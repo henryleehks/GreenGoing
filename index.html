@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Add Bootstrap CSS Link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Add your custom styles here if needed */
+        body {
+            padding-top: 70px;
+            /* Adjust body padding to account for fixed navbar */
+            background-color: #C9FFD3;
+            color: black;
+        }
+
+        #cart,
+        #favourites {
+            position: relative;
+        }
+
+        /* 
+        #cart::after,
+        #favourites::after {
+            content: '0';
+            /* You can update this value dynamically with JavaScript 
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: red;
+            color: white; 
+            border-radius: 50%;
+            padding: 2px 5px;
+            font-size: 12px;
+        } 
+        
+        */
+
+        #logoz {
+            width: 400px;
+            height: 100px;
+        }
+
+        #test {
+            background-color: #C9FFD3;
+            height: 100px;
+        }
+
+        #topbar {
+            background-color: #5C4B2F;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="test">
+        <nav class="navbar navbar-expand-lg fixed-top" id="topbar" style="height: 100px;">
+            <!-- Navbar content -->
+            <a class="navbar-brand" href="#">
+                <img id="logoz" src="logo.png" alt="Company Logo" height="30" class="d-inline-block align-left">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <form class="form-inline w-100">
+                    <input class="form-control" type="search" placeholder="Search for your next experience..."
+                        aria-label="Search" style="width: 100%;">
+                </form>
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="#" id="cart" class="nav-link">Cart</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" id="favourites" class="nav-link">Favorites</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Navbar content -->
+        </nav>
+    </div>
+
+
+    <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+    <stripe-pricing-table pricing-table-id="prctbl_1O26UmES1IBsN336tA2ZIAKK"
+        publishable-key="pk_test_51O24pyES1IBsN336SYDrnaWegyxxCjctJAUjk0QKhVZa6pkeJqDOA8vpRC2fbykz16JysV77x7lRtW1OYGep8u2i00QFMTf1ZU">
+    </stripe-pricing-table>
+
+    <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+    <stripe-pricing-table pricing-table-id="prctbl_1O25W9ES1IBsN336bWQCN4sH"
+        publishable-key="pk_test_51O24pyES1IBsN336SYDrnaWegyxxCjctJAUjk0QKhVZa6pkeJqDOA8vpRC2fbykz16JysV77x7lRtW1OYGep8u2i00QFMTf1ZU">
+    </stripe-pricing-table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- The rest of your page content goes here -->
+    <!-- Add Bootstrap JS and Popper.js scripts at the end of the body tag -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
