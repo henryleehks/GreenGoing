@@ -6,41 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
 
-    <!-- Tailwind CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <style>
-        #homepage-background {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-
-    </style>
-
+    <!-- Include Tailwind CSS as a stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body>
-    <!-- Top Banner -->
-    <div class="container" id="top-banner" class="fixed">
-
-
-    </div>
-
+<body class="flex items-center justify-center h-screen">
     <div class="container" id="user-input-area">
-        <img id="homepage-background" src="img/homepage background.jpg" class="z-0">
-        <div id="user-input-box" class="bg-stone-500 bg-opacity-70">
-            <h2>Hello there</h2>
-
+        <img id="homepage-background" src="img/homepage background.jpg" class="w-full h-full">
+        
+        <!-- Center the user-input-box within the image -->
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div id="user-input-box" class="bg-stone-500 bg-opacity-70">
+                <h2>Hello there</h2>
+            </div>
         </div>
-
-
-
     </div>
-
-
-
 </body>
 
 </html>
