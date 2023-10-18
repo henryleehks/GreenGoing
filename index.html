@@ -11,7 +11,7 @@
         body {
             padding-top: 70px;
             /* Adjust body padding to account for fixed navbar */
-            background-color: #C9FFD3;
+            /* background-color: #C9FFD3; */
             color: black;
         }
 
@@ -34,6 +34,8 @@
             padding: 2px 5px;
             font-size: 12px;
         } 
+
+        F8F9FA
         
         */
 
@@ -43,12 +45,17 @@
         }
 
         #test {
-            background-color: #C9FFD3;
+            background-color: #F8F9FA;
             height: 100px;
         }
 
         #topbar {
-            background-color: #5C4B2F;
+            background-color: #CFCAC2;
+        }
+
+        #side1,#side2,#side3{
+            width:50px;
+            height:50px;
         }
     </style>
 </head>
@@ -69,19 +76,30 @@
                     <input class="form-control" type="search" placeholder="Search for your next experience..."
                         aria-label="Search" style="width: 100%;">
                 </form>
-                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit"><img id="side1" src="FAVOURITES.png"></button>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a href="#" id="cart" class="nav-link">Cart</a>
+                        <a href="#" id="cart" class="nav-link"><img id="side2" src="CART.png"></a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" id="favourites" class="nav-link">Favorites</a>
+                        <a href="#" id="favourites" class="nav-link"><img id="side3" src="USER.png"></a>
                     </li>
                 </ul>
             </div>
             <!-- Navbar content -->
         </nav>
     </div>
+
+
+    <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+    <stripe-pricing-table pricing-table-id="prctbl_1O2aMUES1IBsN336eNGdfPut"
+        publishable-key="pk_test_51O24pyES1IBsN336SYDrnaWegyxxCjctJAUjk0QKhVZa6pkeJqDOA8vpRC2fbykz16JysV77x7lRtW1OYGep8u2i00QFMTf1ZU">
+    </stripe-pricing-table>
+
+    <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+    <stripe-pricing-table pricing-table-id="prctbl_1O2aONES1IBsN3366duSpLDp"
+        publishable-key="pk_test_51O24pyES1IBsN336SYDrnaWegyxxCjctJAUjk0QKhVZa6pkeJqDOA8vpRC2fbykz16JysV77x7lRtW1OYGep8u2i00QFMTf1ZU">
+    </stripe-pricing-table>
 
 
     <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
