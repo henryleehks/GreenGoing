@@ -8,19 +8,78 @@
 
     <!-- Include Tailwind CSS as a stylesheet -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+
+
+    <style>
+        /* Center the image to the page */
+        #top-banner {
+            height: 100%;
+            width: 100%;    
+            background-color: #CFCAC2;
+            margin-bottom: 150px;
+        }
+
+        #banner-logo {
+            width: 25%;
+            height: 25%;
+            display: block;
+        }
+
+        #homepage-background {
+            display: block;
+            margin: auto;
+        }
+
+        /* Center the user-input-box to the image */
+        #user-input-area {
+            position: relative;
+            margin: auto;
+            margin-bottom: 150px;
+        }
+
+        #user-input-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 80%;
+            height: 20%;
+            transform: translate(-50%, -50%);
+            background-color: #CFCAC2;
+            /* Adjust the background color and opacity as needed */
+            /* padding: 70px; */
+            /* Adjust the padding as needed */
+            opacity: 0.8;
+        }
+    </style>
 </head>
 
-<body class="flex items-center justify-center h-screen">
-    <div class="container" id="user-input-area">
-        <img id="homepage-background" src="img/homepage background.jpg" class="w-full h-full">
-        
-        <!-- Center the user-input-box within the image -->
-        <div class="absolute inset-0 flex items-center justify-center">
-            <div id="user-input-box" class="bg-stone-500 bg-opacity-70">
-                <h2>Hello there</h2>
-            </div>
-        </div>
+<body>
+
+    <!-- Top Banner -->
+
+    <div id="top-banner">
+        <a href="homepage.html">
+            <img id="banner-logo" src="logo.png">
+        </a>
     </div>
+
+    <!-- User Input Bar -->
+    <div class="container" id="user-input-area">
+
+            <img id="homepage-background" src="img/homepage background.jpg" alt="Changi Airport Jewel">
+
+        <div class="columns-3" id="user-input-box">
+
+                <div>hello</div>
+                <div>hello</div>
+                <div>hello</div>
+                <div>hello</div>
+
+            <div id="travel-start">
+                
+            </div>
+
+        </div>
 </body>
 
 </html>
