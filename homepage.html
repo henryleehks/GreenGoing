@@ -9,12 +9,11 @@
     <!-- Include Tailwind CSS as a stylesheet -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
 
-
     <style>
         /* Center the image to the page */
         #top-banner {
             height: 100%;
-            width: 100%;    
+            width: 100%;
             background-color: #CFCAC2;
             margin-bottom: 150px;
         }
@@ -23,6 +22,7 @@
             width: 25%;
             height: 25%;
             display: block;
+            padding: 10px 10px 10px 10px;
         }
 
         #homepage-background {
@@ -45,10 +45,21 @@
             height: 20%;
             transform: translate(-50%, -50%);
             background-color: #CFCAC2;
-            /* Adjust the background color and opacity as needed */
-            /* padding: 70px; */
-            /* Adjust the padding as needed */
             opacity: 0.8;
+        }
+
+        div .user-input {
+            border: solid 2px black;
+            border-radius: 10px;
+            width: 75%;
+            height: 35%;
+            margin: auto;
+            background-color: white;
+
+        }
+
+        span {
+            font-size: 100%;
         }
     </style>
 </head>
@@ -66,20 +77,29 @@
     <!-- User Input Bar -->
     <div class="container" id="user-input-area">
 
-            <img id="homepage-background" src="img/homepage background.jpg" alt="Changi Airport Jewel">
+        <img id="homepage-background" src="img/homepage background.jpg" alt="Changi Airport Jewel">
 
-        <div class="columns-3" id="user-input-box">
+        <!-- user inputs -->
 
-                <div>hello</div>
-                <div>hello</div>
-                <div>hello</div>
-                <div>hello</div>
+        <div class="grid grid-cols-3" id="user-input-box">
 
-            <div id="travel-start">
-                
+            <!-- travel start date input -->
+            <div class="user-input" id="travel-start">
+                <span>test</span>
+            </div>
+
+            <!-- travel end date input -->
+            <div class="user-input" id="travel-end">
+                <span>test</span>
+            </div>
+
+            <!-- number of travllers input -->
+            <div class="user-input" id="number-of-travllers">
+                <span>test</span>
             </div>
 
         </div>
+
 </body>
 
 </html>
