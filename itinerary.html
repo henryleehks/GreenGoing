@@ -8,6 +8,46 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
+    #topnavbar{
+      background-color: #CFCAC2;
+
+    }
+
+    #navbutton{
+      position: relative;
+      display: inline-flex;
+    }
+
+    #default-search{
+      background-color: #CFCAC2;
+      width: 200px;
+    }
+
+    #default-search-mobile{
+      background-color: #CFCAC2;
+      width:100%;
+    }
+
+    #searchbutton{
+      position: absolute;
+      color: white;
+    }
+
+    #header{
+      font-weight: bold;
+      font-size: 30px;
+      font-family:'Franklin Gothic Medium';
+      margin: 20px auto auto 30px;
+    }
+
+    #ItineraryListings{
+      border: 1px solid lightgray;
+      border-radius: 10px;
+      margin: auto;
+      margin-top: 50px;
+      padding: 10px 10px 10px 10px;
+      width: 90%;
+    }
 
   </style>
   
@@ -15,14 +55,15 @@
 
 <body>
   <!-- topbar -->
-  <nav class="bg-[#CFCAC2]">
+  <nav id="topnavbar">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
       <div class="relative flex h-16 items-center justify-between">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
 
           <!-- Mobile menu button-->
           <button type="button"
-            class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-neutral-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+            id="navbutton"
+            class="items-center justify-center rounded-md p-2 text-gray-400 hover:bg-neutral-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
             aria-controls="mobile-menu" aria-expanded="false">
             <span class="absolute -inset-0.5"></span>
             <span class="sr-only">Open main menu</span>
@@ -48,8 +89,9 @@
           </button>
         </div>
 
-        <div class="flex flex-1 justify-items-end justify-center sm:items-stretch sm:justify-start">
-          <div class="flex flex-shrink-0 items-center">
+        <!-- Logo -->
+        <div class="flex flex-1 justify-center sm:items-stretch sm:justify-start">
+          <div class="flex flex-shrink-0 items-center justify-start">
             <img class="h-8 w-auto" src="img/logo.png" alt="Your Company">
           </div>
           <div class="hidden sm:ml-6 sm:block">
@@ -58,16 +100,17 @@
               <!-- Search Bar -->
 
               <form>
-                <label for="default-search" class="mb-2 text-sm font-medium text-neutral-500 sr-only">Search</label>
                 <div class="relative">
                   <!-- <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                             
                         </div> -->
-                  <input type="search" id="default-search"
-                    class="block w-full p-4 text-sm text-neutral-500 border rounded-full bg-[#CFCAC2]"
+                  <input type="search"
+                    id="default-search"
+                    class="block w-full p-4 text-sm text-neutral-500 border rounded-full"
                     placeholder="Search" required>
                   <button type="submit"
-                    class="text-white absolute right-2.5 bottom-2.5 bg-[#CFCAC2] hover:bg-neutral-500 focus:ring-neutral-400 font-medium rounded-full text-sm px-4 py-2">
+                    id="searchbutton"
+                    class="right-2.5 bottom-2.5 hover:bg-neutral-500 focus:ring-neutral-400 font-medium rounded-full text-sm px-4 py-2">
                     <svg class="w-4 h-4 text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                       viewBox="0 0 20 20">
                       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -77,17 +120,29 @@
                 </div>
               </form>
 
-              <a href="#" id="HomeIcon"
-                class="text-white hover:bg-neutral-400 rounded-md px-3 py-2 text-sm font-medium"><img
-                  src="img/Home Icon.png"></a>
-              <a href="#" id="ItineraryIcon" class="bg-neutral-500 text-white rounded-md px-3 py-2 text-sm font-medium"
-                aria-current="page"><img src="img/notebook.png"></a>
-              <a href="#" id="FavoritesIcon"
-                class="text-white hover:bg-neutral-400 rounded-md px-3 py-2 text-sm font-medium"><img
-                  src="img/Favourites Icon.png"></a>
-              <a href="#" id="CartIcon"
-                class="text-white hover:bg-neutral-400 rounded-md px-3 py-2 text-sm font-medium"><img
-                  src="img/Add to Bag Icon.png"></a>
+              <!-- Buttons -->
+              <a href="#"
+                id="HomeIcon"
+                class="hover:bg-neutral-400 rounded-md px-3 py-2 text-sm">
+                <img src="img/Home Icon.png">
+              </a>
+              <a href="#"
+                id="ItineraryIcon"
+                class="bg-neutral-500 text-white rounded-md px-3 py-2 text-sm"
+                aria-current="page">
+                <img src="img/notebook.png">
+              </a>
+              <a href="#"
+                id="FavoritesIcon"
+                class="hover:bg-neutral-400 rounded-md px-3 py-2 text-sm">
+                <img src="img/Favourites Icon.png">
+              </a>
+              <a href="#"
+                id="CartIcon"
+                class="hover:bg-neutral-400 rounded-md px-3 py-2 text-sm">
+                <img src="img/Add to Bag Icon.png">
+              </a>
+              
             </div>
           </div>
         </div>
@@ -100,8 +155,10 @@
                 </svg>
               </button> -->
 
-        <!-- Profile dropdown -->
-        <div class="relative ml-3">
+        <!-- Profile icon-->
+        <div 
+          id="ProfileIcon"
+          class="relative ml-3">
           <div>
             <button type="button"
               class="relative flex hover:bg-neutral-400 rounded-md px-3 py-2 font-medium focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
@@ -112,31 +169,40 @@
             </button>
           </div>
 
-          <!--                 
-                  Dropdown menu, show/hide based on menu state.
-      
-                  Entering: "transition ease-out duration-100"
-                    From: "transform opacity-0 scale-95"
-                    To: "transform opacity-100 scale-100"
-                  Leaving: "transition ease-in duration-75"
-                    From: "transform opacity-100 scale-100"
-                    To: "transform opacity-0 scale-95"
-                -->
           <!-- <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
                   Active: "bg-gray-100", Not Active: ""
                   <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
                   <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
                   <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
                 </div> -->
-        </div>
+        </div>       
       </div>
     </div>
-    </div>
+
 
     <!-- Mobile menu, show/hide based on menu state. -->
     <div class="sm:hidden" id="mobile-menu">
       <div class="space-y-1 px-2 pb-3 pt-2">
-        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+        <form>
+          <div class="relative">
+            <!-- <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                      
+                  </div> -->
+            <input type="search"
+              id="default-search-mobile"
+              class="block w-full p-4 text-sm text-neutral-500 border rounded-full"
+              placeholder="Search" required>
+            <button type="submit"
+              id="searchbutton"
+              class="right-2.5 bottom-2.5 hover:bg-neutral-500 focus:ring-neutral-400 font-medium rounded-full text-sm px-4 py-2">
+              <svg class="w-4 h-4 text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 20 20">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+              </svg>
+            </button>
+          </div>
+        </form>
         <a href="#" class="text-white hover:bg-neutral-400 block rounded-md px-3 py-2 text-base font-medium"><img
             src="img/Home Icon.png">Home</a>
         <a href="#" class="bg-neutral-500 text-white block rounded-md px-3 py-2 text-base font-medium"
@@ -150,9 +216,33 @@
   </nav>
 
 
+  <!-- Header -->
+  <div id="header">
+    <h1>Your Itinerary</h1>
+
+  </div>
+  
+
+  <!-- Listings -->
+  <div id="ItineraryListings" class="container">
+    Listing1
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, repudiandae saepe commodi voluptatum perspiciatis natus corporis cupiditate totam odio voluptate possimus? Incidunt enim maxime earum consequuntur fugiat quo accusantium officiis.</p>
+    <br>
+    Listing2
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid fugit omnis in, tenetur hic eos maxime repudiandae cumque dolores sit eum maiores ratione consequuntur pariatur ut expedita et beatae non.</p>
+    <br>
+    Listing3
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, amet. Delectus ab quasi consequatur explicabo quidem labore suscipit earum voluptate recusandae maiores unde vero autem ratione, cupiditate minus asperiores? Voluptatum.</p>
+  </div>
+
+
+
+
+
+
 
   <footer
-    class="fixed bottom-0 left-0 z-20 w-full p-4 bg-[#CFCAC2] border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6">
+    class="fixed bottom-0 left-0 z-20 w-full p-1 bg-[#CFCAC2] border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-2">
     <span class="text-sm text-white sm:text-center">© 2023 <a href="https://flowbite.com/"
         class="hover:underline">GreenGoing</a>. All Rights Reserved.
     </span>
