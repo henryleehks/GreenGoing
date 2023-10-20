@@ -9,13 +9,19 @@
     <!-- Include Tailwind CSS as a stylesheet -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
 
+    <!-- datepicker js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/datepicker.min.js"></script>
+
+    <link rel="stylesheet" href="path/to/datepicker.css">
+    <script src="path/to/datepicker.js"></script>
+
     <style>
         /* Center the image to the page */
         #top-banner {
             height: 100%;
             width: 100%;
             background-color: #CFCAC2;
-            margin-bottom: 150px;
+            margin-bottom: 20px;
             position: sticky;
         }
 
@@ -23,12 +29,14 @@
             width: 25%;
             height: 25%;
             display: block;
-            padding: 10px 10px 10px 10px;
+            padding: 20px;
         }
 
         #homepage-background {
             display: block;
             margin: auto;
+            width: auto;
+            height: auto;
         }
 
         /* Center the user-input-box to the image */
@@ -36,11 +44,12 @@
             position: relative;
             margin: auto;
             margin-bottom: 500px;
+            width: 100%;
         }
 
         #user-input-box {
             position: absolute;
-            top: 50%;
+            top: 40%;
             left: 50%;
             width: 60%;
             height: 20%;
@@ -50,20 +59,21 @@
         }
 
         div .user-input {
-            border: solid 2px black;
+            border: 1px rgb(231, 221, 203) solid;
             border-radius: 10px;
             width: 75%;
             height: 35%;
             margin: auto;
             background-color: white;
             display: flex;
-            justify-content: left;
+            justify-content: center;
             align-items: center;
             opacity: 1.0;
         }
 
         .user-text-input {
             font-size: 10px;
+
         }
     </style>
 </head>
@@ -73,10 +83,15 @@
     <!-- Top Banner -->
 
     <div id="top-banner">
+
+        
         <a href="homepage.html">
-            <img id="banner-logo" src="logo.png">
+            <img id="banner-logo" src="img/logo.png">
         </a>
+
+
     </div>
+
 
     <!-- User Input Bar -->
     <div class="container" id="user-input-area">
@@ -85,21 +100,45 @@
 
         <!-- user inputs -->
 
-        <div class="grid grid-cols-3" id="user-input-box">
+        <div class="grid grid-cols-3 user-input" id="user-input-box">
 
-            <!-- travel start date input -->
-            <div class="user-input" id="travel-start">
-                <input class="user-text-input" type="text" placeholder="Enter Travel Start Date">
+            <div date-rangepicker class="flex items-center">
+                <div class="relative" id="input-start-date">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+                        </svg>
+                    </div>
+                    <input datepicker data-date-format="dd/mm/yyyy" datepicker-autohide name="start" type="text"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="Select date start">
+                </div>
+                <!-- <span class="mx-4 text-gray-500">to</span> -->
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+                        </svg>
+                    </div>
+                    <input datepicker data-date-format="dd/mm/yyyy" datepicker-autohide name="end" type="text"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="Select date end">
+                </div>
             </div>
 
-            <!-- travel end date input -->
-            <div class="user-input" id="travel-end">
-                <input class="user-text-input" type="text" placeholder="Enter Travel Start Date">
-            </div>
 
-            <!-- number of travllers input -->
+            <!-- number of travllers input
             <div class="user-input" id="number-of-travllers">
                 <input class="user-text-input" type="text" placeholder="Enter Travel Start Date">
+            </div> -->
+            <div>
+                <input type="number" id="visitors"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Number of travellers" required>
             </div>
 
         </div>
