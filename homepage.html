@@ -16,6 +16,7 @@
             width: 100%;
             background-color: #CFCAC2;
             margin-bottom: 150px;
+            position: sticky;
         }
 
         #banner-logo {
@@ -34,14 +35,14 @@
         #user-input-area {
             position: relative;
             margin: auto;
-            margin-bottom: 150px;
+            margin-bottom: 500px;
         }
 
         #user-input-box {
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 80%;
+            width: 60%;
             height: 20%;
             transform: translate(-50%, -50%);
             background-color: #CFCAC2;
@@ -55,11 +56,14 @@
             height: 35%;
             margin: auto;
             background-color: white;
-
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            opacity: 1.0;
         }
 
-        span {
-            font-size: 100%;
+        .test {
+            font-size: 10px;
         }
     </style>
 </head>
@@ -85,17 +89,17 @@
 
             <!-- travel start date input -->
             <div class="user-input" id="travel-start">
-                <span>test</span>
+                <input class="test" type="text" placeholder="Enter Travel Start Date">
             </div>
 
             <!-- travel end date input -->
             <div class="user-input" id="travel-end">
-                <span>test</span>
+                <p>Enter Travel End Date</p>
             </div>
 
             <!-- number of travllers input -->
             <div class="user-input" id="number-of-travllers">
-                <span>test</span>
+                <p>Enter No. of Travellers</p>
             </div>
 
         </div>
