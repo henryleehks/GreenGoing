@@ -68,9 +68,9 @@
             height: 35%;
             margin: auto;
             background-color: white;
-            display: flex;
+            /* display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: center; */
             opacity: 1.0;
         }
 
@@ -85,7 +85,7 @@
 
     <!-- Top Banner -->
 
-    <div class="grid grid-cols-12" id="top-banner">
+    <div class="grid grid-cols-12 h-screen place-items-center" id="top-banner">
 
         <!-- logo -->
         <div class="col-span-2">
@@ -94,9 +94,13 @@
             </a>
         </div>
 
+        <div class="col-span-1">
+
+        </div>
+
         <!-- search bar -->
-        <div class="col-span-8 w-full flex items-center justify-center">
-            <form>
+        <div class="col-span-4" id="search-bar-input">
+            <!-- <form>
                 <label for="default-search" class="mb-2 text-sm font-medium text-neutral-500 sr-only">Search</label>
                 <div class="relative">
                     <input type="search" id="top-banner-search"
@@ -111,14 +115,12 @@
                         </svg>
                     </button>
                 </div>
-            </form>
-        </div>
+            </form> -->
 
-
-        <!-- <form>
+            <form>
                 <label for="default-search"
                     class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-                <div class="relative" id="search-bar-area">
+                <div class="relative">
                     <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                         <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
@@ -126,23 +128,36 @@
                                 d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                         </svg>
                     </div>
-                    <input type="search" id="top-banner-search"
+                    <input type="search" id="default-search"
                         class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="Search for Sustainable Attractions..." required>
+                        placeholder="Search Mockups, Logos..." required>
                     <button type="submit"
-                        class="text-white absolute right-2.5 bottom-2.5 bg-[#CFCAC2] hover:bg-neutral-500 focus:ring-neutral-400 font-medium rounded-full text-sm px-4 py-2">
-                        <svg class="w-4 h-4 text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                            fill="none" viewBox="0 0 20 20">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                        </svg>
-                    </button>
+                        class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
                 </div>
             </form>
 
-        </div> -->
+        </div>
 
+        <div class="col-span-2">
+        </div>
 
+        <div class="col-span-1">
+            <a href="itinerary.html">
+                <img src="img/Favourites Icon.png">
+            </a>
+        </div>
+
+        <div class="col-span-1">
+            <a href="checkout_page.html">
+                <img src="img/Add to Bag Icon.png">
+            </a>
+        </div>
+
+        <div class="col-span-1">
+            <a href="index.html"> <!-- to be modified -->
+                <img src="img/User Profile Icon.png">
+            </a>
+        </div>
 
     </div>
 
@@ -154,48 +169,57 @@
 
         <!-- user inputs -->
 
-        <div class="grid grid-cols-3 user-input" id="user-input-box">
+        <!-- start and end dates -->
+        <div class="grid grid-rows-2 h-screen place-items-center user-input" id="user-input-box">
 
-            <div date-rangepicker class="flex items-center">
-                <div class="relative" id="input-start-date">
-                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                            <path
-                                d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
-                        </svg>
+
+            <div class="row-start-1 grid grid-cols-12">
+                <div date-rangepicker class="flex items-center col-span-8">
+                    <div class="relative" id="input-start-date">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+                            </svg>
+                        </div>
+                        <input datepicker data-date-format="dd/mm/yyyy" datepicker-autohide name="start" type="text"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Select date start">
                     </div>
-                    <input datepicker data-date-format="dd/mm/yyyy" datepicker-autohide name="start" type="text"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="Select date start">
+                    <span class="mx-4 text-gray-500">to</span>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+                            </svg>
+                        </div>
+                        <input datepicker data-date-format="dd/mm/yyyy" datepicker-autohide name="end" type="text"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Select date end">
+                    </div>
                 </div>
-                <!-- <span class="mx-4 text-gray-500">to</span> -->
-                <div class="relative">
-                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                            <path
-                                d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
-                        </svg>
-                    </div>
-                    <input datepicker data-date-format="dd/mm/yyyy" datepicker-autohide name="end" type="text"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="Select date end">
+                <div class="col-span-1">
+                    
+                </div>
+
+                <div class="col-span-3">
+                    <input type="number" id="visitors"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="Number of travellers" required>
                 </div>
             </div>
-
-
-            <!-- number of travllers input
-            <div class="user-input" id="number-of-travllers">
-                <input class="user-text-input" type="text" placeholder="Enter Travel Start Date">
-            </div> -->
-            <div>
-                <input type="number" id="visitors"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Number of travellers" required>
+            <div class="row-start-2">
+                hello
             </div>
-
         </div>
+        
+
+
+
+    </div>
 
 </body>
 
