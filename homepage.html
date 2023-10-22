@@ -44,6 +44,7 @@
             margin: auto;
             margin-bottom: 500px;
             width: 100%;
+            height: 100%;
         }
 
         #search-bar-area {
@@ -154,7 +155,7 @@
             </a>
         </div> -->
 
-        <div class="col-span-2 flex items-center justify-center space-x-16">
+        <div class="col-span-2 flex items-center justify-center space-x-10 mr-">
             <a href="itinerary.html">
                 <img src="img/Favourites Icon.png">
             </a>
@@ -180,14 +181,30 @@
         <div class="grid grid-rows-3 h-screen place-items-center user-input" id="user-input-box">
 
             <div class="row-start-1 grid grid-cols-12">
-                <div class="col-span-8">
-                    <div class="col-span-8"></div>
+
+                <div class="col-span-1">
                 </div>
+
+                <div class="col-span-4">
+                    Start and End Date:
+                </div>
+
+                <div class="col-span-6">
+                </div>
+
+                <div class="col-span-1 self-enter">
+                    hello
+                </div>
+
             </div>
 
 
             <div class="row-start-2 grid grid-cols-12">
-                <div date-rangepicker class="flex items-center col-span-8">
+
+                <div class="col-span-1">
+                </div>
+
+                <div date-rangepicker class="flex items-center col-span-7">
                     <div class="relative" id="input-start-date">
                         <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                             <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
@@ -214,18 +231,23 @@
                             placeholder="Select date end">
                     </div>
                 </div>
-                <div class="col-span-1">
 
+                <div class="col-span-1">
                 </div>
 
-                <div class="col-span-3">
+                <div class="col-span-2">
                     <input type="number" id="visitors"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="Number of travellers" required>
+                        placeholder="Travellers" required>
                 </div>
+
+                <div class="col-span-1">
+                </div>
+
             </div>
+
             <div class="row-start-3">
-                <div>
+                <div class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     Book your next experience!
                 </div>
             </div>
