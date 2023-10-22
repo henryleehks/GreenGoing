@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <title>GreenGoing - Sustainable Tourism</title>
   <!-- <link rel="stylesheet" href="github2.css"> -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
 
   <style>
     #topnavbar{
@@ -20,7 +20,8 @@
 
     #default-search{
       background-color: #CFCAC2;
-      width: 200px;
+      /* width: 200px; */
+      width: 200%;
     }
 
     #default-search-mobile{
@@ -28,10 +29,10 @@
       width:100%;
     }
 
-    #searchbutton{
+    #SearchButton{
       position: absolute;
-      color: white;
     }
+
 
     #header{
       font-weight: bold;
@@ -40,13 +41,37 @@
       margin: 20px auto auto 30px;
     }
 
+    #CategorySearch{
+      margin: 10px auto 0px 30px ;
+    }
+
+    #CategorySearchButton{
+      position: absolute;
+      margin-left: 310px; 
+      background-color: #50A060;
+    }
+
     #ItineraryListings{
       border: 1px solid lightgray;
       border-radius: 10px;
-      margin: auto;
-      margin-top: 50px;
+      margin: 10px auto auto 30px;
       padding: 10px 10px 10px 10px;
-      width: 90%;
+      width: 100%;
+    }
+
+    td{
+      padding: 10px;
+    }
+    
+    tr:nth-child(even){
+      background-color: #F1F3F4;
+    }
+
+    #viewbutton{
+      background-color: #50A060;
+      color: white;
+      padding: 2px 15px 2px 15px;
+      margin-top: 5px;
     }
 
   </style>
@@ -56,9 +81,11 @@
 <body>
   <!-- topbar -->
   <nav id="topnavbar">
-    <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-7xl px-2 sm:px-4 lg:px-6">
       <div class="relative flex h-16 items-center justify-between">
-        <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+
+        <!-- not sure whats gg on for the navbutton-->
+        <div class="absolute flex items-center sm:hidden">
 
           <!-- Mobile menu button-->
           <button type="button"
@@ -67,6 +94,7 @@
             aria-controls="mobile-menu" aria-expanded="false">
             <span class="absolute -inset-0.5"></span>
             <span class="sr-only">Open main menu</span>
+
             <!--
                   Icon when menu is closed.
       
@@ -87,30 +115,31 @@
             </svg>
 
           </button>
-        </div>
 
-        <!-- Logo -->
-        <div class="flex flex-1 justify-center sm:items-stretch sm:justify-start">
-          <div class="flex flex-shrink-0 items-center justify-start">
+        </div>
+        <!-- not sure whats gg on for the navbutton^^^-->
+
+
+
+        <div class="flex flex-1 justify-center sm:justify-start">
+          <!-- Logo -->
+          <div class="flex items-center justify-start">
             <img class="h-8 w-auto" src="img/logo.png" alt="Your Company">
           </div>
+
           <div class="hidden sm:ml-6 sm:block">
             <div class="flex space-x-4">
 
               <!-- Search Bar -->
-
               <form>
-                <div class="relative">
-                  <!-- <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                            
-                        </div> -->
+                <div class="relative grid grid-cols-2">
                   <input type="search"
                     id="default-search"
                     class="block w-full p-4 text-sm text-neutral-500 border rounded-full"
                     placeholder="Search" required>
                   <button type="submit"
-                    id="searchbutton"
-                    class="right-2.5 bottom-2.5 hover:bg-neutral-500 focus:ring-neutral-400 font-medium rounded-full text-sm px-4 py-2">
+                    id="SearchButton"
+                    class="right-10 bottom-2.5 hover:bg-neutral-500 focus:ring-neutral-400 rounded-full text-sm px-2 py-2">
                     <svg class="w-4 h-4 text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                       viewBox="0 0 20 20">
                       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -120,6 +149,7 @@
                 </div>
               </form>
 
+              <div class="grid grid-cols-9 gap-9"></div>
               <!-- Buttons -->
               <a href="#"
                 id="HomeIcon"
@@ -169,6 +199,8 @@
             </button>
           </div>
 
+          <!-- This is for a dropdown when user clicks profile -->
+
           <!-- <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
                   Active: "bg-gray-100", Not Active: ""
                   <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
@@ -184,17 +216,14 @@
     <div class="sm:hidden" id="mobile-menu">
       <div class="space-y-1 px-2 pb-3 pt-2">
         <form>
-          <div class="relative">
-            <!-- <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                      
-                  </div> -->
+          <div class="relative grid grid-cols-1">
             <input type="search"
               id="default-search-mobile"
               class="block w-full p-4 text-sm text-neutral-500 border rounded-full"
               placeholder="Search" required>
             <button type="submit"
-              id="searchbutton"
-              class="right-2.5 bottom-2.5 hover:bg-neutral-500 focus:ring-neutral-400 font-medium rounded-full text-sm px-4 py-2">
+              id="SearchButton"
+              class="right-10 bottom-2.5 hover:bg-neutral-500 focus:ring-neutral-400 font-medium rounded-full text-sm px-2 py-2">
               <svg class="w-4 h-4 text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                 viewBox="0 0 20 20">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -216,25 +245,83 @@
   </nav>
 
 
-  <!-- Header -->
-  <div id="header">
-    <h1>Your Itinerary</h1>
+  <div id="PageContent" class="container">
+      <!-- Header -->
+    <div id="header">
+      <h1>Your Itinerary</h1>
+    </div>  
+    <!-- Itineray search -->
+    <form>
+      <div id="CategorySearch" class="flex">
+        <button id="CategorySearchDropdownButton" data-dropdown-toggle="dropdown" class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-l-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100" type="button">
+          All categories 
+          <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+          </svg>
+        </button>
+
+        <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+          <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdown-button">
+            <li>
+              <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100">Accomodations</button>
+            </li>
+            <li>
+              <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100">Attractions</button>
+            </li>
+            <li>
+              <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100">Food</button>
+            </li>
+            <li>
+              <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100">Others</button>
+            </li>
+          </ul>
+        </div>
+        <div class="relative w-full">
+          <input type="search" id="CategorySearchInput" class="block p-2.5 w-80 z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border-l-gray-50 border-l-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Search Category" required>
+          <button type="submit" id="CategorySearchButton" class="top-0 p-2.5 text-sm font-medium h-full rounded-r-lg focus:ring-4 focus:outline-none focus:ring-blue-300">
+              <svg class="w-4 h-4 text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+              </svg>
+              <span class="sr-only">Search</span>
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <table id="ItineraryListings" class="container">
+      <tr>
+        <td>
+          <img src="img/homepage background.jpg" class="w-50">
+        </td>
+        <td>
+          <h2>Listing 1</h2>
+          <h2>Date:</h2>
+          <h2>Time:</h2>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, repudiandae saepe commodi voluptatum perspiciatis natus corporis cupiditate totam odio voluptate possimus? Incidunt enim maxime earum consequuntur fugiat quo accusantium officiis.</p>
+          <button id="viewbutton" class="rounded">View</button>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="w-20 h-20">
+          <img src="img/homepage background.jpg">
+        </td>
+        <td>
+          <h2>Listing 2</h2>
+          <h2>Date:</h2>
+          <h2>Time:</h2>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, repudiandae saepe commodi voluptatum perspiciatis natus corporis cupiditate totam odio voluptate possimus? Incidunt enim maxime earum consequuntur fugiat quo accusantium officiis.</p>
+          <button id="viewbutton" class="rounded">View</button>
+        </td>
+      </tr>
+
+
+
+    </table>
 
   </div>
+
   
-
-  <!-- Listings -->
-  <div id="ItineraryListings" class="container">
-    Listing1
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, repudiandae saepe commodi voluptatum perspiciatis natus corporis cupiditate totam odio voluptate possimus? Incidunt enim maxime earum consequuntur fugiat quo accusantium officiis.</p>
-    <br>
-    Listing2
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid fugit omnis in, tenetur hic eos maxime repudiandae cumque dolores sit eum maiores ratione consequuntur pariatur ut expedita et beatae non.</p>
-    <br>
-    Listing3
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, amet. Delectus ab quasi consequatur explicabo quidem labore suscipit earum voluptate recusandae maiores unde vero autem ratione, cupiditate minus asperiores? Voluptatum.</p>
-  </div>
-
 
 
 
@@ -249,24 +336,7 @@
   </footer>
 
 
-
-  <script>
-    export default{
-      setup(){
-        let links = [
-          {name: "", link: ""},
-          {name: "", link: ""},
-          {name: "", link: ""},
-          {name: "", link: ""},
-          {name: "", link: ""},
-        ]
-      }
-    }
-  </script>
-
-
-
-
+  <script src="https://cdn.tailwindcss.com"></script>
   <script src="github.js"></script>
 
 </body>
