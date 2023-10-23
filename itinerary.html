@@ -8,50 +8,50 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
 
   <style>
-    #topnavbar{
+    #topnavbar {
       background-color: #CFCAC2;
 
     }
 
-    #navbutton{
+    #navbutton {
       position: relative;
       display: inline-flex;
     }
 
-    #default-search{
+    #default-search {
       background-color: #CFCAC2;
       /* width: 200px; */
       width: 200%;
     }
 
-    #default-search-mobile{
+    #default-search-mobile {
       background-color: #CFCAC2;
-      width:100%;
+      width: 100%;
     }
 
-    #SearchButton{
+    #SearchButton {
       position: absolute;
     }
 
 
-    #header{
+    #header {
       font-weight: bold;
       font-size: 30px;
-      font-family:'Franklin Gothic Medium';
+      font-family: 'Franklin Gothic Medium';
       margin: 20px auto auto 30px;
     }
 
-    #CategorySearch{
-      margin: 10px auto 0px 30px ;
+    #CategorySearch {
+      margin: 10px auto 0px 30px;
     }
 
-    #CategorySearchButton{
+    #CategorySearchButton {
       position: absolute;
-      margin-left: 310px; 
+      margin-left: 310px;
       background-color: #50A060;
     }
 
-    #ItineraryListings{
+    #ItineraryListings {
       border: 1px solid lightgray;
       border-radius: 10px;
       margin: 10px auto auto 30px;
@@ -59,23 +59,22 @@
       width: 100%;
     }
 
-    td{
+    td {
       padding: 10px;
     }
-    
-    tr:nth-child(even){
+
+    tr:nth-child(even) {
       background-color: #F1F3F4;
     }
 
-    #viewbutton{
+    #viewbutton {
       background-color: #50A060;
       color: white;
       padding: 2px 15px 2px 15px;
       margin-top: 5px;
     }
-
   </style>
-  
+
 </head>
 
 <body>
@@ -88,8 +87,7 @@
         <div class="absolute flex items-center sm:hidden">
 
           <!-- Mobile menu button-->
-          <button type="button"
-            id="navbutton"
+          <button type="button" id="navbutton"
             class="items-center justify-center rounded-md p-2 text-gray-400 hover:bg-neutral-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
             aria-controls="mobile-menu" aria-expanded="false">
             <span class="absolute -inset-0.5"></span>
@@ -124,7 +122,10 @@
         <div class="flex flex-1 justify-center sm:justify-start">
           <!-- Logo -->
           <div class="flex items-center justify-start">
-            <img class="h-8 w-auto" src="img/logo.png" alt="Your Company">
+            <a href="homepage.html">
+              <img class="h-8 w-auto" src="img/logo.png" alt="Your Company">
+            </a>
+
           </div>
 
           <div class="hidden sm:ml-6 sm:block">
@@ -133,12 +134,9 @@
               <!-- Search Bar -->
               <form>
                 <div class="relative grid grid-cols-2">
-                  <input type="search"
-                    id="default-search"
-                    class="block w-full p-4 text-sm text-neutral-500 border rounded-full"
-                    placeholder="Search" required>
-                  <button type="submit"
-                    id="SearchButton"
+                  <input type="search" id="default-search"
+                    class="block w-full p-4 text-sm text-neutral-500 border rounded-full" placeholder="Search" required>
+                  <button type="submit" id="SearchButton"
                     class="right-10 bottom-2.5 hover:bg-neutral-500 focus:ring-neutral-400 rounded-full text-sm px-2 py-2">
                     <svg class="w-4 h-4 text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                       viewBox="0 0 20 20">
@@ -151,28 +149,20 @@
 
               <div class="grid grid-cols-9 gap-9"></div>
               <!-- Buttons -->
-              <a href="#"
-                id="HomeIcon"
-                class="hover:bg-neutral-400 rounded-md px-3 py-2 text-sm">
+              <a href="#" id="HomeIcon" class="hover:bg-neutral-400 rounded-md px-3 py-2 text-sm">
                 <img src="img/Home Icon.png">
               </a>
-              <a href="#"
-                id="ItineraryIcon"
-                class="bg-neutral-500 text-white rounded-md px-3 py-2 text-sm"
+              <a href="#" id="ItineraryIcon" class="bg-neutral-500 text-white rounded-md px-3 py-2 text-sm"
                 aria-current="page">
                 <img src="img/notebook.png">
               </a>
-              <a href="#"
-                id="FavoritesIcon"
-                class="hover:bg-neutral-400 rounded-md px-3 py-2 text-sm">
+              <a href="#" id="FavoritesIcon" class="hover:bg-neutral-400 rounded-md px-3 py-2 text-sm">
                 <img src="img/Favourites Icon.png">
               </a>
-              <a href="#"
-                id="CartIcon"
-                class="hover:bg-neutral-400 rounded-md px-3 py-2 text-sm">
+              <a href="#" id="CartIcon" class="hover:bg-neutral-400 rounded-md px-3 py-2 text-sm">
                 <img src="img/Add to Bag Icon.png">
               </a>
-              
+
             </div>
           </div>
         </div>
@@ -186,9 +176,7 @@
               </button> -->
 
         <!-- Profile icon-->
-        <div 
-          id="ProfileIcon"
-          class="relative ml-3">
+        <div id="ProfileIcon" class="relative ml-3">
           <div>
             <button type="button"
               class="relative flex hover:bg-neutral-400 rounded-md px-3 py-2 font-medium focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
@@ -207,7 +195,7 @@
                   <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
                   <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
                 </div> -->
-        </div>       
+        </div>
       </div>
     </div>
 
@@ -217,12 +205,9 @@
       <div class="space-y-1 px-2 pb-3 pt-2">
         <form>
           <div class="relative grid grid-cols-1">
-            <input type="search"
-              id="default-search-mobile"
-              class="block w-full p-4 text-sm text-neutral-500 border rounded-full"
-              placeholder="Search" required>
-            <button type="submit"
-              id="SearchButton"
+            <input type="search" id="default-search-mobile"
+              class="block w-full p-4 text-sm text-neutral-500 border rounded-full" placeholder="Search" required>
+            <button type="submit" id="SearchButton"
               class="right-10 bottom-2.5 hover:bg-neutral-500 focus:ring-neutral-400 font-medium rounded-full text-sm px-2 py-2">
               <svg class="w-4 h-4 text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                 viewBox="0 0 20 20">
@@ -246,17 +231,21 @@
 
 
   <div id="PageContent" class="container">
-      <!-- Header -->
+    <!-- Header -->
     <div id="header">
       <h1>Your Itinerary</h1>
-    </div>  
+    </div>
     <!-- Itineray search -->
     <form>
       <div id="CategorySearch" class="flex">
-        <button id="CategorySearchDropdownButton" data-dropdown-toggle="dropdown" class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-l-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100" type="button">
-          All categories 
-          <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+        <button id="CategorySearchDropdownButton" data-dropdown-toggle="dropdown"
+          class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-l-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100"
+          type="button">
+          All categories
+          <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 10 6">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="m1 1 4 4 4-4" />
           </svg>
         </button>
 
@@ -277,12 +266,17 @@
           </ul>
         </div>
         <div class="relative w-full">
-          <input type="search" id="CategorySearchInput" class="block p-2.5 w-80 z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border-l-gray-50 border-l-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Search Category" required>
-          <button type="submit" id="CategorySearchButton" class="top-0 p-2.5 text-sm font-medium h-full rounded-r-lg focus:ring-4 focus:outline-none focus:ring-blue-300">
-              <svg class="w-4 h-4 text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-              </svg>
-              <span class="sr-only">Search</span>
+          <input type="search" id="CategorySearchInput"
+            class="block p-2.5 w-80 z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border-l-gray-50 border-l-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+            placeholder="Search Category" required>
+          <button type="submit" id="CategorySearchButton"
+            class="top-0 p-2.5 text-sm font-medium h-full rounded-r-lg focus:ring-4 focus:outline-none focus:ring-blue-300">
+            <svg class="w-4 h-4 text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+              viewBox="0 0 20 20">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+            </svg>
+            <span class="sr-only">Search</span>
           </button>
         </div>
       </div>
@@ -297,7 +291,9 @@
           <h2>Listing 1</h2>
           <h2>Date:</h2>
           <h2>Time:</h2>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, repudiandae saepe commodi voluptatum perspiciatis natus corporis cupiditate totam odio voluptate possimus? Incidunt enim maxime earum consequuntur fugiat quo accusantium officiis.</p>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, repudiandae saepe commodi voluptatum
+            perspiciatis natus corporis cupiditate totam odio voluptate possimus? Incidunt enim maxime earum
+            consequuntur fugiat quo accusantium officiis.</p>
           <button id="viewbutton" class="rounded">View</button>
         </td>
       </tr>
@@ -310,7 +306,9 @@
           <h2>Listing 2</h2>
           <h2>Date:</h2>
           <h2>Time:</h2>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, repudiandae saepe commodi voluptatum perspiciatis natus corporis cupiditate totam odio voluptate possimus? Incidunt enim maxime earum consequuntur fugiat quo accusantium officiis.</p>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, repudiandae saepe commodi voluptatum
+            perspiciatis natus corporis cupiditate totam odio voluptate possimus? Incidunt enim maxime earum
+            consequuntur fugiat quo accusantium officiis.</p>
           <button id="viewbutton" class="rounded">View</button>
         </td>
       </tr>
@@ -321,7 +319,7 @@
 
   </div>
 
-  
+
 
 
 
