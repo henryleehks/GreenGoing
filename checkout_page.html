@@ -34,10 +34,26 @@
       position: absolute;
     }
 
+    table{
+      width: 90%;
+      margin-left: auto;
+    }
+
+    tr{
+      border-bottom: lightgray solid 1px;
+    }
+
     td{
       text-align: left;
       padding: 10px 10px 10px 10px;
     }
+
+    td img{
+      width: 100px;
+      height: 100px;
+    }
+
+   
   </style>
 
 </head>
@@ -221,18 +237,16 @@
   </nav>
 
   <div class="container">
+    <h1 class="text-center">Cart</h1>
     <table>
         <tr>
-            <th>Cart</th>
+            <th colspan="2">Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
         </tr>
         <tr>
-            <td colspan="2">Product</td>
-            <td>Price</td>
-            <td>Quantity</td>
-            <td>Total</td>
-        </tr>
-        <tr>
-            <td><img src="img/bird-paradise-crimson-wetlands.png" class="w-[20%] h-[20%]"></td>
+            <td><img src="img/bird-paradise-crimson-wetlands.png"></td>
             <td> Bird Paradise Tickets</td>
             <td>$20</td>
             <td>1</td>
