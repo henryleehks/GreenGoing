@@ -34,10 +34,26 @@
       position: absolute;
     }
 
-    td{
+    table{
+      width: 90%;
+      margin-left: auto;
+    }
+
+    tr{
+      border-bottom: lightgray solid 1px;
+    }
+
+    td, th{
       text-align: left;
       padding: 10px 10px 10px 10px;
     }
+
+    td img{
+      width: 100px;
+      height: 100px;
+    }
+
+   
   </style>
 
 </head>
@@ -220,19 +236,17 @@
     </div>
   </nav>
 
-  <div class="container">
+  <div class="container space-y-6">
+    <h1 class="text-center">Cart</h1>
     <table>
         <tr>
-            <th>Cart</th>
+            <th colspan="2">Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
         </tr>
         <tr>
-            <td colspan="2">Product</td>
-            <td>Price</td>
-            <td>Quantity</td>
-            <td>Total</td>
-        </tr>
-        <tr>
-            <td><img src="img/bird-paradise-crimson-wetlands.png" class="w-[20%] h-[20%]"></td>
+            <td><img src="img/bird-paradise-crimson-wetlands.png"></td>
             <td> Bird Paradise Tickets</td>
             <td>$20</td>
             <td>1</td>
@@ -241,6 +255,14 @@
     </table>
   </div>
 
+
+  <!-- Checkout button -->
+  <div class=" bg-yellow-100 border border-gray-300 text-gray-900 w-[20%] text-sm text-center rounded-lg p-2.5 opacity-100">
+    <a href="https://checkout.stripe.com/c/pay/cs_test_b17rMufkod9KTyI4qFXpvnjeAfko9hPoHaXMqB4eP21oW36pWBc400eqig#fidkdWxOYHwnPyd1blpxYHZxWjA0SjcxdXxAVjRMR3ZLNjYzVlxBd2tkUmBifH19Rm9mcU9EUG9uNVRObVNfZDN1bmBPdEFKRD1zdVdGN2NnfG5%2FNDNPfHZTMjJ9MmlXcVI0SlxCYHU9cDdsNTVUQ0hRYzRfUCd4JSUl">
+      Check Out
+    </a>
+  </div>
+  
 
   <!-- Footer -->
   <footer
