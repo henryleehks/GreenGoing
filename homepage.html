@@ -52,9 +52,23 @@
             height: 100%;
         }
 
-        #search-bar-area {
-            width: 100%;
+        /* #search-bar-area {
+            width: 200%;
             height: 100%;
+        } */
+
+        #default-search{
+          width: 200%;
+          background-color: #CFCAC2;
+        }
+
+        #SearchButton{
+          position: absolute;
+        }
+
+        #default-search-mobile {
+        background-color: #CFCAC2;
+        width: 100%;
         }
 
         #user-input-box {
@@ -198,17 +212,14 @@
     
                   <div class="grid grid-cols-9 gap-9"></div>
                   <!-- Buttons -->
-                  <a href="#" id="HomeIcon" class="hover:bg-neutral-400 rounded-md px-3 py-2 text-sm">
-                    <img src="img/Home Icon.png">
-                  </a>
-                  <a href="#" id="ItineraryIcon" class="bg-neutral-500 text-white rounded-md px-3 py-2 text-sm"
+                  <a href="itinerary.html" id="ItineraryIcon" class="bg-neutral-500 text-white rounded-md px-3 py-2 text-sm"
                     aria-current="page">
                     <img src="img/notebook.png">
                   </a>
                   <a href="#" id="FavoritesIcon" class="hover:bg-neutral-400 rounded-md px-3 py-2 text-sm">
                     <img src="img/Favourites Icon.png">
                   </a>
-                  <a href="#" id="CartIcon" class="hover:bg-neutral-400 rounded-md px-3 py-2 text-sm">
+                  <a href="checkout_page.html" id="CartIcon" class="hover:bg-neutral-400 rounded-md px-3 py-2 text-sm">
                     <img src="img/Add to Bag Icon.png">
                   </a>
     
@@ -266,13 +277,11 @@
                 </button>
               </div>
             </form>
-            <a href="#" class="text-white hover:bg-neutral-400 block rounded-md px-3 py-2 text-base font-medium"><img
-                src="img/Home Icon.png">Home</a>
-            <a href="#" class="bg-neutral-500 text-white block rounded-md px-3 py-2 text-base font-medium"
+            <a href="itinerary.html" class="bg-neutral-500 text-white block rounded-md px-3 py-2 text-base font-medium"
               aria-current="page"><img src="img/notebook.png">Itinerary</a>
             <a href="#" class="text-white hover:bg-neutral-400 block rounded-md px-3 py-2 text-base font-medium"><img
                 src="img/Favourites Icon.png">Favorites</a>
-            <a href="#" class="text-white hover:bg-neutral-400 block rounded-md px-3 py-2 text-base font-medium"><img
+            <a href="checkout_page.html" class="text-white hover:bg-neutral-400 block rounded-md px-3 py-2 text-base font-medium"><img
                 src="img/Add to Bag Icon.png">Cart</a>
           </div>
         </div>
@@ -375,9 +384,11 @@
             </div>
 
             <div class="row-start-2">
-                <div class="bg-yellow-100 border border-gray-300 text-gray-900 text-sm rounded-lg p-2.5 opacity-100">
-                    Book your next experience!
+              <a href="TAILWINDLISTING.html">
+                <div class="bg-yellow-100 border hover:bg-neutral-500 border-gray-300 text-gray-900 text-sm rounded-lg p-2.5 opacity-100">
+                  Book your next experience!
                 </div>
+              </a>
             </div>
         </div>
 
