@@ -53,7 +53,7 @@
     
                     <li>
                         <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-2 pl-3 pr-4  text-white border-t border-gray-100 hover:bg-emerald-700 md:hover:bg-transparent md:border-0 md:hover:text-emerald-700 md:p-0 md:w-auto">
-                            <img src="src/assets/UserIcon.png" />
+                            <img src="src/assets/User Profile Icon.png" />
                             <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
                             </svg>
