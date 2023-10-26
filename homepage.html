@@ -26,13 +26,6 @@
       margin: 20px;
     }
 
-    #homepage-background {
-      display: block;
-      margin: auto;
-      width: auto;
-      height: auto;
-    }
-
     #homepage-carousel {
       position: relative;
       z-index: 0
@@ -60,18 +53,12 @@
       margin-bottom: 500px;
       width: 100%;
       height: 100%;
-      margin-top: 50px;
     }
 
     #user-input-box {
-      position: absolute;
-      z-index: 1;
-      top: 30%;
-      left: 50%;
-      width: 60%;
       height: 30%;
       transform: translate(-50%, -50%);
-      background-color: rgb(207, 202, 194, 0.8);
+      background-color: rgb(207, 202, 194, 0.9);
     }
 
     div .user-input {
@@ -234,11 +221,10 @@
   <!-- User Input Bar -->
   <div id="user-input-area">
 
-    <!-- <img id="homepage-background" src="img/homepage background.jpg" alt="Changi Airport Jewel"> -->
 
     <div id="homepage-carousel" class="relative w-full m-auto content-center" data-carousel="slide">
       <!-- Carousel wrapper -->
-      <div class="absolute h-56 overflow-hidden w-full rounded-lg md:h-96">
+      <div class="absolute h-96 overflow-hidden w-full rounded-b-3xl md:h-96">
         <!-- Item 1 -->
         <div class="hidden duration-1000 ease-in-out" data-carousel-item>
           <img src="img/homepage background 1.jpg"
@@ -255,59 +241,18 @@
             class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
       </div>
-      <!-- Slider indicators -->
-      <!-- <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-        <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
-          data-carousel-slide-to="0"></button>
-        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
-          data-carousel-slide-to="1"></button>
-        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
-          data-carousel-slide-to="2"></button>
-        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4"
-          data-carousel-slide-to="3"></button>
-        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5"
-          data-carousel-slide-to="4"></button> -->
     </div>
-    <!-- Slider controls -->
-    <!-- <button type="button"
-        class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-        data-carousel-prev>
-        <span
-          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-          <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-            fill="none" viewBox="0 0 6 10">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M5 1 1 5l4 4" />
-          </svg>
-          <span class="sr-only">Previous</span>
-        </span>
-      </button>
-      <button type="button"
-        class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-        data-carousel-next>
-        <span
-          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-          <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-            fill="none" viewBox="0 0 6 10">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="m1 9 4-4-4-4" />
-          </svg>
-          <span class="sr-only">Next</span>
-        </span>
-      </button>
-    </div> -->
-
 
     <!-- user inputs -->
 
     <!-- start and end dates -->
-    <div class="grid grid-rows-2 h-screen place-items-center user-input" id="user-input-box">
+    <div class="grid md:grid-rows-3 lg:grid-rows-2 h-screen place-items-center rounded-xl absolute z-1 top-1/4 left-1/2 w-1/2 " id="user-input-box">
 
-      <div class="row-start-1 grid grid-cols-12">
+      <div class="grid md:row-start-1 md:grid-cols-6 lg:row-start-1 lg:grid-cols-12">
 
-        <div class="col-span-1"></div>
+        <div class="lg:col-span-1"></div>
 
-        <div date-rangepicker class="flex items-center col-span-7">
+        <div date-rangepicker class="flex items-center md:col-span-6 lg:col-span-7">
           <div class="relative" id="input-start-date">
             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
               <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
@@ -321,7 +266,7 @@
               placeholder="Select date start">
           </div>
           <span class="mx-4 text-gray-500">to</span>
-          <div class="relative">
+          <div class="relative" id="input-end-date">
             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
               <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -335,32 +280,43 @@
           </div>
         </div>
 
-        <div class="col-span-1">
+        <div class="lg:col-span-1">
         </div>
 
-        <div class="col-span-2">
+        <div class="hidden lg:block lg:col-span-2 ">
           <input type="number" id="visitors"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="Travellers" required>
         </div>
 
-        <div class="col-span-1">
+        <div class="lg:col-span-1">
         </div>
 
       </div>
 
-      <div class="row-start-2">
+      <div class="lg:hidden md:row-start-2 md:block md:col-span-6">
+        <input type="number" id="visitors"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          placeholder="Travellers" required>
+      </div>
+
+      <div class="hidden lg:block lg:row-start-2 md:row-start-3 md:block">
         <div class="bg-yellow-100 border border-gray-300 text-gray-900 text-sm rounded-lg p-2.5 opacity-100">
           <a href="TAILWINDLISTING.html">
             Book your next experience!
           </a>
         </div>
       </div>
+
+
+
+
     </div>
+
 
   </div>
 
-  
+
 
   <!-- Flowbite CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
