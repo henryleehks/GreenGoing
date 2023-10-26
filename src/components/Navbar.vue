@@ -1,5 +1,5 @@
 <template>
-    <nav class="bg-emerald-900 border-gray-200 dark:bg-gray-900 dark:border-gray-700">
+    <nav class="fixed top-0 left-0 z-20 w-full bg-emerald-900 border-gray-200 dark:bg-gray-900 dark:border-gray-700">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
     
             <!-- GreenGoing logo -->

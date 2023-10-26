@@ -7,19 +7,20 @@ import Footerfoot from './components/Footer.vue'
 
 <template>
   <header>
+    <Navbar></Navbar>
+  </header>
     
 
-    <div >
-      <Navbar></Navbar>
+    
 
       <!-- <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav> -->
 
-      <Footerfoot></Footerfoot>
-    </div>
-  </header>
+    <Footerfoot></Footerfoot>
+
+
 
   <RouterView />
 </template>
