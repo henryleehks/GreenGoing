@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Login Test</title>
+
+    <!-- Stylesheet file -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+
+    <!-- Load Google client library -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://apis.google.com/js/platform.js?onload=initGoogleSignIn" async defer></script>
+
+    <!-- Tailwind CSS -->
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
+    <!-- Bootstrap CSS -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
+
+    <script>
+        function initGoogleSignIn() {
+            gapi.load('auth2', function () {
+                gapi.auth2.init({
+                    client_id: '176192187370-3odlpcm2nbk05h3cfh9bcleh3gh7s4c7.apps.googleusercontent.com'
+                });
+            });
+        }
+
+        // Credential response handler function
+        function handleCredentialResponse(response) {
+            // Post JWT token to server-side
+            fetch("auth_init.php", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ request_type: 'user_auth', credential: response.credential }),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status == 1) {
+                        let responsePayload = data.pdata;
+
+                        // Display the user account data
+                        let profileHTML = '<h3>Welcome ' + responsePayload.given_name + '! <a href="javascript:void(0);" onclick="signOut(' + responsePayload.sub + ');">Sign out</a></h3>';
+                        profileHTML += '<img src="' + responsePayload.picture + '"/><p><b>Auth ID: </b>' + responsePayload.sub + '</p><p><b>Name: </b>' + responsePayload.name + '</p><p><b>Email: </b>' + responsePayload.email + '</p>';
+                        document.getElementsByClassName("pro-data")[0].innerHTML = profileHTML;
+
+                        document.querySelector("#btnWrap").classList.add("hidden");
+                        document.querySelector(".pro-data").classList.remove("hidden");
+                    }
+                })
+                .catch(console.error);
+        }
+
+        // Sign out the user
+        function signOut(authID) {
+            document.getElementsByClassName("pro-data")[0].innerHTML = '';
+            document.querySelector("#btnWrap").classList.remove("hidden");
+            document.querySelector(".pro-data").classList.add("hidden");
+            document.location.href = "https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=http://localhost/is216/greengoing/google-login-api";
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <!-- Replace this with their navbar, including a redirect back to the homepage -->
+    <header class="header">
+        <a href="../homepage.html">
+            <ion-icon name="arrow-back"></ion-icon>
+            Back to Home
+        </a>
+        <a href="../homepage.html">
+            <!-- <img src="../Greengoing/img/logo.png" href="homepage.html"> -->
+        </a>
+        <!-- <a href="homepage.html"></a> -->
+        <!-- <a href="homepage.html"> -->
+            <!-- <h2 class="logo">Logo</h2> -->
+            <!-- <img src="../Greengoing/img/logo.png"> -->
+        <!-- </a> -->
+        
+        <nav class="navigation">
+            <!-- <a href="homepage.html">Back to Home</a>
+            <a href="homepage.html">
+                <ion-icon name="arrow-back"></ion-icon>
+            </a> -->
+            <!-- <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+            <button class="btnLogin-popup">Login</button> -->
+        </nav>
+    </header>
+
+    <div class="wrapper">
+        <!-- <span class="icon-close">
+            <ion-icon name="close"></ion-icon>
+        </span> -->
+
+        <div class="form-box login">
+            <h2>Login</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="mail"></ion-icon>
+                    </span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="lock-closed"></ion-icon>
+                    </span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <!-- <div class="remember-forgot">
+                    <label>
+                        <input type="checkbox">Remember me
+                    </label>
+                    <a href="#">Forgot Password?</a>
+                </div> -->
+                <button type="submit" class="btn btn-dark">Login</button>
+
+                <p>or</p>
+
+                <div class="container">
+                    <!-- Sign In with Google Button HTML API -->
+                    <div id="btnWrap">
+                        <div id="g_id_onload"
+                            data-client_id="176192187370-3odlpcm2nbk05h3cfh9bcleh3gh7s4c7.apps.googleusercontent.com"
+                            data-context="signin" data-ux_mode="popup" data-callback="handleCredentialResponse"
+                            data-auto_prompt="true" data-login_uri="https://localhost/is216/greengoing/google-login-api">
+                        </div>
+            
+                        <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline"
+                            data-text="signin_with" data-size="large" data-logo_alignment="center">
+                        </div>
+                    </div>
+            
+                    <!-- Display the user's profile info -->
+                    <div class="pro-data hidden"></div>
+            
+                </div>
+
+                <div class="login-register">
+                    <p>
+                        Don't have an account?
+                        <a href="#" class="register-link">Register</a>
+                    </p>
+
+                    
+                </div>
+            </form>
+        </div>
+
+        <div class="form-box register">
+            <h2>Registration</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="person"></ion-icon>
+                    </span>
+                    <input type="text" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="mail"></ion-icon>
+                    </span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="lock-closed"></ion-icon>
+                    </span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label>
+                        <input type="checkbox" required>I agree to the terms & conditions
+                    </label>
+                    
+                </div>
+                <button type="submit" class="btn">Register</button>
+
+                <p>or</p>
+
+                <div class="container">
+                    <!-- Sign In with Google Button HTML API -->
+                    <div id="btnWrap">
+                        <div id="g_id_onload"
+                            data-client_id="176192187370-3odlpcm2nbk05h3cfh9bcleh3gh7s4c7.apps.googleusercontent.com"
+                            data-context="signup" data-ux_mode="popup" data-callback="handleCredentialResponse"
+                            data-auto_prompt="true" data-login_uri="https://localhost/is216/greengoing/google-login-api">
+                        </div>
+            
+                        <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline"
+                            data-text="signup_with" data-size="large" data-logo_alignment="center">
+                        </div>
+                    </div>
+            
+                    <!-- Display the user's profile info -->
+                    <div class="pro-data hidden"></div>
+            
+                </div>
+
+                <div class="login-register">
+                    <p>
+                        Already have an account?
+                        <a href="#" class="login-link">Login</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    
+
+    <script src="login.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
+</body>
+
+</html>

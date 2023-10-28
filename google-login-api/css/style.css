@@ -1,0 +1,40 @@
+.container{
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+#btnWrap{
+    max-width: 320px;
+}
+.pro-data{
+    padding: 10px 20px;
+    margin: auto;
+    width: 350px;
+    background-color: #F7F7F7;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),
+    0 2px 10px 0 rgba(0,0,0,0.12);
+}
+.pro-data h3{
+    font-size: 17px;
+}
+.pro-data p {
+    font-size: 15px;
+}
+.pro-data img{
+    max-width: 100%;
+    margin-bottom: 5px;
+}
+.hidden{
+    display: none;
+}
+#authResponse {
+    font-size: 17px;
+    border: 1px dashed;
+}
+
+form > p {
+    text-align: center;
+    margin-top: 10px;
+}
