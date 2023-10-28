@@ -61,6 +61,18 @@
       background-color: rgb(207, 202, 194, 0.9);
     }
 
+    #featured-listings {
+      position: absolute;
+
+    }
+
+    .butt {
+      background-color: rgb(0, 250, 112);
+      font-size: 30px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
     /* germaine code */
   </style>
 </head>
@@ -206,40 +218,41 @@
   </nav>
 
   <!-- User Input Bar -->
-  <div id="user-input-area">  
-
+  <div id="user-input-area">
 
     <div id="homepage-carousel" class="relative w-full m-auto content-center" data-carousel="slide">
       <!-- Carousel wrapper -->
-      <div class="absolute h-96 overflow-hidden w-full rounded-b-3xl md:h-96">
+      <div class="absolute h-80 overflow-hidden w-full rounded-b-3xl md:h-64">
         <!-- Item 1 -->
         <div class="hidden duration-1000 ease-in-out" data-carousel-item>
           <img src="img/homepage background 1.jpg"
-            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 bg-cover" alt="...">
+            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <!-- Item 2 -->
         <div class="hidden duration-1000 ease-in-out" data-carousel-item>
           <img src="img/homepage background 2.jpeg"
-            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 bg-cover" alt="...">
+            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <!-- Item 3 -->
         <div class="hidden duration-1000 ease-in-out" data-carousel-item>
           <img src="img/homepage background 3.jpg"
-            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 bg-cover" alt="...">
+            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
       </div>
     </div>
 
-    <!-- user inputs -->
-    <div
-      class="grid sm:grid-rows-3 md:grid-rows-3 lg:grid-rows-2 h-screen place-items-center rounded-xl absolute z-1 top-1/4 left-1/2 w-1/2 p-1"
-      id="user-input-box">
 
-      <div class="grid sm:row-start-1 md:row-start-1 md:grid-cols-6 lg:row-start-1 lg:grid-cols-12">
+    <!-- user inputs -->
+    <div id="user-input-box"
+      class="grid grid-rows-3 sm:grid-rows-3 md:grid-rows-3 lg:grid-rows-2 h-screen place-items-center rounded-xl absolute z-1 top-1/4 left-1/2 w-1/2 p-1">
+
+      <div id="traveller-date-input-lg"
+        class="grid row-start-1 sm:row-start-1 md:row-start-1 md:grid-cols-6 lg:row-start-1 lg:grid-cols-12">
 
         <div class="lg:col-span-1"></div>
 
-        <div date-rangepicker class="flex items-center sm:col-span-6 md:col-span-6 lg:col-span-7">
+        <div id="daterange-input" date-rangepicker
+          class="flex items-center col-span-6 sm:col-span-6 md:col-span-6 lg:col-span-7">
           <div class="relative" id="input-start-date">
             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
               <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
@@ -272,7 +285,7 @@
         <div class="lg:col-span-1">
         </div>
 
-        <div class="hidden lg:block lg:col-span-2 ">
+        <div id="travellers-input-lg" class="hidden lg:block lg:col-span-2 ">
           <input type="number" id="visitors"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="Travellers" required>
@@ -283,14 +296,16 @@
 
       </div>
 
-      <div class="sm:row-start-2 sm:row-start-2 sm:block sm:col-span-6 md:row-start-2 md:block md:col-span-6 lg:hidden">
+      <div id="travllers-input"
+        class="row-start-2 col-span-6 sm:row-start-2 sm:col-span-6 sm:block sm:col-span-6 md:row-start-2 md:block md:col-span-6 lg:hidden">
         <input type="number" id="visitors"
           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           placeholder="Travellers" required>
       </div>
 
-      <div class="hidden sm:row-start-3 sm:block md:row-start-3 md:block lg:block lg:row-start-2">
-        <div class="bg-yellow-100 border border-gray-300 text-gray-900 text-sm rounded-lg p-2.5 opacity-100">
+      <div id="book-button" class="row-start-3 sm:row-start-3 sm:block md:row-start-3 md:block lg:block lg:row-start-2">
+        <div
+          class="bg-yellow-100 border border-gray-300 text-gray-900 text-sm rounded-lg p-2.5 text-center opacity-100">
           <a href="TAILWINDLISTING.html">
             Book your next experience!
           </a>
@@ -302,9 +317,73 @@
 
     </div>
 
-
   </div>
 
+  <!-- featured listings -->
+
+
+  <div id="featured-listings" class="pt-96">
+
+    <div id="header-featured-listings" class="px-6">
+      <h1
+        class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+        Attractions People <mark class="px-2 text-white bg-blue-600 rounded dark:bg-blue-500">LOVE</mark></h1>
+      <p class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">Life is all about trying new
+        experiences!</p>
+    </div>
+
+
+
+
+    <div id="PageContent" class="grid grid-cols-12 grid-rows-1 flex-auto w-full">
+
+      <div id="item1" class="col-span-3" style=" width: 100%; padding: 50px;">
+        <h2 style="font-size: 30px;">Item 1:</h2>
+        <img src="./img/a" style="width:100%; height: 40%;">
+        <h2 style="font-size: 200%;">Wild Wild Ticket </h2>
+        <h2 style="font-size: 200%;">1 Pax (Adult)</h2>
+        <h2 style="font-size: 250%;">Price:</h2>
+        <h2 style="font-size: 300%;">$10</h2>
+        <br>
+        <button class="butt">Add To Cart</button>
+      </div>
+
+      <div id="item2" class="col-span-3" style=" width: 100%; padding: 50px;">
+        <h2 style="font-size: 30px;">Item 2:</h2>
+        <img src="./img/b" style="width:100%; height: 40%;">
+        <h2 style="font-size: 200%;">Bird Paradise </h2>
+        <h2 style="font-size: 200%;">1 Pax (Adult)</h2>
+        <h2 style="font-size: 250%;">Price:</h2>
+        <h2 style="font-size: 300%;">$15</h2>
+        <br>
+        <button class="butt">Add To Cart</button>
+      </div>
+
+      <div id="item3" class="col-span-3" style=" width: 100%; padding: 50px;">
+        <h2 style="font-size: 30px;">Item 3:</h2>
+        <img src="./img/c" style="width:100%; height: 40%;">
+        <h2 style="font-size: 200%;">Garden Nina Bay </h2>
+        <h2 style="font-size: 200%;">1 Pax (Adult)</h2>
+        <h2 style="font-size: 250%;">Price:</h2>
+        <h2 style="font-size: 300%;">$45</h2>
+        <br>
+        <button class="butt">Add To Cart</button>
+      </div>
+
+      <div id="item4" class="col-span-3" style=" width: 100%; padding: 50px;">
+        <h2 style="font-size: 30px;">Item 3:</h2>
+        <img src="./img/d" style="width:100%; height: 40%;">
+        <h2 style="font-size: 200%;">Changi Jewel </h2>
+        <h2 style="font-size: 200%;">1 Pax (Adult)</h2>
+        <h2 style="font-size: 250%;">Price:</h2>
+        <h2 style="font-size: 300%;">$45</h2>
+        <br>
+        <button class="butt">Add To Cart</button>
+      </div>
+
+
+    </div>
+  </div>
 
 
 
