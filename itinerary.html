@@ -10,6 +10,7 @@
   <style>
     #topnavbar {
       background-color: #CFCAC2;
+      /* background-color: #c8dbff; */
 
     }
 
@@ -19,13 +20,13 @@
     }
 
     #default-search {
-      background-color: #CFCAC2;
+      /* background-color: #A6CEAE; */
       /* width: 200px; */
       width: 200%;
     }
 
     #default-search-mobile {
-      background-color: #CFCAC2;
+      /* background-color: #50A060; */
       width: 100%;
     }
 
@@ -34,12 +35,12 @@
     }
 
 
-    #header {
+    /* #header {
       font-weight: bold;
       font-size: 30px;
       font-family: 'Franklin Gothic Medium';
       margin: 20px auto auto 30px;
-    }
+    } */
 
     #CategorySearch {
       margin: 10px auto 0px 30px;
@@ -52,15 +53,18 @@
     }
 
     #ItineraryListings {
-      border: 1px solid lightgray;
       border-radius: 10px;
-      margin: 10px auto auto 30px;
+      margin: 10px auto 30px auto;
       padding: 10px 10px 10px 10px;
       width: 100%;
     }
 
     td {
       padding: 10px;
+    }
+
+    tr{
+      background-color: white;
     }
 
     tr:nth-child(even) {
@@ -79,8 +83,8 @@
 
 <body>
   <!-- topbar -->
-  <nav id="topnavbar">
-    <div class="mx-auto max-w-7xl px-2 sm:px-4 lg:px-6">
+  <nav id="topnavbar" class="z-50">
+    <div class=" mx-auto max-w-7xl px-2 sm:px-4 lg:px-6">
       <div class="relative flex h-16 items-center justify-between">
 
         <!-- not sure whats gg on for the navbutton-->
@@ -123,7 +127,7 @@
           <!-- Logo -->
           <div class="flex items-center justify-start">
             <a href="homepage.html">
-              <img class="h-8 w-auto" src="img/logo.png" alt="Your Company">
+              <img class="h-15 w-40" src="img/logo.png" alt="Your Company">
             </a>
 
           </div>
@@ -153,11 +157,11 @@
                 aria-current="page">
                 <img src="img/notebook.png">
               </a>
-              <a href="favourites.html" id="FavoritesIcon" class="hover:bg-neutral-400 rounded-md px-3 py-2 text-sm">
-                <img src="img/Favourites Icon.png">
+              <a href="favourites.html" id="FavoritesIcon" class="hover:bg-neutral-400 rounded-md px-3 py-3 text-sm">
+                <img src="img/favsgray.png">
               </a>
               <a href="checkout_page.html" id="CartIcon" class="hover:bg-neutral-400 rounded-md px-3 py-2 text-sm">
-                <img src="img/Add to Bag Icon.png">
+                <img src="img/cartgray.png">
               </a>
 
             </div>
@@ -180,7 +184,7 @@
               id="user-menu-button" aria-expanded="false" aria-haspopup="true">
               <span class="absolute -inset-1.5"></span>
               <span class="sr-only">Open user menu</span>
-              <img class="h-10 w-10 rounded-md" src="img/User Profile Icon.png" alt="">
+              <img class="h-10 w-10 rounded-md" src="img/acctgray.png" alt="">
             </button>
           </div>
 
@@ -199,7 +203,7 @@
 
     <!-- Mobile menu, show/hide based on menu state. -->
     <div class="sm:hidden" id="mobile-menu">
-      <div class="space-y-1 px-2 pb-3 pt-2">
+      <div class="space-y-1 px-2 pb-3 pt-2 w-full">
         <form>
           <div class="relative grid grid-cols-1">
             <input type="search" id="default-search-mobile"
@@ -225,108 +229,118 @@
   </nav>
 
 
-  <div id="PageContent" class="container">
-    <!-- Header -->
-    <div id="header">
-      <h1>Your Itinerary</h1>
-    </div>
-    <!-- Itineray search -->
-    <form>
-      <div id="CategorySearch" class="flex">
-        <button id="CategorySearchDropdownButton" data-dropdown-toggle="dropdown"
-          class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-l-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100"
-          type="button">
-          All categories
-          <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-            viewBox="0 0 10 6">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="m1 1 4 4 4-4" />
-          </svg>
-        </button>
+  <!-- Header -->
+  <div id="PageContent" class="bg-gradient-to-b from-[#CFCAC2] to-[#A6CEAE]">
 
-        <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
-          <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdown-button">
-            <li>
-              <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100">Accomodations</button>
-            </li>
-            <li>
-              <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100">Attractions</button>
-            </li>
-            <li>
-              <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100">Food</button>
-            </li>
-            <li>
-              <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100">Others</button>
-            </li>
-          </ul>
+    <div class="p-5">
+      <div class="p-5 relative inline-flex items-center">
+        <img class="w-full m-auto md:h-90 lg:h-95 xl:h-80 opacity-50 rounded-2xl" src="img/orchid.png">
+        <h2 class="absolute left-10 top-12 font-mono lg:text-3xl md:text-3xl sm:text-3xl text-white" id="text">Your Itinerary</h2>
+        <h3 class="absolute left-10 top-15 font-mono lg:text-2xl md:text-2xl sm:text-2xl text-white">Your recent bookings towards a healthier city.</h3>
+      
+        <!-- Itineray search -->
+        <div class="container justify-center absolute left-0 mt-20 md:mt-35 lg:mt-40 xl:mt-40">
+          <form>
+            <div id="CategorySearch" class="flex">
+              <button id="CategorySearchDropdownButton" data-dropdown-toggle="dropdown"
+                class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-l-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100"
+                type="button">
+                All categories
+                <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 10 6">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="m1 1 4 4 4-4" />
+                </svg>
+              </button>
+      
+              <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdown-button">
+                  <li>
+                    <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100">Accomodations</button>
+                  </li>
+                  <li>
+                    <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100">Attractions</button>
+                  </li>
+                  <li>
+                    <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100">Food</button>
+                  </li>
+                  <li>
+                    <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100">Others</button>
+                  </li>
+                </ul>
+              </div>
+              <div class="w-full relative">
+                <input type="search" id="CategorySearchInput"
+                  class="block p-2.5 w-80 z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border-l-gray-50 border-l-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                  placeholder="Search Category" required>
+                <button type="submit" id="CategorySearchButton"
+                  class="top-0 p-2.5 text-sm font-medium h-full rounded-r-lg focus:ring-4 focus:outline-none focus:ring-blue-300">
+                  <svg class="w-4 h-4 text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 20 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                  </svg>
+                  
+                </button>
+              </div>
+            </div>
+          </form>
         </div>
-        <div class="relative w-full">
-          <input type="search" id="CategorySearchInput"
-            class="block p-2.5 w-80 z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border-l-gray-50 border-l-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
-            placeholder="Search Category" required>
-          <button type="submit" id="CategorySearchButton"
-            class="top-0 p-2.5 text-sm font-medium h-full rounded-r-lg focus:ring-4 focus:outline-none focus:ring-blue-300">
-            <svg class="w-4 h-4 text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-              viewBox="0 0 20 20">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-            </svg>
-            <span class="sr-only">Search</span>
-          </button>
-        </div>
+      
       </div>
-    </form>
+    
+      
+    
+  <!-- Listings -->
+      <table id="ItineraryListings" class="justify-center items-center">
 
-    <table id="ItineraryListings" class="container">
-      <tr>
-        <td>
-          <img src="img/homepage background.jpg" class="w-50">
-        </td>
-        <td>
-          <h2>Listing 1</h2>
-          <h2>Date:</h2>
-          <h2>Time:</h2>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, repudiandae saepe commodi voluptatum
-            perspiciatis natus corporis cupiditate totam odio voluptate possimus? Incidunt enim maxime earum
-            consequuntur fugiat quo accusantium officiis.</p>
-          <button id="viewbutton" class="rounded">View</button>
-        </td>
-      </tr>
+        <tr>
+          <td class="w-20 h-20">
+            <img src="img/bird-paradise-crimson-wetlands.png">
+          </td>
+          <td>
+            <h2 class="font-bold text-lg">Bird Paradise</h2>
+            <h2 class="font-bold">Date: 11/11/23</h2>
+            <h2 class="font-bold">Time: 1300 - 1900</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, repudiandae saepe commodi voluptatum
+              perspiciatis natus corporis cupiditate totam odio voluptate possimus? Incidunt enim maxime earum
+              consequuntur fugiat quo accusantium officiis.</p>
+            <a href="review_page_tailwind.html">
+              <button id="viewbutton" class="rounded">View</button>
+            </a>
+          </td>
+        </tr>
 
-      <tr>
-        <td class="w-20 h-20">
-          <img src="img/homepage background.jpg">
-        </td>
-        <td>
-          <h2>Listing 2</h2>
-          <h2>Date:</h2>
-          <h2>Time:</h2>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, repudiandae saepe commodi voluptatum
-            perspiciatis natus corporis cupiditate totam odio voluptate possimus? Incidunt enim maxime earum
-            consequuntur fugiat quo accusantium officiis.</p>
-          <button id="viewbutton" class="rounded">View</button>
-        </td>
-      </tr>
-
-
-
-    </table>
-
-  </div>
-
+        <tr>
+          <td>
+            <img src="img/homepage background 1.jpg" class="w-50">
+          </td>
+          <td>
+            <h2 class="font-bold text-lg">Gardens By the Bay</h2>
+            <h2 class="font-bold">Date: 25/12/23</h2>
+            <h2 class="font-bold">Time: 2000</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, repudiandae saepe commodi voluptatum
+              perspiciatis natus corporis cupiditate totam odio voluptate possimus? Incidunt enim maxime earum
+              consequuntur fugiat quo accusantium officiis.</p>
+            <button id="viewbutton" class="rounded">View</button>
+          </td>
+        </tr>
+  
+      </table>
+  
+    </div>
   
 
+  
+    <footer
+      class="fixed bottom-0 left-0 z-20 w-full p-1 bg-[#CFCAC2] border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-2">
+      <span class="text-sm text-white sm:text-center">© 2023 <a href="https://flowbite.com/"
+          class="hover:underline">GreenGoing</a>. All Rights Reserved.
+      </span>
+    </footer>
 
-
-
-
-
-  <footer
-    class="fixed bottom-0 left-0 z-20 w-full p-1 bg-[#CFCAC2] border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-2">
-    <span class="text-sm text-white sm:text-center">© 2023 <a href="https://flowbite.com/"
-        class="hover:underline">GreenGoing</a>. All Rights Reserved.
-    </span>
-  </footer>
+  </div>
+  
 
 
   <script src="https://cdn.tailwindcss.com"></script>
