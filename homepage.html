@@ -67,10 +67,11 @@
     }
 
     .butt {
-      background-color: rgb(0, 250, 112);
-      font-size: 30px;
+      background-color: rgb(187, 221, 202);
+      font-size: 90%;
       padding-left: 10px;
       padding-right: 10px;
+      border-radius: 10px;
     }
 
     /* germaine code */
@@ -80,7 +81,7 @@
 <body>
 
   <!-- Top Banner -->
-  <nav id="topnavbar">
+  <nav id="topnavbar" class="shadow-xl">
     <div class="mx-auto max-w-7xl px-2 sm:px-4 lg:px-6">
       <div class="relative flex h-16 items-center justify-between">
 
@@ -224,19 +225,19 @@
       <!-- Carousel wrapper -->
       <div class="absolute h-80 overflow-hidden w-full rounded-b-3xl md:h-64">
         <!-- Item 1 -->
-        <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+        <div class="hidden duration-[4000ms] ease-in-out" data-carousel-item>
           <img src="img/homepage background 1.jpg"
-            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 shadow-xl" alt="Gardens By the Bay">
         </div>
         <!-- Item 2 -->
-        <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+        <div class="hidden duration-[4000ms] ease-in-out" data-carousel-item>
           <img src="img/homepage background 2.jpeg"
-            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 shadow-xl" alt="Henderson Waves">
         </div>
         <!-- Item 3 -->
-        <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+        <div class="hidden duration-[4000ms] ease-in-out" data-carousel-item>
           <img src="img/homepage background 3.jpg"
-            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 shadow-xl" alt="Changi Jewel">
         </div>
       </div>
     </div>
@@ -321,71 +322,103 @@
 
   <!-- featured listings -->
 
+  <div class="pt-96">
 
-  <div id="featured-listings" class="pt-96">
+  </div>
 
-    <div id="header-featured-listings" class="px-6">
+
+  <div id="featured-listings" style="background-color: bisque;" class="px-6 pb-24 w-full">
+
+    <div id="header-featured-listings" class="px-6 my-5">
       <h1
         class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-        Attractions People <mark class="px-2 text-white bg-blue-600 rounded dark:bg-blue-500">LOVE</mark></h1>
+        Attractions People <mark class="px-2 text-white bg-green-600 rounded dark:bg-green-500">LOVE</mark></h1>
       <p class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">Life is all about trying new
         experiences!</p>
     </div>
 
+    <div id="PageContent" class="p-6 grid grid-rows-2 flex-auto w-full content-center lg:grid-rows-1">
 
+      <div id="row-1" class="grid row-start-1 lg:grid-cols-12 grid-cols-6">
 
+        <div id="item1" class="col-span-3 lg:col-span-6 border-solid border-2 border-teal-300" style=" width: 100%; padding: 50px;">
+          <h2 style="font-size: 20px;">Item 1:</h2>
+          <img src="./img/a" style="width:100%; height: 40%;">
+          <h2 style="font-size: 90%;">Wild Wild Ticket </h2>
+          <h2 style="font-size: 90%;">1 Pax (Adult)</h2>
+          <h2 style="font-size: 90%;">Price:</h2>
+          <h2 style="font-size: 90%;">$10</h2>
+          <br>
+          <button class="butt">Add To Cart</button>
+        </div>
+  
+        <div id="item2" class="col-span-3 lg:col-span-6 border-solid border-2 border-teal-300" style=" width: 100%; padding: 50px;">
+          <h2 style="font-size: 20px;">Item 2:</h2>
+          <img src="./img/b" style="width:100%; height: 40%;">
+          <h2 style="font-size: 90%;">Bird Paradise </h2>
+          <h2 style="font-size: 90%;">1 Pax (Adult)</h2>
+          <h2 style="font-size: 90%;">Price:</h2>
+          <h2 style="font-size: 90%;">$15</h2>
+          <br>
+          <button class="butt">Add To Cart</button>
+        </div>
 
-    <div id="PageContent" class="grid grid-cols-12 grid-rows-1 flex-auto w-full">
+        <div id="item3" class="hidden lg:block lg:col-span-3 lg:border-solid lg:border-2 lg:border-teal-300" style=" width: 100%; padding: 50px;">
+          <h2 style="font-size: 20px;">Item 3:</h2>
+          <img src="./img/c" style="width:100%; height: 40%;">
+          <h2 style="font-size: 90%;">Garden Nina Bay </h2>
+          <h2 style="font-size: 90%;">1 Pax (Adult)</h2>
+          <h2 style="font-size: 90%;">Price:</h2>
+          <h2 style="font-size: 90%;">$45</h2>
+          <br>
+          <button class="butt">Add To Cart</button>
+        </div>
+  
+        <div id="item4" class="hidden lg:block lg:col-span-3 lg:border-solid lg:border-2 lg:border-teal-300" style=" width: 100%; padding: 50px;">
+          <h2 style="font-size: 20px;">Item 4:</h2>
+          <img src="./img/d" style="width:100%; height: 40%;">
+          <h2 style="font-size: 90%;">Garden Nina Bay </h2>
+          <h2 style="font-size: 90%;">1 Pax (Adult)</h2>
+          <h2 style="font-size: 90%;">Price:</h2>
+          <h2 style="font-size: 90%;">$45</h2>
+          <br>
+          <button class="butt">Add To Cart</button>
+        </div>
 
-      <div id="item1" class="col-span-3" style=" width: 100%; padding: 50px;">
-        <h2 style="font-size: 30px;">Item 1:</h2>
-        <img src="./img/a" style="width:100%; height: 40%;">
-        <h2 style="font-size: 200%;">Wild Wild Ticket </h2>
-        <h2 style="font-size: 200%;">1 Pax (Adult)</h2>
-        <h2 style="font-size: 250%;">Price:</h2>
-        <h2 style="font-size: 300%;">$10</h2>
-        <br>
-        <button class="butt">Add To Cart</button>
       </div>
 
-      <div id="item2" class="col-span-3" style=" width: 100%; padding: 50px;">
-        <h2 style="font-size: 30px;">Item 2:</h2>
-        <img src="./img/b" style="width:100%; height: 40%;">
-        <h2 style="font-size: 200%;">Bird Paradise </h2>
-        <h2 style="font-size: 200%;">1 Pax (Adult)</h2>
-        <h2 style="font-size: 250%;">Price:</h2>
-        <h2 style="font-size: 300%;">$15</h2>
-        <br>
-        <button class="butt">Add To Cart</button>
-      </div>
+      <div id="row-2" class="grid lg:hidden row-start-2 grid-cols-12" >
 
-      <div id="item3" class="col-span-3" style=" width: 100%; padding: 50px;">
-        <h2 style="font-size: 30px;">Item 3:</h2>
-        <img src="./img/c" style="width:100%; height: 40%;">
-        <h2 style="font-size: 200%;">Garden Nina Bay </h2>
-        <h2 style="font-size: 200%;">1 Pax (Adult)</h2>
-        <h2 style="font-size: 250%;">Price:</h2>
-        <h2 style="font-size: 300%;">$45</h2>
-        <br>
-        <button class="butt">Add To Cart</button>
-      </div>
+        <div id="item3" class="lg:hidden col-span-6 border-solid border-2 border-teal-300" style=" width: 100%; padding: 50px;">
+          <h2 style="font-size: 20px;">Item 3:</h2>
+          <img src="./img/c" style="width:100%; height: 40%;">
+          <h2 style="font-size: 90%;">Garden Nina Bay </h2>
+          <h2 style="font-size: 90%;">1 Pax (Adult)</h2>
+          <h2 style="font-size: 90%;">Price:</h2>
+          <h2 style="font-size: 90%;">$45</h2>
+          <br>
+          <button class="butt">Add To Cart</button>
+        </div>
+  
+        <div id="item4" class="lg:hidden col-span-6 border-solid border-2 border-teal-300" style=" width: 100%; padding: 50px;">
+          <h2 style="font-size: 20px;">Item 3:</h2>
+          <img src="./img/d" style="width:100%; height: 40%;">
+          <h2 style="font-size: 90%;">Changi Jewel  </h2>
+          <h2 style="font-size: 90%;">1 Pax (Adult)</h2>
+          <h2 style="font-size: 90%;">Price:</h2>
+          <h2 style="font-size: 90%;">$45</h2>
+          <br>
+          <button class="butt">Add To Cart</button>
+        </div>
 
-      <div id="item4" class="col-span-3" style=" width: 100%; padding: 50px;">
-        <h2 style="font-size: 30px;">Item 3:</h2>
-        <img src="./img/d" style="width:100%; height: 40%;">
-        <h2 style="font-size: 200%;">Changi Jewel </h2>
-        <h2 style="font-size: 200%;">1 Pax (Adult)</h2>
-        <h2 style="font-size: 250%;">Price:</h2>
-        <h2 style="font-size: 300%;">$45</h2>
-        <br>
-        <button class="butt">Add To Cart</button>
-      </div>
+        </div>
+
+
 
 
     </div>
+
   </div>
-
-
 
 
 
@@ -394,6 +427,8 @@
 
   <!-- datepicker js CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/datepicker.min.js"></script>
+
+  
 </body>
 
 </html>
