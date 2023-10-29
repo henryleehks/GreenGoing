@@ -43,7 +43,8 @@
     } */
 
     #CategorySearch {
-      margin: 10px auto 0px 30px;
+      /* margin: 10px auto 0px 30px; */
+      margin: 10px 0px 0px 30px;
     }
 
     #CategorySearchButton {
@@ -232,16 +233,18 @@
   <!-- Header -->
   <div id="PageContent" class="bg-gradient-to-b from-[#CFCAC2] to-[#A6CEAE]">
 
-    <div class="p-5">
-      <div class="p-5 relative inline-flex items-center">
-        <img class="w-full m-auto md:h-90 lg:h-95 xl:h-80 opacity-50 rounded-2xl" src="img/orchid.png">
-        <h2 class="absolute left-10 top-12 font-mono lg:text-3xl md:text-3xl sm:text-3xl text-white" id="text">Your Itinerary</h2>
-        <h3 class="absolute left-10 top-15 font-mono lg:text-2xl md:text-2xl sm:text-2xl text-white">Your recent bookings towards a healthier city.</h3>
+    <div id="itinerary-content" class="p-5">
+
+      <div class="py-5 relative inline-flex items-center overflow-hidden">
+        <img class="w-auto m-auto h-60 md:h-64 lg:h-72 xl:h-80 opacity-50 rounded-2xl" src="img/orchid.png">
+        <h2 class="absolute left-10 top-12 font-mono text-3xl lg:text-3xl md:text-3xl sm:text-3xl text-white" id="text">Your Itinerary</h2>
+        <h3 class="absolute left-10 top-15 font-mono text-2xl lg:text-2xl md:text-2xl sm:text-2xl text-white">Your recent bookings towards a healthier city.</h3>
       
-        <!-- Itineray search -->
-        <div class="container justify-center absolute left-0 mt-20 md:mt-35 lg:mt-40 xl:mt-40">
-          <form>
-            <div id="CategorySearch" class="flex">
+        <!-- itinerary search -->
+        <div id="itinerary-search" class="container justify-center absolute left-0 mt-40 md:mt-45 lg:mt-40 xl:mt-40">
+          <form class="w-full">
+
+            <div id="CategorySearch" class="flex w-auto">
               <button id="CategorySearchDropdownButton" data-dropdown-toggle="dropdown"
                 class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-l-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100"
                 type="button">
@@ -269,9 +272,9 @@
                   </li>
                 </ul>
               </div>
-              <div class="w-full relative">
+              <div id="search-input" class="w-auto relative">
                 <input type="search" id="CategorySearchInput"
-                  class="block p-2.5 w-80 z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border-l-gray-50 border-l-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                  class="block p-2.5 w-auto z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border-l-gray-50 border-l-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
                   placeholder="Search Category" required>
                 <button type="submit" id="CategorySearchButton"
                   class="top-0 p-2.5 text-sm font-medium h-full rounded-r-lg focus:ring-4 focus:outline-none focus:ring-blue-300">
@@ -283,7 +286,9 @@
                   
                 </button>
               </div>
+
             </div>
+            
           </form>
         </div>
       
