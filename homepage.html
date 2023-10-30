@@ -253,15 +253,15 @@
 
     <!-- user inputs -->
     <div id="user-input-box"
-      class="grid grid-rows-3 sm:grid-rows-3 md:grid-rows-3 lg:grid-rows-2 h-screen place-items-center rounded-xl absolute z-1 top-1/4 left-1/2 w-1/2 p-1 drop-shadow-md">
+      class="grid grid-rows-3 lg:grid-rows-2 h-screen place-items-center rounded-xl absolute z-1 top-1/4 left-1/2 w-1/2 p-1 drop-shadow-md">
 
       <div id="traveller-date-input-lg"
-        class="grid row-start-1 sm:row-start-1 md:row-start-1 md:grid-cols-6 lg:row-start-1 lg:grid-cols-12">
+        class="grid place-items-center row-start-1 grid-cols-6 md:grid-cols-6 lg:grid-cols-12">
 
         <div class="lg:col-span-1"></div>
 
         <div id="daterange-input" date-rangepicker
-          class="flex items-center col-span-6 sm:col-span-6 md:col-span-6 lg:col-span-7">
+          class="flex place-items-center col-span-6 lg:col-span-7">
           <div class="relative" id="input-start-date">
             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
               <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
@@ -312,7 +312,7 @@
           placeholder="Travellers" required>
       </div>
 
-      <div id="book-button" class="row-start-3 sm:row-start-3 sm:block md:row-start-3 md:block lg:block lg:row-start-2">
+      <div id="book-button" class="grid grid-cols-6 row-start-3 lg:block lg:row-start-2 place-items-center">
         <!-- <div
             class="bg-yellow-100 border border-gray-300 text-gray-900 text-sm rounded-lg p-2.5 text-center opacity-100">
             <a href="TAILWINDLISTING.html">
@@ -321,7 +321,7 @@
           </div> -->
 
         <button type="button"
-          class="text-gray-900 bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-yellow-800 content-center shadow-lg shadow-yellow-500/50 dark:shadow-lg dark:shadow-yellow-800/80 font-medium rounded-lg text-sm p-2.5 text-center mr-2">Book
+          class="text-gray-900 bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:focus:ring-yellow-800 content-center shadow-lg shadow-yellow-500/50 dark:shadow-lg dark:shadow-yellow-800/80 font-medium rounded-lg text-sm p-2.5 mr-2 col-span-6 ">Book
           your next experience!</button>
       </div>
 
@@ -339,12 +339,12 @@
     <div id="header-featured-listings" class="px-6 my-5">
       <h1
         class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-        Attractions People <mark class="px-2 text-white bg-green-600 rounded dark:bg-green-500">LOVE</mark></h1>
+        Attractions People <mark class="px-4 text-white bg-green-600 rounded dark:bg-green-500">LOVE</mark></h1>
       <p class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">Life is all about trying new
         experiences!</p>
     </div>
 
-    <div id="PageContent" class="p-6 grid content-center grid-rows-2 flex-auto w-full content-center lg:grid-rows-1">
+    <div id="PageContent" class="p-6 gap-2 grid grid-rows-2 flex-auto w-full content-center lg:grid-rows-1">
 
       <div id="row-1" class="grid gap-2 row-start-1 lg:grid-cols-12 grid-cols-6">
 
@@ -598,9 +598,9 @@
 
       </div>
 
-      <div id="row-2" class="grid lg:hidden row-start-2 grid-cols-12">
+      <div id="row-2" class="grid gap-2 lg:hidden row-start-2 grid-cols-12">
 
-        <div id="item3" class="lg:hidden col-span-6 border-solid border-2 border-teal-300"
+        <!-- <div id="item3" class="lg:hidden col-span-6 border-solid border-2 border-teal-300"
           style=" width: 100%; padding: 50px;">
           <h2 style="font-size: 20px;">Item 3:</h2>
           <img src="./img/c" style="width:100%; height: 40%;">
@@ -610,19 +610,117 @@
           <h2 style="font-size: 90%;">$45</h2>
           <br>
           <button class="butt">Add To Cart</button>
+        </div> -->
+
+
+        <div id="item-3-card-lg"
+          class="lg:hidden col-span-6 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+          <a href="#">
+            <img class="p-8 rounded-t-lg" src="Justin checkout\img\c.jpg" alt="Gardens By the Bay" />
+          </a>
+          <div class="px-5 pb-5">
+            <a href="#">
+              <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Apple Watch Series 7 GPS,
+                Aluminium Case, Starlight Sport</h5>
+            </a>
+            <div class="flex items-center mt-2.5 mb-5">
+              <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor" viewBox="0 0 22 20">
+                <path
+                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+              </svg>
+              <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor" viewBox="0 0 22 20">
+                <path
+                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+              </svg>
+              <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor" viewBox="0 0 22 20">
+                <path
+                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+              </svg>
+              <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor" viewBox="0 0 22 20">
+                <path
+                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+              </svg>
+              <svg class="w-4 h-4 text-gray-200 dark:text-gray-600" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                <path
+                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+              </svg>
+              <span
+                class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">5.0</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
+              <a href="#"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
+                to cart</a>
+            </div>
+          </div>
         </div>
 
-        <div id="item4" class="lg:hidden col-span-6 border-solid border-2 border-teal-300"
+
+        <!-- <div id="item4" class="lg:hidden col-span-6 border-solid border-2 border-teal-300"
           style=" width: 100%; padding: 50px;">
           <h2 style="font-size: 20px;">Item 3:</h2>
           <img src="./img/d" style="width:100%; height: 40%;">
           <h2 style="font-size: 90%;">Changi Jewel </h2>
           <h2 style="font-size: 90%;">1 Pax (Adult)</h2>
-          <h2 style="font-size: 90%;">Price:</h2>
+          <h2 style="font-size: 90%;">Price:</h2> 
           <h2 style="font-size: 90%;">$45</h2>
           <br>
           <button class="butt">Add To Cart</button>
+        </div> -->
+
+        <div id="item-4-card-lg"
+        class="lg:hidden col-span-6 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <a href="#">
+          <img class="p-8 rounded-t-lg " src="Justin checkout\img\d.jpg" alt="Changi Jewel" />
+        </a>
+        <div class="px-5 pb-5">
+          <a href="#">
+            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Apple Watch Series 7 GPS,
+              Aluminium Case, Starlight Sport</h5>
+          </a>
+          <div class="flex items-center mt-2.5 mb-5">
+            <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor" viewBox="0 0 22 20">
+              <path
+                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+            </svg>
+            <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor" viewBox="0 0 22 20">
+              <path
+                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+            </svg>
+            <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor" viewBox="0 0 22 20">
+              <path
+                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+            </svg>
+            <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor" viewBox="0 0 22 20">
+              <path
+                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+            </svg>
+            <svg class="w-4 h-4 text-gray-200 dark:text-gray-600" aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+              <path
+                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+            </svg>
+            <span
+              class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">4.0</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
+            <a href="#"
+              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
+              to cart</a>
+          </div>
         </div>
+      </div>
 
       </div>
 
