@@ -423,7 +423,7 @@
 
             <div
                 id="item1" class="w-full max-w-sm bg-green-100 border border-gray-200 rounded-lg shadow light:bg-gray-800 dark:border-gray-700 object-cover">
-                <a href="#">
+                <a href="protoreview.html" onclick="sendoverrev(1,'./img/a','Wild Wild Ticket','My House',5,'NIL')">
                     <img class="p-8 rounded-t-lg object-cover" src="./img/a" alt="product image" />
                 </a>
                 <div class="px-5 pb-5">
@@ -714,6 +714,15 @@
         // ------------------------------------------------------------------------------------------
 
         var cart = [];
+
+        var reviewcache =[];
+
+        function sendoverrev(ID,imgurl,Name,address,ratings,misc){
+            reviewcache.push({ ID: ID,imgurl: imgurl, Name: Name, address: address, ratings: ratings , misc: misc});
+            // window.localStorage.setItem("rcac", reviewcache)
+            console.log(reviewcache)
+            window.localStorage.setItem("rcac", JSON.stringify(reviewcache));
+        }
 
         function addToCart(productName, price, imgurl, type) {
             cart.push({ name: productName, price: price, imgurl: imgurl, type: type });

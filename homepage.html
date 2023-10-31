@@ -28,7 +28,6 @@
 
     #default-search {
       background-color: #CFCAC2;
-      /* width: 200px; */
       width: 200%;
     }
 
@@ -46,23 +45,14 @@
       position: absolute;
       padding-bottom: 500px;
       width: 100%;
-      /* height: 100%; */
     }
 
     #user-input-box {
       height: 145px;
-      /* width: 75%; */
-      /* transform: translate(-50%, -45%); */
       margin: auto;
       background-color: rgb(207, 202, 194, 0.9);
     }
 
-    /* #featured-listings {
-      position: absolute;
-
-    } */
-
-    /* germaine code */
   </style>
 </head>
 
@@ -241,9 +231,20 @@
             class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 shadow-xl"
             alt="Changi Jewel">
         </div>
+        <!-- item 4 -->
+        <div class="hidden duration-[4000ms] ease-in-out" data-carousel-item>
+          <img src="img/homepage background 4.jpg"
+            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 shadow-xl"
+            alt="Kampung Admirality">
+        </div>
+        <!-- item 5 -->
+        <div class="hidden duration-[4000ms] ease-in-out" data-carousel-item>
+          <img src="img/homepage background 5.jpg"
+            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 shadow-xl"
+            alt="Cycling by Marina Bay">
+        </div>
       </div>
     </div>
-
 
     <!-- user inputs -->
     <div id="user-input-box"
@@ -286,8 +287,8 @@
       <div id="travellers-pax-input" class="grid place-items-center row-start-2 grid-cols-6">
         <div class="col-span-2">
         </div>
-        <input type="number" id="visitors"
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 col-span-2"
+        <input type="number" id="visitors" min="1" max="12"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 col-span-2 w-full"
           placeholder="Travellers" required>
         <div class="col-span-2">
         </div>
@@ -314,23 +315,22 @@
   <div class="pt-80 md:pt-96">
   </div>
 
-  <div class="sm:pt-32 lg:pt-40">
+  <div class="sm:pt-36 lg:pt-40">
   </div>
 
   <!-- featured listings -->
-  <div id="featured-listings" style="background-color: bisque;" class="px-6 py-12 mb-96 w-full">
+  <div id="featured-listings" style="background-color: bisque;" class="px-6 pt-2 pb-12 mb-24 w-full">
 
     <div id="header-featured-listings" class="px-6 my-5">
       <h1
-        class="text-center mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+        class="text-center mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
         Attractions People</h1>
       <h1
         class="text-center mb-4 text-5xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
         <mark class="px-4 text-white bg-green-600 rounded dark:bg-green-500">LOVE</mark>
       </h1>
-      <p class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400 text-center">Life is all about trying
-        new
-        experiences!</p>
+      <p class="font-bold text-lg text-gray-500 lg:text-xl dark:text-gray-400 text-center">Life is all about trying
+        new experiences!</p>
     </div>
 
 
@@ -464,7 +464,7 @@
 
     <!-- ApexChart CDN -->
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-
+  </div>
 
 </body>
 
