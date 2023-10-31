@@ -51,7 +51,8 @@
 
     #user-input-box {
       height: 145px;
-      transform: translate(-50%, -45%);
+      /* width: 75%; */
+      /* transform: translate(-50%, -45%); */
       margin: auto;
       background-color: rgb(207, 202, 194, 0.9);
     }
@@ -218,9 +219,8 @@
     <h1
       class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white text-center">
       Streamlining Eco-travel in Singapore</h1>
-    <p class="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400 text-center">At
-      <span class="text-green-500 dark:text-green-500">Greengoing</span>, we are dedicated to showcasing the sustainable
-      travel experiences that Singapore has to offer.
+    <p class="mb-6 text-lg font-bold text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400 text-center">At
+      <span class="text-green-500 dark:text-green-500">Greengoing</span>, we're Dedicated to Singapore's Sustainable Travels!
   </div>
 
   <!-- User Input Bar -->
@@ -228,7 +228,7 @@
 
     <div id="homepage-carousel" class="relative z-0 w-full m-auto content-center" data-carousel="slide">
       <!-- Carousel wrapper -->
-      <div class="absolute h-80 overflow-hidden w-full rounded-3xl md:h-64">
+      <div class="absolute h-80 overflow-hidden w-full rounded-3xl md:h-96">
         <!-- Item 1 -->
         <div class="hidden duration-[4000ms] ease-in-out" data-carousel-item>
           <img src="img/homepage background 1.jpg"
@@ -253,15 +253,11 @@
 
     <!-- user inputs -->
     <div id="user-input-box"
-      class="grid grid-rows-3 lg:grid-rows-2 h-screen place-items-center rounded-xl absolute z-1 top-1/4 left-1/2 w-1/2 p-1 drop-shadow-md">
+      class="grid grid-rows-3 h-screen rounded-xl absolute z-1 top-1/4 left-1/2 w-4/12 lg:w-5/12 xl:w-6/12 p-1 drop-shadow-md -translate-x-1/2 -translate-y-1/3 gap-y-1">
 
-      <div id="traveller-date-input-lg"
-        class="grid place-items-center row-start-1 grid-cols-6 md:grid-cols-6 lg:grid-cols-12">
+      <div id="traveller-date-input" class="grid place-items-center row-start-1 grid-cols-4">
 
-        <div class="lg:col-span-1"></div>
-
-        <div id="daterange-input" date-rangepicker
-          class="flex place-items-center col-span-6 lg:col-span-7">
+        <div id="daterange-input" date-rangepicker class="flex place-items-center col-span-4 place-items-center">
           <div class="relative" id="input-start-date">
             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
               <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
@@ -271,11 +267,11 @@
               </svg>
             </div>
             <input datepicker data-date-format="dd/mm/yyyy" datepicker-autohide name="start" type="text"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Start Date">
           </div>
 
-          <span class="mx-4 text-gray-500">to</span>
+          <span class="hidden md:block mx-4 text-gray-500">to</span>
 
           <div class="relative" id="input-end-date">
             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -286,43 +282,35 @@
               </svg>
             </div>
             <input datepicker data-date-format="dd/mm/yyyy" datepicker-autohide name="end" type="text"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="End Date">
           </div>
         </div>
 
-        <div class="lg:col-span-1">
-        </div>
-
-        <div id="travellers-input-lg" class="hidden lg:block lg:col-span-2 ">
-          <input type="number" id="visitors"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="Travellers" required>
-        </div>
-
-        <div class="lg:col-span-1">
-        </div>
-
       </div>
 
-      <div id="travllers-input"
-        class="row-start-2 col-span-6 sm:row-start-2 sm:col-span-6 sm:block sm:col-span-6 md:row-start-2 md:block md:col-span-6 lg:hidden">
+      <div id="travellers-pax-input" class="grid place-items-center row-start-2 grid-cols-6">
+        <div class="col-span-2">
+        </div>
         <input type="number" id="visitors"
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 col-span-2"
           placeholder="Travellers" required>
+        <div class="col-span-2">
+        </div>
       </div>
 
-      <div id="book-button" class="grid grid-cols-6 row-start-3 lg:block lg:row-start-2 place-items-center">
-        <!-- <div
-            class="bg-yellow-100 border border-gray-300 text-gray-900 text-sm rounded-lg p-2.5 text-center opacity-100">
-            <a href="TAILWINDLISTING.html">
-              Book your next experience!
-            </a>
-          </div> -->
+      <div id="book-button" class="grid row-start-3 grid-cols-6 ">
+
+        <div class="col-span-1">
+        </div>
 
         <button type="button"
-          class="text-gray-900 bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:focus:ring-yellow-800 content-center shadow-lg shadow-yellow-500/50 dark:shadow-lg dark:shadow-yellow-800/80 font-medium rounded-lg text-sm p-2.5 mr-2 col-span-6 ">Book
-          your next experience!</button>
+          class="col-span-3 m-auto place-items-center bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:focus:ring-yellow-800 shadow-lg shadow-yellow-500/50 dark:shadow-lg dark:shadow-yellow-800/80 font-medium rounded-lg text-sm p-2.5 md:p-1 col-span-6 ">
+          <p class="text-xs md:text-base">Explore Now!</p>
+        </button>
+
+        <div class="col-span-1">
+        </div>
       </div>
 
     </div>
@@ -330,7 +318,9 @@
   </div>
 
   <div class="pt-96">
+  </div>
 
+  <div class="pt-40">
   </div>
 
   <!-- featured listings -->
@@ -338,7 +328,7 @@
 
     <div id="header-featured-listings" class="px-6 my-5">
       <h1
-        class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+        class="mb-4 text-xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
         Attractions People <mark class="px-4 text-white bg-green-600 rounded dark:bg-green-500">LOVE</mark></h1>
       <p class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">Life is all about trying new
         experiences!</p>
@@ -347,18 +337,6 @@
     <div id="PageContent" class="p-6 gap-2 grid grid-rows-2 flex-auto w-full content-center lg:grid-rows-1">
 
       <div id="row-1" class="grid gap-2 row-start-1 lg:grid-cols-12 grid-cols-6">
-
-        <!-- <div id="item1" class="col-span-3 lg:col-span-6 border-solid border-2 border-teal-300"
-            style=" width: 100%; padding: 50px;">
-            <h2 style="font-size: 20px;">Item 1:</h2>
-            <img src="./img/a" style="width:100%; height: 40%;">
-            <h2 style="font-size: 90%;">Wild Wild Ticket </h2>
-            <h2 style="font-size: 90%;">1 Pax (Adult)</h2>
-            <h2 style="font-size: 90%;">Price:</h2>
-            <h2 style="font-size: 90%;">$10</h2>
-            <br>
-            <button class="butt">Add To Cart</button>
-          </div> -->
 
         <!-- item 1 card -->
         <div id="item-1-card"
@@ -409,19 +387,6 @@
           </div>
         </div>
 
-
-        <!-- <div id="item2" class="col-span-3 lg:col-span-6 border-solid border-2 border-teal-300"
-            style=" width: 100%; padding: 50px;">
-            <h2 style="font-size: 20px;">Item 2:</h2>
-            <img src="./img/b" style="width:100%; height: 40%;">
-            <h2 style="font-size: 90%;">Bird Paradise </h2>
-            <h2 style="font-size: 90%;">1 Pax (Adult)</h2>
-            <h2 style="font-size: 90%;">Price:</h2>
-            <h2 style="font-size: 90%;">$15</h2>
-            <br>
-            <button class="butt">Add To Cart</button>
-          </div> -->
-
         <!-- item 2 card -->
         <div id="item-2-card"
           class="col-span-3 lg:col-span-6 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
@@ -471,20 +436,7 @@
           </div>
         </div>
 
-
-        <!-- <div id="item3" class="hidden lg:block lg:col-span-3 lg:border-solid lg:border-2 lg:border-teal-300"
-            style=" width: 100%; padding: 50px;">
-            <h2 style="font-size: 20px;">Item 3:</h2>
-            <img src="./img/c" style="width:100%; height: 40%;">
-            <h2 style="font-size: 90%;">Garden Nina Bay </h2>
-            <h2 style="font-size: 90%;">1 Pax (Adult)</h2>
-            <h2 style="font-size: 90%;">Price:</h2>
-            <h2 style="font-size: 90%;">$45</h2>
-            <br>
-            <button class="butt">Add To Cart</button>
-          </div> -->
-
-
+        <!-- item 3 card -->
         <div id="item-3-card"
           class="lg:w-full lg:max-w-sm lg:bg-white lg:border lg:border-gray-200 lg:rounded-lg lg:shadow lg:dark:bg-gray-800 lg:dark:border-gray-700 hidden lg:block lg:col-span-3">
           <a href="#">
@@ -533,20 +485,7 @@
           </div>
         </div>
 
-
-        <!-- <div id="item4" class="hidden lg:block lg:col-span-3 lg:border-solid lg:border-2 lg:border-teal-300"
-            style=" width: 100%; padding: 50px;">
-            <h2 style="font-size: 20px;">Item 4:</h2>
-            <img src="./img/d" style="width:100%; height: 40%;">
-            <h2 style="font-size: 90%;">Garden Nina Bay </h2>
-            <h2 style="font-size: 90%;">1 Pax (Adult)</h2>
-            <h2 style="font-size: 90%;">Price:</h2>
-            <h2 style="font-size: 90%;">$45</h2>
-            <br>
-            <button class="butt">Add To Cart</button>
-          </div> -->
-
-
+        <!-- item 4 card -->
         <div id="item-4-card"
           class="hidden lg:block lg:col-span-3 lg:w-full lg:max-w-sm lg:bg-white lg:border lg:border-gray-200 lg:rounded-lg lg:shadow lg:dark:bg-gray-800 lg:dark:border-gray-700">
           <a href="#">
@@ -600,18 +539,6 @@
 
       <div id="row-2" class="grid gap-2 lg:hidden row-start-2 grid-cols-12">
 
-        <!-- <div id="item3" class="lg:hidden col-span-6 border-solid border-2 border-teal-300"
-          style=" width: 100%; padding: 50px;">
-          <h2 style="font-size: 20px;">Item 3:</h2>
-          <img src="./img/c" style="width:100%; height: 40%;">
-          <h2 style="font-size: 90%;">Garden Nina Bay </h2>
-          <h2 style="font-size: 90%;">1 Pax (Adult)</h2>
-          <h2 style="font-size: 90%;">Price:</h2>
-          <h2 style="font-size: 90%;">$45</h2>
-          <br>
-          <button class="butt">Add To Cart</button>
-        </div> -->
-
 
         <div id="item-3-card-lg"
           class="lg:hidden col-span-6 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
@@ -662,65 +589,53 @@
         </div>
 
 
-        <!-- <div id="item4" class="lg:hidden col-span-6 border-solid border-2 border-teal-300"
-          style=" width: 100%; padding: 50px;">
-          <h2 style="font-size: 20px;">Item 3:</h2>
-          <img src="./img/d" style="width:100%; height: 40%;">
-          <h2 style="font-size: 90%;">Changi Jewel </h2>
-          <h2 style="font-size: 90%;">1 Pax (Adult)</h2>
-          <h2 style="font-size: 90%;">Price:</h2> 
-          <h2 style="font-size: 90%;">$45</h2>
-          <br>
-          <button class="butt">Add To Cart</button>
-        </div> -->
-
         <div id="item-4-card-lg"
-        class="lg:hidden col-span-6 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <a href="#">
-          <img class="p-8 rounded-t-lg " src="Justin checkout\img\d.jpg" alt="Changi Jewel" />
-        </a>
-        <div class="px-5 pb-5">
+          class="lg:hidden col-span-6 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
           <a href="#">
-            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Apple Watch Series 7 GPS,
-              Aluminium Case, Starlight Sport</h5>
+            <img class="p-8 rounded-t-lg " src="Justin checkout\img\d.jpg" alt="Changi Jewel" />
           </a>
-          <div class="flex items-center mt-2.5 mb-5">
-            <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor" viewBox="0 0 22 20">
-              <path
-                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-            </svg>
-            <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor" viewBox="0 0 22 20">
-              <path
-                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-            </svg>
-            <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor" viewBox="0 0 22 20">
-              <path
-                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-            </svg>
-            <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor" viewBox="0 0 22 20">
-              <path
-                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-            </svg>
-            <svg class="w-4 h-4 text-gray-200 dark:text-gray-600" aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-              <path
-                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-            </svg>
-            <span
-              class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">4.0</span>
-          </div>
-          <div class="flex items-center justify-between">
-            <span class="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
-            <a href="#"
-              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
-              to cart</a>
+          <div class="px-5 pb-5">
+            <a href="#">
+              <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Apple Watch Series 7 GPS,
+                Aluminium Case, Starlight Sport</h5>
+            </a>
+            <div class="flex items-center mt-2.5 mb-5">
+              <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor" viewBox="0 0 22 20">
+                <path
+                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+              </svg>
+              <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor" viewBox="0 0 22 20">
+                <path
+                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+              </svg>
+              <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor" viewBox="0 0 22 20">
+                <path
+                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+              </svg>
+              <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor" viewBox="0 0 22 20">
+                <path
+                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+              </svg>
+              <svg class="w-4 h-4 text-gray-200 dark:text-gray-600" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                <path
+                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+              </svg>
+              <span
+                class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">4.0</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
+              <a href="#"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
+                to cart</a>
+            </div>
           </div>
         </div>
-      </div>
 
       </div>
 
@@ -731,7 +646,7 @@
 
   </div>
 
-  <div class="pt-96">
+  <div class="pt-14">
   </div>
 
 
