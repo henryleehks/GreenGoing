@@ -3,10 +3,13 @@
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
     
             <!-- GreenGoing logo -->
-            <a href="#" class="flex items-center">
+            <RouterLink to="Homepage.vue">
+                <img src="src/assets/logo.png" class="h-14 mr-3" alt="GreenGoing Logo" />
+            </RouterLink>
+            <!-- <a href="#" class="flex items-center">
                 <img src="src/assets/logo.png" class="h-14 mr-3" alt="GreenGoing Logo" />
             </a>
-    
+     -->
             
     
             <!-- button to access navbar on on mobile sizes -->
@@ -39,18 +42,27 @@
                     </li>
     
                     <li>
-                        <a href="#" class="block py-2 pl-3 pr-4 text-white bg-neutral-500 rounded md:bg-transparent md:text-[#50A060] md:p-0" aria-current="page">
+                        <!-- <a href="#" class="block py-2 pl-3 pr-4 text-white bg-neutral-500 rounded md:bg-transparent md:text-[#50A060] md:p-0" aria-current="page">
                             Home
-                        </a>
+                        </a> -->
+                        <RouterLink to="Homepage.vue" class="block py-2 pl-3 pr-4 text-white bg-neutral-500 rounded md:bg-transparent md:text-[#50A060] md:p-0" aria-current="page">
+                            Home
+                        </RouterLink>
                     </li>
     
                     <li>
-                        <a href="#" class="block py-2 pl-3 text-white rounded hover:bg-neutral-500 md:hover:bg-transparent md:border-0 md:hover:text-[#50A060] md:p-0">
+                        <!-- <a href="#" class="block py-2 pl-3 text-white rounded hover:bg-neutral-500 md:hover:bg-transparent md:border-0 md:hover:text-[#50A060] md:p-0">
                           Favourites
-                        </a>
+                        </a> -->
+                        <RouterLink to="Favourites.vue" class="block py-2 pl-3 text-white rounded hover:bg-neutral-500 md:hover:bg-transparent md:border-0 md:hover:text-[#50A060] md:p-0">
+                            Favourites
+                        </RouterLink>
                     </li>
                     <li>
-                        <a href="#" class="block py-2 pl-3 pr-4 text-white rounded hover:bg-neutral-500 md:hover:bg-transparent md:border-0 md:hover:text-[#50A060] md:p-0">My Cart</a>
+                        <!-- <a href="#" class="block py-2 pl-3 pr-4 text-white rounded hover:bg-neutral-500 md:hover:bg-transparent md:border-0 md:hover:text-[#50A060] md:p-0">My Cart</a> -->
+                        <RouterLink to="Cart.vue" class="block py-2 pl-3 pr-4 text-white rounded hover:bg-neutral-500 md:hover:bg-transparent md:border-0 md:hover:text-[#50A060] md:p-0">
+                            My Cart
+                        </RouterLink>
                     </li>
     
                     <li>

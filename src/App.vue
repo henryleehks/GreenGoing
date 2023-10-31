@@ -2,7 +2,7 @@
 import { RouterLink, RouterView } from 'vue-router'
 import Navbar from './components/Navbar.vue'
 import Footerfoot from './components/Footer.vue'
-import HomepageCarousel from './components/HomepageCarousel.vue'
+import Homepage from './views/Homepage.vue'
 
 </script>
 
@@ -11,16 +11,12 @@ import HomepageCarousel from './components/HomepageCarousel.vue'
     <Navbar></Navbar>
   </header>
     <body>
-      <HomepageCarousel></HomepageCarousel>
+      <Homepage></Homepage>
     </body>
     
 
     
 
-      <!-- <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav> -->
 
     <Footerfoot></Footerfoot>
 
