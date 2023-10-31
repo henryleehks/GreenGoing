@@ -51,7 +51,8 @@
 
     #user-input-box {
       height: 145px;
-      transform: translate(-50%, -45%);
+      width: 75%;
+      /* transform: translate(-50%, -45%); */
       margin: auto;
       background-color: rgb(207, 202, 194, 0.9);
     }
@@ -253,7 +254,7 @@
 
     <!-- user inputs -->
     <div id="user-input-box"
-      class="grid grid-rows-3 lg:grid-rows-2 h-screen place-items-center rounded-xl absolute z-1 top-1/4 left-1/2 w-1/2 p-1 drop-shadow-md">
+      class="grid grid-rows-3 h-screen place-items-center lg:grid-rows-2 rounded-xl absolute z-1 top-1/4 left-1/2 w-1/2 p-1 drop-shadow-md -translate-x-1/2 -translate-y-1/3">
 
       <div id="traveller-date-input-lg"
         class="grid place-items-center row-start-1 grid-cols-6 md:grid-cols-6 lg:grid-cols-12">
@@ -306,13 +307,13 @@
       </div>
 
       <div id="travllers-input"
-        class="row-start-2 col-span-6 sm:row-start-2 sm:col-span-6 sm:block sm:col-span-6 md:row-start-2 md:block md:col-span-6 lg:hidden">
+        class="row-start-2 col-span-6 lg:hidden">
         <input type="number" id="visitors"
           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           placeholder="Travellers" required>
       </div>
 
-      <div id="book-button" class="grid grid-cols-6 row-start-3 lg:block lg:row-start-2 place-items-center">
+      <div id="book-button" class="grid grid-cols-6 row-start-3 place-items-center lg:grid lg:grid-cols-6 lg:block lg:row-start-2">
         <!-- <div
             class="bg-yellow-100 border border-gray-300 text-gray-900 text-sm rounded-lg p-2.5 text-center opacity-100">
             <a href="TAILWINDLISTING.html">
@@ -338,7 +339,7 @@
 
     <div id="header-featured-listings" class="px-6 my-5">
       <h1
-        class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+        class="mb-4 text-xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
         Attractions People <mark class="px-4 text-white bg-green-600 rounded dark:bg-green-500">LOVE</mark></h1>
       <p class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">Life is all about trying new
         experiences!</p>
