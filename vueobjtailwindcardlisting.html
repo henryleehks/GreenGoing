@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* The side navigation menu */
+        .sidenav {
+            height: 100%;
+            /* 100% Full-height */
+            width: 0;
+            /* 0 width - change this with JavaScript */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Stay on top */
+            top: 0;
+            /* Stay at the top */
+            left: 0;
+            background-color: white;
+            /* Black*/
+            overflow-x: hidden;
+            /* Disable horizontal scroll */
+            padding-top: 60px;
+            /* Place content 60px from the top */
+            transition: 0.5s;
+            /* 0.5 second transition effect to slide in the sidenav */
+        }
+
+        /* The navigation menu links */
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        /* When you mouse over the navigation links, change their color */
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        /* Position and style the close button (top right corner) */
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+        #main {
+            transition: margin-left .5s;
+            padding: 20px;
+        }
+
+        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+
+        #topnavbar {
+            background-color: #CFCAC2;
+        }
+
+        #navbutton {
+            position: relative;
+            display: inline-flex;
+        }
+
+        #default-search {
+            background-color: #CFCAC2;
+            width: 200%;
+        }
+
+        #default-search-mobile {
+            background-color: #CFCAC2;
+            width: 100%;
+        }
+
+        #SearchButton {
+            position: absolute;
+        }
+
+        #header {
+            font-weight: bold;
+            font-size: 30px;
+            font-family: 'Franklin Gothic Medium';
+            margin: 20px auto auto 30px;
+        }
+
+        #CategorySearch {
+            margin: 10px auto 0px 30px;
+        }
+
+        #CategorySearchButton {
+            position: absolute;
+            margin-left: 310px;
+            background-color: #50A060;
+        }
+
+        #ItineraryListings {
+            border: 1px solid lightgray;
+            border-radius: 10px;
+            margin: 10px auto auto 30px;
+            padding: 10px 10px 10px 10px;
+            width: 100%;
+        }
+
+        td {
+            padding: 10px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #F1F3F4;
+        }
+
+        #viewbutton {
+            background-color: #50A060;
+            color: white;
+            padding: 2px 15px 2px 15px;
+            margin-top: 5px;
+        }
+
+        #searchz {
+            background-color: white;
+            width: 200%;
+        }
+
+        .butt {
+            background-color: rgb(156, 255, 200);
+            font-size: 30px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border: 1px;
+            border-radius: 10px;
+        }
+
+        /* Updated styles for responsiveness */
+        #item1,
+        #item2,
+        #item3,
+        #item4 {
+            width: 100%;
+            padding: 10px;
+        }
+
+        .flex.items-center.justify-start {
+            max-width: 200px;
+            /* Adjust the value as per your requirements */
+        }
+
+        @media screen and (max-width: 768px) {
+            #PageContent {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            #item1,#item2,#item3,#item4{
+                width: 100%;
+            }
+            
+        }
+
+        @media screen and (max-width: 1000px) {
+            #PageContent {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            /* #item1,#item2,#item3,#item4{
+                width: 50%;
+            } */
+        }
+
+        img {
+            border-radius: 20px;
+        }
+
+        #main {
+            align-items: center;
+            text-align: center;
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+    </div> -->
+    <!-- topbar -->
+
+
+    <nav id="topnavbar" class="shadow-xl">
+        <div class="mx-auto max-w-7xl px-2 sm:px-4 lg:px-6">
+          <div class="relative flex h-16 items-center justify-between">
+    
+            <!-- not sure whats gg on for the navbutton-->
+            <div class="absolute flex items-center sm:hidden">
+    
+              <!-- Mobile menu button-->
+              <button type="button" id="navbutton"
+                class="items-center justify-center rounded-md p-2 text-gray-400 hover:bg-neutral-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                aria-controls="mobile-menu" aria-expanded="false">
+                <span class="absolute -inset-0.5"></span>
+                <span class="sr-only">Open main menu</span>
+    
+                <!--
+                      Icon when menu is closed.
+          
+                      Menu open: "hidden", Menu closed: "block"
+                    -->
+                <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                  aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+                <!--
+                      Icon when menu is open.
+          
+                      Menu open: "block", Menu closed: "hidden"
+                    -->
+                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                  aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+    
+              </button>
+    
+            </div>
+            <!-- not sure whats gg on for the navbutton^^^-->
+    
+    
+    
+            <div class="flex flex-1 justify-center sm:justify-start ">
+              <!-- Logo -->
+              <div class="flex items-center justify-start">
+                <a href="homepage.html">
+                  <img class="h-12 w-auto" src="img/logo.png" alt="Your Company">
+                </a>
+    
+              </div>
+    
+              <div class="hidden sm:ml-6 sm:block">
+                <div class="flex space-x-4">
+    
+                  <!-- Search Bar -->
+                  <form>
+                    <div class="relative grid grid-cols-2">
+                      <input type="search" id="default-search"
+                        class="block w-full p-4 text-sm text-neutral-500 border rounded-full" placeholder="Search" required>
+                      <button type="submit" id="SearchButton"
+                        class="right-10 bottom-2.5 hover:bg-neutral-500 focus:ring-neutral-400 rounded-full text-sm px-2 py-2">
+                        <svg class="w-4 h-4 text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                          viewBox="0 0 20 20">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                        </svg>
+                      </button>
+                    </div>
+                  </form>
+    
+                  <div class="grid grid-cols-10 gap-10"></div>
+                  <!-- Buttons -->
+                  <a href="itinerary.html" id="ItineraryIcon" class="bg-neutral-500 text-white rounded-md px-3 py-2 text-sm"
+                    aria-current="page">
+                    <img src="img/notebook.png">
+                  </a>
+                  <a href="favourites.html" id="FavoritesIcon" class="hover:bg-neutral-400 rounded-md px-3 py-2 text-sm">
+                    <img src="img/Favourites Icon.png">
+                  </a>
+                  <a href="checkout_page.html" id="CartIcon" class="hover:bg-neutral-400 rounded-md px-3 py-2 text-sm">
+                    <img src="img/Add to Bag Icon.png">
+                  </a>
+    
+                </div>
+              </div>
+            </div>
+    
+            <!-- Profile icon-->
+            <div id="ProfileIcon" class="relative ml-3">
+              <div>
+                <button type="button"
+                  class="relative flex hover:bg-neutral-400 rounded-md px-3 py-2 font-medium focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                  id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                  <span class="absolute -inset-1.5"></span>
+                  <span class="sr-only">Open user menu</span>
+                  <img class="h-10 w-10 rounded-md" src="img/User Profile Icon.png" alt="">
+                </button>
+              </div>
+    
+              <!-- This is for a dropdown when user clicks profile -->
+    
+              <!-- <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                      Active: "bg-gray-100", Not Active: ""
+                      <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
+                      <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
+                      <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+                    </div> -->
+            </div>
+          </div>
+        </div>
+    
+    
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="sm:hidden" id="mobile-menu">
+          <div class="space-y-1 px-2 pb-3 pt-2">
+            <form>
+              <div class="relative grid grid-cols-1">
+                <input type="search" id="default-search-mobile"
+                  class="block w-full p-4 text-sm text-neutral-500 border rounded-full" placeholder="Search" required>
+                <button type="submit" id="SearchButton"
+                  class="right-10 bottom-2.5 hover:bg-neutral-500 focus:ring-neutral-400 font-medium rounded-full text-sm px-2 py-2">
+                  <svg class="w-4 h-4 text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 20 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                  </svg>
+                </button>
+              </div>
+            </form>
+            <a href="#" class="bg-neutral-500 text-white block rounded-md px-3 py-2 text-base font-medium"
+              aria-current="page"><img src="img/notebook.png">Itinerary</a>
+            <a href="#" class="text-white hover:bg-neutral-400 block rounded-md px-3 py-2 text-base font-medium"><img
+                src="img/Favourites Icon.png">Favorites</a>
+            <a href="#" class="text-white hover:bg-neutral-400 block rounded-md px-3 py-2 text-base font-medium"><img
+                src="img/Add to Bag Icon.png">Cart</a>
+          </div>
+        </div>
+      </nav>
+    
+
+
+
+
+    <!-- SIDENAVBARZ -->
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg"></div>
+                <div class="col-lg">
+                    <div id="alerts" class="ms-text-center"></div>
+                    <div id="loading" class="spinner-container ms-div-center">
+                        <div class="spinner"></div>
+                    </div>
+                    <div id="content" class="hide">
+                        <div class="ms-card ms-fill" style="padding: 10px;">
+                            <h1 style="text-align: center; font-size: 120%;">YOUR ITEMS</h1>
+                            <br>
+                            <!-- <h2 style="font-size: 120%;">Item 1:</h2>
+                            <img src="./img/a" style="width: 100%;">
+                            <h2 style="font-size: 120%;">Wild Wild Ticket 1 Pax (Adult)</h2>
+                            <h2 style="font-size: 120%;">Price:</h2>
+                            <h2 style="font-size: 120%;">$10</h2>
+                            <br>
+                            <h2 style="font-size: 120%;">Item 2:</h2>
+                            <img src="./img/b" style="width: 100%;">
+                            <h2 style="font-size: 120%;">Bird Paradise 1 Pax (Adult)</h2>
+                            <h2 style="font-size: 120%;">Price:</h2>
+                            <h2 style="font-size: 120%;">$15</h2>
+                            <br>
+                            <h2 style="font-size: 120%;">Total:</h2>
+                            <h2 style="font-size: 120%;">$25</h2> -->
+
+                            <ul id="cart"></ul>
+                            <br>
+                            <a href="./checkout.html"
+                                style="background-color: rgb(156, 255, 200); font-size: 30px; border: 1px; border-radius: 10px;">CHECKOUT</a>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                        </div>
+                        <div id="payment_options"></div>
+                    </div>
+                </div>
+                <div class="col-sm"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SIDECARTzz OPENER -->
+    <span onclick="openNav()"
+        style="font-weight: 900; text-align: center; display: flex; justify-content: center; align-items: center;">CART</span>
+    <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+
+
+    <div id="main">
+        <div id="PageContent" class="container flex flex-1 justify-center md:justify-start "
+            style=" display: flex; width: 100%; ">
+            <!-- <div id="item1">
+                <h2 style="font-size: 30px;">Item 1:</h2>
+                <img src="./img/a" style="width:100%; height: 40%;">
+                <h2 style="font-size: 150%;">Wild Wild Ticket </h2>
+                <h2 style="font-size: 100%;">1 Pax (Adult)</h2>
+                <h2 style="font-size: 140%;">Price:</h2>
+                <h2 style="font-size: 150%;">$10</h2>
+                <br>
+                <button class="butt" onclick="addToCart('Wild Wild Ticket', 10.00,'./img/a','Adult')">Add To
+                    Cart</button>
+            </div> -->
+
+
+            <div
+                id="item1" class="w-full max-w-sm bg-green-100 border border-gray-200 rounded-lg shadow light:bg-gray-800 dark:border-gray-700 object-cover">
+                <a href="protoreview.html" onclick="sendoverrev(1,'./img/a','Wild Wild Ticket','My House',5,'NIL')">
+                    <img class="p-8 rounded-t-lg object-cover" src="./img/a" alt="product image" />
+                </a>
+                <div class="px-5 pb-5">
+                    <a href="#">
+                        <h5 class="text-2xl font-semibold tracking-tight text-gray-900 light:text-white">Wild Wild Ticket
+                        </h5>
+                    </a>
+                    <div class="flex items-center mt-2.5 mb-5">
+                        <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" viewBox="0 0 22 20">
+                            <path
+                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                        </svg>
+                        <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" viewBox="0 0 22 20">
+                            <path
+                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                        </svg>
+                        <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" viewBox="0 0 22 20">
+                            <path
+                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                        </svg>
+                        <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" viewBox="0 0 22 20">
+                            <path
+                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                        </svg>
+                        <svg class="w-4 h-4 text-yellow-200 dark:text-gray-600" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                            <path
+                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                        </svg>
+                        <span
+                            class="bg-light green-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">5.0</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl font-bold text-gray-900 light:text-black">$10</span>
+                        <button
+                            class="text-black bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center light:bg-blue-600 light:hover:bg-blue-700 light:focus:ring-blue-800"
+                            onclick="addToCart('Wild Wild Ticket', 10.00,'./img/a','Adult')">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                &nbsp
+            </div>
+
+            <div
+            id="item2" class="w-full max-w-sm bg-green-100 border border-gray-200 rounded-lg shadow light:bg-gray-800 dark:border-gray-700">
+                <a href="#">
+                    <img class="p-8 rounded-t-lg" src="./img/b" alt="product image" />
+                </a>
+                <div class="px-5 pb-5">
+                    <a href="#">
+                        <h5 class="text-2xl font-semibold tracking-tight text-gray-900 light:text-white">Bird Paradise
+                        </h5>
+                    </a>
+                    <div class="flex items-center mt-2.5 mb-5">
+                        <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" viewBox="0 0 22 20">
+                            <path
+                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                        </svg>
+                        <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" viewBox="0 0 22 20">
+                            <path
+                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                        </svg>
+                        <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" viewBox="0 0 22 20">
+                            <path
+                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                        </svg>
+                        <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" viewBox="0 0 22 20">
+                            <path
+                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                        </svg>
+                        <svg class="w-4 h-4 text-yellow-200 dark:text-gray-600" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                            <path
+                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                        </svg>
+                        <span
+                            class="bg-light green-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">5.0</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl font-bold text-gray-900 light:text-black">$15</span>
+                        <button
+                            class="text-black bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center light:bg-blue-600 light:hover:bg-blue-700 light:focus:ring-blue-800"
+                            onclick="addToCart('Bird Paradise', 15.00,'./img/b','Adult')">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                &nbsp
+            </div>
+
+            <div
+            id="item3" class="w-full max-w-sm bg-green-100 border border-gray-200 rounded-lg shadow light:bg-gray-800 dark:border-gray-700">
+                <a href="#">
+                    <img class="p-8 rounded-t-lg" src="./img/c" alt="product image" />
+                </a>
+                <div class="px-5 pb-5">
+                    <a href="#">
+                        <h5 class="text-2xl font-semibold tracking-tight text-gray-900 light:text-white">Grdn Nina Bay
+                        </h5>
+                    </a>
+                    <div class="flex items-center mt-2.5 mb-5">
+                        <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" viewBox="0 0 22 20">
+                            <path
+                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                        </svg>
+                        <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" viewBox="0 0 22 20">
+                            <path
+                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                        </svg>
+                        <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" viewBox="0 0 22 20">
+                            <path
+                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                        </svg>
+                        <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" viewBox="0 0 22 20">
+                            <path
+                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                        </svg>
+                        <svg class="w-4 h-4 text-yellow-200 dark:text-gray-600" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                            <path
+                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                        </svg>
+                        <span
+                            class="bg-light green-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">5.0</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl font-bold text-gray-900 light:text-black">$45</span>
+                        <button
+                            class="text-black bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center light:bg-blue-600 light:hover:bg-blue-700 light:focus:ring-blue-800"
+                            onclick="addToCart('Grdn Nina Bay', 45.00,'./img/c','Adult')">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                &nbsp
+                
+            </div>
+
+            <div
+            id="item4" class="w-full max-w-sm bg-green-100 border border-gray-200 rounded-lg shadow light:bg-gray-800 dark:border-gray-700">
+                <a href="#">
+                    <img class="p-8 rounded-t-lg" src="./img/d" alt="product image" />
+                </a>
+                <div class="px-5 pb-5">
+                    <a href="#">
+                        <h5 class="text-2xl font-semibold tracking-tight text-gray-900 light:text-white">Changi Jewel
+                        </h5>
+                    </a>
+                    <div class="flex items-center mt-2.5 mb-5">
+                        <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" viewBox="0 0 22 20">
+                            <path
+                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                        </svg>
+                        <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" viewBox="0 0 22 20">
+                            <path
+                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                        </svg>
+                        <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" viewBox="0 0 22 20">
+                            <path
+                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                        </svg>
+                        <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" viewBox="0 0 22 20">
+                            <path
+                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                        </svg>
+                        <svg class="w-4 h-4 text-yellow-200 dark:text-gray-600" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                            <path
+                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                        </svg>
+                        <span
+                            class="bg-light green-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">5.0</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl font-bold text-gray-900 light:text-black">$45</span>
+                        <button
+                            class="text-black bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center light:bg-blue-600 light:hover:bg-blue-700 light:focus:ring-blue-800"
+                            onclick="addToCart('Changi Jewel', 45.00,'./img/d','Adult')">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+            <!-- <div
+                class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                <div class="flex justify-end px-4 pt-4">
+                    
+                </div>
+                <div class="flex flex-col items-center pb-10">
+                    <img class="w-50 h-50 mb-3 rounded shadow-lg" src="./img/a"
+                        alt="Bonnie image" />
+                    <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Wild Wild Ticket</h5>
+                    <span class="text-sm text-gray-500 dark:text-gray-400">1 Pax (Adult)</span>
+                    <span class="text-md text-gray-500 dark:text-gray-400">Price:</span>
+                    <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">$10</h5>
+                    <div class="flex mt-4 space-x-3 md:mt-6">
+                        <button class="butt" onclick="addToCart('Wild Wild Ticket', 10.00,'./img/a','Adult')">Add To Cart</button>
+                    </div>
+                </div>
+            </div> -->
+
+
+
+
+
+
+            <!-- <div id="item2">
+                <h2 style="font-size: 30px;">Item 2:</h2>
+                <img src="./img/b" style="width:100%; height: 40%;">
+                <h2 style="font-size: 150%;">Bird Paradise </h2>
+                <h2 style="font-size: 100%;">1 Pax (Adult)</h2>
+                <h2 style="font-size: 140%;">Price:</h2>
+                <h2 style="font-size: 150%;">$15</h2>
+                <br>
+                <button class="butt" onclick="addToCart('Bird Paradise', 15.00,'./img/b','Adult)')">Add To
+                    Cart</button>
+            </div>
+            <div id="item3">
+                <h2 style="font-size: 30px;">Item 3:</h2>
+                <img src="./img/c" style="width:100%; height: 40%;">
+                <h2 style="font-size: 150%;">Grdn Nina Bay </h2>
+                <h2 style="font-size: 100%;">1 Pax (Adult)</h2>
+                <h2 style="font-size: 140%;">Price:</h2>
+                <h2 style="font-size: 150%;">$45</h2>
+                <br>
+                <button class="butt" onclick="addToCart('Grdn Nina Bay', 45.00,'./img/c','Adult')">Add To
+                    Cart</button>
+            </div>
+            <div id="item4">
+                <h2 style="font-size: 30px;">Item 4:</h2>
+                <img src="./img/d" style="width:100%; height: 40%;">
+                <h2 style="font-size: 150%;">Changi Jewel </h2>
+                <h2 style="font-size: 100%;">1 Pax (Adult)</h2>
+                <h2 style="font-size: 140%;">Price:</h2>
+                <h2 style="font-size: 150%;">$45</h2>
+                <br>
+                <button class="butt" onclick="addToCart('Changi Jewel', 45.00,'./img/d','Adult')">Add To
+                    Cart</button>
+            </div> -->
+
+            <!-- http://localhost/WEBAPP2/Project/Shopping%20cart/GreengoingCart/ITER2/ -->
+
+        </div>
+        <footer
+            class="fixed bottom-0 left-0 z-20 w-full p-1 bg-[#CFCAC2] border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-2">
+            <span class="text-sm text-white sm:text-center">© 2023 <a href="https://flowbite.com/"
+                    class="hover:underline">GreenGoing</a>. All Rights Reserved.
+            </span>
+        </footer>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="github.js"></script>
+    </div>
+    <script>
+        /* Set the width of the side navigation to 250px */
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+        /* Set the width of the side navigation to 0 */
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+
+
+        // ------------------------------------------------------------------------------------------
+
+        var cart = [];
+
+        var reviewcache =[];
+
+        function sendoverrev(ID,imgurl,Name,address,ratings,misc){
+            reviewcache.push({ ID: ID,imgurl: imgurl, Name: Name, address: address, ratings: ratings , misc: misc});
+            // window.localStorage.setItem("rcac", reviewcache)
+            console.log(reviewcache)
+            window.localStorage.setItem("rcac", JSON.stringify(reviewcache));
+        }
+
+        function addToCart(productName, price, imgurl, type) {
+            cart.push({ name: productName, price: price, imgurl: imgurl, type: type });
+            updateCart();
+            window.localStorage.setItem("crt", cart)
+        }
+
+        function updateCart() {
+            let cartList = document.getElementById("cart");
+            cartList.innerHTML = "";
+            var totalPrice = 0;
+
+            for (let item of cart) {
+                let img = document.createElement('img');
+                img.src = item.imgurl;
+                cartList.appendChild(img);
+
+
+                console.log(item)
+                let listItem = document.createElement("li");
+                listItem.innerText = `${item.name} - $${item.price.toFixed(2)} - ${item.type}`;
+                cartList.appendChild(listItem);
+                totalPrice += item.price;
+                cartList.appendChild(document.createElement("br"));
+
+
+            }
+
+
+
+            let totalItem2 = document.createElement("br");
+            cartList.appendChild(totalItem2);
+
+            let totalItem = document.createElement("li");
+            totalItem.innerText = `Total: $${totalPrice.toFixed(2)}`;
+            cartList.appendChild(totalItem);
+            window.localStorage.setItem("cart", JSON.stringify(cart));
+        }
+    </script>
+</body>
+
+</html>
