@@ -1,15 +1,14 @@
+
+
 <template>
     <nav class="fixed top-0 left-0 z-20 w-full bg-[#CFCAC2] border-gray-200 dark:bg-gray-900 dark:border-gray-700">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
     
             <!-- GreenGoing logo -->
-            <RouterLink to="Homepage.vue">
+            <div class="flex items-center">
                 <img src="src/assets/logo.png" class="h-14 mr-3" alt="GreenGoing Logo" />
-            </RouterLink>
-            <!-- <a href="#" class="flex items-center">
-                <img src="src/assets/logo.png" class="h-14 mr-3" alt="GreenGoing Logo" />
-            </a>
-     -->
+            </div>
+    
             
     
             <!-- button to access navbar on on mobile sizes -->
@@ -45,11 +44,16 @@
                         <!-- <a href="#" class="block py-2 pl-3 pr-4 text-white bg-neutral-500 rounded md:bg-transparent md:text-[#50A060] md:p-0" aria-current="page">
                             Home
                         </a> -->
-                        <RouterLink to="Homepage.vue" class="block py-2 pl-3 pr-4 text-white bg-neutral-500 rounded md:bg-transparent md:text-[#50A060] md:p-0" aria-current="page">
+                        <RouterLink to="App.vue" class="block py-2 pl-3 pr-4 text-white bg-neutral-500 rounded md:bg-transparent md:text-[#50A060] md:p-0" aria-current="page">
                             Home
                         </RouterLink>
                     </li>
-    
+                    
+                    <li>
+                        <RouterLink to="itinerary.vue" class="block py-2 pl-3 text-white rounded hover:bg-neutral-500 md:hover:bg-transparent md:border-0 md:hover:text-[#50A060] md:p-0">
+                            Itinerary
+                        </RouterLink>
+                    </li>
                     <li>
                         <!-- <a href="#" class="block py-2 pl-3 text-white rounded hover:bg-neutral-500 md:hover:bg-transparent md:border-0 md:hover:text-[#50A060] md:p-0">
                           Favourites
@@ -94,11 +98,11 @@
             </div>
         </div>
     </nav>
-    </template>
+</template>
     
-    <script>
-    export default {
-        name: 'Navbar'
-    }
-    </script>
+<script>
+export default {
+    name: 'Navbar'
+}
+</script>
     

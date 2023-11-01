@@ -21,7 +21,6 @@ import Homepage from './views/Homepage.vue'
     <Footerfoot></Footerfoot>
 
 
-
   <RouterView />
 </template>
 
