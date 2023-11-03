@@ -63,11 +63,11 @@
                                 <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Wild Wild Wet</h5>
                             </a>
                             <div class="flex items-center mt-2.5 mb-5">
-                                <img class="w-4 h-4" src="img/color_tree.png">
-                                <img class="w-4 h-4" src="img/color_tree.png">
-                                <img class="w-4 h-4" src="img/color_tree.png">
-                                <img class="w-4 h-4" src="img/color_tree.png">
-                                <img class="w-4 h-4" src="img/grey_tree.png">
+                                <img class="w-4 h-4" src="src/assets/color_tree.png">
+                                <img class="w-4 h-4" src="src/assestscolor_tree.png">
+                                <img class="w-4 h-4" src="src/assets/color_tree.png">
+                                <img class="w-4 h-4" src="src/assets/color_tree.png">
+                                <img class="w-4 h-4" src="src/assets/grey_tree.png">
                                 <span
                                 class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">4.0</span>
                             </div>
@@ -90,11 +90,11 @@
                                 <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Wild Wild Wet</h5>
                             </a>
                             <div class="flex items-center mt-2.5 mb-5">
-                                <img class="w-4 h-4" src="img/color_tree.png">
-                                <img class="w-4 h-4" src="img/color_tree.png">
-                                <img class="w-4 h-4" src="img/color_tree.png">
-                                <img class="w-4 h-4" src="img/color_tree.png">
-                                <img class="w-4 h-4" src="img/grey_tree.png">
+                                <img class="w-4 h-4" src="src/assets/color_tree.png">
+                                <img class="w-4 h-4" src="src/assets/color_tree.png">
+                                <img class="w-4 h-4" src="src/assets/color_tree.png">
+                                <img class="w-4 h-4" src="src/assets/color_tree.png">
+                                <img class="w-4 h-4" src="src/assets/color_tree.png">
                                 <span
                                 class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">4.0</span>
                             </div>
@@ -117,11 +117,11 @@
                                 <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Wild Wild Wet</h5>
                             </a>
                             <div class="flex items-center mt-2.5 mb-5">
-                                <img class="w-4 h-4" src="img/color_tree.png">
-                                <img class="w-4 h-4" src="img/color_tree.png">
-                                <img class="w-4 h-4" src="img/color_tree.png">
-                                <img class="w-4 h-4" src="img/color_tree.png">
-                                <img class="w-4 h-4" src="img/grey_tree.png">
+                                <img class="w-4 h-4" src="src/assets/color_tree.png">
+                                <img class="w-4 h-4" src="src/assets/color_tree.png">
+                                <img class="w-4 h-4" src="src/assets/color_tree.png">
+                                <img class="w-4 h-4" src="src/assets/color_tree.png">
+                                <img class="w-4 h-4" src="src/assets/color_tree.png">
                                 <span
                                 class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">4.0</span>
                             </div>
@@ -144,11 +144,11 @@
                                 <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Wild Wild Wet</h5>
                             </a>
                             <div class="flex items-center mt-2.5 mb-5">
-                                <img class="w-4 h-4" src="img/color_tree.png">
-                                <img class="w-4 h-4" src="img/color_tree.png">
-                                <img class="w-4 h-4" src="img/color_tree.png">
-                                <img class="w-4 h-4" src="img/color_tree.png">
-                                <img class="w-4 h-4" src="img/grey_tree.png">
+                                <img class="w-4 h-4" src="src/assets/color_tree.png">
+                                <img class="w-4 h-4" src="src/assets/color_tree.png">
+                                <img class="w-4 h-4" src="src/assets/color_tree.png">
+                                <img class="w-4 h-4" src="src/assets/color_tree.png">
+                                <img class="w-4 h-4" src="src/assets/color_tree.png">
                                 <span
                                 class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">4.0</span>
                             </div>
