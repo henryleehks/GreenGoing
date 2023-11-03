@@ -1,5 +1,5 @@
 <template>
-    <div id="PageContent" class="bg-gradient-to-b from-[bisque] to-[#A6CEAE]">
+    <div id="PageContent" class="w-full h-auto top-0 bg-[bisque]">
 
         <div id="itinerary-content">
 
@@ -37,7 +37,7 @@
 
         <!-- Favourites as Cards -->
 
-        <div id="featured-listings" class="px-6 pt-2 pb-12 mb-24 w-full">
+        <div id="featured-listings" class="px-6 pt-2 pb-12 mb-24 w-full bg-gradient-to-b from-[bisque] to-[#A6CEAE]">
 
             <div id="header-featured-listings" class="px-6 my-5">
   
