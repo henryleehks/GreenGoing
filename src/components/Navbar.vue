@@ -40,7 +40,7 @@
                     </li>
     
                     <li>
-                        <RouterLink to="/" class="block py-2 pl-3 pr-4 text-white bg-neutral-500 rounded md:bg-transparent  md:text-[#50A060] md:p-0" aria-current="page">
+                        <RouterLink to="/" class="block py-2 pl-3 pr-4 text-white bg-neutral-500 rounded md:bg-transparent  md:hover:text-[#50A060] md:p-0" aria-current="page">
                             Home
                         </RouterLink>
                     </li>
@@ -56,7 +56,6 @@
                         </RouterLink>
                     </li>
                     <li>
-                        <!-- <a href="#" class="block py-2 pl-3 pr-4 text-white rounded hover:bg-neutral-500 md:hover:bg-transparent md:border-0 md:hover:text-[#50A060] md:p-0">My Cart</a> -->
                         <RouterLink to="/cart" class="block py-2 pl-3 pr-4 text-white rounded hover:bg-neutral-500 md:hover:bg-transparent md:border-0 md:hover:text-[#50A060] md:p-0">
                             My Cart
                         </RouterLink>
@@ -69,6 +68,7 @@
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
                             </svg>
                         </button>
+                        
                         <!-- Dropdown menu -->
                         <div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
                             <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
