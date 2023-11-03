@@ -1,5 +1,5 @@
 <template>
-    <div id="PageContent" class="w-full h-auto top-0 bg-[bisque]">
+    <div id="PageContent" class="w-full h-auto pt-5 top-0 bg-[bisque]">
 
         <div id="itinerary-content">
 
