@@ -6,6 +6,7 @@ import Listing from '../views/Listings.vue'
 import Listing_Review from '../views/Listing_Review.vue'
 import checkout from '../views/Checkout.vue'
 import itinerary from '../views/Itinerary.vue'
+import Login from '../views/login.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,6 +15,11 @@ const router = createRouter({
       path: '/',
       name: 'Homepage',
       component: Homepage
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
     },
     {
       path: '/favourites',
