@@ -3,11 +3,37 @@
   <head>
     <meta charset="UTF-8">
     <link rel="icon" href="/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
     <title>Vite App</title>
+    <!-- Include Tailwind CSS as a stylesheet -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css"
+      rel="stylesheet">
+
+    <!-- Flowbite CDN -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css"
+      rel="stylesheet" />
+
+    <link rel="stylesheet"
+      href="path/to/datepicker.css">
+    <script src="path/to/datepicker.js"></script>
+
   </head>
   <body>
-    <div id="app"></div>
+
+    <div id="mount"></div>
+
     <script type="module" src="/src/main.js"></script>
+
+    <!-- Flowbite CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+    <!-- datepicker js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/datepicker.min.js"></script>
+    <!-- ApexChart CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+
   </body>
 </html>

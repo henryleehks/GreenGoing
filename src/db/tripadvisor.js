@@ -1,10 +1,12 @@
 const APIKey = "A9CACCFDA85846E3AB953CE0CC281A40";
 
 
+
+
 //#######################################################
 //returns an array of rating objects containing rating, ratingImg, title, text, date
 //#######################################################
-async function getTAReview(apiKey, locationID) {
+export async function getTAReview(apiKey, locationID) {
   const options = { method: "GET", headers: { accept: "application/json" } };
 
   const Query =
@@ -37,7 +39,7 @@ async function getTAReview(apiKey, locationID) {
 // returns a JS object containing name, desc, webUrl, address, rating, 
 // ratingImg, numReviews, category
 //#######################################################
-async function getTADetails(apiKey, locationID) {
+export async function getTADetails(apiKey, locationID) {
   const options = { method: "GET", headers: { accept: "application/json" } };
   const Query =
     "https://api.content.tripadvisor.com/api/v1/location/" +
@@ -56,6 +58,7 @@ async function getTADetails(apiKey, locationID) {
     ratingImg: obj.rating_image_url,
     numReviews: obj.num_reviews,
     category: obj.category.name,
+    price: obj.price_level
   };
 
   return toReturn;
@@ -65,7 +68,7 @@ async function getTADetails(apiKey, locationID) {
 // returns an object containing URLs for thumbnail photo and carousel of a 
 // list of 5 most recentphoto URLs (must resize photos)
 //#######################################################
-async function getTAPhotos(apiKey, locationID) {
+export async function getTAPhotos(apiKey, locationID) {
   const options = { method: "GET", headers: { accept: "application/json" } };
   const Query =
     "https://api.content.tripadvisor.com/api/v1/location/" +
@@ -90,14 +93,15 @@ async function getTAPhotos(apiKey, locationID) {
   return toReturn;
 }
 
+
+
+
 //#######################################################
 //whenever calling any of these functions use the following syntax
 // object = await getPhotos(apiKey, locationID) to ensure that async promises
 // are fulfilled before continuing
 //#######################################################
-export default {
-  getTAReview,
-  getTADetails,
-  getTAPhotos,
+
+export {
   APIKey
-};
+}
