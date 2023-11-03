@@ -114,14 +114,12 @@
                             <div class="col-span-1">
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
 
 
             </div>
-
-
 
             <div class="flex flex-shrink-0 flex-1">
                 <div id="featured-listings" style="background-color: bisque;" class="px-6 pt-2 pb-12 mb-24 w-full h-full">
