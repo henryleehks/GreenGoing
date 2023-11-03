@@ -107,13 +107,14 @@
                             </div>
 
                             <button type="button"
-                                class="col-span-3 text-black m-auto place-items-center bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:focus:ring-yellow-800 shadow-lg shadow-yellow-500/50 dark:shadow-lg dark:shadow-yellow-800/80 font-medium rounded-lg text-sm p-2.5 md:p-1 col-span-6 ">
+                                class="col-span-3 w-3/4 text-black m-auto place-items-center bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:focus:ring-yellow-800 shadow-lg shadow-yellow-500/50 dark:shadow-lg dark:shadow-yellow-800/80 font-medium rounded-lg text-sm p-2.5 md:p-1 col-span-6 ">
                                 <p class="text-xs md:text-base">Explore Now!</p>
                             </button>
 
                             <div class="col-span-1">
                             </div>
                         </div>
+                        
                     </div>
                 </div>
 
@@ -265,6 +266,14 @@
         </columns>
     </div>
 </template>
+
+<script>
+
+function floatin() {
+
+}
+
+</script>
 
 
 
