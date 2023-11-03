@@ -312,6 +312,7 @@
 
         var email = document.getElementById('email-login').value;
         var password = document.getElementById('password-login').value;
+        var username = email.split("@")[0];
 
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
@@ -322,7 +323,7 @@
                 update(ref(database, 'users/' + user.uid), {
                     last_login: dt,
                 })
-                window.location.href = "../homepage.html?email=" + email;
+                window.location.href = "../homepage.html?username=" + username + "&email=" + email;
                 alert('User logged in!');
             })
             .catch((error) => {
