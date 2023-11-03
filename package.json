@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
-    "firebase": "^10.5.0",
+    "firebase": "^10.5.2",
     "flowbite": "^1.8.1",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5",
