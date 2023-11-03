@@ -3,7 +3,7 @@
 
         <div id="itinerary-content">
 
-            <div class="py-5 relative inline-flex items-center overflow-hidden">
+            <div class="relative inline-flex items-center overflow-hidden">
                 <img class="w-full h:auto opacity-50 rounded-r-2xl" src="src/assets/favpagebackground.png">
                 <h1 class="absolute left-8 xl:bottom-80 top-10 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl">Your Favorites</h1>
                 <h1 class="absolute left-8 top-30 ml-2 text-3xl font-semibold text-white">Begin your journey towards sustainability.</h1>
@@ -43,7 +43,7 @@
   
                 <h1
                 class="text-center mb-4 text-5xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-                <mark class="px-4 text-white bg-green-600 rounded dark:bg-green-500">Your Journey Awaits</mark>
+                <mark class="px-4 text-white font-bold bg-green-600 rounded dark:bg-green-500">Your Journey Awaits</mark>
                 </h1>
                 <p class="font-bold text-lg text-gray-500 lg:text-xl dark:text-gray-400 text-center">
                 Book your next eco-trip to Singapore now!
