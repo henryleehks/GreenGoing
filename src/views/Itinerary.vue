@@ -13,7 +13,7 @@
   
                 <!-- itinerary search -->
                 <div id="itinerary-search" class="container justify-center absolute left-0 mt-40 md:mt-45 lg:mt-40 xl:mt-40">
-        
+                            
                     <!-- </form> -->
                     <form class="ml-10 mb-5">
                         <label for="default-search" class="mb-2 mx-5 text-xs font-medium text-gray-900 sr-only dark:text-white">Search</label>
@@ -142,6 +142,24 @@
 </template>
 
 <style>
+    #ItineraryListings {
+      border-radius: 10px;
+      margin: 10px auto 30px auto;
+      padding: 10px 10px 10px 10px;
+      width: 100%;
+    }
+
+    td {
+      padding: 10px;
+    }
+
+    tr{
+      background-color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #F1F3F4;
+    }
 </style>
     
 
