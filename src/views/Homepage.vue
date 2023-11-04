@@ -13,7 +13,7 @@
                     <p
                         class="mb-6 text-lg font-bold text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400 text-center">
                         At
-                        <span class="text-green-500 dark:text-green-500">Greengoing</span>, We're Dedicated to Singapore's
+                        <span class="text-green-500 font-bold dark:text-green-500">Greengoing</span>, We're Dedicated to Singapore's
                         Sustainable
                         Travels!
                     </p>
@@ -130,7 +130,7 @@
                             Attractions People</h1>
                         <h1
                             class="text-center mb-4 text-5xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-                            <mark class="px-4 text-white bg-green-600 rounded dark:bg-green-500">LOVE</mark>
+                            <mark class="px-4 font-bold text-white bg-green-600 rounded dark:bg-green-500">LOVE</mark>
                         </h1>
                         <p class="font-bold text-lg text-gray-500 lg:text-xl dark:text-gray-400 text-center">Life is all
                             about
@@ -263,11 +263,15 @@
 
         </columns>
     </div>
+
+    
 </template>
 
 <script>
 
 function floatin() {
+
+    console.log("float-in() start")
 
 }
 
