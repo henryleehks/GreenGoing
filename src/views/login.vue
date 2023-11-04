@@ -1,14 +1,14 @@
 <template>
     <body>
     <!-- Replace this with their navbar, including a redirect back to the homepage -->
-    <header class="header">
+    <!-- <header class="header">
         <a href="../">
             <ion-icon name="arrow-back"></ion-icon>
             Back to Home
-        </a>
-        <a href="../">
-            <!-- <img src="../Greengoing/img/logo.png" href="homepage.html"> -->
-        </a>
+        </a> -->
+        <!-- <a href="../">
+            <img src="../Greengoing/img/logo.png" href="homepage.html">
+        </a> -->
         <!-- <a href="homepage.html"></a> -->
         <!-- <a href="homepage.html"> -->
         <!-- <h2 class="logo">Logo</h2> -->
@@ -25,7 +25,7 @@
             <a href="#">Contact</a>
             <button class="btnLogin-popup">Login</button> -->
         </nav>
-    </header>
+    <!-- </header> -->
 
     <div class="wrapper">
         <!-- <span class="icon-close">
