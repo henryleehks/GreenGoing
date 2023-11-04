@@ -58,7 +58,7 @@
                         document.querySelector(".pro-data").classList.remove("hidden");
 
                         // Redirect to the homepage after login
-                        window.location.href = "../homepage.html?name=" + responsePayload.given_name + "&email=" + responsePayload.email;;
+                        window.location.href = "../?name=" + responsePayload.given_name + "&email=" + responsePayload.email;;
                     }
                 })
                 .catch(console.error);
@@ -81,11 +81,11 @@
 <body>
     <!-- Replace this with their navbar, including a redirect back to the homepage -->
     <header class="header">
-        <a href="../homepage.html">
+        <a href="../">
             <ion-icon name="arrow-back"></ion-icon>
             Back to Home
         </a>
-        <a href="../homepage.html">
+        <a href="../">
             <!-- <img src="../Greengoing/img/logo.png" href="homepage.html"> -->
         </a>
         <!-- <a href="homepage.html"></a> -->
@@ -134,7 +134,7 @@
                     </label>
                     <a href="#">Forgot Password?</a>
                 </div> -->
-                <a href="../homepage.html">
+                <a href="../">
 
                 </a>
                 <button type="submit" id="login"
@@ -323,7 +323,7 @@
                 update(ref(database, 'users/' + user.uid), {
                     last_login: dt,
                 })
-                window.location.href = "../homepage.html?username=" + username + "&email=" + email;
+                window.location.href = "../?username=" + username + "&email=" + email;
                 alert('User logged in!');
             })
             .catch((error) => {

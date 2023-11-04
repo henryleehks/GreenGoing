@@ -74,7 +74,7 @@
 
                         <tr>
                             <td>
-                                <img src="src/assets/homepage background 1.jpg" class="w-50">
+                                <img src="src/assets/home_bg1.jpg" class="w-50">
                             </td>
                             <td>
                                 <h2 class="font-bold text-3xl">Gardens By the Bay</h2>
@@ -93,7 +93,7 @@
 
                         <tr>
                             <td class="w-50 h-50">
-                                <img src="src/assets/homepage background 2.jpeg">
+                                <img src="src/assets/home_bg2.jpeg">
                             </td>
                             <td>
                                 <h2 class="font-bold text-3xl">Bird Paradise</h2>
@@ -112,7 +112,7 @@
 
                         <tr>
                             <td class="w-50 h-50">
-                                <img src="src/assets/homepage background 3.jpg">
+                                <img src="src/assets/home_bg3.jpg">
                             </td>
                             <td>
                                 <h2 class="font-bold text-3xl">Bird Paradise</h2>
@@ -132,6 +132,9 @@
 
                 
                     </table>
+                </div>
+                <div class="hidden p4 rounder-lg bg-gray-50" id="pastbookings" role="tabpanel" aria-labelledby="pastbookings-tab">
+                    <p>past bookings</p>
                 </div>
             </div>
         </div> 
