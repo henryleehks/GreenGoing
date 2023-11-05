@@ -1,9 +1,8 @@
 <style>
-    
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
 * {
-	margin: 0;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif
@@ -20,7 +19,7 @@ body {
     background-attachment: fixed;
 }
 
-header{
+header {
     position: absolute;
     top: 0;
     left: 0;
@@ -141,8 +140,8 @@ header{
 
     position: absolute;
     margin-top: 20px;
-    top: 50%; 
-    left: 50%; 
+    top: 50%;
+    left: 50%;
     /* width: 400px;
     height: 520px;  */
     width: 90%;
@@ -159,7 +158,7 @@ header{
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);
     /* transform: scale(0); */
     transition: transform .18s ease, height .5s ease;
 }
@@ -244,7 +243,7 @@ header{
 
 .input-box input:focus~label,
 .input-box input:valid~label {
-    top: -5px;
+    top: -10px;
 }
 
 .input-box input {
@@ -321,43 +320,50 @@ header{
     text-decoration: underline;
 }
 
-.container{
+.container {
     padding: 20px;
     text-align: center;
     justify-content: center;
     align-items: center;
     display: flex;
 }
-#btnWrap{
+
+#btnWrap {
     max-width: 320px;
 }
-.pro-data{
+
+.pro-data {
     padding: 10px 20px;
     margin: auto;
     width: 350px;
     background-color: #F7F7F7;
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),
-    0 2px 10px 0 rgba(0,0,0,0.12);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+        0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
-.pro-data h3{
+
+.pro-data h3 {
     font-size: 17px;
 }
+
 .pro-data p {
     font-size: 15px;
 }
-.pro-data img{
+
+.pro-data img {
     max-width: 100%;
     margin-bottom: 5px;
 }
-.hidden{
+
+.hidden {
     display: none;
 }
+
 #authResponse {
     font-size: 17px;
     border: 1px dashed;
 }
 
-form > p {
+form>p {
     text-align: center;
     margin-top: 10px;
 }
@@ -367,8 +373,8 @@ form > p {
 
 <template>
     <body>
-    <!-- Replace this with their navbar, including a redirect back to the homepage -->
-    <!-- <header class="header">
+        <!-- Replace this with their navbar, including a redirect back to the homepage -->
+        <!-- <header class="header">
         <a href="../">
             <ion-icon name="arrow-back"></ion-icon>
             Back to Home
@@ -392,153 +398,286 @@ form > p {
             <a href="#">Contact</a>
             <button class="btnLogin-popup">Login</button> -->
         </nav>
-    <!-- </header> -->
+        <!-- </header> -->
 
-    <div class="wrapper">
-        <!-- <span class="icon-close">
+        <div class="wrapper">
+            <!-- <span class="icon-close">
             <ion-icon name="close"></ion-icon>
         </span> -->
 
-        <div class="form-box login">
-            <h2>Login</h2>
-            <form action="#">
-                <div class="input-box">
-                    <span class="icon">
-                        <ion-icon name="mail"></ion-icon>
-                    </span>
-                    <input type="email" id="email-login" class="outline-none" required>
-                    <label>Email</label>
-                </div>
-                <div class="input-box">
-                    <span class="icon">
-                        <ion-icon name="lock-closed"></ion-icon>
-                    </span>
-                    <input type="password" id="password-login" required>
-                    <label>Password</label>
-                </div>
-                <!-- <div class="remember-forgot">
+            <div class="form-box login">
+                <h2>Login</h2>
+                <form action="#">
+                    <div class="input-box">
+                        <span class="icon">
+                            <ion-icon name="mail"></ion-icon>
+                        </span>
+                        <input type="email" id="email-login" class="outline-none" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon">
+                            <ion-icon name="lock-closed"></ion-icon>
+                        </span>
+                        <input type="password" id="password-login" required>
+                        <label>Password</label>
+                    </div>
+                    <!-- <div class="remember-forgot">
                     <label>
                         <input type="checkbox">Remember me
                     </label>
                     <a href="#">Forgot Password?</a>
                 </div> -->
-                <!-- <a href="./">
+                    <!-- <a href="./">
                     
                 </a> -->
-                <button type="submit" id="login"
-                    class="btn text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Login</button>
+                    <button type="submit" id="login"
+                        class="btn text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Login</button>
 
-                <p>or</p>
+                    <p>or</p>
 
-                <div class="container">
-                    <!-- Sign In with Google Button HTML API -->
-                    <div id="btnWrap">
-                        <div id="g_id_onload"
-                            data-client_id="176192187370-3odlpcm2nbk05h3cfh9bcleh3gh7s4c7.apps.googleusercontent.com"
-                            data-context="signin" data-ux_mode="popup" data-callback="handleCredentialResponse"
-                            data-auto_prompt="true"
-                            data-login_uri="../">
+                    <div class="container">
+                        <!-- Sign In with Google Button HTML API -->
+                        <div id="btnWrap">
+                            <div id="g_id_onload"
+                                data-client_id="176192187370-3odlpcm2nbk05h3cfh9bcleh3gh7s4c7.apps.googleusercontent.com"
+                                data-context="signin" data-ux_mode="popup" data-callback="handleCredentialResponse"
+                                data-auto_prompt="true" data-login_uri="../">
+                            </div>
+
+                            <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline"
+                                data-text="signin_with" data-size="large" data-logo_alignment="center">
+                            </div>
                         </div>
 
-                        <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline"
-                            data-text="signin_with" data-size="large" data-logo_alignment="center">
-                        </div>
+                        <!-- Display the user's profile info -->
+                        <div class="pro-data hidden"></div>
+
                     </div>
 
-                    <!-- Display the user's profile info -->
-                    <div class="pro-data hidden"></div>
-
-                </div>
-
-                <div class="login-register">
-                    <p>
-                        Don't have an account?
-                        <a href="#" class="register-link">Register</a>
-                    </p>
+                    <div class="login-register">
+                        <p>
+                            Don't have an account?
+                            <a href="#" class="register-link">Register</a>
+                        </p>
 
 
-                </div>
-            </form>
-        </div>
+                    </div>
+                </form>
+            </div>
 
-        <div class="form-box register">
-            <h2>Registration</h2>
-            <form action="#">
-                <div class="input-box">
-                    <span class="icon">
-                        <ion-icon name="person"></ion-icon>
-                    </span>
-                    <input type="text" id="username" required>
-                    <label>Username</label>
-                </div>
-                <div class="input-box">
-                    <span class="icon">
-                        <ion-icon name="mail"></ion-icon>
-                    </span>
-                    <input type="email" id="email-register" required>
-                    <label>Email</label>
-                </div>
-                <div class="input-box">
-                    <span class="icon">
-                        <ion-icon name="lock-closed"></ion-icon>
-                    </span>
-                    <input type="password" id="password-register" required>
-                    <label>Password</label>
-                </div>
-                <div class="remember-forgot">
-                    <label>
-                        <input type="checkbox" required>I agree to the terms & conditions
-                    </label>
+            <div class="form-box register">
+                <h2>Registration</h2>
+                <form action="#">
+                    <div class="input-box">
+                        <span class="icon">
+                            <ion-icon name="person"></ion-icon>
+                        </span>
+                        <input type="text" id="username" required>
+                        <label>Username</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon">
+                            <ion-icon name="mail"></ion-icon>
+                        </span>
+                        <input type="email" id="email-register" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon">
+                            <ion-icon name="lock-closed"></ion-icon>
+                        </span>
+                        <input type="password" id="password-register" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="remember-forgot">
+                        <label>
+                            <input type="checkbox" required>I agree to the terms & conditions
+                        </label>
 
-                </div>
-                <button type="submit" id="register"
-                    class="btn text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Register</button>
+                    </div>
+                    <button type="submit" id="register"
+                        class="btn text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Register</button>
 
-                <p>or</p>
+                    <p>or</p>
 
-                <div class="container">
-                    <!-- Sign Up with Google Button HTML API -->
-                    <div id="btnWrap">
-                        <div id="g_id_onload"
-                            data-client_id="176192187370-3odlpcm2nbk05h3cfh9bcleh3gh7s4c7.apps.googleusercontent.com"
-                            data-context="signup" data-ux_mode="popup" data-callback="handleCredentialResponse"
-                            data-auto_prompt="true"
-                            data-login_uri="..">
+                    <div class="container">
+                        <!-- Sign Up with Google Button HTML API -->
+                        <div id="btnWrap">
+                            <div id="g_id_onload"
+                                data-client_id="176192187370-3odlpcm2nbk05h3cfh9bcleh3gh7s4c7.apps.googleusercontent.com"
+                                data-context="signup" data-ux_mode="popup" data-callback="handleCredentialResponse"
+                                data-auto_prompt="true" data-login_uri="..">
+                            </div>
+
+                            <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline"
+                                data-text="signup_with" data-size="large" data-logo_alignment="center">
+                            </div>
                         </div>
 
-                        <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline"
-                            data-text="signup_with" data-size="large" data-logo_alignment="center">
-                        </div>
+                        <!-- Display the user's profile info -->
+                        <div class="pro-data hidden"></div>
+
                     </div>
 
-                    <!-- Display the user's profile info -->
-                    <div class="pro-data hidden"></div>
-
-                </div>
-
-                <div class="login-register">
-                    <p>
-                        Already have an account?
-                        <a href="#" class="login-link">Login</a>
-                    </p>
-                </div>
-            </form>
+                    <div class="login-register">
+                        <p>
+                            Already have an account?
+                            <a href="#" class="login-link">Login</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
 
 
 
-    <!-- <script src="login.js"></script>
+        <!-- <script src="login.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script> -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.js"></script> -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.js"></script> -->
 
-</body>
+    </body>
 </template>
 
 <script>
-export default{
-    
+export default {
+    mounted() {
+        function initGoogleSignIn() {
+            gapi.load('auth2', function () {
+                gapi.auth2.init({
+                    client_id: '176192187370-3odlpcm2nbk05h3cfh9bcleh3gh7s4c7.apps.googleusercontent.com'
+                });
+            });
+        }
+
+        // Credential response handler function
+        function handleCredentialResponse(response) {
+            // Post JWT token to server-side
+            fetch("auth_init.php", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ request_type: 'user_auth', credential: response.credential }),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status == 1) {
+                        let responsePayload = data.pdata;
+
+                        // Display the user account data
+                        let profileHTML = '<h3>Welcome ' + responsePayload.given_name + '! <a href="javascript:void(0);" onclick="signOut(' + responsePayload.sub + ');">Sign out</a></h3>';
+                        profileHTML += '<img src="' + responsePayload.picture + '"/><p><b>Auth ID: </b>' + responsePayload.sub + '</p><p><b>Name: </b>' + responsePayload.name + '</p><p><b>Email: </b>' + responsePayload.email + '</p>';
+                        document.getElementsByClassName("pro-data")[0].innerHTML = profileHTML;
+
+                        document.querySelector("#btnWrap").classList.add("hidden");
+                        document.querySelector(".pro-data").classList.remove("hidden");
+
+                        // Redirect to the homepage after login
+                        window.location.href = "../?name=" + responsePayload.given_name + "&email=" + responsePayload.email;;
+                    }
+                })
+                .catch(console.error);
+        }
+
+        // Sign out the user
+        function signOut(authID) {
+            document.getElementsByClassName("pro-data")[0].innerHTML = '';
+            document.querySelector("#btnWrap").classList.remove("hidden");
+            document.querySelector(".pro-data").classList.add("hidden");
+            document.location.href = "https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=http://localhost/is216/greengoing/google-login-api";
+            // document.location.href = "http://localhost/is216/greengoing/homepage.html";
+            // window.location.href = "http://localhost/is216/greengoing/homepage.html";
+        }
+
+        const wrapper = document.querySelector('.wrapper');
+        const loginLink = document.querySelector('.login-link');
+        const registerLink = document.querySelector('.register-link');
+        // const btnPopup = document.querySelector('.btnLogin-popup');
+        const iconClose = document.querySelector('.icon-close');
+
+        registerLink.addEventListener('click', () => {
+            wrapper.classList.add('active');
+        });
+
+        loginLink.addEventListener('click', () => {
+            wrapper.classList.remove('active');
+        });
+
+        // btnPopup.addEventListener('click', ()=> {
+        //     wrapper.classList.add('active-popup');
+        // });
+
+        // iconClose.addEventListener('click', ()=> {
+        //     wrapper.classList.remove('active-popup');
+        // });
+
+        // Inside the registration event listener
+        const register = document.getElementById('register');
+        register.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            // Get email and password from input fields
+            const email = document.getElementById('email-register').value;
+            const password = document.getElementById('password-register').value;
+            const username = document.getElementById('username').value;
+
+            // Use Firebase Authentication to create a new user
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+
+                    // Add user details to the database
+                    set(ref(database, 'users/' + user.uid), {
+                        username: username,
+                        email: email,
+                    }).then(() => {
+                        // Redirect to the desired page
+                        window.location.href = "index.html";
+                    }).catch((error) => {
+                        console.error('Error adding user details to the database', error);
+                    });
+
+                    alert('User created!');
+                })
+                .catch((error) => {
+                    const errorMessage = error.message;
+                    alert(errorMessage);
+                });
+        });
+
+        // Inside the login event listener
+        const login = document.getElementById('login');
+        login.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            // Get email and password from input fields
+            const email = document.getElementById('email-login').value;
+            const password = document.getElementById('password-login').value;
+            const username = email.split("@")[0];
+
+            // Use Firebase Authentication to sign in
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    // User has successfully logged in
+                    const user = userCredential.user;
+
+                    // Update user's last login time
+                    const dt = new Date();
+                    update(ref(database, 'users/' + user.uid), {
+                        last_login: dt,
+                    });
+
+                    // Redirect to the desired page
+                    window.location.href = "homepage.html?username=" + username + "&email=" + email;
+
+                    alert('User logged in!');
+                })
+                .catch((error) => {
+                    const errorMessage = error.message;
+                    alert(errorMessage);
+                });
+        });
+    }
 }
 </script>
