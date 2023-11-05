@@ -1,8 +1,28 @@
-import {doc, setDoc, addDoc,deleteDoc,updateDoc, arrayRemove, arrayUnion} from 'firebase/firestore';
+import {doc, collection, getDoc, setDoc, addDoc,deleteDoc,updateDoc, arrayRemove, arrayUnion} from 'firebase/firestore';
 
-import db from './FireBaseDB.js'
+import {db}from './FireBaseDB.js'
 
 
+async function getDocument(id,db_object){
+    const docRef = doc(db_object,'Entries',id)
+    const docSnap = await getDoc(docRef)
+    if (docSnap.exists()) {
+        
+        // console.log("Document data:", docSnap.data());
+        return docSnap.data()
+      } else {
+        // docSnap.data() will be undefined in this case
+        console.log("No such document!");
+      }
+}
+
+export {
+    getDocument
+}
+
+// ######################################################################
+// ######################################################################
+// ######################################################################
 // the following code is used for users, but can also be used
 // for our Entries
 // #####################################################
