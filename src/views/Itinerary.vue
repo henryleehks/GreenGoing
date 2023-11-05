@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 import { initFlowbite } from 'flowbite'
 export default{
     mounted(){
@@ -6,7 +6,7 @@ export default{
         initFlowbite();
     }
 }
-</script>
+</script> -->
 
 <template>
 <div id="PageContent" class="bg-gradient-to-b from-[bisque] to-[#A6CEAE]">
@@ -34,7 +34,7 @@ export default{
                         <!-- search bar -->
                         <input type="search" id="default-search-itinerary" class="w-full block p-2.5 pl-8 pr-12 text-xs text-gray-900 border border-gray-300 rounded-lg bg-grey-200" placeholder='Search Your Bookings!' required>
                         <!-- submit button -->
-                        <button type="submit" class="text-white absolute right-1 bottom-1.5 bg-neutral-400 hover:bg-neutral-500 focus:ring-4 focus:outline-none focus:ring-[#50A060] font-xsmall rounded-md text-xs px-1 py-1">Search</button>
+                        <button type="submit" onclick="showFilteredResults()" class="text-white absolute right-1 bottom-1.5 bg-neutral-400 hover:bg-neutral-500 focus:ring-4 focus:outline-none focus:ring-[#50A060] font-xsmall rounded-md text-xs px-1 py-1">Search</button>
                     </div>
                 </form>
 
@@ -254,3 +254,24 @@ tr:nth-child(even) {
     background-color: #F1F3F4;
 }
 </style>
+
+<script>
+    
+    import { initFlowbite } from 'flowbite'
+    export default{
+    mounted(){
+        // console.log('hello');
+        initFlowbite();
+        }
+    }
+    
+    // figure out how to import db
+    function showFilteredResults(){
+        var searchInput = document.getElementById('default-search-itinerary')
+        console.log('===START===')
+        // for listing in listings
+        // results = smth.filter(searchInput)
+        string = ``
+        // return string
+    }
+</script>
