@@ -1,3 +1,370 @@
+<style>
+    
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+* {
+	margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('../../src/assets/home_bg3.jpg') no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    /* padding: max(20px 25%); */
+    background: rgba(59, 34, 34, 0.9);
+    /* background: rgba(255, 255, 255, 0.544); */
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    z-index: 99;
+}
+
+.header a {
+    text-decoration: none;
+    color: white;
+    margin-left: 5px;
+    position: relative;
+    font-size: 1.1em;
+}
+
+.header a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.header a:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.logo {
+    font-size: 2em;
+    color: #fff;
+    user-select: none;
+}
+
+/* img {
+    margin-left: 5px;
+    width: 40%;
+    height: 40%;
+} */
+
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navigation a:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.navigation .btnLogin-popup {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+}
+
+.navigation .btnLogin-popup:hover {
+    background: #fff;
+    color: #162938;
+}
+
+.wrapper {
+    /* position: relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px; */
+    /* backdrop-filter: blur(20px); */
+    /* background-color: white;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: scale(0);
+    transition: transform .5s ease, height .2s ease; */
+
+    position: absolute;
+    margin-top: 20px;
+    top: 50%; 
+    left: 50%; 
+    /* width: 400px;
+    height: 520px;  */
+    width: 90%;
+    max-width: 400px;
+    height: 70%;
+    max-height: 620px;
+    background-color: rgba(255, 255, 255, 0.544);
+    border: 2px solid #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(8, 121, 241, 0.5);
+    backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: translate(-50%, -50%); 
+    /* transform: scale(0); */
+    transition: transform .18s ease, height .5s ease;
+}
+
+.wrapper.active-popup {
+    transform: scale(1);
+}
+
+.wrapper.active {
+    margin-top: 35px;
+    height: 570px;
+}
+
+.wrapper .form-box {
+    width: 100%;
+    padding: 40px;
+}
+
+.wrapper .form-box.login {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper.active .form-box.login {
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.wrapper .form-box.register {
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+
+.wrapper.active .form-box.register {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper .icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background-color: #162938;
+    font-size: 2em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.form-box h2 {
+    font-size: 2em;
+    color: #162938;
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #162938;
+    margin: 30px 0;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #162938;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #162938;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #162938;
+    line-height: 57px;
+}
+
+.remember-forgot {
+    font-size: .9em;
+    color: #162938;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input {
+    accent-color: #162938;
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: #162938;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    height: 45px;
+    background-color: #162938;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+}
+
+.login-register {
+    font-size: .9em;
+    color: #162938;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.login-register p a {
+    color: #162938;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-register p a:hover {
+    text-decoration: underline;
+}
+
+.container{
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+#btnWrap{
+    max-width: 320px;
+}
+.pro-data{
+    padding: 10px 20px;
+    margin: auto;
+    width: 350px;
+    background-color: #F7F7F7;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),
+    0 2px 10px 0 rgba(0,0,0,0.12);
+}
+.pro-data h3{
+    font-size: 17px;
+}
+.pro-data p {
+    font-size: 15px;
+}
+.pro-data img{
+    max-width: 100%;
+    margin-bottom: 5px;
+}
+.hidden{
+    display: none;
+}
+#authResponse {
+    font-size: 17px;
+    border: 1px dashed;
+}
+
+form > p {
+    text-align: center;
+    margin-top: 10px;
+}
+</style>
+
+
+
 <template>
     <body>
     <!-- Replace this with their navbar, including a redirect back to the homepage -->
@@ -39,7 +406,7 @@
                     <span class="icon">
                         <ion-icon name="mail"></ion-icon>
                     </span>
-                    <input type="email" id="email-login" required>
+                    <input type="email" id="email-login" class="outline-none" required>
                     <label>Email</label>
                 </div>
                 <div class="input-box">
@@ -55,9 +422,9 @@
                     </label>
                     <a href="#">Forgot Password?</a>
                 </div> -->
-                <a href="../">
-
-                </a>
+                <!-- <a href="./">
+                    
+                </a> -->
                 <button type="submit" id="login"
                     class="btn text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Login</button>
 
@@ -70,7 +437,7 @@
                             data-client_id="176192187370-3odlpcm2nbk05h3cfh9bcleh3gh7s4c7.apps.googleusercontent.com"
                             data-context="signin" data-ux_mode="popup" data-callback="handleCredentialResponse"
                             data-auto_prompt="true"
-                            data-login_uri="https://localhost/is216/greengoing/google-login-api">
+                            data-login_uri="../">
                         </div>
 
                         <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline"
@@ -136,7 +503,7 @@
                             data-client_id="176192187370-3odlpcm2nbk05h3cfh9bcleh3gh7s4c7.apps.googleusercontent.com"
                             data-context="signup" data-ux_mode="popup" data-callback="handleCredentialResponse"
                             data-auto_prompt="true"
-                            data-login_uri="https://localhost/is216/greengoing/google-login-api">
+                            data-login_uri="..">
                         </div>
 
                         <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline"
@@ -169,3 +536,5 @@
 
 </body>
 </template>
+
+<script></script>
