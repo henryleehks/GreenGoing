@@ -482,7 +482,7 @@ img {
 // import { getTADetails, APIKey } from '../db/tripadvisor.js'
 // let obj = await getTADetails(APIKey,'616578')
 // console.log(obj.name)
-
+import { initFlowbite } from 'flowbite'
 
 /* Set the width of the side navigation to 250px */
 function openNav() {
@@ -584,6 +584,14 @@ function sendoverrev(ID, imgurl, Name, address, ratings, misc) {
     reviewcache.push({ ID: ID, imgurl: imgurl, Name: Name, address: address, ratings: ratings, misc: misc });
     window.localStorage.setItem("specificz", JSON.stringify(reviewcache));
     window.location.href = "protoreview.html";
+}
+
+
+export default{
+    mounted(){
+        console.log('hello');
+        initFlowbite();
+    }
 }
 
 

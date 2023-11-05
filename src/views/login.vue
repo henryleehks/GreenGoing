@@ -537,4 +537,8 @@ form > p {
 </body>
 </template>
 
-<script></script>
+<script>
+export default{
+    
+}
+</script>

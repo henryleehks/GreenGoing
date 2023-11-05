@@ -1,4 +1,11 @@
 <script>
+import { initFlowbite } from 'flowbite'
+export default{
+    mounted(){
+        console.log('hello');
+        initFlowbite();
+    }
+}
 </script>
 
 <template>
