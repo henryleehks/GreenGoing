@@ -32,7 +32,7 @@ export default{
                             </svg>
                         </div>
                         <!-- search bar -->
-                        <input type="search" id="default-search-itinerary" class="w-full block p-2.5 pl-8 pr-12 text-xs text-gray-900 border border-gray-300 rounded-lg bg-grey-200" placeholder='Search Experiences!' required>
+                        <input type="search" id="default-search-itinerary" class="w-full block p-2.5 pl-8 pr-12 text-xs text-gray-900 border border-gray-300 rounded-lg bg-grey-200" placeholder='Search Your Bookings!' required>
                         <!-- submit button -->
                         <button type="submit" class="text-white absolute right-1 bottom-1.5 bg-neutral-400 hover:bg-neutral-500 focus:ring-4 focus:outline-none focus:ring-[#50A060] font-xsmall rounded-md text-xs px-1 py-1">Search</button>
                     </div>
@@ -59,8 +59,8 @@ export default{
             <div class="hidden p-4 rounded-lg bg-gray-50" id="yourbookings" role="tabpanel" aria-labelledby="yourbookings-tab">
                 <table id="ItineraryListings" class="justify-center items-center">
                     <tr>
-                        <td class="w-50 h-50">
-                            <img src="src/assets/bird-paradise-crimson-wetlands.png">
+                        <td>
+                            <img src="src/assets/bird-paradise-crimson-wetlands.png" class="w-50 h-50">
                         </td>
                         <td>
                             <h2 class="font-bold text-3xl">Bird Paradise (current booking)</h2>
@@ -79,7 +79,7 @@ export default{
 
                     <tr>
                         <td>
-                            <img src="src/assets/home_bg1.jpg" class="w-50">
+                            <img src="src/assets/home_bg1.jpg" class="w-50 h-50">
                         </td>
                         <td>
                             <h2 class="font-bold text-3xl">Gardens By the Bay</h2>
@@ -98,7 +98,7 @@ export default{
 
                     <tr>
                         <td class="w-50 h-50">
-                            <img src="src/assets/home_bg2.jpeg">
+                            <img src="src/assets/home_bg2.jpeg" class="w-50 h-50">
                         </td>
                         <td>
                             <h2 class="font-bold text-3xl">Bird Paradise</h2>
@@ -117,7 +117,7 @@ export default{
 
                     <tr>
                         <td class="w-50 h-50">
-                            <img src="src/assets/home_bg3.jpg">
+                            <img src="src/assets/home_bg3.jpg" class="w-50 h-50">
                         </td>
                         <td>
                             <h2 class="font-bold text-3xl">Bird Paradise</h2>
@@ -136,9 +136,95 @@ export default{
 
                 </table>
             </div>
-            <div class="hidden p4 rounder-lg bg-gray-50" id="pastbookings" role="tabpanel" aria-labelledby="pastbookings-tab">
-                <p>past bookings</p>
+
+
+            <!-- Past booking content -->
+            <div class="hidden p-4 rounded-lg bg-gray-50" id="pastbookings" role="tabpanel" aria-labelledby="pastbookings-tab">
+                <table id="ItineraryListings" class="justify-center items-center">
+                    <tr>
+                        <td>
+                            <img src="src/assets/bird-paradise-crimson-wetlands.png" class="w-50 h-50">
+                        </td>
+                        <td>
+                            <h2 class="font-bold text-3xl">Bird Paradise (past booking)</h2>
+                            <h2 class="font-bold text-xl">Date: 11/11/23</h2>
+                            <h2 class="font-bold text-xl">Time: 1300 - 1900</h2>
+                            <p class="text-lg">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, repudiandae saepe commodi voluptatum
+                                perspiciatis natus corporis cupiditate totam odio voluptate possimus? Incidunt enim maxime earum
+                                consequuntur fugiat quo accusantium officiis.</p>
+                            <a href="#">
+                                <button class= "w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-md px-5 py-2.5 mt-8 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                    Leave a review
+                                </button>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <img src="src/assets/home_bg1.jpg" class="w-50 h-50">
+                        </td>
+                        <td>
+                            <h2 class="font-bold text-3xl">Gardens By the Bay</h2>
+                            <h2 class="font-bold text-xl">Date: 25/12/23</h2>
+                            <h2 class="font-bold text-xl">Time: 2000</h2>
+                            <p class="text-lg">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, repudiandae saepe commodi voluptatum
+                                perspiciatis natus corporis cupiditate totam odio voluptate possimus? Incidunt enim maxime earum
+                                consequuntur fugiat quo accusantium officiis.</p>
+                            <a href="#">
+                                <button class= "w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-md px-5 py-2.5 mt-8 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                    Leave a review
+                                </button>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="w-50 h-50">
+                            <img src="src/assets/home_bg2.jpeg" class="w-50 h-50">
+                        </td>
+                        <td>
+                            <h2 class="font-bold text-3xl">Bird Paradise</h2>
+                            <h2 class="font-bold text-xl">Date: 11/11/23</h2>
+                            <h2 class="font-bold text-xl">Time: 1300 - 1900</h2>
+                            <p class="text-lg">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, repudiandae saepe commodi voluptatum
+                                perspiciatis natus corporis cupiditate totam odio voluptate possimus? Incidunt enim maxime earum
+                                consequuntur fugiat quo accusantium officiis.</p>
+                            <a href="#">
+                                <button class= "w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-md px-5 py-2.5 mt-8 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                    Leave a review
+                                </button>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="w-50 h-50">
+                            <img src="src/assets/home_bg3.jpg" class="w-50 h-50">
+                        </td>
+                        <td>
+                            <h2 class="font-bold text-3xl">Bird Paradise</h2>
+                            <h2 class="font-bold text-xl">Date: 11/11/23</h2>
+                            <h2 class="font-bold text-xl">Time: 1300 - 1900</h2>
+                            <p class="text-lg">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, repudiandae saepe commodi voluptatum
+                                perspiciatis natus corporis cupiditate totam odio voluptate possimus? Incidunt enim maxime earum
+                                consequuntur fugiat quo accusantium officiis.</p>
+                            <a href="#">
+                                <button class= "w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-md px-5 py-2.5 mt-8 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                    Leave a review
+                                </button>
+                            </a>
+                        </td>
+                    </tr>
+
+                </table>
+                
+                
+                
+                
+                
             </div>
+            
         </div>
     </div>
 </div>
@@ -150,6 +236,10 @@ export default{
     margin: 10px auto 30px auto;
     padding: 10px 10px 10px 10px;
     width: 100%;
+}
+
+table {
+    color: black;
 }
 
 td {
