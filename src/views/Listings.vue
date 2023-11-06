@@ -2,7 +2,7 @@
 <div>
     <!-- Your body content -->
     <section class="w-full h-1/2 bg-center bg-thisbg bg-cover bg-no-repeat">
-        <div class="sticky z-0 h-80 w-full">
+        <div class="sticky z-0 h-full w-full">
             <img :src="this_img" class="absolute object-cover w-full h-full z-0">
             <div class="sticky top-1/2 px-4 mx-auto max-w-screen-xl text-center">
                 <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
@@ -22,6 +22,15 @@
     </section>
 
     <div class="mb-4 border-b border-gray-200">
+        <h1 class="font-bold text-3xl p-3">{{ info.Name }}</h1>
+        <h1 class="p-3 justify-start">{{ info.Description }}</h1>
+        <div class="container justify-start">
+            <ul>
+                <li class="text-start"><span class="text-lg p-1 font-bold text-emerald-600">Address:</span> {{ info.Address }}</li>
+                <li class="text-start"><span class="text-lg p-1 font-bold text-emerald-600">Price Level:</span> {{ info.Price_level }}</li>
+                <li class="text-start bg-green-500 flex w-fit p-1 rounded-lg"><a :href="info.WebUrl" class="text-lg font-bold text-slate-50 ">Link to Tripadvisor</a></li>
+            </ul>
+        </div>
         <ul class="flex flex-wrap -mb-px text-sm sm:text-md md:text-md font-medium text-center" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist">
             <li class="mr-2" role="presentation">
                 <button class="inline-block p-4 border-b-2 rounded-t-lg" id="tripadvisor-tab" data-tabs-target="#tripadvisorbookings" type="button" role="tab" aria-controls="yourbookings" aria-selected="false">Tripadvisor Reviews</button>
