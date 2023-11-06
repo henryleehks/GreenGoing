@@ -597,7 +597,8 @@ export default {
         //     // document.location.href = "http://localhost/is216/greengoing/homepage.html";
         //     // window.location.href = "http://localhost/is216/greengoing/homepage.html";
         // }
-
+        
+        // Toggle btwn Login and Register 
         const wrapper = document.querySelector('.wrapper');
         const loginLink = document.querySelector('.login-link');
         const registerLink = document.querySelector('.register-link');
@@ -611,30 +612,6 @@ export default {
         loginLink.addEventListener('click', () => {
             wrapper.classList.remove('active');
         });
-
-        // btnPopup.addEventListener('click', ()=> {
-        //     wrapper.classList.add('active-popup');
-        // });
-
-        // iconClose.addEventListener('click', ()=> {
-        //     wrapper.classList.remove('active-popup');
-        // });
-
-        // const firebaseConfig = {
-        //     apiKey: "AIzaSyBWD2dz3Bj8knRkHD5wgn7X5ly1eVkygSc",
-        //     authDomain: "greengoing-8e009.firebaseapp.com",
-        //     databaseURL: "https://greengoing-8e009-default-rtdb.asia-southeast1.firebasedatabase.app",
-        //     projectId: "greengoing-8e009",
-        //     storageBucket: "greengoing-8e009.appspot.com",
-        //     messagingSenderId: "892747843777",
-        //     appId: "1:892747843777:web:367a797620802e6fff2c40"
-        // };
-
-        // // Initialize Firebase
-        // const app = initializeApp(firebaseConfig);
-        // // const analytics = getAnalytics(app);
-        // const database = getDatabase(app);
-        // const auth = getAuth();
 
         // Inside the registration event listener
         const register = document.getElementById('register');
@@ -655,10 +632,14 @@ export default {
                     set(ref(login_db, 'users/' + user.uid), {
                         username: username,
                         email: email,
-                    }).then(() => {
+                    })
+                    .then(() => {
                         // Redirect to the desired page
-                        window.location.href = "../";
-                    }).catch((error) => {
+                        // window.location.href = "../";
+                        window.location.reload();
+                        alert('User created!');
+                    })
+                    .catch((error) => {
                         console.error('Error adding user details to the database', error);
                     });
 
@@ -694,7 +675,7 @@ export default {
                     });
 
                     // Redirect to the desired page
-                    window.location.href = "../?username=" + username + "&email=" + email;
+                    // window.location.href = "../?username=" + username + "&email=" + email;
 
                     alert('User logged in!');
                 })
