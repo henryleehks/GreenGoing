@@ -434,11 +434,11 @@ form>p {
                     <button type="submit" id="login"
                         class="btn text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Login</button>
 
-                    <p>or</p>
+                    <!-- <p>or</p>
 
-                    <div class="container">
-                        <!-- Sign In with Google Button HTML API -->
-                        <div id="btnWrap">
+                    <div class="container"> -->
+                    <!-- Sign In with Google Button HTML API -->
+                    <!-- <div id="btnWrap">
                             <div id="g_id_onload"
                                 data-client_id="176192187370-3odlpcm2nbk05h3cfh9bcleh3gh7s4c7.apps.googleusercontent.com"
                                 data-context="signin" data-ux_mode="popup" data-callback="handleCredentialResponse"
@@ -448,12 +448,12 @@ form>p {
                             <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline"
                                 data-text="signin_with" data-size="large" data-logo_alignment="center">
                             </div>
-                        </div>
+                        </div> -->
 
-                        <!-- Display the user's profile info -->
-                        <div class="pro-data hidden"></div>
+                    <!-- Display the user's profile info -->
+                    <!-- <div class="pro-data hidden"></div>
 
-                    </div>
+                    </div> -->
 
                     <div class="login-register">
                         <p>
@@ -499,11 +499,11 @@ form>p {
                     <button type="submit" id="register"
                         class="btn text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Register</button>
 
-                    <p>or</p>
+                    <!-- <p>or</p> -->
 
-                    <div class="container">
-                        <!-- Sign Up with Google Button HTML API -->
-                        <div id="btnWrap">
+                    <!-- <div class="container"> -->
+                    <!-- Sign Up with Google Button HTML API -->
+                    <!-- <div id="btnWrap">
                             <div id="g_id_onload"
                                 data-client_id="176192187370-3odlpcm2nbk05h3cfh9bcleh3gh7s4c7.apps.googleusercontent.com"
                                 data-context="signup" data-ux_mode="popup" data-callback="handleCredentialResponse"
@@ -513,12 +513,12 @@ form>p {
                             <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline"
                                 data-text="signup_with" data-size="large" data-logo_alignment="center">
                             </div>
-                        </div>
+                        </div> -->
 
-                        <!-- Display the user's profile info -->
-                        <div class="pro-data hidden"></div>
+                    <!-- Display the user's profile info -->
+                    <!-- <div class="pro-data hidden"></div>
 
-                    </div>
+                    </div> -->
 
                     <div class="login-register">
                         <p>
@@ -541,54 +541,62 @@ form>p {
     </body>
 </template>
 
-<script>
+<script type="module">
+// import { firebaseConfig } from "../db/FireBaseDB";
+// import { cart, loggedInUser } from "../db/localstore";
+// import { initializeApp } from "firebase/app";
+// import { getFirestore } from "firebase/firestore";
+import { app, db, login_db, auth } from "../db/FireBaseDB";
+import { set, ref, update } from "firebase/database";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+
 export default {
     mounted() {
-        function initGoogleSignIn() {
-            gapi.load('auth2', function () {
-                gapi.auth2.init({
-                    client_id: '176192187370-3odlpcm2nbk05h3cfh9bcleh3gh7s4c7.apps.googleusercontent.com'
-                });
-            });
-        }
+        // function initGoogleSignIn() {
+        //     gapi.load('auth2', function () {
+        //         gapi.auth2.init({
+        //             client_id: '176192187370-3odlpcm2nbk05h3cfh9bcleh3gh7s4c7.apps.googleusercontent.com'
+        //         });
+        //     });
+        // }
 
         // Credential response handler function
-        function handleCredentialResponse(response) {
-            // Post JWT token to server-side
-            fetch("auth_init.php", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ request_type: 'user_auth', credential: response.credential }),
-            })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.status == 1) {
-                        let responsePayload = data.pdata;
+        // function handleCredentialResponse(response) {
+        //     // Post JWT token to server-side
+        //     fetch("auth_init.php", {
+        //         method: "POST",
+        //         headers: { "Content-Type": "application/json" },
+        //         body: JSON.stringify({ request_type: 'user_auth', credential: response.credential }),
+        //     })
+        //         .then(response => response.json())
+        //         .then(data => {
+        //             if (data.status == 1) {
+        //                 let responsePayload = data.pdata;
 
-                        // Display the user account data
-                        let profileHTML = '<h3>Welcome ' + responsePayload.given_name + '! <a href="javascript:void(0);" onclick="signOut(' + responsePayload.sub + ');">Sign out</a></h3>';
-                        profileHTML += '<img src="' + responsePayload.picture + '"/><p><b>Auth ID: </b>' + responsePayload.sub + '</p><p><b>Name: </b>' + responsePayload.name + '</p><p><b>Email: </b>' + responsePayload.email + '</p>';
-                        document.getElementsByClassName("pro-data")[0].innerHTML = profileHTML;
+        //                 // Display the user account data
+        //                 let profileHTML = '<h3>Welcome ' + responsePayload.given_name + '! <a href="javascript:void(0);" onclick="signOut(' + responsePayload.sub + ');">Sign out</a></h3>';
+        //                 profileHTML += '<img src="' + responsePayload.picture + '"/><p><b>Auth ID: </b>' + responsePayload.sub + '</p><p><b>Name: </b>' + responsePayload.name + '</p><p><b>Email: </b>' + responsePayload.email + '</p>';
+        //                 document.getElementsByClassName("pro-data")[0].innerHTML = profileHTML;
 
-                        document.querySelector("#btnWrap").classList.add("hidden");
-                        document.querySelector(".pro-data").classList.remove("hidden");
+        //                 document.querySelector("#btnWrap").classList.add("hidden");
+        //                 document.querySelector(".pro-data").classList.remove("hidden");
 
-                        // Redirect to the homepage after login
-                        window.location.href = "../?name=" + responsePayload.given_name + "&email=" + responsePayload.email;;
-                    }
-                })
-                .catch(console.error);
-        }
+        //                 // Redirect to the homepage after login
+        //                 window.location.href = "../?name=" + responsePayload.given_name + "&email=" + responsePayload.email;;
+        //             }
+        //         })
+        //         .catch(console.error);
+        // }
 
         // Sign out the user
-        function signOut(authID) {
-            document.getElementsByClassName("pro-data")[0].innerHTML = '';
-            document.querySelector("#btnWrap").classList.remove("hidden");
-            document.querySelector(".pro-data").classList.add("hidden");
-            document.location.href = "https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=http://localhost/is216/greengoing/google-login-api";
-            // document.location.href = "http://localhost/is216/greengoing/homepage.html";
-            // window.location.href = "http://localhost/is216/greengoing/homepage.html";
-        }
+        // function signOut(authID) {
+        //     document.getElementsByClassName("pro-data")[0].innerHTML = '';
+        //     document.querySelector("#btnWrap").classList.remove("hidden");
+        //     document.querySelector(".pro-data").classList.add("hidden");
+        //     document.location.href = "https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=http://localhost/is216/greengoing/google-login-api";
+        //     // document.location.href = "http://localhost/is216/greengoing/homepage.html";
+        //     // window.location.href = "http://localhost/is216/greengoing/homepage.html";
+        // }
 
         const wrapper = document.querySelector('.wrapper');
         const loginLink = document.querySelector('.login-link');
@@ -612,6 +620,22 @@ export default {
         //     wrapper.classList.remove('active-popup');
         // });
 
+        // const firebaseConfig = {
+        //     apiKey: "AIzaSyBWD2dz3Bj8knRkHD5wgn7X5ly1eVkygSc",
+        //     authDomain: "greengoing-8e009.firebaseapp.com",
+        //     databaseURL: "https://greengoing-8e009-default-rtdb.asia-southeast1.firebasedatabase.app",
+        //     projectId: "greengoing-8e009",
+        //     storageBucket: "greengoing-8e009.appspot.com",
+        //     messagingSenderId: "892747843777",
+        //     appId: "1:892747843777:web:367a797620802e6fff2c40"
+        // };
+
+        // // Initialize Firebase
+        // const app = initializeApp(firebaseConfig);
+        // // const analytics = getAnalytics(app);
+        // const database = getDatabase(app);
+        // const auth = getAuth();
+
         // Inside the registration event listener
         const register = document.getElementById('register');
         register.addEventListener('click', (e) => {
@@ -628,12 +652,12 @@ export default {
                     const user = userCredential.user;
 
                     // Add user details to the database
-                    set(ref(database, 'users/' + user.uid), {
+                    set(ref(login_db, 'users/' + user.uid), {
                         username: username,
                         email: email,
                     }).then(() => {
                         // Redirect to the desired page
-                        window.location.href = "index.html";
+                        window.location.href = "../";
                     }).catch((error) => {
                         console.error('Error adding user details to the database', error);
                     });
@@ -641,6 +665,7 @@ export default {
                     alert('User created!');
                 })
                 .catch((error) => {
+                    // const errorCode = error.code;
                     const errorMessage = error.message;
                     alert(errorMessage);
                 });
@@ -664,12 +689,12 @@ export default {
 
                     // Update user's last login time
                     const dt = new Date();
-                    update(ref(database, 'users/' + user.uid), {
+                    update(ref(login_db, 'users/' + user.uid), {
                         last_login: dt,
                     });
 
                     // Redirect to the desired page
-                    window.location.href = "homepage.html?username=" + username + "&email=" + email;
+                    window.location.href = "../?username=" + username + "&email=" + email;
 
                     alert('User logged in!');
                 })
@@ -678,6 +703,33 @@ export default {
                     alert(errorMessage);
                 });
         });
+
+        const user = auth.currentUser;
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // User is signed in, see docs for a list of available properties
+                // https://firebase.google.com/docs/reference/js/auth.user
+                const uid = user.uid;
+                // ...
+            } else {
+                // User is signed out
+                // ...
+            }
+        });
+
+        // Logout function
+        const logout = document.getElementById('logout')
+        logout.addEventListener('click', (e) => {
+            signOut(auth).then(() => {
+                // Sign-out successful.
+                alert('User Logged Out')
+            }).catch((error) => {
+                // An error happened.
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                alert(errorMessage);
+            });
+        })
     }
 }
 </script>
