@@ -1,6 +1,3 @@
-<script>
-</script>
-
 <template>
 <div onload="floatin()">
     <div class="flex flex-col flex-1">
@@ -114,104 +111,17 @@
                         new experiences!</p>
                 </div>
 
-                <div id="PageContent" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 place-items-center content-center">
-
-                    <div id="item-1-card" class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-[4000ms]">
-                        <a href="#">
-                            <img class="p-8 rounded-t-lg" src="Justin checkout\img\a.jpg" alt="product image" />
-                        </a>
-                        <div class="px-5 pb-5">
-                            <a href="#">
-                                <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                                    Wild Wild Wet
-                                </h5>
-                            </a>
-                            <div class="flex items-center mt-2.5 mb-5">
-                                <img class="w-4 h-4" src="../assets/color_tree.png">
-                                <img class="w-4 h-4" src="../assets/color_tree.png">
-                                <img class="w-4 h-4" src="../assets/color_tree.png">
-                                <img class="w-4 h-4" src="../assets/color_tree.png">
-                                <img class="w-4 h-4" src="../assets/grey_tree.png">
-                                <span class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">4.0</span>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <span class="text-3xl font-bold text-gray-900 dark:text-white">$30</span>
-                                <a href="#" class="text-white bg-blue-[4000ms] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-[4000ms] dark:focus:ring-blue-800">View</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="item-2-card" class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-[4000ms]">
-                        <a href="#">
-                            <img class="p-8 rounded-t-lg" src="Justin checkout\img\b.png" alt="product image" />
-                        </a>
-                        <div class="px-5 pb-5">
-                            <a href="#">
-                                <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Birds'
-                                    Paradise</h5>
-                            </a>
-                            <div class="flex items-center mt-2.5 mb-5">
-                                <img class="w-4 h-4" src="../assets/color_tree.png">
-                                <img class="w-4 h-4" src="../assets/color_tree.png">
-                                <img class="w-4 h-4" src="../assets/color_tree.png">
-                                <img class="w-4 h-4" src="../assets/color_tree.png">
-                                <img class="w-4 h-4" src="../assets/grey_tree.png">
-                                <span class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">4.0</span>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <span class="text-3xl font-bold text-gray-900 dark:text-white">$60</span>
-                                <a href="#" class="text-white bg-blue-[4000ms] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-[4000ms] dark:focus:ring-blue-800">View</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="item-3-card" class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-[4000ms]">
-                        <a href="#">
-                            <img class="p-8 rounded-t-lg" src="Justin checkout\img\c.jpg" alt="product image" />
-                        </a>
-                        <div class="px-5 pb-5">
-                            <a href="#">
-                                <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Gardens
-                                    By
-                                    the Bay</h5>
-                            </a>
-                            <div class="flex items-center mt-2.5 mb-5">
-                                <img class="w-4 h-4" src="../assets/color_tree.png">
-                                <img class="w-4 h-4" src="../assets/color_tree.png">
-                                <img class="w-4 h-4" src="../assets/color_tree.png">
-                                <img class="w-4 h-4" src="../assets/color_tree.png">
-                                <img class="w-4 h-4" src="../assets/grey_tree.png">
-                                <span class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">4.0</span>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <span class="text-3xl font-bold text-gray-900 dark:text-white">$52</span>
-                                <a href="#" class="text-white bg-blue-[4000ms] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-[4000ms] dark:focus:ring-blue-800">View</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="item-4-card" class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-[4000ms]">
-                        <a href="#">
-                            <img class="p-8 rounded-t-lg" src="Justin checkout\img\d.jpg" alt="product image" />
-                        </a>
-                        <div class="px-5 pb-5">
-                            <a href="#">
-                                <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Changi
-                                    Airport, Jewel</h5>
-                            </a>
-                            <div class="flex items-center mt-2.5 mb-5">
-                                <img class="w-4 h-4" src="../assets/color_tree.png">
-                                <img class="w-4 h-4" src="../assets/color_tree.png">
-                                <img class="w-4 h-4" src="../assets/color_tree.png">
-                                <img class="w-4 h-4" src="../assets/color_tree.png">
-                                <img class="w-4 h-4" src="../assets/grey_tree.png">
-                                <span class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">4.0</span>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <span class="text-3xl font-bold text-gray-900 dark:text-white">$10</span>
-                                <a href="#" class="text-white bg-blue-[4000ms] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-[4000ms] dark:focus:ring-blue-800">View</a>
-                            </div>
-                        </div>
+                <div id="PageContent" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 place-items-center content-center">
+                        
+                        <itemCardVue
+                            v-for="doc of allDocs"
+                            :cardID = doc.ID
+                            :cardName= doc.Data.Name
+                            :cardImg = doc.Data.images[0]
+                            :cardRating = doc.Data.rating
+                            :cardRatingImg = doc.Data.rating_img
+                        >
+                        </itemCardVue>
                     </div>
 
                 </div>
@@ -221,25 +131,34 @@
         </div>
 
     </div>
-</div>
 </template>
 
 <script>
-// import {scripts} from './externalJs.js'
-// console.log(scripts[0])
-// import {router} from '../router/index.js'
 import { initCarousels, initDropdowns } from 'flowbite'
-
+import itemCardVue from '../components/itemCard.vue'
+import {getAllDocuments} from '../db/dbfunctions.js'
+import {db} from '../db/FireBaseDB.js'
 function floatin() {
     require('tailwind')
     console.log("float-in() start")
 
 }
+
+const allDocs = await getAllDocuments(db)
+
+
 export default{
-    mounted(){
+    mounted() {
         console.log('hello');
         initCarousels();
         initDropdowns();
+    },
+    components: { itemCardVue },
+    data(){
+        return {
+            allDocs
+        }
+
     }
 }
 </script>

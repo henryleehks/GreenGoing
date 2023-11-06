@@ -4,9 +4,11 @@
         <div class=" flex flex-wrap items-center justify-between mx-auto p-4">
     
             <!-- GreenGoing logo -->
-            <div class="flex items-center">
-                <img src="src/assets/logo.png" class="h-14 mr-3" alt="GreenGoing Logo" />
-            </div>
+            <RouterLink to="/">
+                <div class="flex items-center">
+                    <img src="src/assets/logo.png" class="h-14 mr-3" alt="GreenGoing Logo" />
+                </div>
+            </RouterLink>
     
             
     
@@ -77,9 +79,8 @@
                                 </li>
                             </ul>
                             <div class="py-1">
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-emerald-700 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Sign
-                                    out
-                                </a>
+                                <RouterLink to="/login" class="block px-4 py-2 text-sm text-gray-700 hover:bg-emerald-700 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Sign In
+                                </RouterLink>
                             </div>
                         </div>
                     </li>
