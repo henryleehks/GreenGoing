@@ -25,30 +25,30 @@
 
                             <div class="hidden duration-1000 ease-in-out" data-carousel-item>
                                 <img src="../assets/home_bg1.jpg"
-                                    class="w-full h-64 lg:h-full object-fill relative block w-full shadow-xl"
+                                    class="w-full h-64 lg:h-full object-cover relative block w-full shadow-xl"
                                     alt="Gardens By the Bay">
                             </div>
 
                             <div class="hidden duration-1000 ease-in-out" data-carousel-item>
                                 <img src="../assets/home_bg2.jpeg"
-                                    class="w-full h-64 lg:h-full object-fill relative block w-full shadow-xl"
+                                    class="w-full h-64 lg:h-full object-cover relative block w-full shadow-xl"
                                     alt="Henderson Waves">
                             </div>
 
                             <div class="hidden duration-1000 ease-in-out" data-carousel-item>
                                 <img src="../assets/home_bg3.jpg"
-                                    class="h-64 lg:h-full object-fill relative block w-full shadow-xl" alt="Changi Jewel">
+                                    class="h-64 lg:h-full object-cover relative block w-full shadow-xl" alt="Changi Jewel">
                             </div>
 
                             <div class="hidden duration-1000 ease-in-out" data-carousel-item>
                                 <img src="../assets/home_bg4.jpg"
-                                    class="w-full h-64 lg:h-full object-fill relative block w-full shadow-xl"
+                                    class="w-full h-64 lg:h-full object-cover relative block w-full shadow-xl"
                                     alt="Kampung Admirality">
                             </div>
 
                             <div class="hidden duration-1000 ease-in-out" data-carousel-item>
                                 <img src="../assets/home_bg5.jpg"
-                                    class="w-full h-64 lg:h-full object-fill relative block w-full shadow-xl"
+                                    class="w-full h-64 lg:h-full object-cover relative block w-full shadow-xl"
                                     alt="Cycling by Marina Bay">
                             </div>
                         </div>
