@@ -60,7 +60,7 @@
             </button>
             <div class="px-6 py-6 lg:px-8">
                 <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Leave a review!</h3>
-                <form class="space-y-6" action="#">
+                <form class="space-y-6" action="/"> <!-- idk how to get this to WORK HAIZ-->
                     <div>
                         <label for="review_title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Review Title</label>
                         <input type="text" name="review_title" id="review_title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-emerald-500 focus:border-emerald-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Review Title" required>
@@ -70,7 +70,7 @@
                         <input type="text" name="review_text" id="review_text" placeholder="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-emerald-500 focus:border-emerald-500 block w-full h-40 p-2.5  dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
                     </div>
 
-                    <button type="submit" class="w-full text-white bg-emerald-700 hover:bg-emerald-800 focus:ring-4 focus:outline-none focus:ring-emerald-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-emerald-600 dark:hover:bg-emerald-700 dark:focus:ring-emerald-800">Submit your Review</button>
+                    <button type="submit" @click="addReview(db,thisID,the_review_obj)" class="w-full text-white bg-emerald-700 hover:bg-emerald-800 focus:ring-4 focus:outline-none focus:ring-emerald-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-emerald-600 dark:hover:bg-emerald-700 dark:focus:ring-emerald-800">Submit your Review</button>
 
                 </form>
             </div>
@@ -104,24 +104,36 @@
 <script setup>
 import {initFlowbite} from 'flowbite';
 import {currentID} from '../db/localstore.js';
-import {getDocument} from '../db/dbfunctions';
+import {getDocument,addGGReview} from '../db/dbfunctions';
 import {db} from '../db/FireBaseDB';
-import { onMounted, Suspense } from 'vue';
+import { onMounted, Suspense,ref } from 'vue';
 import reviewdata from '../components/reviewdata.vue'
 import { RouterLink } from 'vue-router';
 
 onMounted(initFlowbite)
 
+function onsubmit(e){
+    e.preventDefault()
+}
+
+const the_review_obj = ref({
+    rev_username: 'John Doe',
+    rev_title:'my first review',
+    rev_text:'hello world!',
+    rev_rating:'4'
+})
+
+async function addReview(db,id,review_obj){
+    console.log('start')
+    addGGReview(db,id,review_obj)   
+    console.log('end')
+}
+
+
 const thisID = currentID.currentID
-console.log(thisID)
 const info = await getDocument(thisID, db)
-console.log(info)
 const this_reviews = info.reviews
 const this_img = info.images[0]
-console.log(this_img)
-console.log(this_reviews)
-
-console.log(currentID.currentID)
 
 
 

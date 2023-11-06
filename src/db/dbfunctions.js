@@ -30,11 +30,39 @@ async function getAllDocuments(db_object){
     return results
 }
 
+async function addGGReview(db,id,review){
+  console.log('test1')
+  console.log(review)
+  console.log(db)
+  console.log(id)
+  const doc_to_update = doc(db,'Entries',id)
+  console.log('test2')
+  console.log(doc)
+  const result = await updateDoc(doc_to_update, {
+    GGReviews: arrayUnion(
+        {
+          Name:review.rev_username,
+          Title:review.rev_title,
+          Text:review.rev_text,
+          Rating:review.rev_rating
+        }
+      )
+   }
+  )
+  if(result.exists()){
+    console.log('review added succesfully')
+  }
+  else{
+    console.log('review add failed')
+  }
 
+
+}
 
 export {
     getDocument,
-    getAllDocuments
+    getAllDocuments,
+    addGGReview
 }
 
 // // ######################################################################
