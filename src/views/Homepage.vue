@@ -53,7 +53,7 @@
                                         <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
                                     </svg>
                                 </div>
-                                <input datepicker data-date-format="dd/mm/yyyy" datepicker-autohide name="start" type="text" class="bg-gray-50 border border-gray-300 text-emerald-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2 dark:bg-gray-[4000ms] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Start Date">
+                                <input datepicker data-date-format="dd/mm/yyyy" datepicker-autohide name="start" type="text" class="bg-gray-50 border border-gray-300 text-emerald-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2 dark:bg-gray-[4000ms] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Start Date">
                             </div>
 
                             <span class="hidden md:block mx-4 text-gray-500">to</span>
@@ -64,7 +64,7 @@
                                         <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
                                     </svg>
                                 </div>
-                                <input datepicker data-date-format="dd/mm/yyyy" datepicker-autohide name="end" type="text" class="bg-gray-50 border border-gray-300 text-emerald-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2 dark:bg-gray-[4000ms] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="End Date">
+                                <input datepicker data-date-format="dd/mm/yyyy" datepicker-autohide name="end" type="text" class="bg-gray-50 border border-gray-300 text-emerald-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2 dark:bg-gray-[4000ms] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="End Date">
                             </div>
                         </div>
 
@@ -73,7 +73,7 @@
                     <div id="travellers-pax-input" class="grid place-items-center row-start-2 grid-cols-6">
                         <div class="col-span-2">
                         </div>
-                        <input type="number" id="visitors" min="1" max="12" class="bg-gray-50 border border-gray-300 text-emerald-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-[4000ms] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 col-span-2 w-full" placeholder="Travellers" required>
+                        <input type="number" id="visitors" min="1" max="12" class="bg-gray-50 border border-gray-300 text-emerald-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-[4000ms] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 col-span-2 w-full" placeholder="Travellers" required>
                         <div class="col-span-2">
                         </div>
                     </div>

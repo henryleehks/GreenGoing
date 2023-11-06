@@ -13,7 +13,11 @@ export default {
   ],
   
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'set1': "url('src/assets/favpagebackground.png')",
+      }
+    },
   },
   plugins: [
     require('flowbite/plugin')
