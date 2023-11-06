@@ -111,7 +111,7 @@
                         new experiences!</p>
                 </div>
 
-                <div id="PageContent" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 place-items-center content-center">
+                <div id="PageContent" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-4 place-items-center content-center">
                         
                         <itemCardVue
                             v-for="doc of allDocs"
@@ -120,6 +120,7 @@
                             :cardImg = doc.Data.images[0]
                             :cardRating = doc.Data.rating
                             :cardRatingImg = doc.Data.rating_img
+                            :card-price=doc.Data.Price_level
                         >
                         </itemCardVue>
                     </div>
