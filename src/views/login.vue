@@ -675,9 +675,10 @@ export default {
                     });
 
                     // Redirect to the desired page
+                    window.location.href = "../";
                     // window.location.href = "../?username=" + username + "&email=" + email;
 
-                    alert('User logged in!');
+                    alert("Welcome, " + username + "! Let's travel sustainably!!");
                 })
                 .catch((error) => {
                     const errorMessage = error.message;
