@@ -434,11 +434,11 @@ form>p {
                     <button type="submit" id="login"
                         class="btn text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Login</button>
 
-                    <p>or</p>
+                    <!-- <p>or</p>
 
-                    <div class="container">
+                    <div class="container"> -->
                         <!-- Sign In with Google Button HTML API -->
-                        <div id="btnWrap">
+                        <!-- <div id="btnWrap">
                             <div id="g_id_onload"
                                 data-client_id="176192187370-3odlpcm2nbk05h3cfh9bcleh3gh7s4c7.apps.googleusercontent.com"
                                 data-context="signin" data-ux_mode="popup" data-callback="handleCredentialResponse"
@@ -448,12 +448,12 @@ form>p {
                             <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline"
                                 data-text="signin_with" data-size="large" data-logo_alignment="center">
                             </div>
-                        </div>
+                        </div> -->
 
                         <!-- Display the user's profile info -->
-                        <div class="pro-data hidden"></div>
+                        <!-- <div class="pro-data hidden"></div>
 
-                    </div>
+                    </div> -->
 
                     <div class="login-register">
                         <p>
@@ -499,11 +499,11 @@ form>p {
                     <button type="submit" id="register"
                         class="btn text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Register</button>
 
-                    <p>or</p>
+                    <!-- <p>or</p> -->
 
-                    <div class="container">
+                    <!-- <div class="container"> -->
                         <!-- Sign Up with Google Button HTML API -->
-                        <div id="btnWrap">
+                        <!-- <div id="btnWrap">
                             <div id="g_id_onload"
                                 data-client_id="176192187370-3odlpcm2nbk05h3cfh9bcleh3gh7s4c7.apps.googleusercontent.com"
                                 data-context="signup" data-ux_mode="popup" data-callback="handleCredentialResponse"
@@ -513,12 +513,12 @@ form>p {
                             <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline"
                                 data-text="signup_with" data-size="large" data-logo_alignment="center">
                             </div>
-                        </div>
+                        </div> -->
 
                         <!-- Display the user's profile info -->
-                        <div class="pro-data hidden"></div>
+                        <!-- <div class="pro-data hidden"></div>
 
-                    </div>
+                    </div> -->
 
                     <div class="login-register">
                         <p>
@@ -541,7 +541,9 @@ form>p {
     </body>
 </template>
 
-<script>
+<script type="module">
+// import { firebaseConfig } from "../db/FireBaseDB.js";
+
 export default {
     mounted() {
         function initGoogleSignIn() {
@@ -633,7 +635,7 @@ export default {
                         email: email,
                     }).then(() => {
                         // Redirect to the desired page
-                        window.location.href = "index.html";
+                        window.location.href = "../";
                     }).catch((error) => {
                         console.error('Error adding user details to the database', error);
                     });
@@ -669,7 +671,7 @@ export default {
                     });
 
                     // Redirect to the desired page
-                    window.location.href = "homepage.html?username=" + username + "&email=" + email;
+                    window.location.href = "../?username=" + username + "&email=" + email;
 
                     alert('User logged in!');
                 })
