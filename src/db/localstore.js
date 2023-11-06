@@ -10,7 +10,7 @@ const cart = reactive({
     inCart: []
 })
 
-export default() => {
+export {
     cart,
     loggedInUser
 }
