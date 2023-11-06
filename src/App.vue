@@ -2,6 +2,7 @@
 import { RouterView } from 'vue-router'
 import Navbar from './components/Navbar.vue'
 import Footerfoot from './components/Footer.vue'
+import { Suspense } from 'vue';
 
 </script>
 
@@ -15,7 +16,7 @@ import Footerfoot from './components/Footer.vue'
   </div>
 
   <div class="flex flex-1 bg-gray-100 overflow-auto">
-    <RouterView class="w-full h-full"></RouterView>
+    <Suspense><RouterView class="w-full h-full"></RouterView></Suspense>
   </div>
 
   <div class="flex h-10 bg-gray-200" style="height: auto;">

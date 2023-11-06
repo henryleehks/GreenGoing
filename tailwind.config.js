@@ -15,7 +15,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'set1': "url('src/assets/favpagebackground.png')",
+        'thisbg': "url('src/assets/favpagebackground.png')",
       }
     },
   },

@@ -164,40 +164,40 @@ export default{
 </script>
 
 <style>
-#topnavbar {
-    background-color: #CFCAC2;
-}
+    #topnavbar {
+        background-color: #CFCAC2;
+    }
 
-#banner-logo {
-    width: 75%;
-    display: block;
-    margin: 20px;
-}
+    #banner-logo {
+        width: 75%;
+        display: block;
+        margin: 20px;
+    }
 
-#default-search {
-    background-color: #CFCAC2;
-    width: 200%;
-}
+    #default-search {
+        background-color: #CFCAC2;
+        width: 200%;
+    }
 
-#default-search-mobile {
-    background-color: #CFCAC2;
-    width: 100%;
-}
+    #default-search-mobile {
+        background-color: #CFCAC2;
+        width: 100%;
+    }
 
-#SearchButton {
-    position: absolute;
-}
+    #SearchButton {
+        position: absolute;
+    }
 
-/* Center the user-input-box to the image */
-#user-input-area {
-    position: relative;
-    padding-bottom: 500px;
-    width: 100%;
-}
+    /* Center the user-input-box to the image */
+    #user-input-area {
+        position: relative;
+        padding-bottom: 500px;
+        width: 100%;
+    }
 
-#user-input-box {
-    height: 145px;
-    margin: auto;
-    background-color: rgb(207, 202, 194, 0.9);
-}
+    #user-input-box {
+        height: 145px;
+        margin: auto;
+        background-color: rgb(207, 202, 194, 0.9);
+    }
 </style>
