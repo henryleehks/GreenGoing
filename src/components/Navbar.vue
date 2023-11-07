@@ -42,11 +42,12 @@
                     </li>
     
                     <li>
-<<<<<<< Updated upstream
-                        <RouterLink to="/" class="block py-2 pl-3 pr-4 text-white hover:bg-neutral-500 rounded md:bg-transparent  md:hover:text-[#50A060] md:p-0" aria-current="page">
-=======
+                        <RouterLink to="/cart" class="block py-2 pl-3 pr-4 text-white rounded hover:bg-neutral-500 md:hover:bg-transparent md:border-0 md:hover:text-[#50A060] md:p-0">
+                            Listings
+                        </RouterLink>
+                    </li>
+                    <li>
                         <RouterLink to="/" class="block py-2 pl-3 pr-4 text-white rounded hover:bg-neutral-500 md:hover:bg-transparent  md:hover:text-[#50A060] md:p-0" aria-current="page">
->>>>>>> Stashed changes
                             Home
                         </RouterLink>
                     </li>
@@ -61,14 +62,6 @@
                             Favourites
                         </RouterLink>
                     </li>
-<<<<<<< Updated upstream
-                    <li>
-                        <RouterLink to="/cart" class="block py-2 pl-3 pr-4 text-white rounded hover:bg-neutral-500 md:hover:bg-transparent md:border-0 md:hover:text-[#50A060] md:p-0">
-                            Listings
-                        </RouterLink>
-                    </li>
-=======
->>>>>>> Stashed changes
     
                     <li>
                         <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-2 pl-3 pr-4  text-white border border-gray-100 hover:bg-[#50A060] md:hover:bg-transparent md:border-0 md:hover:text-[#50A060] md:p-0 md:w-auto">
