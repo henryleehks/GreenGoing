@@ -60,7 +60,7 @@
             </button>
             <div class="px-6 py-6 lg:px-8">
                 <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Leave a review!</h3>
-                <div class="space-y-6"> <!-- idk how to get this to WORK HAIZ-->
+                <form class="space-y-6"> <!-- idk how to get this to WORK HAIZ-->
                     <div>
                         <label for="review_title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Review Title</label>
                         <input type="text" name="review_title" id="review_title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-emerald-500 focus:border-emerald-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Review Title" 
@@ -77,9 +77,8 @@
                         required v-model="the_rating" >
                     </div>
 
-                    <button type="submit" @click="addReview(db,thisID,the_text,the_rating,the_title,currentUser.UserName)" class="w-full text-white bg-emerald-700 hover:bg-emerald-800 focus:ring-4 focus:outline-none focus:ring-emerald-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-emerald-600 dark:hover:bg-emerald-700 dark:focus:ring-emerald-800">Submit your Review</button>
-
-                </div>
+                    <button type="submit" data-modal-hide="authentication-modal" @click="addReview(db,thisID,the_text,the_rating,the_title,currentUser.UserName); router.push('/')" class="w-full text-white bg-emerald-700 hover:bg-emerald-800 focus:ring-4 focus:outline-none focus:ring-emerald-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-emerald-600 dark:hover:bg-emerald-700 dark:focus:ring-emerald-800">Submit your Review</button>
+                </form>
             </div>
         </div>
     </div>
@@ -127,6 +126,7 @@ import { onMounted,ref, defineModel } from 'vue';
 import ggreview from '../components/GGreview.vue'
 import reviewdata from '../components/reviewdata.vue'
 import { RouterLink } from 'vue-router';
+import router from '../router'
 
 onMounted(initFlowbite)
 
