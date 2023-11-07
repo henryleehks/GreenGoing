@@ -1,4 +1,4 @@
-import {doc, collection, getDoc, getDocs, setDoc, addDoc,deleteDoc,updateDoc, arrayRemove, arrayUnion, QuerySnapshot} from 'firebase/firestore';
+import {doc, collection, getDoc, getDocs, where, query, setDoc, addDoc,deleteDoc,updateDoc, arrayRemove, arrayUnion, QuerySnapshot} from 'firebase/firestore';
 
 
 async function getDocument(id,db_object){
@@ -13,6 +13,7 @@ async function getDocument(id,db_object){
         console.log("No such document!");
       }
 }
+
 
 async function getAllDocuments(db_object){
     const querySnap = await getDocs(collection(db_object,'Entries'))
@@ -47,6 +48,22 @@ async function SearchAllDocuments(db_object,query){
     console.log('no results')
     return results
   }
+}
+
+async function searchUser(UserID,db_object){
+  console.log('begin user search')
+  console.log(UserID)
+  const users = collection(db_object, "Users");
+  const q = query(users, where("authID", "==", UserID));
+  const querySnapshot = await getDocs(q);
+  var toreturn = {}
+  querySnapshot.forEach((doc) => {
+    const obj_to = doc.data()
+    console.log(doc.data())
+    // doc.data() is never undefined for query doc snapshots
+    toreturn =  obj_to
+  });
+  return toreturn
 }
 
 async function addGGReview(db,id,review){
@@ -102,6 +119,7 @@ export {
     getDocument,
     getAllDocuments,
     SearchAllDocuments,
+    searchUser,
     addGGReview,
     addFavourite,
     removeFavourite,

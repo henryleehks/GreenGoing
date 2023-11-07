@@ -5,7 +5,7 @@
             <!-- GreenGoing logo -->
             <RouterLink to="/">
                 <div class="flex items-center">
-                    <img src="src/assets/logo.png" class="h-14 mr-4" alt="GreenGoing Logo" />
+                    <img src="/src/assets/logo.png" class="h-14 mr-4 rounded-3xl" alt="GreenGoing Logo" />
                 </div>
             </RouterLink>
 
@@ -46,17 +46,18 @@
                             </div>
                         </form>
                     </li>
+                    <li>
+                        <RouterLink to="/" class="block py-2 pl-3 pr-4 text-white rounded hover:bg-neutral-500 md:hover:bg-transparent  md:hover:text-[#50A060] md:p-0" aria-current="page">
+                            Home
+                        </RouterLink>
+                    </li>
 
                     <li>
                         <RouterLink to="/cart" class="block py-2 pl-3 pr-4 text-white rounded hover:bg-neutral-500 md:hover:bg-transparent md:border-0 md:hover:text-[#50A060] md:p-0">
                             Listings
                         </RouterLink>
                     </li>
-                    <li>
-                        <RouterLink to="/" class="block py-2 pl-3 pr-4 text-white rounded hover:bg-neutral-500 md:hover:bg-transparent  md:hover:text-[#50A060] md:p-0" aria-current="page">
-                            Home
-                        </RouterLink>
-                    </li>
+
 
                     <li>
                         <RouterLink to="/itinerary"
@@ -73,7 +74,7 @@
     
                     <li>
                         <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-2 pl-3 pr-4  text-white border border-gray-100 hover:bg-[#50A060] md:hover:bg-transparent md:border-0 md:hover:text-[#50A060] md:p-0 md:w-auto">
-                            <img src="src/assets/User Profile Icon.png" />
+                            <img src="/src/assets/User Profile Icon.png" />
                             <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 fill="none" viewBox="0 0 10 6">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -110,18 +111,15 @@ import SignOutButton from "../components/SignOutButton.vue";
 export default {
     name: 'Navbar',
     methods:{
-        search(){
-            console.log('hello')
-        }
     },
     data() {
-        const query = 'search';
+        const query = '';
         return {
             // This to check if user is currently signed in.
             isUserSignedIn: false, // Initialize it as false when the component is created
+            query
         };
     },
-
     created() {
         // Check the user's sign-in status based on your authentication logic
         // For example, if you're using Firebase Authentication:
@@ -170,12 +168,27 @@ export default {
         };
     },
     methods: {
+        search(query){
+            console.log('newquery = ' + query)
+            if(query == 'hotels'){
+                router.push('/search/hotels')
+            }
+            else if (query == 'adventures'){
+                router.push('/search/adventures')
+            }
+            else if (query == 'tours'){
+                router.push('/search/tours')
+            }
+            else{
+                router.push('/')
+            }
+        },
         handleSignOut() {
             // Perform sign-out logic here
             signOut(auth)
                 .then(() => {
                     // Sign-out successful.
-                    alert('User Logged Out');
+                    alert('Logged Out successfully!');
                     this.isUserSignedIn = false;
                     currentID.updateCurrentID('');
                     console.log('Logged Out UserID: ' + currentID.currentID)

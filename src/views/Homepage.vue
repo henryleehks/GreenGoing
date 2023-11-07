@@ -45,7 +45,7 @@
             <div class="animate-up flex flex-shrink-0 h-80 md:h-96">
                 <div id="user-input-area" class="w-full h-auto">
                     <div id="homepage-carousel" class="z-0 w-full content-center" data-carousel="slide">
-                        <div class="relative z-0 h-80 overflow-hidden w-full rounded-t-xl md:h-96">
+                        <div class="relative z-0 h-80 overflow-hidden w-full rounded-t-2xl md:h-96">
 
                             <div class="hidden duration-1000 ease-in-out" data-carousel-item>
                                 <img src="../assets/home_bg1.jpg"
@@ -161,7 +161,6 @@
                             about
                             trying
                             new experiences!</p>
-                        <button @click="showsearch"> hellow</button>
                     </div>
 
                     <div id="PageContent"

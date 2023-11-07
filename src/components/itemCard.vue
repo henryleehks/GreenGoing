@@ -12,6 +12,9 @@
                     
                     <button class="scale-75 hover:scale-90">
                         <img src="src/assets/Favorite@2x.png">
+                <div class="absolute top-3 right-4">
+                    <button @click="togglefav()" class="scale-75 hover:scale-90">
+                        <img :id="cardID" src="/src/assets/Favorite@2x.png">
                     </button>
                     
                 </div>
@@ -54,18 +57,35 @@
 <script setup>
 import { RouterLink } from 'vue-router';
 import { ref } from 'vue';
-import { currentID } from '../db/localstore.js'
+import { currentID,currentUser } from '../db/localstore.js'
+import { addFavourite,removeFavourite } from '../db/dbfunctions';
+import { db } from '../db/FireBaseDB';
+
 
 const props = defineProps(['cardName', 'cardID', 'cardImg', 'cardRating', 'cardRatingImg', 'cardPrice'])
 
 const theURL = ref(props.cardID)
 const cardURL = "/listing/" + theURL.value
+var fav_state = false
+const userID = currentUser.UserID
 
 // var Hearts = [{image1 : "src/assets/Favorite.png"}, {image2 : "src/assets/Favorite_fill.png"}]
 
-// function switchImages(){   
+function togglefav(){
 
-// }
+    const id = props.cardID
+    console.log(props.cardID)
+    if (fav_state){
+        document.getElementById(id).setAttribute('src','/src/assets/Favorite@2x.png')
+        var result = addFavourite(db,props.cardID,userID)
+        fav_state = false
+    }
+    else{
+        document.getElementById(id).setAttribute('src','/src/assets/Favorite_fill@2x.png')
+        var result = removeFavourite(db,props.cardID,userID)
+        fav_state = true
+    }
+}
 
 
 
