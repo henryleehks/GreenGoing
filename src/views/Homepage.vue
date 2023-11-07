@@ -141,9 +141,10 @@
                         <button @click="showsearch"> hellow</button>
                     </div>
 
-                    <div id="PageContent" 
-                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 place-items-center content-center">
-                        <itemCardVue v-for="doc of allDocs" :cardID=doc.ID :cardName=doc.Data.Name
+                    <div id="PageContent"
+                        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 place-items-center content-center">
+
+                        <itemCardVue v-for="doc of allDocs.slice(0, 4)" :cardID=doc.ID :cardName=doc.Data.Name
                             :cardImg=doc.Data.images[0] :cardRating=doc.Data.rating :cardRatingImg=doc.Data.rating_img
                             :card-price=doc.Data.Price_level>
                         </itemCardVue>
@@ -159,11 +160,6 @@
 </template>
 
 <script>
-
-
-// getElementById("PageContent").style.height = "100%"
-
-
 import { initCarousels, initDropdowns } from 'flowbite'
 import itemCardVue from '../components/itemCard.vue'
 import { getAllDocuments } from '../db/dbfunctions.js'
@@ -181,11 +177,12 @@ export default {
         initCarousels();
         initDropdowns();
         console.log('username');    
-        // console.log(currentUser.UserName)
+        console.log(currentUser.UserName)
         console.log('user_ID')
-        // console.log(currentUser.UserID)
+        console.log(currentUser.UserID)
         console.log('loc_ID');
-        // console.log(currentID.currentID)
+        console.log(currentID.currentID)
+
     },
     components: { itemCardVue },
     data() {

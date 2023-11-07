@@ -1,16 +1,27 @@
 <template>
         <div class="rounded-3xl transition duration-500 ease-in-out scale-90 hover:scale-100 w-64 h-96 max-w-sm bg-white border border-gray-200 shadow-xl dark:bg-gray-800 dark:border-gray-700 align-bottom">
-            <RouterLink :to=cardURL class='flex flex-column' @click="currentID.updateCurrentID(theURL)">
+            <div class="relative">
+                <RouterLink :to=cardURL class='flex flex-column' @click="currentID.updateCurrentID(theURL)">
                 <img class="h-40 w-full p-2" :src="cardImg" alt="product image" />
-            </RouterLink>
+                </RouterLink>
+                <div class="absolute top-3 right-4">
+                    <button class="scale-75 hover:scale-90">
+                        <img src="src/assets/Favorite@2x.png">
+                    </button>
+                </div>
+            </div>
+            
 
             <div class="p-5 m-5 mx-auto">
+
+                
                 <RouterLink :to=cardURL @click="currentID.updateCurrentID(theURL)">
-                    <h5 class="text-lg font-semibold tracking-tight text-gray-900 dark:text-white">
+                <h5 class="z-0 text-lg font-semibold tracking-tight text-gray-900 dark:text-white">
                     {{ cardName }}
-                    </h5>
+                </h5>
                 </RouterLink>
-                <!-- <img src="src/assets/favsgray.png"> -->
+                   
+                
 
                 <div class="align-bottom pb-0">
                     <div class="flex items-center mt-2.5 mb-5">
@@ -20,7 +31,7 @@
                             Rating: {{ cardRating }}
                         </span>
                     </div>
-                <div class="flex items-center justify-between bottom-0">
+                    <div class="flex items-center justify-between bottom-0">
                     <span class="text-3xl font-bold text-gray-900 dark:text-white">{{ cardPrice }}</span>
 
                     <RouterLink :to=cardURL @click="currentID.updateCurrentID(theURL)"
@@ -28,10 +39,10 @@
                         View
                     </RouterLink>
 
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 </template>
 
 <script setup>
@@ -44,7 +55,13 @@ const props = defineProps(['cardName', 'cardID', 'cardImg', 'cardRating', 'cardR
 const theURL = ref(props.cardID)
 const cardURL = "/listing/" + theURL.value
 
-// const cardURL = "/listing/" + ref(props.cardID)
+// var Hearts = [{image1 : "src/assets/Favorite.png"}, {image2 : "src/assets/Favorite_fill.png"}]
+
+// function switchImages(){   
+
+// }
+
+
 
 </script>
 
