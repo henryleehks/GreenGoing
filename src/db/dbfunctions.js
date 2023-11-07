@@ -115,7 +115,9 @@ export {
     getAllDocuments,
     addGGReview,
     addFavourite,
-    removeFavourite
+    removeFavourite,
+    addPast,
+    removePast
 }
 
 // // ######################################################################
