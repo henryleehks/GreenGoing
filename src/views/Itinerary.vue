@@ -98,7 +98,7 @@
     
     const allDocs = await getAllDocuments(db)
     var searchInput = document.getElementById('default-search-itinerary')
-    var results = await SearchAllDocuments(allDocs, searchInput)
+    var results = SearchAllDocuments(allDocs, searchInput)
     
     
     export default {
