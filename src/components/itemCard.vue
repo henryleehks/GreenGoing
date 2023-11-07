@@ -4,14 +4,15 @@
                 <RouterLink :to=cardURL class='flex flex-column' @click="currentID.updateCurrentID(theURL)">
                 <img class="h-40 w-full p-2" :src="cardImg" alt="product image" />
                 </RouterLink>
-                <div class="absolute top-2 right-2">
+                
                     <!-- <img
                     :src="currentImageSrc"
                     alt="Favorite"
                     @click="toggleImage"> -->
                     
-                    <button class="scale-75 hover:scale-90">
+                    <!-- <button class="scale-75 hover:scale-90">
                         <img src="src/assets/Favorite@2x.png">
+                    </button> -->
                 <div class="absolute top-3 right-4">
                     <button @click="togglefav()" class="scale-75 hover:scale-90">
                         <img :id="cardID" src="/src/assets/Favorite@2x.png">
