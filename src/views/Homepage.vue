@@ -178,11 +178,11 @@ export default {
         initCarousels();
         initDropdowns();
         console.log('username');    
-        // console.log(currentUser.UserName)
+        console.log(currentUser.UserName)
         console.log('user_ID')
-        // console.log(currentUser.UserID)
+        console.log(currentUser.UserID)
         console.log('loc_ID');
-        // console.log(currentID.currentID)
+        console.log(currentID.currentID)
 
     },
     components: { itemCardVue },
