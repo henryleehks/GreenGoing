@@ -78,9 +78,9 @@ img {
     <!-- <h1 style="color: black;">hello world</h1> -->
 
     <div id="mySidenav"
-        style="height: 100%; width: 0px;  position: fixed; z-index: 1; top: 0; left: 0; background-color: white; overflow-x: hidden; padding-top: 60px; transition: 0.5s;">
+        style="height: 100%; width: 250;  position: fixed; z-index: 1; top: 0; left: 0; background-color: white; overflow-x: hidden; padding-top: 60px; transition: 0.5s;">
         <br>
-        <br>
+
         <a href="javascript:void(0)" class="closebtn" v-on:click="closeNav()"
             style="padding: 8px 8px 8px 32px; text-decoration: none; font-size: 25px; color: #818181; display: block; transition: 0.3s;">&times;</a>
 
@@ -101,7 +101,7 @@ img {
                             <br>
                             <ul id="cart"></ul>
                             <a href="./checkout"
-                                style="background-color: #68BE97; font-size: 20px; border: 1px; border-radius: 10px; text-align: center; color: black; padding: 20px;">CHECKOUT</a>
+style="background-color: rgb(156, 255, 200); font-size: 20px; border: 1px; border-radius: 10px; text-align: center; color: black; padding: 20px;">CHECKOUT</a>
                             <br>
                             <br>
                             <br>
@@ -116,33 +116,362 @@ img {
         </div>
     </div>
     <button v-on:click="openNav()"
-        style="font-weight: 900; text-align: center; display: flex; justify-content: center; align-items: center; color: black; background-color: #68BE97; padding: 5px;">CART</button>
+        style="font-weight: 900; text-align: center; display: flex; justify-content: center; align-items: center; color: black;">CART</button>
 
     <div id="main"
         style="display: flex; text-align: center; padding-left: 10%; padding-right: 10%; transition: margin-left .5s; padding: 30px; ">
         <div id="PageContent" class="container flex flex-1 justify-center md:justify-start "
             style=" display: flex; width: 100%; display: flex; flex-wrap: wrap; justify-content: center; ">
 
-            <div class="flex flex-shrink-0 flex-1">
-                <div id="featured-listings" style="background-color: bisque;" class="px-6 pt-2 pb-12 pb-24 w-full h-full">
+            <div id="item1"
+                class="w-full max-w-sm bg-green-100 border border-gray-200 rounded-xl shadow light:bg-gray-800 dark:border-gray-700 object-cover"
+                style="width: 100%;">
+                <a href="#">
+                    <img class="rounded-xl object-cover" src="img/a.jpg" alt="product image" />
+                </a>
 
-                    
-
-                    <div id="PageContent"
-                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 place-items-center content-center">
-
-                        <itemCardVue v-for="doc of allDocs" :cardID=doc.ID :cardName=doc.Data.Name
-                            :cardImg=doc.Data.images[0] :cardRating=doc.Data.rating :cardRatingImg=doc.Data.rating_img
-                            :card-price=doc.Data.Price_level>
-                        </itemCardVue>
-
+                <div class="px-5 pb-5">
+                    <a href="#">
+                        <h5 class="text-2xl font-semibold tracking-tight text-gray-900 light:text-white">Wild Wild
+                            Ticket
+                        </h5>
+                    </a>
+                    <div class="flex items-center mt-2.5 mb-5">
+                        <img class="w-4 h-4" src="img/color_tree.png">
+                        <img class="w-4 h-4" src="img/color_tree.png">
+                        <img class="w-4 h-4" src="img/color_tree.png">
+                        <img class="w-4 h-4" src="img/color_tree.png">
+                        <img class="w-4 h-4" src="img/grey_tree.png">
+                        <span
+                            class="bg-light green-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">4.0</span>
                     </div>
-
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl font-bold text-gray-900 light:text-black">$10</span>
+                        &nbsp
+                        <a href="protoreview.html"
+                            v-on:click="sendoverrev(1, 'img/a.jpg', 'Wild Wild Ticket', 'My House', 5, 'NIL') ; location.href = 'protoreview.html';">
+                            <button
+                                class="text-black bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center light:bg-blue-600 light:hover:bg-blue-700 light:focus:ring-blue-800"
+                                v-on:click="sendoverrev(1, 'img/a.jpg', 'Wild Wild Ticket', 'My House', 5, 'NIL') ; location.href = 'protoreview.html';">View
+                                More</button>
+                        </a>
+                        &nbsp
+                        <button
+                            class="text-black bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center light:bg-blue-600 light:hover:bg-blue-700 light:focus:ring-blue-800"
+                            v-on:click="addToCart(1, 'Wild Wild Ticket', 10.00, 'img/a.jpg', 'Adult')">Add Cart</button>
+                    </div>
                 </div>
+            </div>
+            &nbsp
+            &nbsp
+            &nbsp
+            &nbsp
+            &nbsp
 
+
+            <div id="item2"
+                class="w-full max-w-sm bg-green-100 border border-gray-200 rounded-xl shadow light:bg-gray-800 dark:border-gray-700 object-cover"
+                style="width: 100%;">
+                <a href="#">
+                    <img class="rounded-xl object-cover" src="img/b.png" alt="product image" />
+                </a>
+
+                <div class="px-5 pb-5">
+                    <a href="#">
+                        <h5 class="text-2xl font-semibold tracking-tight text-gray-900 light:text-white">Bird Paradise
+                        </h5>
+                    </a>
+                    <div class="flex items-center mt-2.5 mb-5">
+                        <img class="w-4 h-4" src="img/color_tree.png">
+                        <img class="w-4 h-4" src="img/color_tree.png">
+                        <img class="w-4 h-4" src="img/color_tree.png">
+                        <img class="w-4 h-4" src="img/grey_tree.png">
+                        <img class="w-4 h-4" src="img/grey_tree.png">
+                        <span
+                            class="bg-light green-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">3.0</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl font-bold text-gray-900 light:text-black">$20</span>
+                        &nbsp
+                        <a href="protoreview.html"
+                            v-on:click="sendoverrev(2, 'img/b.png', 'Bird Paradise', 'My House', 5, 'NIL') ; ">
+                            <button
+                                class="text-black bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center light:bg-blue-600 light:hover:bg-blue-700 light:focus:ring-blue-800"
+                                onclick="sendoverrev(2,'img/b.png','Bird Paradise','My House',5,'NIL') ; ">View
+                                More</button>
+                        </a>
+                        &nbsp
+                        <button
+                            class="text-black bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center light:bg-blue-600 light:hover:bg-blue-700 light:focus:ring-blue-800"
+                            v-on:click="addToCart(2, 'Bird Paradise', 20.00, 'img/b.png', 'Adult')">Add Cart</button>
+                    </div>
+                </div>
+            </div>
+            &nbsp
+            &nbsp
+            &nbsp
+            &nbsp
+            &nbsp
+
+            <div id="item3"
+                class="w-full max-w-sm bg-green-100 border border-gray-200 rounded-xl shadow light:bg-gray-800 dark:border-gray-700 object-cover"
+                style="width: 100%;">
+                <a href="#">
+                    <img class="rounded-xl object-cover" src="img/c.jpg" alt="product image" />
+                </a>
+
+                <div class="px-5 pb-5">
+                    <a href="#">
+                        <h5 class="text-2xl font-semibold tracking-tight text-gray-900 light:text-white">Gardens Nina Buay
+                        </h5>
+                    </a>
+                    <div class="flex items-center mt-2.5 mb-5">
+                        <img class="w-4 h-4" src="img/color_tree.png">
+                        <img class="w-4 h-4" src="img/color_tree.png">
+                        <img class="w-4 h-4" src="img/color_tree.png">
+                        <img class="w-4 h-4" src="img/color_tree.png">
+                        <img class="w-4 h-4" src="img/color_tree.png">
+                        <span
+                            class="bg-light green-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">5.0</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl font-bold text-gray-900 light:text-black">$50</span>
+                        &nbsp
+                        <a href="protoreview.html"
+                            v-on:click="sendoverrev(3, 'img/c.jpg', 'Gardens Nina Buay', 'My House', 5, 'NIL') ; location.href = 'protoreview.html';">
+                            <button
+                                class="text-black bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center light:bg-blue-600 light:hover:bg-blue-700 light:focus:ring-blue-800"
+                                v-on:click="sendoverrev(3, 'img/c.jpg', 'Gardens Nina Buay', 'My House', 5, 'NIL') ; location.href = 'protoreview.html';">View
+                                More</button>
+                        </a>
+                        &nbsp
+                        <button
+                            class="text-black bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center light:bg-blue-600 light:hover:bg-blue-700 light:focus:ring-blue-800"
+                            v-on:click="addToCart(3, 'Gardens Nina Buay', 50.00, 'img/c.jpg', 'Adult')">Add Cart</button>
+                    </div>
+                </div>
+            </div>
+            &nbsp
+            &nbsp
+            &nbsp
+            &nbsp
+            &nbsp
+
+            <div id="item4"
+                class="w-full max-w-sm bg-green-100 border border-gray-200 rounded-xl shadow light:bg-gray-800 dark:border-gray-700 object-cover">
+                <a href="#">
+                    <img class="rounded-xl object-cover" src="img/d.jpg" alt="product image" />
+                </a>
+
+                <div class="px-5 pb-5">
+                    <a href="#">
+                        <h5 class="text-2xl font-semibold tracking-tight text-gray-900 light:text-white">Changi Jewel Tour
+                        </h5>
+                    </a>
+                    <div class="flex items-center mt-2.5 mb-5">
+                        <img class="w-4 h-4" src="img/color_tree.png">
+                        <img class="w-4 h-4" src="img/color_tree.png">
+                        <img class="w-4 h-4" src="img/color_tree.png">
+                        <img class="w-4 h-4" src="img/color_tree.png">
+                        <img class="w-4 h-4" src="img/grey_tree.png">
+                        <span
+                            class="bg-light green-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">4.0</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl font-bold text-gray-900 light:text-black">$90</span>
+                        &nbsp
+                        <a href="protoreview.html"
+                            v-on:click="sendoverrev(4, 'img/d.jpg', 'Changi Jewel Tour', 'My House', 5, 'NIL') ; location.href = 'protoreview.html';">
+                            <button
+                                class="text-black bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center light:bg-blue-600 light:hover:bg-blue-700 light:focus:ring-blue-800"
+                                v-on:click="sendoverrev(4, 'img/d.jpg', 'Changi Jewel Tour', 'My House', 5, 'NIL') ; location.href = 'protoreview.html';">View
+                                More</button>
+                        </a>
+                        &nbsp
+                        <button
+                            class="text-black bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center light:bg-blue-600 light:hover:bg-blue-700 light:focus:ring-blue-800"
+                            v-on:click="addToCart(4, 'Changi Jewel Tour', 90.00, 'img/d.jpg', 'Adult')">Add Cart</button>
+                    </div>
+                </div>
+            </div>
+            &nbsp
+            &nbsp
+            &nbsp
+            &nbsp
+            &nbsp
+
+            <div id="item5"
+                class="w-full max-w-sm bg-green-100 border border-gray-200 rounded-xl shadow light:bg-gray-800 dark:border-gray-700 object-cover">
+                <a href="#">
+                    <img class="rounded-xl object-cover" src="img/e.jpeg" alt="product image" />
+                </a>
+
+                <div class="px-5 pb-5">
+                    <a href="#">
+                        <h5 class="text-2xl font-semibold tracking-tight text-gray-900 light:text-white">Garden Walk
+                        </h5>
+                    </a>
+                    <div class="flex items-center mt-2.5 mb-5">
+                        <img class="w-4 h-4" src="img/color_tree.png">
+                        <img class="w-4 h-4" src="img/color_tree.png">
+                        <img class="w-4 h-4" src="img/color_tree.png">
+                        <img class="w-4 h-4" src="img/color_tree.png">
+                        <img class="w-4 h-4" src="img/color_tree.png">
+                        <span
+                            class="bg-light green-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">5.0</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl font-bold text-gray-900 light:text-black">$15</span>
+                        &nbsp
+                        <a href="protoreview.html"
+                            v-on:click="sendoverrev(5, 'img/e.jpeg', 'Garden Walk', 'My House', 5, 'NIL') ; location.href = 'protoreview.html';">
+                            <button
+                                class="text-black bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center light:bg-blue-600 light:hover:bg-blue-700 light:focus:ring-blue-800"
+                                v-on:click="sendoverrev(5, 'img/e.jpeg', 'Garden Walk', 'My House', 5, 'NIL') ; location.href = 'protoreview.html';">View
+                                More</button>
+                        </a>
+                        &nbsp
+                        <button
+                            class="text-black bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center light:bg-blue-600 light:hover:bg-blue-700 light:focus:ring-blue-800"
+                            v-on:click="addToCart(5, 'Garden Walk', 15.00, 'img/e.jpeg', 'Adult')">Add Cart</button>
+                    </div>
+                </div>
+            </div>
+            &nbsp
+            &nbsp
+            &nbsp
+            &nbsp
+            &nbsp
+
+            <div id="item6"
+                class="w-full max-w-sm bg-green-100 border border-gray-200 rounded-xl shadow light:bg-gray-800 dark:border-gray-700 object-cover">
+                <a href="#">
+                    <img class="rounded-xl object-cover" src="img/f.jpg" alt="product image" />
+                </a>
+
+                <div class="px-5 pb-5">
+                    <a href="#">
+                        <h5 class="text-2xl font-semibold tracking-tight text-gray-900 light:text-white">MBS Tour
+                        </h5>
+                    </a>
+                    <div class="flex items-center mt-2.5 mb-5">
+                        <img class="w-4 h-4" src="img/color_tree.png">
+                        <img class="w-4 h-4" src="img/color_tree.png">
+                        <img class="w-4 h-4" src="img/grey_tree.png">
+                        <img class="w-4 h-4" src="img/grey_tree.png">
+                        <img class="w-4 h-4" src="img/grey_tree.png">
+                        <span
+                            class="bg-light green-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">2.0</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl font-bold text-gray-900 light:text-black">$98</span>
+                        &nbsp
+                        <a href="protoreview.html"
+                            v-on:click="sendoverrev(6, 'img/f.jpg', 'MBS Tour', 'My House', 2, 'NIL') ; ">
+                            <button
+                                class="text-black bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center light:bg-blue-600 light:hover:bg-blue-700 light:focus:ring-blue-800"
+                                v-on:click="sendoverrev(6, 'img/f.jpg', 'MBS Tour', 'My House', 2, 'NIL') ; ">View
+                                More</button>
+                        </a>
+                        &nbsp
+                        <button
+                            class="text-black bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center light:bg-blue-600 light:hover:bg-blue-700 light:focus:ring-blue-800"
+                            v-on:click="addToCart(6, 'MBS Tour', 98.00, 'img/f.jpg', 'Adult')">Add Cart</button>
+                    </div>
+                </div>
+            </div>
+            &nbsp
+            &nbsp
+            &nbsp
+            &nbsp
+            &nbsp
+
+            <div id="item7"
+                class="w-full max-w-sm bg-green-100 border border-gray-200 rounded-xl shadow light:bg-gray-800 dark:border-gray-700 object-cover">
+                <a href="#">
+                    <img class="rounded-xl object-cover" src="img/g.jpg" alt="product image" />
+            </a>
+
+                <div class="px-5 pb-5">
+                    <a href="#">
+                        <h5 class="text-2xl font-semibold tracking-tight text-gray-900 light:text-white">Universal
+                        </h5>
+                    </a>
+                    <div class="flex items-center mt-2.5 mb-5">
+                        <img class="w-4 h-4" src="img/color_tree.png">
+                        <img class="w-4 h-4" src="img/grey_tree.png">
+                        <img class="w-4 h-4" src="img/grey_tree.png">
+                        <img class="w-4 h-4" src="img/grey_tree.png">
+                        <img class="w-4 h-4" src="img/grey_tree.png">
+                        <span
+                            class="bg-light green-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">1.0</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl font-bold text-gray-900 light:text-black">$70</span>
+                        &nbsp
+                        <a href="protoreview.html"
+                            onclick="sendoverrev(7,'img/g.jpg','Universal','My House',1,'NIL') ; location.href = 'protoreview.html';">
+                            <button
+                                class="text-black bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center light:bg-blue-600 light:hover:bg-blue-700 light:focus:ring-blue-800"
+                                v-on:click="sendoverrev(7, 'img/g.jpg', 'Universal', 'My House', 1, 'NIL') ; location.href = 'protoreview.html';">View
+                                More</button>
+                        </a>
+                        &nbsp
+                        <button
+                            class="text-black bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center light:bg-blue-600 light:hover:bg-blue-700 light:focus:ring-blue-800"
+                            v-on:click="addToCart(7, 'Universal', 70.00, 'img/g.jpg', 'Adult')">Add Cart</button>
+                    </div>
+                </div>
+            </div>
+            &nbsp
+            &nbsp
+            &nbsp
+            &nbsp
+            &nbsp
+
+            <div id="item8"
+                class="w-full max-w-sm bg-green-100 border border-gray-200 rounded-xl shadow light:bg-gray-800 dark:border-gray-700 object-cover">
+                <a href="#">
+                    <img class="rounded-xl object-cover" src="img/h.jpg" alt="product image" />
+                </a>
+
+                <div class="px-5 pb-5">
+                    <a href="#">
+                        <h5 class="text-2xl font-semibold tracking-tight text-gray-900 light:text-white">Merlion
+                        </h5>
+                    </a>
+                    <div class="flex items-center mt-2.5 mb-5">
+                        <img class="w-4 h-4" src="img/color_tree.png">
+                        <img class="w-4 h-4" src="img/color_tree.png">
+                        <img class="w-4 h-4" src="img/color_tree.png">
+                        <img class="w-4 h-4" src="img/grey_tree.png">
+                        <img class="w-4 h-4" src="img/grey_tree.png">
+                        <span
+                            class="bg-light green-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">3.0</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl font-bold text-gray-900 light:text-black">$50</span>
+                        &nbsp
+                        <a href="protoreview.html"
+                            v-on:click="sendoverrev(8, 'img/h.jpg', 'Merlion', 'My House', 3, 'NIL') ; location.href = 'protoreview.html';">
+                            <button
+                                class="text-black bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center light:bg-blue-600 light:hover:bg-blue-700 light:focus:ring-blue-800"
+                                v-on:click="sendoverrev(8, 'img/h.jpg', 'Merlion', 'My House', 3, 'NIL') ; location.href = 'protoreview.html';">View
+                                More</button>
+                        </a>
+                        &nbsp
+                        <button
+                            class="text-black bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center light:bg-blue-600 light:hover:bg-blue-700 light:focus:ring-blue-800"
+                            v-on:click="addToCart(8, 'Merlion', 50.00, 'img/h.jpg', 'Adult')">Add Cart</button>
+                        <!-- <button onclick="openNav()" style="color: black;">OPEN</button>
+                                                                    <a href="./checkout.html"
+                                                                        style="background-color: rgb(156, 255, 200); font-size: 20px; border: 1px; border-radius: 10px; text-align: center; color: black; padding-right: 20px;">CHECKOUT</a> -->
+                    </div>
+                </div>
             </div>
 
 
+            <!-- <button v-on:click="hello('DATA')" style="color: black;">CLICK ME</button> -->
 
 
 
@@ -158,18 +487,6 @@ img {
 var cart = [];
 
 var cartID = 1;
-
-
-// getElementById("PageContent").style.height = "100%"
-
-
-import { initCarousels, initDropdowns } from 'flowbite'
-import itemCardVue from '../components/CartCard.vue'
-import { getAllDocuments } from '../db/dbfunctions.js'
-import { db } from '../db/FireBaseDB.js'
-import { currentUser, currentID } from '../db/localstore'
-
-const allDocs = await getAllDocuments(db)
 
 export default {
 
@@ -565,29 +882,9 @@ export default {
         },
 
         closeNav() {
-            document.getElementById("mySidenav").style.width = "0px";
+            document.getElementById("mySidenav").style.width = "0";
         }
 
-
-    },
-
-    mounted() {
-        console.log('hello');
-        initCarousels();
-        initDropdowns();
-        console.log('username');
-        console.log(currentUser.UserName)
-        console.log('user_ID')
-        console.log(currentUser.UserID)
-        console.log('loc_ID');
-        console.log(currentID.currentID)
-
-    },
-    components: { itemCardVue },
-    data() {
-        return {
-            allDocs
-        }
 
     }
 }
