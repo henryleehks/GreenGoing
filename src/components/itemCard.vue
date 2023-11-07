@@ -1,8 +1,8 @@
 <template>
 
-<div class="w-full h-full m-5 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-    <RouterLink :to= cardURL class='flex h-1/2 m-5 justify-center'>
-        <img class="object-cover object-center h-full rounded-lg" :src="cardImg" alt="product image" />
+<div class="w-full h-full m-5 max-w-sm bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700">
+    <RouterLink :to= cardURL class='flex h-1/2 justify-center'>
+        <img class="object-cover object-center h-full" :src="cardImg" alt="product image" />
     </RouterLink>
     <div class="px-5 pb-5 mx-auto">
         <RouterLink :to= cardURL >

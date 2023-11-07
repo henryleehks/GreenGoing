@@ -1,13 +1,3 @@
-<!-- <script>
-import { initFlowbite } from 'flowbite'
-export default{
-    mounted(){
-        console.log('hello');
-        initFlowbite();
-    }
-}
-</script> -->
-
 <template>
 <div id="PageContent" class="bg-gradient-to-b from-[bisque] to-[#A6CEAE]">
 
@@ -34,7 +24,7 @@ export default{
                         <!-- search bar -->
                         <input type="search" id="default-search-itinerary" class="w-full block p-2.5 pl-8 pr-12 text-xs text-gray-900 border border-gray-300 rounded-lg bg-grey-200" placeholder='Search Your Bookings!' required>
                         <!-- submit button -->
-                        <button type="submit" onclick="showFilteredResults()" class="text-white absolute right-1 bottom-1.5 bg-neutral-400 hover:bg-neutral-500 focus:ring-4 focus:outline-none focus:ring-[#50A060] font-xsmall rounded-md text-xs px-1 py-1">Search</button>
+                        <button type="submit" v-on:click="showFilteredResults()" class="text-white absolute right-1 bottom-1.5 bg-neutral-400 hover:bg-neutral-500 focus:ring-4 focus:outline-none focus:ring-[#50A060] font-xsmall rounded-md text-xs px-1 py-1">Search</button>
                     </div>
                 </form>
 
@@ -58,81 +48,20 @@ export default{
             <!-- Your Bookings content -->
             <div class="hidden p-4 rounded-lg bg-gray-50" id="yourbookings" role="tabpanel" aria-labelledby="yourbookings-tab">
                 <table id="ItineraryListings" class="justify-center items-center">
-                    <tr>
-                        <td>
-                            <img src="src/assets/bird-paradise-crimson-wetlands.png" class="w-50 h-50">
-                        </td>
-                        <td>
-                            <h2 class="font-bold text-3xl">Bird Paradise (current booking)</h2>
-                            <h2 class="font-bold text-xl">Date: 11/11/23</h2>
-                            <h2 class="font-bold text-xl">Time: 1300 - 1900</h2>
-                            <p class="text-lg">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, repudiandae saepe commodi voluptatum
-                                perspiciatis natus corporis cupiditate totam odio voluptate possimus? Incidunt enim maxime earum
-                                consequuntur fugiat quo accusantium officiis.</p>
-                            <a href="review_page_tailwind.html">
-                                <button class="text-white bg-[#50A060] hover:bg-emerald-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm sm:text-md md:text-md px-5 py-2.5 mt-8 text-center">
-                                    View
-                                </button>
-                            </a>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <img src="src/assets/home_bg1.jpg" class="w-50 h-50">
-                        </td>
-                        <td>
-                            <h2 class="font-bold text-3xl">Gardens By the Bay</h2>
-                            <h2 class="font-bold text-xl">Date: 25/12/23</h2>
-                            <h2 class="font-bold text-xl">Time: 2000</h2>
-                            <p class="text-lg">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, repudiandae saepe commodi voluptatum
-                                perspiciatis natus corporis cupiditate totam odio voluptate possimus? Incidunt enim maxime earum
-                                consequuntur fugiat quo accusantium officiis.</p>
-                            <a href="#">
-                                <button class="text-white bg-[#50A060] hover:bg-emerald-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm sm:text-md md:text-md px-5 py-2.5 mt-8 text-center">
-                                    View
-                                </button>
-                            </a>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="w-50 h-50">
-                            <img src="src/assets/home_bg2.jpeg" class="w-50 h-50">
-                        </td>
-                        <td>
-                            <h2 class="font-bold text-3xl">Bird Paradise</h2>
-                            <h2 class="font-bold text-xl">Date: 11/11/23</h2>
-                            <h2 class="font-bold text-xl">Time: 1300 - 1900</h2>
-                            <p class="text-lg">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, repudiandae saepe commodi voluptatum
-                                perspiciatis natus corporis cupiditate totam odio voluptate possimus? Incidunt enim maxime earum
-                                consequuntur fugiat quo accusantium officiis.</p>
-                            <a href="#">
-                                <button class="text-white bg-[#50A060] hover:bg-emerald-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm sm:text-md md:text-md px-5 py-2.5 mt-8 text-center">
-                                    View
-                                </button>
-                            </a>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="w-50 h-50">
-                            <img src="src/assets/home_bg3.jpg" class="w-50 h-50">
-                        </td>
-                        <td>
-                            <h2 class="font-bold text-3xl">Bird Paradise</h2>
-                            <h2 class="font-bold text-xl">Date: 11/11/23</h2>
-                            <h2 class="font-bold text-xl">Time: 1300 - 1900</h2>
-                            <p class="text-lg">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, repudiandae saepe commodi voluptatum
-                                perspiciatis natus corporis cupiditate totam odio voluptate possimus? Incidunt enim maxime earum
-                                consequuntur fugiat quo accusantium officiis.</p>
-                            <a href="#">
-                                <button class="text-white bg-[#50A060] hover:bg-emerald-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm sm:text-md md:text-md px-5 py-2.5 mt-8 text-center">
-                                    View
-                                </button>
-                            </a>
-                        </td>
-                    </tr>
+                    <!-- <div v-if="showFilteredResults()">
+                        <tableRowItinerary
+                        v-for="result of results" :rowID=doc.ID :rowName=doc.Data.Name :rowImg=doc.Data.images[0] :rowDescript=doc.Description :rowRating=doc.Data.rating :rowRatingImg=doc.Data.rating_img>
+                        </tableRowItinerary>  
+                    </div>
+                    <div v-else>
+                        <tableRowItinerary
+                        v-for="doc of allDocs" :rowID=doc.ID :rowName=doc.Data.Name :rowImg=doc.Data.images[0] :rowDescript=doc.Description :rowRating=doc.Data.rating :rowRatingImg=doc.Data.rating_img>
+                        </tableRowItinerary>
+                    </div> -->
+                    <tableRowItinerary
+                        v-for="doc of allDocs" :rowID=doc.ID :rowName=doc.Data.Name :rowImg=doc.Data.images[0] :rowDescript=doc.Description :rowRating=doc.Data.rating :rowRatingImg=doc.Data.rating_img>
+                    </tableRowItinerary>
+                    
 
                 </table>
             </div>
@@ -141,94 +70,63 @@ export default{
             <!-- Past booking content -->
             <div class="hidden p-4 rounded-lg bg-gray-50" id="pastbookings" role="tabpanel" aria-labelledby="pastbookings-tab">
                 <table id="ItineraryListings" class="justify-center items-center">
-                    <tr>
-                        <td>
-                            <img src="src/assets/bird-paradise-crimson-wetlands.png" class="w-50 h-50">
-                        </td>
-                        <td>
-                            <h2 class="font-bold text-3xl">Bird Paradise (past booking)</h2>
-                            <h2 class="font-bold text-xl">Date: 11/11/23</h2>
-                            <h2 class="font-bold text-xl">Time: 1300 - 1900</h2>
-                            <p class="text-lg">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, repudiandae saepe commodi voluptatum
-                                perspiciatis natus corporis cupiditate totam odio voluptate possimus? Incidunt enim maxime earum
-                                consequuntur fugiat quo accusantium officiis.</p>
-                            <a href="#">
-                                <button class= "w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-md px-5 py-2.5 mt-8 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                    Leave a review
-                                </button>
-                            </a>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <img src="src/assets/home_bg1.jpg" class="w-50 h-50">
-                        </td>
-                        <td>
-                            <h2 class="font-bold text-3xl">Gardens By the Bay</h2>
-                            <h2 class="font-bold text-xl">Date: 25/12/23</h2>
-                            <h2 class="font-bold text-xl">Time: 2000</h2>
-                            <p class="text-lg">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, repudiandae saepe commodi voluptatum
-                                perspiciatis natus corporis cupiditate totam odio voluptate possimus? Incidunt enim maxime earum
-                                consequuntur fugiat quo accusantium officiis.</p>
-                            <a href="#">
-                                <button class= "w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-md px-5 py-2.5 mt-8 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                    Leave a review
-                                </button>
-                            </a>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="w-50 h-50">
-                            <img src="src/assets/home_bg2.jpeg" class="w-50 h-50">
-                        </td>
-                        <td>
-                            <h2 class="font-bold text-3xl">Bird Paradise</h2>
-                            <h2 class="font-bold text-xl">Date: 11/11/23</h2>
-                            <h2 class="font-bold text-xl">Time: 1300 - 1900</h2>
-                            <p class="text-lg">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, repudiandae saepe commodi voluptatum
-                                perspiciatis natus corporis cupiditate totam odio voluptate possimus? Incidunt enim maxime earum
-                                consequuntur fugiat quo accusantium officiis.</p>
-                            <a href="#">
-                                <button class= "w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-md px-5 py-2.5 mt-8 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                    Leave a review
-                                </button>
-                            </a>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="w-50 h-50">
-                            <img src="src/assets/home_bg3.jpg" class="w-50 h-50">
-                        </td>
-                        <td>
-                            <h2 class="font-bold text-3xl">Bird Paradise</h2>
-                            <h2 class="font-bold text-xl">Date: 11/11/23</h2>
-                            <h2 class="font-bold text-xl">Time: 1300 - 1900</h2>
-                            <p class="text-lg">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, repudiandae saepe commodi voluptatum
-                                perspiciatis natus corporis cupiditate totam odio voluptate possimus? Incidunt enim maxime earum
-                                consequuntur fugiat quo accusantium officiis.</p>
-                            <a href="#">
-                                <button class= "w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-md px-5 py-2.5 mt-8 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                    Leave a review
-                                </button>
-                            </a>
-                        </td>
-                    </tr>
-
+                    <tableRowItinerary
+                    v-for="doc of allDocs" :rowID=doc.ID :rowName=doc.Data.Name :rowImg=doc.Data.images[0] :rowDescript=doc.Description :rowRating=doc.Data.rating :rowRatingImg=doc.Data.rating_img>
+                    </tableRowItinerary>
                 </table>
-                
-                
-                
-                
-                
             </div>
             
         </div>
     </div>
 </div>
 </template>
+
+
+<script>
+import tableRowItinerary from '../components/tableRowItinerary.vue'
+import { getAllDocuments } from '../db/dbfunctions.js'
+import { db } from '../db/FireBaseDB.js'
+import { initFlowbite } from 'flowbite'
+
+
+
+
+
+const allDocs = await getAllDocuments(db)
+
+
+export default {
+    mounted() {
+        console.log('hello');
+        initFlowbite();
+       
+    },
+    components: { tableRowItinerary },
+    data() {
+        return {
+            allDocs,
+            searchInput: document.getElementById('default-search-itinerary')
+        }
+        
+        // work in progress
+    },
+    computed: {
+        // showFilteredResults(){
+        //     console.log('===START===')
+            
+        //     result = allDocs.filter(searchInput.value)
+        //     return allDocs.filter((result) => 
+        //         result.toLowerCase().includes(searchInput.value.toLowerCase())
+        //     )
+        // }
+        
+        
+    }
+
+}
+
+</script>
+
 
 <style>
 #ItineraryListings {
@@ -255,23 +153,3 @@ tr:nth-child(even) {
 }
 </style>
 
-<script>
-    
-    import { initFlowbite } from 'flowbite'
-    export default{
-    mounted(){
-        // console.log('hello');
-        initFlowbite();
-        }
-    }
-    
-    // figure out how to import db
-    function showFilteredResults(){
-        var searchInput = document.getElementById('default-search-itinerary')
-        console.log('===START===')
-        // for listing in listings
-        // results = smth.filter(searchInput)
-        string = ``
-        // return string
-    }
-</script>
