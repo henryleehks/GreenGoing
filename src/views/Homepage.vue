@@ -1,5 +1,5 @@
 <template>
-    <div onload="floatin()">
+    <div id="PageContent" style="height: 100%; transition: 0.5s">
         <div class="flex flex-col flex-1">
 
             <div>
@@ -54,7 +54,7 @@
                         </div>
                     </div>
 
-                    <div id="user-input-box"
+                    <!-- <div id="user-input-box"
                         class=" absolute grid grid-rows-3 h-screen rounded-xl z-1 p-1 drop-shadow-md inset-x-0 top-16 w-2/3 md:w-1/3">
 
                         <div id="traveller-date-input" class="grid place-items-center row-start-1 grid-cols-4">
@@ -117,7 +117,7 @@
                             </div>
                         </div>
 
-                    </div>
+                    </div> -->
                 </div>
 
             </div>
@@ -140,14 +140,13 @@
                     </div>
 
                     <div id="PageContent"
-                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-4 place-items-center content-center">
+                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 place-items-center content-center">
 
                         <itemCardVue v-for="doc of allDocs" :cardID=doc.ID :cardName=doc.Data.Name
-                            :cardImg=doc.Data.images[0] 
-                            :cardRating=doc.Data.rating 
-                            :cardRatingImg=doc.Data.rating_img
+                            :cardImg=doc.Data.images[0] :cardRating=doc.Data.rating :cardRatingImg=doc.Data.rating_img
                             :card-price=doc.Data.Price_level>
                         </itemCardVue>
+
                     </div>
 
                 </div>
@@ -160,20 +159,26 @@
 </template>
 
 <script>
+
+
+// getElementById("PageContent").style.height = "100%"
+
+
 import { initCarousels, initDropdowns } from 'flowbite'
 import itemCardVue from '../components/itemCard.vue'
 import { getAllDocuments } from '../db/dbfunctions.js'
 import { db } from '../db/FireBaseDB.js'
-function floatin() {
-    require('tailwind')
-    console.log("float-in() start")
-
-}
 
 const allDocs = await getAllDocuments(db)
 
 
 export default {
+    methods: {
+        floatin() {
+            console.log("test")
+        }
+    },
+
     mounted() {
         console.log('hello');
         initCarousels();
