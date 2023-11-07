@@ -6,7 +6,7 @@
                 </RouterLink>
                 <div class="absolute top-3 right-4">
                     <button class="scale-75 hover:scale-90">
-                        <img src="src/assets/Favorite@2x.png">
+                        <img src="/src/assets/Favorite@2x.png">
                     </button>
                 </div>
             </div>
