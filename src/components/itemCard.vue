@@ -1,7 +1,7 @@
 <template>
-        <div class="rounded-2xl scale-90 hover:scale-100 w-72 h-96 max-w-sm bg-white border border-gray-200 shadow-xl dark:bg-gray-800 dark:border-gray-700 align-bottom">
+        <div class="rounded-3xl transition duration-500 ease-in-out scale-90 hover:scale-100 w-64 h-96 max-w-sm bg-white border border-gray-200 shadow-xl dark:bg-gray-800 dark:border-gray-700 align-bottom">
             <RouterLink :to=cardURL class='flex flex-column' @click="currentID.updateCurrentID(theURL)">
-                <img class="object-cover object-center h-40 w-full" :src="cardImg" alt="product image" />
+                <img class="h-40 w-full p-2" :src="cardImg" alt="product image" />
             </RouterLink>
 
             <div class="p-5 m-5 mx-auto">
@@ -10,6 +10,8 @@
                     {{ cardName }}
                     </h5>
                 </RouterLink>
+                <!-- <img src="src/assets/favsgray.png"> -->
+
                 <div class="align-bottom pb-0">
                     <div class="flex items-center mt-2.5 mb-5">
                         <img :src="cardRatingImg">
