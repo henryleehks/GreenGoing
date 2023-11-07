@@ -62,13 +62,6 @@ async function addGGReview(db,id,review){
       )
    }
   )
-  if(result.exists()){
-    console.log('review added succesfully')
-  }
-  else{
-    console.log('review add failed')
-  }
-
 
 }
 
@@ -78,12 +71,6 @@ async function addFavourite(db,locationID,userID){
     Favourites: arrayUnion(locationID)
     }
   )
-  if(result.exists()){
-    console.log('favourite added succesfully')
-  }
-  else{
-    console.log('favourite add failed')
-  }
 }
 
 async function removeFavourite(db,locationID,userID){
@@ -92,12 +79,6 @@ async function removeFavourite(db,locationID,userID){
     Favourites: arrayRemove(locationID)
     }
   )
-  if(result.exists()){
-    console.log('favourite added succesfully')
-  }
-  else{
-    console.log('favourite add failed')
-  }
 }
 
 async function addPast(db,locationID,userID){
@@ -106,12 +87,6 @@ async function addPast(db,locationID,userID){
     Booked: arrayUnion(locationID)
     }
   )
-  if(result.exists()){
-    console.log('past booking added succesfully')
-  }
-  else{
-    console.log('past booking add failed')
-  }
 }
 
 async function removePast(db,locationID,userID){
@@ -120,12 +95,6 @@ async function removePast(db,locationID,userID){
     Booked: arrayRemove(locationID)
     }
   )
-  if(result.exists()){
-    console.log('past booking remove succesfully')
-  }
-  else{
-    console.log('past booking remove failed')
-  }
 }
 
 
