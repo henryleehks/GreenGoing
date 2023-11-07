@@ -192,7 +192,7 @@ export default {
                     this.isUserSignedIn = false;
                     currentID.updateCurrentID('');
                     console.log('Logged Out UserID: ' + currentID.currentID)
-                    currentUser.updateCurrentUser('','');
+                    currentUser.updateCurrentUser('','Anonymous');
                     console.log('Logged Out User ID: ' + currentUser.UserID)
                     console.log('Logged Out Username: ' + currentUser.UserName)
 
