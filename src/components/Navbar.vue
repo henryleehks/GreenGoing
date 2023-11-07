@@ -34,9 +34,9 @@
                                     </svg>
                                 </div>
 
-                                <input type="search" id="nav-search" class="block w-full p-2 pl-8 pr-12 mx10 text-xs text-gray-900 border border-slate-900 rounded-lg bg-grey-200" placeholder = 'Search Experiences!' required>
+                                <input type="search" id="nav-search" v-model="query" placeholder = 'Search Experiences!' class="block w-full p-2 pl-8 pr-12 mx10 text-xs text-gray-900 border border-slate-900 rounded-lg bg-grey-200"  required>
 
-                                <button type="submit" class="text-white absolute right-1 bottom-1 bg-neutral-400 hover:bg-neutral-500 focus:ring-4 focus:outline-none focus:ring-[#50A060] font-xsmall rounded-md text-xs px-1 py-1">Search</button>
+                                <button @click="search(query)" class="text-white absolute right-1 bottom-1 bg-neutral-400 hover:bg-neutral-500 focus:ring-4 focus:outline-none focus:ring-[#50A060] font-xsmall rounded-md text-xs px-1 py-1">Search</button>
                             </div>
                         </form>
                     </li>
@@ -89,7 +89,18 @@
     
 <script>
 export default {
-    name: 'Navbar'
+    name: 'Navbar',
+    methods:{
+        search(){
+            console.log('hello')
+        }
+    },
+    data(){
+        const query = 'search'
+        return {
+            
+        }
+    }
 }
 </script>
     
