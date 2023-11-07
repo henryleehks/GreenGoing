@@ -5,7 +5,7 @@
             <!-- GreenGoing logo -->
             <RouterLink to="/">
                 <div class="flex items-center">
-                    <img src="/src/assets/logo.png" class="h-14 mr-4" alt="GreenGoing Logo" />
+                    <img src="/src/assets/logo.png" class="h-14 mr-4 rounded-3xl" alt="GreenGoing Logo" />
                 </div>
             </RouterLink>
 
@@ -188,7 +188,7 @@ export default {
             signOut(auth)
                 .then(() => {
                     // Sign-out successful.
-                    alert('User Logged Out');
+                    alert('Logged Out successfully!');
                     this.isUserSignedIn = false;
                     currentID.updateCurrentID('');
                     console.log('Logged Out UserID: ' + currentID.currentID)
