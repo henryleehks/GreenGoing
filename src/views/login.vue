@@ -664,7 +664,6 @@ export default {
                             // Redirect to the desired page
                             // window.location.href = "../";
                             router.push('/login');
-                            alert('User created!');
                         })
                         .catch((error) => {
                             console.error('Error adding user details to the database', error);

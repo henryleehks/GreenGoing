@@ -188,7 +188,7 @@ export default {
             signOut(auth)
                 .then(() => {
                     // Sign-out successful.
-                    alert('User Logged Out');
+                    alert('Logged Out successfully!');
                     this.isUserSignedIn = false;
                     currentID.updateCurrentID('');
                     console.log('Logged Out UserID: ' + currentID.currentID)
