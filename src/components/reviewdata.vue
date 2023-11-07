@@ -4,9 +4,7 @@
         <h2 class="font-bold text-2xl">{{ revTitle }}</h2>
         <h2 class="font-bold text-xl">Date: {{revDate}}</h2>
         <p class="text-lg">{{ revText }}</p>
-        <a href="review_page_tailwind.html">
-            <span>Review Rating: <img :src="revImg"></span>
-        </a>
+        <span>Review Rating: <img :src="revImg"></span>
     </td>
 </tr>
 </template>

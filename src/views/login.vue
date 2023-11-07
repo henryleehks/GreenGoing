@@ -549,6 +549,7 @@ form>p {
 import { app, db, login_db, auth } from "../db/FireBaseDB";
 import { set, ref, update } from "firebase/database";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+import { currentUser } from "../db/localstore";
 
 export default {
     mounted() {
@@ -679,6 +680,7 @@ export default {
                     // window.location.href = "../?username=" + username + "&email=" + email;
 
                     alert("Welcome, " + username + "! Let's travel sustainably!!");
+                    currentUser.updateCurrentUser(user.uid)
                 })
                 .catch((error) => {
                     const errorMessage = error.message;

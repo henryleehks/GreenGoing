@@ -94,7 +94,16 @@
             </table>
         </div>
         <!-- Greengoing content -->
-        <div class="hidden p-4 rounded-lg bg-gray-50" id="greengoingbookings" role="tabpanel" aria-labelledby="greengoing-tab">
+        <div class="hidden p-4 rounded-lg bg-gray-50 pb-20" id="greengoingbookings" role="tabpanel" aria-labelledby="greengoing-tab">
+            <ggreview
+            v-for="review in this_ggreviews"
+            :revName="review.Name"
+            :revRate="review.Rating"
+            :revText="review.Text"
+            :revTitle="review.Title"
+            >
+
+            </ggreview>
         </div>
     </div>
 
@@ -106,7 +115,8 @@ import {initFlowbite} from 'flowbite';
 import {currentID} from '../db/localstore.js';
 import {getDocument,addGGReview} from '../db/dbfunctions';
 import {db} from '../db/FireBaseDB';
-import { onMounted, Suspense,ref } from 'vue';
+import { onMounted,ref } from 'vue';
+import ggreview from '../components/GGreview.vue'
 import reviewdata from '../components/reviewdata.vue'
 import { RouterLink } from 'vue-router';
 
@@ -133,6 +143,7 @@ async function addReview(db,id,review_obj){
 const thisID = currentID.currentID
 const info = await getDocument(thisID, db)
 const this_reviews = info.reviews
+const this_ggreviews = info.GGReviews
 const this_img = info.images[0]
 
 

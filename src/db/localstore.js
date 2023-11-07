@@ -7,13 +7,29 @@ const loggedInUser = reactive({
 })
 
 const cart = reactive({
-    inCart: []
+    inCart: [],
+    add_to_cart(item){
+        this.inCart.push(item)
+    },
+    remove_from_cart(value) {
+        return this.inCart.filter(function (geeks) {
+            return geeks != value;
+        });
+    }
 })
 
 export var currentID = reactive({
     currentID: '12345',
     updateCurrentID(new_id) {
         this.currentID = new_id
+    }
+})
+
+export var currentUser = reactive({
+    UserID: '',
+    userName:'',
+    updateCurrentUser(new_User){
+        this.currentUser = new_User
     }
 })
 
