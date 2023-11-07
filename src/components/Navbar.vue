@@ -59,7 +59,7 @@
                     </li>
                     <li>
                         <RouterLink to="/cart" class="block py-2 pl-3 pr-4 text-white rounded hover:bg-neutral-500 md:hover:bg-transparent md:border-0 md:hover:text-[#50A060] md:p-0">
-                            My Cart
+                            Listings
                         </RouterLink>
                     </li>
     
