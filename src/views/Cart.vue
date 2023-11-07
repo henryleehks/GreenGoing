@@ -78,7 +78,7 @@ img {
     <!-- <h1 style="color: black;">hello world</h1> -->
 
     <div id="mySidenav"
-        style="height: 100%; width: 250;  position: fixed; z-index: 1; top: 0; left: 0; background-color: white; overflow-x: hidden; padding-top: 60px; transition: 0.5s;">
+        style="height: 100%; width: 0px;  position: fixed; z-index: 1; top: 0; left: 0; background-color: white; overflow-x: hidden; padding-top: 60px; transition: 0.5s;">
         <br>
         <br>
         <a href="javascript:void(0)" class="closebtn" v-on:click="closeNav()"
@@ -565,7 +565,7 @@ export default {
         },
 
         closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("mySidenav").style.width = "0px";
         }
 
 

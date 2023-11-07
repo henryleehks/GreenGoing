@@ -42,7 +42,7 @@
                     </li>
     
                     <li>
-                        <RouterLink to="/" class="block py-2 pl-3 pr-4 text-white bg-neutral-500 rounded md:bg-transparent  md:hover:text-[#50A060] md:p-0" aria-current="page">
+                        <RouterLink to="/" class="block py-2 pl-3 pr-4 text-white hover:bg-neutral-500 rounded md:bg-transparent  md:hover:text-[#50A060] md:p-0" aria-current="page">
                             Home
                         </RouterLink>
                     </li>
