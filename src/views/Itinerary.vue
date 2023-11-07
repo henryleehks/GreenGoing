@@ -117,6 +117,7 @@ import { initFlowbite } from 'flowbite'
 
 
 
+
 const allDocs = await getAllDocuments(db)
 var searchInput = document.getElementById('default-search-itinerary')
 var results = SearchAllDocuments(allDocs, searchInput)

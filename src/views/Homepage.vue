@@ -4,9 +4,32 @@
 
             <div class="animate-up">
                 <div id="top-header" class="block pt-8 shadow-inner w-full">
-                    <h1
+                    <div class="typingtext">
+                        <div class="typewriter hidden xl:block justify-content-center"> 
+                            <h1
+                            class="mb-4 p-5 text-3xl font-extrabold leading-none tracking-tight text-black md:text-5xl lg:text-6xl dark:text-white text-center">
+                            Streamlining Eco-travel in Singapore
+                            </h1>
+                        </div> 
+                    </div>
+                    <!-- <div class="typewriter hidden xl:block justify-content-center"> 
+                        <h1
                         class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white text-center">
-                        Streamlining Eco-travel in Singapore</h1>
+                        Streamlining Eco-travel in Singapore
+                        </h1>
+                    </div>  -->
+
+                    <div class="xl:hidden"> 
+                        <h1
+                        class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white text-center">
+                        Streamlining Eco-travel in Singapore
+                        </h1>
+                    </div> 
+                    
+                    
+                    <!-- <h1
+                        class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white text-center">
+                        Streamlining Eco-travel in Singapore</h1> -->
                     <p
                         class="mb-6 text-lg font-bold text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400 text-center">
                         At
@@ -155,7 +178,12 @@
             </div>
 
         </div>
-
+        <!-- Test -->
+        <!-- <div class="wrapper"> 
+        <div class="typewriter text-black"> 
+            <h1>Hello Geeks of GeeksforGeeks</h1> 
+        </div> 
+        </div>  -->
     </div>
 </template>
 
@@ -167,8 +195,23 @@ import { db } from '../db/FireBaseDB.js'
 import { currentUser,currentID} from '../db/localstore'
 import { ref, watch } from 'vue'
 
+
+
 var allDocs = await getAllDocuments(db)
 
+// Test
+var index = 0; 
+var text = 'Streamlining Eco-travel in Singapore'; 
+var speed = 50; 
+  
+// function textEffect() { 
+//     if (index < text.length) { 
+//         document.getElementById("effect") 
+//                 .innerHTML += text.charAt(index); 
+//         index++; 
+//         setTimeout(textEffect, speed); 
+//     } 
+// }
 
 export default {
     mounted() {
@@ -190,37 +233,13 @@ export default {
             
         }
     },
-    methods:{
-
-    }
+   
+    
 }
 
 </script>
 
 <style>
-#topnavbar {
-    background-color: #CFCAC2;
-}
-
-#banner-logo {
-    width: 75%;
-    display: block;
-    margin: 20px;
-}
-
-#default-search {
-    background-color: #CFCAC2;
-    width: 200%;
-}
-
-#default-search-mobile {
-    background-color: #CFCAC2;
-    width: 100%;
-}
-
-#SearchButton {
-    position: absolute;
-}
 
 /* Center the user-input-box to the image */
 #user-input-area {
@@ -250,4 +269,39 @@ export default {
         transform: translateY(0);
     }
 }
+
+@keyframes typing { 
+  from { 
+        
+      width: 0;
+      margin: 300px;
+  } 
+  to { 
+      width: 100%
+  } 
+}
+
+.typewriter h1 { 
+
+    overflow: hidden; 
+
+  /* Keeps the content on a single line */
+    white-space: nowrap; 
+
+  /* Gives that scrolling effect  
+     as the typing happens */
+  /* margin: 0 auto;  */
+
+  /* Typing Effect Animation */
+    animation: typing 2.5s steps(50, end) 
+} 
+.typingtext { 
+  
+  /* Keeping the Text in the  
+     center of the Screen */
+  display: flex; 
+  justify-content: center; 
+  padding: 5px;
+} 
+
 </style>
