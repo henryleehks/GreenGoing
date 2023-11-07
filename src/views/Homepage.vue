@@ -168,15 +168,6 @@ import { initCarousels, initDropdowns } from 'flowbite'
 import itemCardVue from '../components/itemCard.vue'
 import { getAllDocuments } from '../db/dbfunctions.js'
 import { db } from '../db/FireBaseDB.js'
-<<<<<<< HEAD
-=======
-import { currentID, currentUser } from '../db/localstore'
-function floatin() {
-    require('tailwind')
-    console.log("float-in() start")
-
-}
->>>>>>> 4a15a40a2c6b012828c78bf252353036a1926f07
 
 const allDocs = await getAllDocuments(db)
 
