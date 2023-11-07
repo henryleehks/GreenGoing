@@ -27,9 +27,10 @@ export var currentID = reactive({
 
 export var currentUser = reactive({
     UserID: '',
-    userName:'',
-    updateCurrentUser(new_User){
-        this.currentUser = new_User
+    UserName:'',
+    updateCurrentUser(id,name){
+        this.UserID = id
+        this.UserName = name
     }
 })
 

@@ -164,6 +164,7 @@ import { initCarousels, initDropdowns } from 'flowbite'
 import itemCardVue from '../components/itemCard.vue'
 import { getAllDocuments } from '../db/dbfunctions.js'
 import { db } from '../db/FireBaseDB.js'
+import { currentID, currentUser } from '../db/localstore'
 function floatin() {
     require('tailwind')
     console.log("float-in() start")
@@ -178,6 +179,13 @@ export default {
         console.log('hello');
         initCarousels();
         initDropdowns();
+        console.log('username');
+        console.log(currentUser.UserName)
+        console.log('user_ID')
+        console.log(currentUser.UserID)
+        console.log('loc_ID');
+        console.log(currentID.currentID)
+
     },
     components: { itemCardVue },
     data() {

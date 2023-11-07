@@ -680,7 +680,12 @@ export default {
                     // window.location.href = "../?username=" + username + "&email=" + email;
 
                     alert("Welcome, " + username + "! Let's travel sustainably!!");
-                    currentUser.updateCurrentUser(user.uid)
+                    console.log(user.uid)
+                    console.log('the current user is: ' + currentUser.UserID)
+                    currentUser.updateCurrentUser(user.uid,username)
+
+                    console.log(currentUser.UserID)
+                    console.log(currentUser.UserName)
                 })
                 .catch((error) => {
                     const errorMessage = error.message;
