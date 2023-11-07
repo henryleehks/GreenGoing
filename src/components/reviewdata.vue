@@ -2,9 +2,9 @@
 <tr>
     <td>
         <h2 class="font-bold text-2xl">{{ revTitle }}</h2>
-        <h2 class="font-bold text-xl">Date: {{revDate}}</h2>
+        <h2 class="font-bold text-emerald-600 text-xl">Date: {{revDate}}</h2>
         <p class="text-lg">{{ revText }}</p>
-        <span>Review Rating: <img :src="revImg"></span>
+        <p><span>Review Rating: </span><span><img class='inline' :src="revImg"></span></p>
     </td>
 </tr>
 </template>

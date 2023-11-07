@@ -95,6 +95,7 @@
         </div>
         <!-- Greengoing content -->
         <div class="hidden p-4 rounded-lg bg-gray-50 pb-20" id="greengoingbookings" role="tabpanel" aria-labelledby="greengoing-tab">
+            <table id="ItineraryListings" class="justify-center items-center">
             <ggreview
             v-for="review in this_ggreviews"
             :revName="review.Name"
@@ -102,8 +103,8 @@
             :revText="review.Text"
             :revTitle="review.Title"
             >
-
             </ggreview>
+            </table>
         </div>
     </div>
 
@@ -127,7 +128,7 @@ function onsubmit(e){
 }
 
 const the_review_obj = ref({
-    rev_username: 'John Doe',
+    rev_username: 'Aaron Yeo',
     rev_title:'my first review',
     rev_text:'hello world!',
     rev_rating:'4'
