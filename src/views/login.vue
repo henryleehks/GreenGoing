@@ -554,6 +554,29 @@ import { RouterLink, routerKey } from "vue-router";
 import router from '../router'
 
 export default {
+    name: 'Login',
+    data() {
+        return {
+            isUserSignedIn: false, // Initialize it as false when the component is created
+        };
+    },
+    methods: {
+        login() {
+            // Your login logic here
+            if (currentID != '' && currentUser != '') {
+                // If the login is successful, set isUserSignedIn to true
+                this.isUserSignedIn = true;
+                // Redirect the user to the homepage
+                alert('logged in baby');
+                this.$router.push('/');
+            }
+            else {
+                this.isUserSignedIn = false;
+            }
+
+        },
+    },
+
     mounted() {
         // function initGoogleSignIn() {
         //     gapi.load('auth2', function () {
@@ -600,7 +623,8 @@ export default {
         //     // document.location.href = "http://localhost/is216/greengoing/homepage.html";
         //     // window.location.href = "http://localhost/is216/greengoing/homepage.html";
         // }
-        
+
+
         // Toggle btwn Login and Register 
         const wrapper = document.querySelector('.wrapper');
         const loginLink = document.querySelector('.login-link');
@@ -636,15 +660,15 @@ export default {
                         username: username,
                         email: email,
                     })
-                    .then(() => {
-                        // Redirect to the desired page
-                        // window.location.href = "../";
-                        window.location.reload();
-                        alert('User created!');
-                    })
-                    .catch((error) => {
-                        console.error('Error adding user details to the database', error);
-                    });
+                        .then(() => {
+                            // Redirect to the desired page
+                            // window.location.href = "../";
+                            router.push('/login');
+                            alert('User created!');
+                        })
+                        .catch((error) => {
+                            console.error('Error adding user details to the database', error);
+                        });
 
                     alert('User created!');
                 })
@@ -654,6 +678,9 @@ export default {
                     alert(errorMessage);
                 });
         });
+
+        console.log('[START] Current ID: ' + currentID.currentID);
+        console.log('[START] Current Username: ' + currentUser.Username)
 
         // Inside the login event listener
         const login = document.getElementById('login');
@@ -678,23 +705,19 @@ export default {
                     });
 
                     // Redirect to the desired page
-                    // window.location.href = "../";
-                    // window.location.href = "../?username=" + username + "&email=" + email;
-                    // routerKey.push({ path: '../'})
-
                     alert("Welcome, " + username + "! Let's travel sustainably!!");
                     // currentUser.UserID = user.uid;
                     console.log(user.uid);
                     console.log('the current user is: ' + currentUser.UserID)
-                    currentUser.updateCurrentUser(user.uid,username)
+                    currentUser.updateCurrentUser(user.uid, username)
                     router.push({ path: '/' })
 
-                    console.log(currentUser.UserID)
-                    console.log(currentUser.UserName)
-                    currentID.updateCurrentID(user.uid);
-                    console.log(currentID.currentID);
-                    console.log('done')
-                    router.push('/')
+                    // console.log(currentUser.UserID)
+                    // console.log(currentUser.UserName)
+                    // currentID.updateCurrentID(user.uid);
+                    // console.log(currentID.currentID);
+                    // console.log('done')
+                    // router.push('/')
                 })
                 .catch((error) => {
                     const errorMessage = error.message;
@@ -723,6 +746,9 @@ export default {
         //         alert('User Logged Out')
         //         currentID.updateCurrentID('');
         //         currentUser.updateCurrentUser('','');
+
+        //         // Redirect user back to Log-In page
+        //          router.push('/login')
         //     }).catch((error) => {
         //         // An error happened.
         //         const errorMessage = error.message;
@@ -732,5 +758,5 @@ export default {
     }
 }
 
-export {currentID, currentUser}
- </script>
+export { currentID, currentUser }
+</script>
