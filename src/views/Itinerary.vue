@@ -6,9 +6,9 @@
             <div class="py-5 relative inline-flex items-center overflow-hidden">
                 <img class="w-full h:auto opacity-50 rounded-r-2xl" src="src/assets/orchid.png">
                 <h1
-                    class="absolute left-8 xl:bottom-80 top-10 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl">
+                    class="absolute left-4 top-11 sm:top-24 md:top-36 lg:top-44 font-extrabold leading-none tracking-tight text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
                     Your Itinerary</h1>
-                <h1 class="absolute left-8 top-30 ml-2 text-3xl font-semibold text-white">Your recent bookings towards a
+                <h1 class="absolute left-4 top-25 md:top-30 text-md sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl font-medium text-white">Your recent bookings towards a
                     healthier, greener city.</h1>
 
                 <!-- itinerary search -->
