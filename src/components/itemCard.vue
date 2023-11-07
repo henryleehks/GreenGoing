@@ -1,6 +1,6 @@
 <template>
     <div
-        class="w-full h-full m-5 max-w-sm bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 align-bottom">
+        class="w-full h-full max-w-sm bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 align-bottom">
         <RouterLink :to=cardURL class='flex h-1/2 justify-center' @click="currentID.updateCurrentID(theURL)">
             <img class="object-cover object-center h-full" :src="cardImg" alt="product image" />
         </RouterLink>
