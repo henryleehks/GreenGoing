@@ -48,12 +48,12 @@
                 <!-- Your Bookings content -->
                 <div class="hidden p-4 rounded-lg bg-gray-50" id="yourbookings" role="tabpanel" aria-labelledby="yourbookings-tab">
                     <table id="ItineraryListings" class="justify-center items-center">
-                        <div v-if="SearchAllDocuments()">
+                        <!-- <div v-if="SearchAllDocuments()">
                             <tableRowItinerary
                             v-for="result of results" :rowID=doc.ID :rowName=doc.Data.Name :rowImg=doc.Data.images[0] :rowDescript=doc.Description :rowRating=doc.Data.rating :rowRatingImg=doc.Data.rating_img>
                             </tableRowItinerary>  
-                        </div>
-                        <div v-else>
+                        </div> -->
+                        <div>
                             <tableRowItinerary
                             v-for="doc of allDocs" :rowID=doc.ID :rowName=doc.Data.Name :rowImg=doc.Data.images[0] :rowDescript=doc.Description :rowRating=doc.Data.rating :rowRatingImg=doc.Data.rating_img>
                             </tableRowItinerary>
