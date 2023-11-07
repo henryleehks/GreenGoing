@@ -31,13 +31,7 @@ async function getAllDocuments(db_object){
 }
 
 async function addGGReview(db,id,review){
-  console.log('test1')
-  console.log(review)
-  console.log(db)
-  console.log(id)
   const doc_to_update = doc(db,'Entries',id)
-  console.log('test2')
-  console.log(doc)
   const result = await updateDoc(doc_to_update, {
     GGReviews: arrayUnion(
         {
@@ -59,10 +53,40 @@ async function addGGReview(db,id,review){
 
 }
 
+async function addFavourite(db,locationID,userID){
+  const doc_to_update = doc(db,'Users',userID)
+  const result = await updateDoc(doc_to_update,{
+    Favourites: arrayUnion(locationID)
+    }
+  )
+  if(result.exists()){
+    console.log('review added succesfully')
+  }
+  else{
+    console.log('review add failed')
+  }
+}
+
+async function removeFavourite(db,locationID,userID){
+  const doc_to_update = doc(db,'Users',userID)
+  const result = await updateDoc(doc_to_update,{
+    Favourites: arrayRemove(locationID)
+    }
+  )
+  if(result.exists()){
+    console.log('review added succesfully')
+  }
+  else{
+    console.log('review add failed')
+  }
+}
+
 export {
     getDocument,
     getAllDocuments,
-    addGGReview
+    addGGReview,
+    addFavourite,
+    removeFavourite
 }
 
 // // ######################################################################
