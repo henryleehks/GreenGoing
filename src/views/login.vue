@@ -551,6 +551,7 @@ import { set, ref, update } from "firebase/database";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, updateCurrentUser } from "firebase/auth";
 import { currentUser, currentID } from "../db/localstore";
 import { RouterLink, routerKey } from "vue-router";
+import router from '../router'
 
 export default {
     mounted() {
@@ -686,11 +687,14 @@ export default {
                     console.log(user.uid);
                     console.log('the current user is: ' + currentUser.UserID)
                     currentUser.updateCurrentUser(user.uid,username)
+                    router.push({ path: '/' })
 
                     console.log(currentUser.UserID)
                     console.log(currentUser.UserName)
                     currentID.updateCurrentID(user.uid);
                     console.log(currentID.currentID);
+                    console.log('done')
+                    router.push('/')
                 })
                 .catch((error) => {
                     const errorMessage = error.message;
@@ -712,20 +716,19 @@ export default {
         });
 
         // Logout function
-        const logout = document.getElementById('logout')
-        logout.addEventListener('click', (e) => {
-            signOut(auth).then(() => {
-                // Sign-out successful.
-                alert('User Logged Out')
-                currentID.updateCurrentID('');
-                currentUser.updateCurrentUser('','');
-            }).catch((error) => {
-                // An error happened.
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                alert(errorMessage);
-            });
-        })
+        // const logout = document.getElementById('logout')
+        // logout.addEventListener('click', (e) => {
+        //     signOut(auth).then(() => {
+        //         // Sign-out successful.
+        //         alert('User Logged Out')
+        //         currentID.updateCurrentID('');
+        //         currentUser.updateCurrentUser('','');
+        //     }).catch((error) => {
+        //         // An error happened.
+        //         const errorMessage = error.message;
+        //         alert(errorMessage);
+        //     });
+        // })
     }
 }
 
