@@ -529,15 +529,6 @@ form>p {
                 </form>
             </div>
         </div>
-
-
-
-        <!-- <script src="login.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script> -->
-        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.js"></script> -->
-
     </body>
 </template>
 
@@ -737,23 +728,7 @@ export default {
             }
         });
 
-        // Logout function
-        // const logout = document.getElementById('logout')
-        // logout.addEventListener('click', (e) => {
-        //     signOut(auth).then(() => {
-        //         // Sign-out successful.
-        //         alert('User Logged Out')
-        //         currentID.updateCurrentID('');
-        //         currentUser.updateCurrentUser('','');
-
-        //         // Redirect user back to Log-In page
-        //          router.push('/login')
-        //     }).catch((error) => {
-        //         // An error happened.
-        //         const errorMessage = error.message;
-        //         alert(errorMessage);
-        //     });
-        // })
+ 
     }
 }
 
