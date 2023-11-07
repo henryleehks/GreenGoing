@@ -60,19 +60,26 @@
             </button>
             <div class="px-6 py-6 lg:px-8">
                 <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Leave a review!</h3>
-                <form class="space-y-6" action="/"> <!-- idk how to get this to WORK HAIZ-->
+                <div class="space-y-6"> <!-- idk how to get this to WORK HAIZ-->
                     <div>
                         <label for="review_title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Review Title</label>
-                        <input type="text" name="review_title" id="review_title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-emerald-500 focus:border-emerald-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Review Title" required>
+                        <input type="text" name="review_title" id="review_title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-emerald-500 focus:border-emerald-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Review Title" 
+                        v-model="the_title" required>
                     </div>
                     <div>
                         <label for="review_text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Review Text</label>
-                        <input type="text" name="review_text" id="review_text" placeholder="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-emerald-500 focus:border-emerald-500 block w-full h-40 p-2.5  dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
+                        <input type="text" name="review_text" id="review_text" placeholder="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-emerald-500 focus:border-emerald-500 block w-full h-40 p-2.5  dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" 
+                        required v-model="the_text">
+                    </div>
+                    <div>
+                        <label for="review_rating" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Rating</label>
+                        <input type="number" name="review_rating" id="review_rating" max="5" min="1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-emerald-500 focus:border-emerald-500 block w-full p-2.5  dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" 
+                        required v-model="the_rating" >
                     </div>
 
-                    <button type="submit" @click="addReview(db,thisID,the_review_obj)" class="w-full text-white bg-emerald-700 hover:bg-emerald-800 focus:ring-4 focus:outline-none focus:ring-emerald-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-emerald-600 dark:hover:bg-emerald-700 dark:focus:ring-emerald-800">Submit your Review</button>
+                    <button type="submit" @click="addReview(db,thisID,the_text,the_rating,the_title,currentUser.UserName)" class="w-full text-white bg-emerald-700 hover:bg-emerald-800 focus:ring-4 focus:outline-none focus:ring-emerald-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-emerald-600 dark:hover:bg-emerald-700 dark:focus:ring-emerald-800">Submit your Review</button>
 
-                </form>
+                </div>
             </div>
         </div>
     </div>
@@ -113,40 +120,50 @@
 
 <script setup>
 import {initFlowbite} from 'flowbite';
-import {currentID} from '../db/localstore.js';
+import {currentID,currentUser} from '../db/localstore.js';
 import {getDocument,addGGReview} from '../db/dbfunctions';
 import {db} from '../db/FireBaseDB';
-import { onMounted,ref } from 'vue';
+import { onMounted,ref, defineModel } from 'vue';
 import ggreview from '../components/GGreview.vue'
 import reviewdata from '../components/reviewdata.vue'
 import { RouterLink } from 'vue-router';
 
 onMounted(initFlowbite)
 
+console.log(currentID.currentID)
+
 function onsubmit(e){
     e.preventDefault()
 }
 
-const the_review_obj = ref({
-    rev_username: 'Aaron Yeo',
-    rev_title:'my first review',
-    rev_text:'hello world!',
-    rev_rating:'4'
-})
 
-async function addReview(db,id,review_obj){
+async function addReview(db,id,text,rating,title,user){
+    const the_review_obj = {
+        rev_username: user,
+        rev_title: title,
+        rev_text: text,
+        rev_rating: rating
+    }
     console.log('start')
-    addGGReview(db,id,review_obj)   
+    console.log(id)
+    console.log(db)
+    console.log(the_review_obj)
+    addGGReview(db,id,the_review_obj)   
     console.log('end')
 }
 
 
 const thisID = currentID.currentID
 const info = await getDocument(thisID, db)
+console.log("hello this is: " + thisID)
 console.log(info)
 const this_reviews = info.reviews
 const this_ggreviews = info.GGReviews
 const this_img = info.images[0]
+
+const the_text = ref('')
+const the_rating = ref('')
+const the_title = ref('')
 
 
 

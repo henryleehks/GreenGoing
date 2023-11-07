@@ -27,7 +27,7 @@ export var currentID = reactive({
 
 export var currentUser = reactive({
     UserID: '',
-    UserName:'',
+    UserName:'Anonymous',
     updateCurrentUser(id,name){
         this.UserID = id
         this.UserName = name
