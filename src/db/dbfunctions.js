@@ -1,6 +1,4 @@
-import {doc, collection, getDoc, getDocs, setDoc, addDoc,deleteDoc,updateDoc, arrayRemove, arrayUnion} from 'firebase/firestore';
-
-import {db}from './FireBaseDB.js'
+import {doc, collection, getDoc, getDocs, setDoc, addDoc,deleteDoc,updateDoc, arrayRemove, arrayUnion, QuerySnapshot} from 'firebase/firestore';
 
 
 async function getDocument(id,db_object){
@@ -28,6 +26,27 @@ async function getAllDocuments(db_object){
         results.push(toAdd)
       });
     return results
+}
+
+async function SearchAllDocuments(db_object,query){
+  const q = query(collection(db_object, "Name"), where("Name", ">", query),where("Name", "<", query + "z"));
+  const querySnapshot = await getDocs(q);
+  const results = []
+  if(querySnapshot){
+    querySnapshot.forEach((doc) => {
+      // doc.data() is never undefined for query doc snapshots
+      const toAdd = {
+          ID:doc.id,
+          Data:doc.data()
+      }
+      results.push(toAdd)
+    });
+  return results
+  }
+  else{
+    console.log('no results')
+    return results
+  }
 }
 
 async function addGGReview(db,id,review){
@@ -113,6 +132,7 @@ async function removePast(db,locationID,userID){
 export {
     getDocument,
     getAllDocuments,
+    SearchAllDocuments,
     addGGReview,
     addFavourite,
     removeFavourite,
