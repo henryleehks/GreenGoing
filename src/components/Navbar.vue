@@ -46,17 +46,18 @@
                             </div>
                         </form>
                     </li>
+                    <li>
+                        <RouterLink to="/" class="block py-2 pl-3 pr-4 text-white rounded hover:bg-neutral-500 md:hover:bg-transparent  md:hover:text-[#50A060] md:p-0" aria-current="page">
+                            Home
+                        </RouterLink>
+                    </li>
 
                     <li>
                         <RouterLink to="/cart" class="block py-2 pl-3 pr-4 text-white rounded hover:bg-neutral-500 md:hover:bg-transparent md:border-0 md:hover:text-[#50A060] md:p-0">
                             Listings
                         </RouterLink>
                     </li>
-                    <li>
-                        <RouterLink to="/" class="block py-2 pl-3 pr-4 text-white rounded hover:bg-neutral-500 md:hover:bg-transparent  md:hover:text-[#50A060] md:p-0" aria-current="page">
-                            Home
-                        </RouterLink>
-                    </li>
+
 
                     <li>
                         <RouterLink to="/itinerary"
