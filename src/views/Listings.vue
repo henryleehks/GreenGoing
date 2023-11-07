@@ -21,30 +21,45 @@
 
     </section>
 
-    <div class="mb-4 border-b border-gray-200">
-        <h1 class="font-bold text-3xl p-3">{{ info.Name }}</h1>
-        <h1 class="p-3 justify-start">{{ info.Description }}</h1>
-        <div class="container justify-start">
-            <ul>
-                <li class="text-start"><span class="text-lg p-1 font-bold text-emerald-600">Address:</span> {{ info.Address }}</li>
-                <li class="text-start"><span class="text-lg p-1 font-bold text-emerald-600">Price Level:</span> {{ info.Price_level }}</li>
-                <li class="text-start bg-green-500 flex w-fit p-1 rounded-lg"><a :href="info.WebUrl" class="text-lg font-bold text-slate-50 ">Link to Tripadvisor</a></li>
-            </ul>
+            <div class=" mt-4 mb-4 border-b border-gray-200">
+                <h1 class="font-bold text-3xl p-3">{{ info.Name }}</h1>
+                <h1 class="p-3 justify-start">{{ info.Description }}</h1>
+                
+                <div class="container lg:grid  md:grid-cols-2 lg:grid-cols-2 lg:gap-4">
+                    <div class="lg:col-span-1">
+                    <ul>
+                        <li class="text-start"><p class="text-lg p-1 font-bold text-emerald-600">Address:</p> {{ info.Address }}</li>
+                        <li class="text-start"><span class="text-lg p-1 font-bold text-emerald-600">Price Level:</span> {{ info.Price_level }}</li>
+                    </ul>
+                    </div>
+    
+                    <div class="lg:col-span-1 flex justify-end"> 
+                        <button class="bg-blue-500 px-4 m-5 py-2 rounded-lg">
+                        <a :href="info.WebUrl" class="text-md text-slate-50">
+                            Link to Tripadvisor
+                        </a>
+                        </button>
+                    </div>
+                </div>
+    
+                <div class="flex flex-col md:flex-row md:items-center">
+                    <div class="md:w-1/2"> 
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4 -mb-px text-sm sm:text-md md:text-md font-medium text-center" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist">
+                            <li role="presentation">
+                                <button class="inline-block p-4 border-b-2 rounded-t-lg" id="tripadvisor-tab" data-tabs-target="#tripadvisorbookings" type="button" role="tab" aria-controls="yourbookings" aria-selected="false">Tripadvisor Reviews</button>
+                            </li>
+                            <li role="presentation">
+                                <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300" id="greengoing-tab" data-tabs-target="#greengoingbookings" type="button" role="tab" aria-controls="pastbookings" aria-selected="false">Greengoing Reviews</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="md:ml-auto md:mt-4"> 
+                        <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="block w-full md:w-80 mr-10 md:inline-block text-white bg-emerald-600 hover:bg-emerald-700 focus:ring-4 focus:outline-none focus:ring-emerald-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-emerald-600 dark:hover:bg-emerald-700 dark:focus:ring-emerald-800" type="button">
+                            Leave a Review!
+                        </button>
+                    </div>
+            </div>
         </div>
-        <ul class="flex flex-wrap -mb-px text-sm sm:text-md md:text-md font-medium text-center" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist">
-            <li class="mr-2" role="presentation">
-                <button class="inline-block p-4 border-b-2 rounded-t-lg" id="tripadvisor-tab" data-tabs-target="#tripadvisorbookings" type="button" role="tab" aria-controls="yourbookings" aria-selected="false">Tripadvisor Reviews</button>
-            </li>
-            <li class="mr-2" role="presentation">
-                <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300" id="greengoing-tab" data-tabs-target="#greengoingbookings" type="button" role="tab" aria-controls="pastbookings" aria-selected="false">Greengoing Reviews</button>
-            </li>
-            <li class="mr-2">
-                <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="block text-white bg-emerald-600 hover:bg-emerald-700 focus:ring-4 focus:outline-none focus:ring-emerald-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-emerald-600 dark:hover:bg-emerald-700 dark:focus:ring-emerald-800" type="button">
-                    Leave a Review!
-                </button>
-            </li>
-        </ul>
-    </div>
 
 
 <!-- Main modal -->

@@ -40,20 +40,20 @@
                                     </svg>
                                 </div>
 
-                                <input type="search" id="nav-search"
-                                    class="block w-full p-2 pl-8 pr-12 mx10 text-xs text-gray-900 border border-slate-900 rounded-lg bg-grey-200"
-                                    placeholder='Search Experiences!' required>
+                                <input type="search" id="nav-search" v-model="query" placeholder = 'Search Experiences!' class="block w-full p-2 pl-8 pr-12 mx10 text-xs text-gray-900 border border-slate-900 rounded-lg bg-grey-200"  required>
 
-                                <button type="submit"
-                                    class="text-white absolute right-1 bottom-1 bg-neutral-400 hover:bg-neutral-500 focus:ring-4 focus:outline-none focus:ring-[#50A060] font-xsmall rounded-md text-xs px-1 py-1">Search</button>
+                                <button @click="search(query)" class="text-white absolute right-1 bottom-1 bg-neutral-400 hover:bg-neutral-500 focus:ring-4 focus:outline-none focus:ring-[#50A060] font-xsmall rounded-md text-xs px-1 py-1">Search</button>
                             </div>
                         </form>
                     </li>
 
                     <li>
-                        <RouterLink to="/"
-                            class="block py-2 pl-3 pr-4 text-white bg-neutral-500 rounded md:bg-transparent  md:hover:text-[#50A060] md:p-0"
-                            aria-current="page">
+                        <RouterLink to="/cart" class="block py-2 pl-3 pr-4 text-white rounded hover:bg-neutral-500 md:hover:bg-transparent md:border-0 md:hover:text-[#50A060] md:p-0">
+                            Listings
+                        </RouterLink>
+                    </li>
+                    <li>
+                        <RouterLink to="/" class="block py-2 pl-3 pr-4 text-white rounded hover:bg-neutral-500 md:hover:bg-transparent  md:hover:text-[#50A060] md:p-0" aria-current="page">
                             Home
                         </RouterLink>
                     </li>
@@ -70,16 +70,9 @@
                             Favourites
                         </RouterLink>
                     </li>
+    
                     <li>
-                        <RouterLink to="/cart"
-                            class="block py-2 pl-3 pr-4 text-white rounded hover:bg-neutral-500 md:hover:bg-transparent md:border-0 md:hover:text-[#50A060] md:p-0">
-                            My Cart
-                        </RouterLink>
-                    </li>
-
-                    <li>
-                        <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
-                            class="flex items-center justify-between w-full py-2 pl-3 pr-4  text-white border-t border-gray-100 hover:bg-[#50A060] md:hover:bg-transparent md:border-0 md:hover:text-[#50A060] md:p-0 md:w-auto">
+                        <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-2 pl-3 pr-4  text-white border border-gray-100 hover:bg-[#50A060] md:hover:bg-transparent md:border-0 md:hover:text-[#50A060] md:p-0 md:w-auto">
                             <img src="src/assets/User Profile Icon.png" />
                             <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 fill="none" viewBox="0 0 10 6">
@@ -116,8 +109,15 @@ import SignOutButton from "../components/SignOutButton.vue";
 
 export default {
     name: 'Navbar',
+    methods:{
+        search(){
+            console.log('hello')
+        }
+    },
     data() {
+        const query = 'search';
         return {
+            // This to check if user is currently signed in.
             isUserSignedIn: false, // Initialize it as false when the component is created
         };
     },
@@ -195,6 +195,8 @@ export default {
         },
     },
 }
+    
+
 
 export { currentID, currentUser }
 </script>
