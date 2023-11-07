@@ -142,6 +142,7 @@ async function addReview(db,id,review_obj){
 
 const thisID = currentID.currentID
 const info = await getDocument(thisID, db)
+console.log(info)
 const this_reviews = info.reviews
 const this_ggreviews = info.GGReviews
 const this_img = info.images[0]

@@ -730,4 +730,4 @@ export default {
 }
 
 export {currentID, currentUser}
-</script>
+ </script>
