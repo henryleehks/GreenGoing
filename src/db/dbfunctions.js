@@ -29,7 +29,7 @@ async function getAllDocuments(db_object){
 }
 
 async function SearchAllDocuments(db_object,query){
-  const q = query(collection(db_object, "Name"), where("Name", ">", query),where("Name", "<", query + "z"));
+  const q = query(collection(db_object, "Name"), where("Name", ">", query));
   const querySnapshot = await getDocs(q);
   const results = []
   if(querySnapshot){
