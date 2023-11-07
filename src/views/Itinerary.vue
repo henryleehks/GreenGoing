@@ -111,7 +111,6 @@
         data() {
             return {
                 allDocs,
-                results,
             }
             
         }

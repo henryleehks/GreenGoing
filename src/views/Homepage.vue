@@ -123,7 +123,7 @@
             </div>
 
             <div class="animate-up flex flex-shrink-0 flex-1">
-                <div id="featured-listings" style="background-color: bisque;" class="px-6 pt-2 pb-12 pb-24 w-full h-full">
+                <div id="featured-listings" style="background-color: bisque;" class="px-6 pt-2 pb-12 w-full h-full">
 
                     <div id="header-featured-listings" class="px-6 my-5">
                         <h1
