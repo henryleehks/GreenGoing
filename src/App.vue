@@ -13,7 +13,7 @@ import { Suspense } from 'vue';
       <navbar></navbar>
     </div>
 
-    <div id="pageContent" class="flex flex-1 bg-gray-100 overflow-auto">
+    <div class="flex flex-1 bg-gray-100 overflow-auto">
       <Suspense>
         <RouterView class="w-full h-full"></RouterView>
       </Suspense>
@@ -34,7 +34,7 @@ import { Suspense } from 'vue';
 
 @keyframes fadeInAnimation {
   0% {
-    transform: translateY(-100%);
+    transform: translateY(100%);
   }
   100% {
     transform: translateY(0);

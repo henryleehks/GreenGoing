@@ -2,7 +2,7 @@
     <div id="PageContent">
         <div class="flex flex-col flex-1">
 
-            <div>
+            <div class="animate-up">
                 <div id="top-header" class="block pt-8 shadow-inner w-full">
                     <h1
                         class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white text-center">
@@ -18,7 +18,7 @@
                 </div>
             </div>
 
-            <div class="flex flex-shrink-0 h-80 md:h-96">
+            <div class="animate-up flex flex-shrink-0 h-80 md:h-96">
                 <div id="user-input-area" class="w-full h-auto">
                     <div id="homepage-carousel" class="z-0 w-full content-center" data-carousel="slide">
                         <div class="relative z-0 h-80 overflow-hidden w-full rounded-t-xl md:h-96">
@@ -122,7 +122,7 @@
 
             </div>
 
-            <div class="flex flex-shrink-0 flex-1">
+            <div class="animate-up flex flex-shrink-0 flex-1">
                 <div id="featured-listings" style="background-color: bisque;" class="px-6 pt-2 pb-12 pb-24 w-full h-full">
 
                     <div id="header-featured-listings" class="px-6 my-5">
@@ -231,5 +231,21 @@ export default {
     height: 145px;
     margin: auto;
     background-color: rgb(207, 202, 194, 0.9);
+}
+
+.animate-up {
+    animation: FlyUpAnimation ease 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes FlyUpAnimation {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
 </style>
