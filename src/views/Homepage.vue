@@ -1,5 +1,5 @@
 <template>
-    <div id="PageContent" style="height: 100%; transition: 0.5s">
+    <div id="PageContent">
         <div class="flex flex-col flex-1">
 
             <div>
@@ -20,7 +20,7 @@
 
             <div class="flex flex-shrink-0 h-80 md:h-96">
                 <div id="user-input-area" class="w-full h-auto">
-                    <div id="homepage-carousel" class="z-0 w-full content-center " data-carousel="slide">
+                    <div id="homepage-carousel" class="z-0 w-full content-center" data-carousel="slide">
                         <div class="relative z-0 h-80 overflow-hidden w-full rounded-t-xl md:h-96">
 
                             <div class="hidden duration-1000 ease-in-out" data-carousel-item>
@@ -168,36 +168,20 @@ import { initCarousels, initDropdowns } from 'flowbite'
 import itemCardVue from '../components/itemCard.vue'
 import { getAllDocuments } from '../db/dbfunctions.js'
 import { db } from '../db/FireBaseDB.js'
-<<<<<<< HEAD
-=======
-import { currentID, currentUser } from '../db/localstore'
-function floatin() {
-    require('tailwind')
-    console.log("float-in() start")
-
-}
->>>>>>> 4a15a40a2c6b012828c78bf252353036a1926f07
 
 const allDocs = await getAllDocuments(db)
 
-
 export default {
-    methods: {
-        floatin() {
-            console.log("test")
-        }
-    },
-
     mounted() {
         console.log('hello');
         initCarousels();
         initDropdowns();
-        console.log('username');
-        console.log(currentUser.UserName)
+        console.log('username');    
+        // console.log(currentUser.UserName)
         console.log('user_ID')
-        console.log(currentUser.UserID)
+        // console.log(currentUser.UserID)
         console.log('loc_ID');
-        console.log(currentID.currentID)
+        // console.log(currentID.currentID)
 
     },
     components: { itemCardVue },
