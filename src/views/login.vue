@@ -548,8 +548,9 @@ form>p {
 // import { getFirestore } from "firebase/firestore";
 import { app, db, login_db, auth } from "../db/FireBaseDB";
 import { set, ref, update } from "firebase/database";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
-import { currentUser } from "../db/localstore";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, updateCurrentUser } from "firebase/auth";
+import { currentUser, currentID } from "../db/localstore";
+import { RouterLink, routerKey } from "vue-router";
 
 export default {
     mounted() {
@@ -676,16 +677,20 @@ export default {
                     });
 
                     // Redirect to the desired page
-                    window.location.href = "../";
+                    // window.location.href = "../";
                     // window.location.href = "../?username=" + username + "&email=" + email;
+                    // routerKey.push({ path: '../'})
 
                     alert("Welcome, " + username + "! Let's travel sustainably!!");
-                    console.log(user.uid)
+                    // currentUser.UserID = user.uid;
+                    console.log(user.uid);
                     console.log('the current user is: ' + currentUser.UserID)
                     currentUser.updateCurrentUser(user.uid,username)
 
                     console.log(currentUser.UserID)
                     console.log(currentUser.UserName)
+                    currentID.updateCurrentID(user.uid);
+                    console.log(currentID.currentID);
                 })
                 .catch((error) => {
                     const errorMessage = error.message;
@@ -712,6 +717,8 @@ export default {
             signOut(auth).then(() => {
                 // Sign-out successful.
                 alert('User Logged Out')
+                currentID.updateCurrentID('');
+                currentUser.updateCurrentUser('','');
             }).catch((error) => {
                 // An error happened.
                 const errorCode = error.code;
@@ -721,4 +728,6 @@ export default {
         })
     }
 }
+
+export {currentID, currentUser}
 </script>
