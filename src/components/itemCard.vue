@@ -1,5 +1,5 @@
 <template>
-        <div class="rounded-3xl transition duration-500 ease-in-out scale-90 hover:scale-100 w-64 h-96 max-w-sm bg-white border border-gray-200 shadow-xl dark:bg-gray-800 dark:border-gray-700 align-bottom">
+        <div class="rounded-3xl col-span-1 transition duration-500 ease-in-out scale-90 hover:scale-100 w-64 h-96 max-w-sm bg-white border border-gray-200 shadow-xl dark:bg-gray-800 dark:border-gray-700 align-bottom">
             <RouterLink :to=cardURL class='flex flex-column' @click="currentID.updateCurrentID(theURL)">
                 <img class="h-40 w-full p-2" :src="cardImg" alt="product image" />
             </RouterLink>
