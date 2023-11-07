@@ -60,10 +60,10 @@ async function addFavourite(db,locationID,userID){
     }
   )
   if(result.exists()){
-    console.log('review added succesfully')
+    console.log('favourite added succesfully')
   }
   else{
-    console.log('review add failed')
+    console.log('favourite add failed')
   }
 }
 
@@ -74,12 +74,41 @@ async function removeFavourite(db,locationID,userID){
     }
   )
   if(result.exists()){
-    console.log('review added succesfully')
+    console.log('favourite added succesfully')
   }
   else{
-    console.log('review add failed')
+    console.log('favourite add failed')
   }
 }
+
+async function addPast(db,locationID,userID){
+  const doc_to_update = doc(db,'Users',userID)
+  const result = await updateDoc(doc_to_update,{
+    Booked: arrayUnion(locationID)
+    }
+  )
+  if(result.exists()){
+    console.log('past booking added succesfully')
+  }
+  else{
+    console.log('past booking add failed')
+  }
+}
+
+async function removePast(db,locationID,userID){
+  const doc_to_update = doc(db,'Users',userID)
+  const result = await updateDoc(doc_to_update,{
+    Booked: arrayRemove(locationID)
+    }
+  )
+  if(result.exists()){
+    console.log('past booking remove succesfully')
+  }
+  else{
+    console.log('past booking remove failed')
+  }
+}
+
 
 export {
     getDocument,
