@@ -464,8 +464,8 @@ img {
                             class="text-black bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center light:bg-blue-600 light:hover:bg-blue-700 light:focus:ring-blue-800"
                             v-on:click="addToCart(8, 'Merlion', 50.00, 'img/h.jpg', 'Adult')">Add Cart</button>
                         <!-- <button onclick="openNav()" style="color: black;">OPEN</button>
-                                                            <a href="./checkout.html"
-                                                                style="background-color: rgb(156, 255, 200); font-size: 20px; border: 1px; border-radius: 10px; text-align: center; color: black; padding-right: 20px;">CHECKOUT</a> -->
+                                                                    <a href="./checkout.html"
+                                                                        style="background-color: rgb(156, 255, 200); font-size: 20px; border: 1px; border-radius: 10px; text-align: center; color: black; padding-right: 20px;">CHECKOUT</a> -->
                     </div>
                 </div>
             </div>
@@ -503,25 +503,26 @@ export default {
             window.location.href = "protoreview.html";
         },
         myFunction(IDzz) {
-            //console.log("Button clicked!");
 
-            // Add your desired functionality here
-
+            // REMOVE FUNCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+            //myFunction(item.cartID);
             let counter = 0;
 
-            for (item of cart) {
-                //console.log(item.cartID);
+            for (let thingy of cart) {
+                //alert(thingy)
+                console.log(item.cartID);
+                console.log(thingy.cartID);
+                console.log("^ DING ^")
                 //console.log(IDzz);
-                if (item.cartID == IDzz) {
-                    console.log(IDzz);
-                    console.log("^ DING ^")
+                if (item.cartID == thingy.cartID) {
+                    console.log(thingy.cartID);
                     cart.splice(counter, 1);
                     break
 
                 }
                 counter += 1;
             }
-            // cart.push({ ID:ID,name: productName, price: price, imgurl: imgurl, type: type });
+            //cart.push({ ID:ID,name: productName, price: price, imgurl: imgurl, type: type });
             let cartList = document.getElementById("cart");
             cartList.innerHTML = "";
             var totalPrice = 0;
@@ -532,10 +533,10 @@ export default {
                 cartList.appendChild(img);
 
 
-                console.log(item)
+                //console.log(item)
                 let listItem = document.createElement("li");
                 //listItem.innerText = `${item.cartID}. ${item.name} - $${item.price.toFixed(2)} - ${item.type}`;
-                listItem.innerText = `${item.name} - $${item.price.toFixed(2)} - ${item.type}`;
+                listItem.innerText = `${item.cartID}. ${item.name} - $${item.price.toFixed(2)} - ${item.type}`;
                 cartList.appendChild(listItem);
                 totalPrice += item.price;
                 //cartList.appendChild(document.createElement("br"));
@@ -545,8 +546,9 @@ export default {
                 button.innerHTML = "Remove";
                 // Add an event listener to the button
                 //button.addEventListener("click", myFunction);
+
                 button.addEventListener("click", function () {
-                    myFunction(item.cartID);
+                    this.myFunction(item.cartID);
                 });
 
                 // Append the button to the document body
@@ -586,7 +588,7 @@ export default {
                 //console.log(item)
                 let listItem = document.createElement("li");
                 //listItem.innerText = `${item.cartID}. ${item.name} - $${item.price.toFixed(2)} - ${item.type}`;
-                listItem.innerText = `${item.name} - $${item.price.toFixed(2)} - ${item.type}`;
+                listItem.innerText = `${item.cartID}.${item.name} - $${item.price.toFixed(2)} - ${item.type}`;
                 cartList.appendChild(listItem);
                 totalPrice += item.price;
                 //cartList.appendChild(document.createElement("br"));
@@ -602,12 +604,14 @@ export default {
                     //myFunction(item.cartID);
                     let counter = 0;
 
-                    for (item of cart) {
+                    for (let thingy of cart) {
+                        //alert(thingy)
                         console.log(item.cartID);
+                        console.log(thingy.cartID);
                         console.log("^ DING ^")
                         //console.log(IDzz);
-                        if (item.cartID == item.cartID) {
-                            console.log(item.cartID);
+                        if (item.cartID == thingy.cartID) {
+                            console.log(thingy.cartID);
                             cart.splice(counter, 1);
                             break
 
@@ -636,10 +640,201 @@ export default {
                         var button = document.createElement("button");
                         // Set the button text
                         button.innerHTML = "Remove";
+
                         // Add an event listener to the button
                         //button.addEventListener("click", myFunction);
+
                         button.addEventListener("click", function () {
-                            myFunction(item.cartID);
+                            // REMOVE FUNCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+                            //myFunction(item.cartID);
+                            let counter = 0;
+
+                            for (let thingy of cart) {
+                                //alert(thingy)
+                                console.log(item.cartID);
+                                console.log(thingy.cartID);
+                                console.log("^ DING ^")
+                                //console.log(IDzz);
+                                if (item.cartID == thingy.cartID) {
+                                    console.log(thingy.cartID);
+                                    cart.splice(counter, 1);
+                                    break
+
+                                }
+                                counter += 1;
+                            }
+                            //cart.push({ ID:ID,name: productName, price: price, imgurl: imgurl, type: type });
+                            let cartList = document.getElementById("cart");
+                            cartList.innerHTML = "";
+                            var totalPrice = 0;
+
+                            for (let item of cart) {
+                                let img = document.createElement('img');
+                                img.src = item.imgurl;
+                                cartList.appendChild(img);
+
+
+                                //console.log(item)
+                                let listItem = document.createElement("li");
+                                //listItem.innerText = `${item.cartID}. ${item.name} - $${item.price.toFixed(2)} - ${item.type}`;
+                                listItem.innerText = `${item.cartID}. ${item.name} - $${item.price.toFixed(2)} - ${item.type}`;
+                                cartList.appendChild(listItem);
+                                totalPrice += item.price;
+                                //cartList.appendChild(document.createElement("br"));
+                                // Create a button element
+                                var button = document.createElement("button");
+                                // Set the button text
+                                button.innerHTML = "Remove";
+                                // Add an event listener to the button
+                                //button.addEventListener("click", myFunction);
+
+                                button.addEventListener("click", function () {
+                                    // REMOVE FUNCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+                                    //myFunction(item.cartID);
+                                    let counter = 0;
+
+                                    for (let thingy of cart) {
+                                        //alert(thingy)
+                                        console.log(item.cartID);
+                                        console.log(thingy.cartID);
+                                        console.log("^ DING ^")
+                                        //console.log(IDzz);
+                                        if (item.cartID == thingy.cartID) {
+                                            console.log(thingy.cartID);
+                                            cart.splice(counter, 1);
+                                            break
+
+                                        }
+                                        counter += 1;
+                                    }
+                                    //cart.push({ ID:ID,name: productName, price: price, imgurl: imgurl, type: type });
+                                    let cartList = document.getElementById("cart");
+                                    cartList.innerHTML = "";
+                                    var totalPrice = 0;
+
+                                    for (let item of cart) {
+                                        let img = document.createElement('img');
+                                        img.src = item.imgurl;
+                                        cartList.appendChild(img);
+
+
+                                        //console.log(item)
+                                        let listItem = document.createElement("li");
+                                        //listItem.innerText = `${item.cartID}. ${item.name} - $${item.price.toFixed(2)} - ${item.type}`;
+                                        listItem.innerText = `${item.cartID}. ${item.name} - $${item.price.toFixed(2)} - ${item.type}`;
+                                        cartList.appendChild(listItem);
+                                        totalPrice += item.price;
+                                        //cartList.appendChild(document.createElement("br"));
+                                        // Create a button element
+                                        var button = document.createElement("button");
+                                        // Set the button text
+                                        button.innerHTML = "Remove";
+                                        // Add an event listener to the button
+                                        //button.addEventListener("click", myFunction);
+
+                                        button.addEventListener("click", function () {
+                                            // REMOVE FUNCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+                                            //myFunction(item.cartID);
+                                            let counter = 0;
+
+                                            for (let thingy of cart) {
+                                                //alert(thingy)
+                                                console.log(item.cartID);
+                                                console.log(thingy.cartID);
+                                                console.log("^ DING ^")
+                                                //console.log(IDzz);
+                                                if (item.cartID == thingy.cartID) {
+                                                    console.log(thingy.cartID);
+                                                    cart.splice(counter, 1);
+                                                    break
+
+                                                }
+                                                counter += 1;
+                                            }
+                                            //cart.push({ ID:ID,name: productName, price: price, imgurl: imgurl, type: type });
+                                            let cartList = document.getElementById("cart");
+                                            cartList.innerHTML = "";
+                                            var totalPrice = 0;
+
+                                            for (let item of cart) {
+                                                let img = document.createElement('img');
+                                                img.src = item.imgurl;
+                                                cartList.appendChild(img);
+
+
+                                                //console.log(item)
+                                                let listItem = document.createElement("li");
+                                                //listItem.innerText = `${item.cartID}. ${item.name} - $${item.price.toFixed(2)} - ${item.type}`;
+                                                listItem.innerText = `${item.cartID}. ${item.name} - $${item.price.toFixed(2)} - ${item.type}`;
+                                                cartList.appendChild(listItem);
+                                                totalPrice += item.price;
+                                                //cartList.appendChild(document.createElement("br"));
+                                                // Create a button element
+                                                var button = document.createElement("button");
+                                                // Set the button text
+                                                button.innerHTML = "Remove";
+                                                // Add an event listener to the button
+                                                //button.addEventListener("click", myFunction);
+
+                                                button.addEventListener("click", function () {
+                                                    this.myFunction(item.cartID);
+                                                });
+
+                                                // Append the button to the document body
+                                                cartList.appendChild(button);
+                                                // Example function to be executed when the button is clicked
+
+
+                                            }
+
+
+                                            cartList.appendChild(document.createElement("br"));
+                                            let totalItem2 = document.createElement("br");
+                                            cartList.appendChild(totalItem2);
+
+                                            let totalItem = document.createElement("li");
+                                            totalItem.innerText = `Total: $${totalPrice.toFixed(2)}`;
+                                            cartList.appendChild(totalItem);
+                                            window.localStorage.setItem("cart", JSON.stringify(cart));
+                                            window.localStorage.setItem("crt", cart)
+                                        });
+
+                                        // Append the button to the document body
+                                        cartList.appendChild(button);
+                                        // Example function to be executed when the button is clicked
+
+
+                                    }
+
+
+                                    cartList.appendChild(document.createElement("br"));
+                                    let totalItem2 = document.createElement("br");
+                                    cartList.appendChild(totalItem2);
+
+                                    let totalItem = document.createElement("li");
+                                    totalItem.innerText = `Total: $${totalPrice.toFixed(2)}`;
+                                    cartList.appendChild(totalItem);
+                                    window.localStorage.setItem("cart", JSON.stringify(cart));
+                                    window.localStorage.setItem("crt", cart)
+                                });
+
+                                // Append the button to the document body
+                                cartList.appendChild(button);
+                                // Example function to be executed when the button is clicked
+
+
+                            }
+
+
+                            cartList.appendChild(document.createElement("br"));
+                            let totalItem2 = document.createElement("br");
+                            cartList.appendChild(totalItem2);
+
+                            let totalItem = document.createElement("li");
+                            totalItem.innerText = `Total: $${totalPrice.toFixed(2)}`;
+                            cartList.appendChild(totalItem);
+                            window.localStorage.setItem("cart", JSON.stringify(cart));
+                            window.localStorage.setItem("crt", cart)
                         });
 
                         // Append the button to the document body

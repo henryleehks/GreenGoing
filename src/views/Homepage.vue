@@ -168,6 +168,7 @@ import { initCarousels, initDropdowns } from 'flowbite'
 import itemCardVue from '../components/itemCard.vue'
 import { getAllDocuments } from '../db/dbfunctions.js'
 import { db } from '../db/FireBaseDB.js'
+import { currentUser,currentID } from '../db/localstore'
 
 const allDocs = await getAllDocuments(db)
 
