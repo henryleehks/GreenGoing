@@ -138,7 +138,6 @@
                             about
                             trying
                             new experiences!</p>
-                        <button @click="showsearch"> hellow</button>
                     </div>
 
                     <div id="PageContent"
