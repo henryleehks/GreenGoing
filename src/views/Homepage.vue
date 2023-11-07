@@ -18,6 +18,7 @@
                 </div>
             </div>
 
+
             <div class="animate-up flex flex-shrink-0 h-80 md:h-96">
                 <div id="user-input-area" class="w-full h-auto">
                     <div id="homepage-carousel" class="z-0 w-full content-center" data-carousel="slide">
@@ -137,16 +138,15 @@
                             about
                             trying
                             new experiences!</p>
+                        <button @click="showsearch"> hellow</button>
                     </div>
 
-                    <div id="PageContent"
+                    <div id="PageContent" 
                         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 place-items-center content-center">
-
                         <itemCardVue v-for="doc of allDocs" :cardID=doc.ID :cardName=doc.Data.Name
                             :cardImg=doc.Data.images[0] :cardRating=doc.Data.rating :cardRatingImg=doc.Data.rating_img
                             :card-price=doc.Data.Price_level>
                         </itemCardVue>
-
                     </div>
 
                 </div>
@@ -168,12 +168,15 @@ import { initCarousels, initDropdowns } from 'flowbite'
 import itemCardVue from '../components/itemCard.vue'
 import { getAllDocuments } from '../db/dbfunctions.js'
 import { db } from '../db/FireBaseDB.js'
-import { currentUser,currentID } from '../db/localstore'
+import { currentUser,currentID, search} from '../db/localstore'
+import { ref, watch } from 'vue'
 
-const allDocs = await getAllDocuments(db)
+var allDocs = await getAllDocuments(db)
+
 
 export default {
     mounted() {
+        console.log('current search' + search.search_value)
         console.log('hello');
         initCarousels();
         initDropdowns();
@@ -183,16 +186,20 @@ export default {
         // console.log(currentUser.UserID)
         console.log('loc_ID');
         // console.log(currentID.currentID)
-
     },
     components: { itemCardVue },
     data() {
         return {
-            allDocs
+            allDocs,
+            search
+            
         }
+    },
+    methods:{
 
     }
 }
+
 </script>
 
 <style>

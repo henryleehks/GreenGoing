@@ -142,7 +142,7 @@
                     <div id="PageContent"
                         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 place-items-center content-center">
 
-                        <itemCardVue v-for="doc of allDocs" :cardID=doc.ID :cardName=doc.Data.Name
+                        <itemCardVue v-for="doc of filteredArray" :cardID=doc.ID :cardName=doc.Data.Name
                             :cardImg=doc.Data.images[0] :cardRating=doc.Data.rating :cardRatingImg=doc.Data.rating_img
                             :card-price=doc.Data.Price_level>
                         </itemCardVue>
@@ -172,6 +172,11 @@ import { currentUser,currentID } from '../db/localstore'
 
 const allDocs = await getAllDocuments(db)
 
+const filteredArray = allDocs.filter(obj => {
+  // Check if the 'name' property of the object contains the searchString
+  return obj.Data.Name.toLowerCase().includes('tour');
+});
+
 export default {
     mounted() {
         console.log('hello');
@@ -188,7 +193,7 @@ export default {
     components: { itemCardVue },
     data() {
         return {
-            allDocs
+            filteredArray
         }
 
     }

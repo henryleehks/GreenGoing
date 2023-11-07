@@ -172,20 +172,12 @@ import { currentUser,currentID } from '../db/localstore'
 
 var allDocs = await getAllDocuments(db)
 
-const filteredArray1 = allDocs.filter(obj => {
-  // Check if the 'name' property of the object contains the searchString
-  return obj.Data.Name.toLowerCase().includes('siloso');
-});
-const filteredArray2 = allDocs.filter(obj => {
-  // Check if the 'name' property of the object contains the searchString
-  return obj.Data.Name.toLowerCase().includes('lodge');
-});
-const filteredArray3 = allDocs.filter(obj => {
-  // Check if the 'name' property of the object contains the searchString
-  return obj.Data.Name.toLowerCase().includes('parkroyal');
-});
+allDocs = allDocs.filter(item => item.Data.Name !== 'Tree In Lodge');
+allDocs = allDocs.filter(item => item.Data.Name !== 'PARKROYAL COLLECTION Pickering, Singapore');
+allDocs = allDocs.filter(item => item.Data.Name !== 'Siloso Beach Resort Sentosa');
 
-allDocs = filteredArray1.concat(filteredArray2,filteredArray3)
+
+
 export default {
     mounted() {
         console.log('hello');
