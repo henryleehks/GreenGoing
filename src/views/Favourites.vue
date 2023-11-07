@@ -1,7 +1,7 @@
 <template>
-    <div id="PageContent" class="">
+    <div id="PageContent">
 
-        <div id="itinerary-content">
+        <div id="itinerary-content" class="animate-up">
 
             <div class="relative inline-flex items-center overflow-hidden">
                 <img class="w-full h:auto opacity-80 rounded-b-2xl" src="src/assets/fav_background.jpg">
@@ -49,14 +49,16 @@
 
         <!-- Favourites as Cards -->
 
-        <div id="featured-listings" class="px-6 pt-2 pb-12 mb-24 w-full bg-gradient-to-b from-[bisque] to-[#A6CEAE]">
+        <div id="featured-listings" class="animate-up px-6 pt-2 pb-12 mb-24 w-full bg-gradient-to-b from-[bisque] to-[#A6CEAE]">
 
             <div id="header-featured-listings" class="px-6 my-5">
 
                 <h1
+                    class="text-center mb-8 text-5xl font-extrabold leading-none tracking-tight text-emerald-600 md:text-5xl lg:text-6xl">Your Journey
+                </h1>
+                <h1
                     class="text-center mb-4 text-5xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-                    <mark class="px-4 text-white font-bold bg-green-600 rounded dark:bg-green-500">Your Journey
-                        Awaits</mark>
+                    <mark class="px-6 text-white font-bold bg-emerald-600 rounded dark:bg-green-500">Awaits</mark>
                 </h1>
                 <p class="font-bold text-lg text-gray-500 lg:text-xl dark:text-gray-400 text-center">
                     Book your next eco-trip to Singapore now!
