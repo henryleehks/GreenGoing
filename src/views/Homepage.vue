@@ -71,7 +71,7 @@
                             </div>
 
                             <div class="hidden duration-1000 ease-in-out" data-carousel-item>
-                                <img src="../assets/home_bg5.jpg"
+                                <img src="../assets/fav_background.jpg"
                                     class="w-full h-64 lg:h-full object-cover relative block w-full shadow-xl"
                                     alt="Cycling by Marina Bay">
                             </div>
@@ -151,11 +151,11 @@
 
                     <div id="header-featured-listings" class="px-6 my-5">
                         <h1
-                            class="text-center mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+                            class="text-center mb-4 text-4xl font-extrabold leading-none tracking-tight text-emerald-600 md:text-5xl lg:text-6xl dark:text-white">
                             Attractions People</h1>
                         <h1
                             class="text-center mb-4 text-5xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-                            <mark class="px-4 font-bold text-white bg-green-600 rounded dark:bg-green-500">LOVE</mark>
+                            <mark class="px-4 font-bold text-white bg-emerald-600 rounded dark:bg-green-500">LOVE</mark>
                         </h1>
                         <p class="font-bold text-lg text-gray-500 lg:text-xl dark:text-gray-400 text-center">Life is all
                             about
