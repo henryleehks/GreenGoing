@@ -2,22 +2,13 @@
         <div class="rounded-3xl transition duration-500 ease-in-out scale-90 hover:scale-100 w-64 h-96 max-w-sm bg-white border border-gray-200 shadow-xl dark:bg-gray-800 dark:border-gray-700 align-bottom">
             <div class="relative">
                 <RouterLink :to=cardURL class='flex flex-column' @click="currentID.updateCurrentID(theURL)">
-                <img class="h-40 w-full p-2" :src="cardImg" alt="product image" />
+                <img class="h-40 w-full p-2.5 rounded-3xl" :src="cardImg" alt="product image" />
                 </RouterLink>
                 
-                    <!-- <img
-                    :src="currentImageSrc"
-                    alt="Favorite"
-                    @click="toggleImage"> -->
-                    
-                    <!-- <button class="scale-75 hover:scale-90">
-                        <img src="src/assets/Favorite@2x.png">
-                    </button> -->
                 <div class="absolute top-3 right-4">
                     <button @click="togglefav()" class="scale-75 hover:scale-90">
-                        <img :id="cardID" src="/src/assets/Favorite@2x.png">
+                        <img :id="cardID" src="/src/assets/Favorite_fillwhite@2x.png">
                     </button>
-                    
                 </div>
             </div>
             
@@ -77,7 +68,7 @@ function togglefav(){
     const id = props.cardID
     console.log(props.cardID)
     if (fav_state){
-        document.getElementById(id).setAttribute('src','/src/assets/Favorite@2x.png')
+        document.getElementById(id).setAttribute('src','/src/assets/Favorite_fillwhite@2x.png')
         var result = addFavourite(db,props.cardID,userID)
         fav_state = false
     }
