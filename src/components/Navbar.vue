@@ -5,7 +5,7 @@
             <!-- GreenGoing logo -->
             <RouterLink to="/">
                 <div class="flex items-center">
-                    <img src="src/assets/logo.png" class="h-14 mr-4" alt="GreenGoing Logo" />
+                    <img src="/src/assets/logo.png" class="h-14 mr-4" alt="GreenGoing Logo" />
                 </div>
             </RouterLink>
 
@@ -110,18 +110,15 @@ import SignOutButton from "../components/SignOutButton.vue";
 export default {
     name: 'Navbar',
     methods:{
-        search(){
-            console.log('hello')
-        }
     },
     data() {
-        const query = 'search';
+        const query = '';
         return {
             // This to check if user is currently signed in.
             isUserSignedIn: false, // Initialize it as false when the component is created
+            query
         };
     },
-
     created() {
         // Check the user's sign-in status based on your authentication logic
         // For example, if you're using Firebase Authentication:
@@ -170,6 +167,21 @@ export default {
         };
     },
     methods: {
+        search(query){
+            console.log('newquery = ' + query)
+            if(query == 'hotels'){
+                router.push('/search/hotels')
+            }
+            else if (query == 'adventures'){
+                router.push('/search/adventures')
+            }
+            else if (query == 'tours'){
+                router.push('/search/tours')
+            }
+            else{
+                router.push('/')
+            }
+        },
         handleSignOut() {
             // Perform sign-out logic here
             signOut(auth)
