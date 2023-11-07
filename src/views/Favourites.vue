@@ -4,7 +4,7 @@
         <div id="itinerary-content" class="animate-up">
 
             <div class="relative inline-flex items-center overflow-hidden">
-                <img class="w-full h:auto opacity-80 rounded-b-3xl" src="src/assets/fav_background.jpg">
+                <img class="w-full h:auto opacity-80" src="src/assets/fav_background.jpg">
                 <div class="absolute left-4 top-16 sm:top-24 md:top-32 lg:top-48">
                     <h1
                         class="pb-2 font-extrabold leading-none tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-emerald-600 text-3xl sm:text-4xl md:text-5xl lg:text-6xl bg-white">
@@ -82,7 +82,7 @@ import itemCardVue from '../components/itemCard.vue'
 import { searchUser, getDocument } from '../db/dbfunctions.js'
 import { currentUser } from '../db/localstore.js';
 import {db} from '../db/FireBaseDB'
-initFlowbite()
+
 
 const current_userID = currentUser.UserID
 console.log(current_userID)
