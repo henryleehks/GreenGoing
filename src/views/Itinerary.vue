@@ -4,17 +4,17 @@
     <div id="itinerary-content" class="grid grid-cols-2 sm:grid-cols-6 gap-1">
 
         <div class="col-span-6 relative inline-flex items-center overflow-hidden">
-            <div class="relative">
-                <img class="w-full h-auto" src="src/assets/orchid.png" alt="Orchid">
-                <div class="absolute inset-0 flex flex-col justify-center items-center">
-                    <h1 class="font-extrabold leading-none tracking-tight text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl absolute left-4 top-11 sm:top-24 md:top-36 lg:top-44">
-                        Your Itinerary
-                    </h1>
-                    <h1 class="text-md sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl font-medium text-white absolute left-4 top-25 md:top-30">
-                        Your recent bookings towards a healthier, greener city.
-                    </h1>
+            <div class="relative h-full w-full">
+                <img class="w-full h-auto" src="src/assets/orchid.png" alt="Orchid">                    
+                    <div id="headings" class="absolute top-1/3 left-4">
+                        <h1 class="font-extrabold leading-none tracking-tight text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl left-4">
+                            Your Itinerary
+                        </h1>
+                        <h1 class="text-sm sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl font-medium text-white  left-4 ">
+                            Your recent bookings towards a healthier, greener city.
+                        </h1>
+                    </div>
                 </div>
-            </div>
 
             <!-- itinerary search -->
             <!-- <div id="itinerary-search"
