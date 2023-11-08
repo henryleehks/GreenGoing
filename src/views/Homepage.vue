@@ -5,7 +5,7 @@
             <div class="animate-up">
                 <div id="top-header" class="block pt-8 shadow-inner w-full">
                     <div class="typingtext">
-                        <div class="typewriter hidden xl:block justify-content-center"> 
+                        <div class="typewriter hidden lg:block justify-content-center"> 
                             <h1
                             class="mb-4 p-5 text-3xl font-extrabold leading-none tracking-tight text-black md:text-5xl lg:text-6xl dark:text-white text-center">
                             Streamlining Eco-travel in Singapore
@@ -19,7 +19,7 @@
                         </h1>
                     </div>  -->
 
-                    <div class="xl:hidden"> 
+                    <div class="lg:hidden"> 
                         <h1
                         class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white text-center">
                         Streamlining Eco-travel in Singapore
@@ -187,7 +187,7 @@
 </template>
 
 <script>
-import { initCarousels, initDropdowns } from 'flowbite'
+import { initFlowbite } from 'flowbite'
 import itemCardVue from '../components/itemCard.vue'
 import { getAllDocuments } from '../db/dbfunctions.js'
 import { db } from '../db/FireBaseDB.js'
@@ -215,8 +215,7 @@ var speed = 50;
 export default {
     mounted() {
         console.log('hello');
-        initCarousels();
-        initDropdowns();
+        initFlowbite();
         console.log('username');    
         console.log(currentUser.UserName)
         console.log('user_ID')

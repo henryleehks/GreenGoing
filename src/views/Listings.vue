@@ -28,8 +28,8 @@
                 <div class="container lg:grid  md:grid-cols-2 lg:grid-cols-2 lg:gap-4">
                     <div class="lg:col-span-1">
                     <ul>
-                        <li class="text-start"><p class="text-lg p-1 font-bold text-emerald-600">Address:</p> {{ info.Address }}</li>
-                        <li class="text-start"><span class="text-lg p-1 font-bold text-emerald-600">Price Level:</span> {{ info.Price_level }}</li>
+                        <li class="text-start"><p class="text-lg p-1 font-bold text-gray-600">Address:</p> {{ info.Address }}</li>
+                        <li class="text-start"><span class="text-lg p-1 font-bold text-gray-600 " style="color: black;">Price Level:</span> {{ info.Price_level }}</li>
                     </ul>
                     </div>
     
