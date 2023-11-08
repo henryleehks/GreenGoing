@@ -74,15 +74,15 @@ img {
 }
 </style>
 
-<template>
+<template >
     <!-- <h1 style="color: black;">hello world</h1> -->
 
 <div id="mySidenav"
-    style="height: 100%; width: 0;  position: fixed; z-index: 1; top: 0; left: 0; background-color: white; overflow-x: hidden; padding-top: 60px; transition: 0.5s;">
+    style="height: 100%; width: 0;  position: fixed; z-index: 1; top: 0; left: 0; background-color: white; overflow-x: hidden; padding-top: 60px; transition: 0.5s; text-align: center;" class="bg-gradient-to-b from-[bisque] to-[#A6CEAE]">
     <br>
 
     <a href="javascript:void(0)" class="closebtn" v-on:click="closeNav()"
-        style="padding: 8px 8px 8px 32px; text-decoration: none; font-size: 25px; color: #818181; display: block; transition: 0.3s;">&times;</a>
+        style="padding: 10px 200px 50px 0px; text-decoration: none; font-size: 25px; color: #818181; display: block; transition: 0.3s;">&times;</a>
 
     &nbsp
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
