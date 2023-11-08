@@ -1,7 +1,7 @@
 <template>
     <div class="cart">
 
-      <div class="display:block lg:flex">
+      <div class="display:block lg:flex border-b-2 mb-5">
         <h1 class="text-gray-600 font-extrabold text-3xl text-center py-10 lg:ml-16">Your Cart</h1>
 
         <div class="justify-center flex pb-8 lg:block lg:pt-8 lg:ml-16 ">
@@ -10,8 +10,8 @@
             View Your Cart
           </button>
 
-          <div id="ghost" class="ml-2">
-            <div id="face">⌐■_■</div>
+          <div id="ghost">
+            <div id="face"><img src="/src/assets/Rofl@2x.png" class="hidden lg:block"></div>
           </div>
         </div>
       </div>
@@ -88,7 +88,8 @@
     #ghost{
     display: block;
     position:fixed;
-    left:50vw;
+    margin-right:0;
+    right: 10%;
     animation-name: updown;
     animation-duration:2s;
     animation-iteration-count: infinite;
@@ -97,10 +98,7 @@
 
     #face{
     display: inline-block;
-    padding:10px 5px;
-    background-color: darkgray;
     border-radius:30px;
-    border:1px solid black;
     }
 
   @keyframes bounce{
@@ -110,8 +108,8 @@
   }
 
   @keyframes updown{
-    from, to ,20%, 60%{bottom: 200px;}
-    50%{bottom:220px;}
+    from, to ,20%, 60%{top: 150px;}
+    50%{top:100px;}
   }
   
     
