@@ -1,7 +1,7 @@
 <template>
     <RouterLink
       :to="to"
-      class="block px-4 py-2 text-sm text-gray-700 hover:bg-emerald-700 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+      class="block px-4 py-2 text-sm text-gray-700 hover:bg-emerald-700 dark:hover:bg-gray-600 dark:text-gray-400 hover:text-white"
       @click="handleClick"
     >
       {{ buttonText }}

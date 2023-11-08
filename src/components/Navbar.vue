@@ -88,7 +88,7 @@
                             <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
                                 <li>
                                     <SignOutButton to="/login" :isUserSignedIn="isUserSignedIn" @signOut="handleSignOut"
-                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-emerald-700 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">
+                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-emerald-700 dark:hover:bg-gray-600 dark:text-gray-400 hover:text-white">
                                         {{ isUserSignedIn ? 'Sign Out' : 'Sign In' }}
                                     </SignOutButton>
                                 </li>
