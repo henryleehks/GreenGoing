@@ -1,10 +1,10 @@
-# GreenGoingG
+# GitRepo URL
 
-This template should help get you started developing with Vue 3 in Vite.
 
-## Recommended IDE Setup
+## Application setup
+1. download all files into a repository folder
+2. 
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
 ## Customize configuration
 
