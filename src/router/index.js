@@ -7,9 +7,7 @@ import Listing_Review from '../views/Listing_Review.vue'
 import checkout from '../views/Checkout.vue'
 import itinerary from '../views/Itinerary.vue'
 import Login from '../views/login.vue'
-import searchtours from '../views/SearchTours.vue'
-import searchhotels from '../views/SearchHotels.vue'
-import searchadventures from '../views/SearchAdventures.vue'
+import search from '../views/Search.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,19 +18,9 @@ const router = createRouter({
       component: Homepage
     },
     {
-      path: '/search/tours',
-      name: 'searchtours',
-      component: searchtours
-    },
-    {
-      path: '/search/hotels',
-      name: 'searchhotels',
-      component: searchhotels
-    },
-    {
-      path: '/search/adventures',
-      name: 'searchadventures',
-      component: searchadventures
+      path: '/search/:id',
+      name: 'search',
+      component: search
     },
     {
       path: '/login',
@@ -64,11 +52,6 @@ const router = createRouter({
       name: 'Listings',
       component: Listing,
     },
-    {
-      path: '/listings',
-      name: 'Listing_Review',
-      component: Listing_Review
-    }
 
 
     

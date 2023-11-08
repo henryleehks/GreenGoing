@@ -19,7 +19,7 @@ const cart = reactive({
 })
 
 export var currentID = reactive({
-    currentID: '12345',
+    currentID: '',
     updateCurrentID(new_id) {
         this.currentID = new_id
     }
@@ -34,6 +34,12 @@ export var currentUser = reactive({
     }
 })
 
+export var searchQuery = reactive({
+    search: '',
+    updatesearch(update){
+        this.search = update
+    }
+})
 
 export {
     cart,

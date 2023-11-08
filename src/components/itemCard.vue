@@ -66,11 +66,11 @@ var current_user_obj = await searchUser(userID,db)
 
 function checkfavs(){
     if(currentUser.UserID != ''){
-    const favourites = current_user_obj.Favourites
-    if (favourites.includes(props.cardID)){
-        document.getElementById(props.cardID).setAttribute('src','/src/assets/Favorite_fill@2x.png')
-        fav_state = true
-    }
+        const favourites = current_user_obj.Favourites
+        if (favourites.includes(props.cardID)){
+            document.getElementById(props.cardID).setAttribute('src','/src/assets/Favorite_fill@2x.png')
+            fav_state = true
+        }
     }
     else{
         console.log('no login')

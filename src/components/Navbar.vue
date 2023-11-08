@@ -27,7 +27,7 @@
                     class="flex flex-col font-medium p-5 md:p-0 mt-4 border border-gray-100 rounded-lg bg-[#CFCAC2] md:flex-row md:space-x-12 md:mt-0 md:border-0">
 
                     <li>
-                        <form>
+                        <div>
                             <label for="nav-search"
                                 class="mb-2 text-xs font-medium text-gray-900 sr-only dark:text-white">Search</label>
                             <div class="relative">
@@ -40,11 +40,11 @@
                                     </svg>
                                 </div>
 
-                                <input type="search" id="nav-search" v-model="query" placeholder = 'Search Experiences!' class="block w-full p-2 pl-8 pr-12 mx10 text-xs text-gray-900 border border-slate-900 rounded-lg bg-grey-200"  required>
+                                <input type="search" id="nav-search" v-model="to_search" v-on:keyup="check()" placeholder = 'Search Experiences!' class="block w-full p-2 pl-8 pr-12 mx10 text-xs text-gray-900 border border-slate-900 rounded-lg bg-grey-200"  required>
 
-                                <button @click="search(query)" class="text-white absolute right-1 bottom-1 bg-neutral-400 hover:bg-neutral-500 focus:ring-4 focus:outline-none focus:ring-[#50A060] font-xsmall rounded-md text-xs px-1 py-1">Search</button>
+                                <button @click="search()" class="text-white absolute right-1 bottom-1 bg-neutral-400 hover:bg-neutral-500 focus:ring-4 focus:outline-none focus:ring-[#50A060] font-xsmall rounded-md text-xs px-1 py-1">Search</button>
                             </div>
-                        </form>
+                        </div>
                     </li>
                     <li>
                         <RouterLink to="/" class="block py-2 pl-3 pr-4 text-white rounded hover:bg-neutral-500 md:hover:bg-transparent  md:hover:text-[#50A060] md:p-0" aria-current="page">
@@ -104,9 +104,10 @@
 <script>
 import { auth } from "../db/FireBaseDB";
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import { currentID, currentUser } from "../db/localstore";
+import { currentID, currentUser, searchQuery } from "../db/localstore";
 import router from "../router";
 import SignOutButton from "../components/SignOutButton.vue";
+import { ref } from "vue";
 
 export default {
     name: 'Navbar',
@@ -117,7 +118,8 @@ export default {
         return {
             // This to check if user is currently signed in.
             isUserSignedIn: false, // Initialize it as false when the component is created
-            query
+            query,
+            searchQuery,
         };
     },
     created() {
@@ -133,54 +135,27 @@ export default {
             }
         });
     },
-
-    // mounted() {
-
-    //     // Listen to the event when the user clicks the "Sign Out" button
-    //     this.$on("signOut", () => {
-    //         // Sign out the user
-    //         signOut(auth)
-    //             .then(() => {
-    //                 // Sign-out successful.
-    //                 alert('User Logged Out');
-    //                 this.isUserSignedIn = false;
-    //                 currentID.updateCurrentID('');
-    //                 currentUser.updateCurrentUser('','');
-
-    //                 // Redirect user back to Log-In page
-    //                 router.push('/login');
-    //             })
-    //             .catch((error) => {
-    //                 // An error happened.
-    //                 console.log(error);
-    //                 const errorMessage = error.message;
-    //                 alert(errorMessage);
-    //             });
-    //     });
-    // }
-
     components: {
         SignOutButton,
     },
     data() {
+        const to_search = ref('')
         return {
-            isUserSignedIn: false, // You should manage the user's sign-in status here
+            isUserSignedIn: false,
+            searchQuery,
+            to_search // You should manage the user's sign-in status here
         };
     },
     methods: {
-        search(query){
-            console.log('newquery = ' + query)
-            if(query == 'hotels'){
-                router.push('/search/hotels')
-            }
-            else if (query == 'adventures'){
-                router.push('/search/adventures')
-            }
-            else if (query == 'tours'){
-                router.push('/search/tours')
-            }
-            else{
-                router.push('/')
+        check(){
+            console.log(this.to_search)
+        },
+        search(){
+            console.log("searching for: " + this.to_search)
+            const value = this.to_search
+            searchQuery.updatesearch(value)
+            const url = '/search/' + this.to_search
+            this.$router.push(url)
             }
         },
         handleSignOut() {
@@ -206,8 +181,8 @@ export default {
                     alert(errorMessage);
                 });
         },
-    },
-}
+    }
+
     
 
 

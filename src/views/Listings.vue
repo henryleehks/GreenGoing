@@ -147,10 +147,6 @@ onMounted(initFlowbite)
 
 console.log(currentID.currentID)
 
-function onsubmit(e){
-    e.preventDefault()
-}
-
 
 async function addReview(db,id,text,rating,title,user){
     const the_review_obj = {

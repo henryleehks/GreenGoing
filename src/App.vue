@@ -15,7 +15,7 @@ import { Suspense } from 'vue';
 
     <div class="flex flex-1 bg-gray-100 overflow-auto">
       <Suspense>
-        <RouterView class="w-full h-full"></RouterView>
+        <RouterView :key="$route.path" class="w-full h-full"></RouterView>
       </Suspense>
     </div>
 
