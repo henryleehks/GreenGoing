@@ -660,11 +660,12 @@ export default {
                         .catch((error) => {
                             console.error('Error adding user details to the database', error);
                         });
-                    
+
                     // create FireStore user data
                     console.log('creating user object in firestore')
                     const result = createUser(user.uid,username,email,db)
                     console.log('firestore user created')
+
                     alert('User created!');
                     router.push('/login')
                 })
@@ -673,8 +674,6 @@ export default {
                     const errorMessage = error.message;
                     alert(errorMessage);
                 });
-            
-            
         });
 
         console.log('[START] Current ID: ' + currentID.currentID);
@@ -736,7 +735,7 @@ export default {
             }
         });
 
- 
+
     }
 }
 
