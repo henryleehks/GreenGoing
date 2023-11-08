@@ -14,12 +14,11 @@
       
       
 
-      <div class="cart-content">
+      <div class="cart-content pb-20">
 
         <ul id="cart" class="" style="color: black;"></ul>
       
       </div>
-
       
   
     </div>
