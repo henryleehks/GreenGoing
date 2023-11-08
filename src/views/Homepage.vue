@@ -187,7 +187,7 @@
 </template>
 
 <script>
-import { initCarousels, initDropdowns } from 'flowbite'
+import { initFlowbite } from 'flowbite'
 import itemCardVue from '../components/itemCard.vue'
 import { getAllDocuments } from '../db/dbfunctions.js'
 import { db } from '../db/FireBaseDB.js'
@@ -215,8 +215,7 @@ var speed = 50;
 export default {
     mounted() {
         console.log('hello');
-        initCarousels();
-        initDropdowns();
+        initFlowbite();
         console.log('username');    
         console.log(currentUser.UserName)
         console.log('user_ID')

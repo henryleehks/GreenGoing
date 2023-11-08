@@ -69,12 +69,12 @@ function togglefav(){
     console.log(props.cardID)
     if (fav_state){
         document.getElementById(id).setAttribute('src','/src/assets/Favorite_fillwhite@2x.png')
-        var result = addFavourite(db,props.cardID,userID)
+        var result = removeFavourite(db,props.cardID,userID)
         fav_state = false
     }
     else{
         document.getElementById(id).setAttribute('src','/src/assets/Favorite_fill@2x.png')
-        var result = removeFavourite(db,props.cardID,userID)
+        var result = addFavourite(db,props.cardID,userID)
         fav_state = true
     }
 }
