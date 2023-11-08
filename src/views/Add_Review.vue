@@ -1,6 +1,6 @@
 <template>
     <!-- Leave a review header -->
-  <div id="PageContent" class="bg-gradient-to-b from-[bisque] to-[#A6CEAE] h-full">
+  <div id="PageContent" class="bg-[bisque] to-[#A6CEAE] h-full">
     <div class="bg-blue-500 ">
         <h1 class="mx-auto text-center text-4xl md:text-3xl lg:text-4xl py-10 font-extrabold leading-none tracking-tight text-white">
             Leave a review!

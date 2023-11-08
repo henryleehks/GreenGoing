@@ -1,7 +1,7 @@
 <template>
     <div class="cart bg-[bisque]">
 
-      <div class="display:block lg:flex border-b-2 mb-5">
+      <div class="display:block lg:flex border-b-2 mb-5 bg-gray-100">
         <h1 class="text-gray-600 font-extrabold text-3xl text-center py-10 lg:ml-16">Your Cart</h1>
 
         <div class="justify-center flex pb-8 lg:block lg:pt-8 lg:ml-16 ">
@@ -18,7 +18,7 @@
       
       
 
-      <div id="cart-content" class="pb-20 bg-gradient-to-b from-[bisque] to-[#A6CEAE]">
+      <div id="cart-content" class="pb-20 bg-[bisque]">
 
         <ul id="cart" class="" style="color: black;"></ul>
       
