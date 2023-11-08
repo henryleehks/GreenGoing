@@ -1,13 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greengoing</title>
+  <script class="headflowbite" src="./node_modules/flowbite/dist/datepicker.js"></script>
+  <!-- Load Google client library -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="https://apis.google.com/js/platform.js?onload=initGoogleSignIn" async defer></script>
+
+
+
+
+</head>
+
+<body>
+
+  <div id="mount"></div>
+
+  <script type="module" src="/src/main.js"></script>
+
+  <!-- ApexChart CDN -->
+  <script class='' src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  <!-- Itinerary flowbite -->
+  <!-- <script id='flowbite' src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.js"></script> -->
+  <script src="./node_modules/flowbite/dist/flowbite.min.js"></script>
+  <script src="./node_modules/flowbite/dist/datepicker.js"></script>
+
+  <!-- Importing icons from ionic.io -->
+  <script class='importCDN' type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script class='importCDN' nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+
 </html>

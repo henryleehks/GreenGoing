@@ -9,10 +9,15 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{vue,js,ts,jsx,tsx}",
+    './node_modules/flowbite/**/*.js'
   ],
   
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'thisbg': "url('src/assets/favpagebackground.png')",
+      }
+    },
   },
   plugins: [
     require('flowbite/plugin')
@@ -25,7 +30,7 @@ export default {
       'md': '972px',
       // => @media (min-width: 768px) { ... }
 
-      'lg': '1024px',
+      'lg': '1020px',
       // => @media (min-width: 1024px) { ... }
 
       'xl': '1280px',

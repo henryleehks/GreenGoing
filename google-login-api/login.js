@@ -62,6 +62,7 @@ login.addEventListener('click', (e) => {
     // Get email and password from input fields
     const email = document.getElementById('email-login').value;
     const password = document.getElementById('password-login').value;
+    const username = email.split("@")[0];
 
     // Use Firebase Authentication to sign in
     signInWithEmailAndPassword(auth, email, password)
@@ -76,7 +77,7 @@ login.addEventListener('click', (e) => {
             });
 
             // Redirect to the desired page
-            window.location.href = "homepage.html?email=" + email;
+            window.location.href = "homepage.html?username=" + username + "&email=" + email;
 
             alert('User logged in!');
         })
