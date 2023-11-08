@@ -1,4 +1,4 @@
-<style scoped>
+<style>
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
     .sidenav {
@@ -91,19 +91,17 @@ img {
         <div class="row">
             <div class="col-lg"></div>
             <div class="col-lg">
-                <div id="alerts" class="ms-text-center"></div>
-                <div id="loading" class="spinner-container ms-div-center">
+                    <div id="alerts" class="ms-text-center"></div>
+                    <div id="loading" class="spinner-container ms-div-center">
                         <div class="spinner"></div>
                     </div>
-                    <div id="content" class="hide">
+                <div id="content" class="hide">
                         <div class="ms-card ms-fill" style="padding: 10px; color: black; font-weight: 900;">
-                        <h1 style="text-align: center; font-size: 120%;">YOUR ITEMS</h1>
+                            <h1 style="text-align: center; font-size: 120%;">YOUR ITEMS</h1>
                             <br>
                             <ul id="cart"></ul>
                             <br>
-                            <br>
-                            <!-- <h1>Total price is  ${{this.totalPrice}}</h1> -->
-                            <br>
+
                             <br>
                             <a href="./checkout"
                                 style="background-color: rgb(156, 255, 200); font-size: 20px; border: 1px; border-radius: 10px; text-align: center; color: black; padding: 20px;">CHECKOUT</a>
@@ -129,56 +127,70 @@ img {
             style=" display: flex; width: 100%; display: flex; flex-wrap: wrap; justify-content: center; ">
 
             <!-- <div id="item1"
-                                                        class="w-full max-w-sm bg-green-100 border border-gray-200 rounded-xl shadow light:bg-gray-800 dark:border-gray-700 object-cover"
-                                                        style="width: 100%;">
-                                                        <a href="#">
-                                                            <img class="rounded-xl object-cover" src="img/a.jpg" alt="product image" />
-                                                        </a>
-
-                                                        <div class="px-5 pb-5">
+                                                            class="w-full max-w-sm bg-green-100 border border-gray-200 rounded-xl shadow light:bg-gray-800 dark:border-gray-700 object-cover"
+                                                            style="width: 100%;">
                                                             <a href="#">
-                                                                <h5 class="text-2xl font-semibold tracking-tight text-gray-900 light:text-white">Wild Wild
-                                                                    Ticket
-                                                                </h5>
+                                                                <img class="rounded-xl object-cover" src="img/a.jpg" alt="product image" />
                                                             </a>
-                                                            <div class="flex items-center mt-2.5 mb-5">
-                                                                <img class="w-4 h-4" src="img/color_tree.png">
-                                                                <img class="w-4 h-4" src="img/color_tree.png">
-                                                                <img class="w-4 h-4" src="img/color_tree.png">
-                                                                <img class="w-4 h-4" src="img/color_tree.png">
-                                                                <img class="w-4 h-4" src="img/grey_tree.png">
-                                                                <span
-                                                                    class="bg-light green-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">4.0</span>
-                                                            </div>
-                                                            <div class="flex items-center justify-between">
-                                                                <span class="text-3xl font-bold text-gray-900 light:text-black">$10</span>
-                                                                &nbsp
-                                                                <a href="protoreview.html"
-                                                                    v-on:click="sendoverrev(1, 'img/a.jpg', 'Wild Wild Ticket', 'My House', 5, 'NIL') ; location.href = 'protoreview.html';">
+
+                                                            <div class="px-5 pb-5">
+                                                                <a href="#">
+                                                                    <h5 class="text-2xl font-semibold tracking-tight text-gray-900 light:text-white">Wild Wild
+                                                                        Ticket
+                                                                    </h5>
+                                                                </a>
+                                                                <div class="flex items-center mt-2.5 mb-5">
+                                                                    <img class="w-4 h-4" src="img/color_tree.png">
+                                                                    <img class="w-4 h-4" src="img/color_tree.png">
+                                                                    <img class="w-4 h-4" src="img/color_tree.png">
+                                                                    <img class="w-4 h-4" src="img/color_tree.png">
+                                                                    <img class="w-4 h-4" src="img/grey_tree.png">
+                                                                    <span
+                                                                        class="bg-light green-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">4.0</span>
+                                                                </div>
+                                                                <div class="flex items-center justify-between">
+                                                                    <span class="text-3xl font-bold text-gray-900 light:text-black">$10</span>
+                                                                    &nbsp
+                                                                    <a href="protoreview.html"
+                                                                        v-on:click="sendoverrev(1, 'img/a.jpg', 'Wild Wild Ticket', 'My House', 5, 'NIL') ; location.href = 'protoreview.html';">
+                                                                        <button
+                                                                            class="text-black bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center light:bg-blue-600 light:hover:bg-blue-700 light:focus:ring-blue-800"
+                                                                            v-on:click="sendoverrev(1, 'img/a.jpg', 'Wild Wild Ticket', 'My House', 5, 'NIL') ; location.href = 'protoreview.html';">View
+                                                                            More</button>
+                                                                    </a>
+                                                                    &nbsp
                                                                     <button
                                                                         class="text-black bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center light:bg-blue-600 light:hover:bg-blue-700 light:focus:ring-blue-800"
-                                                                        v-on:click="sendoverrev(1, 'img/a.jpg', 'Wild Wild Ticket', 'My House', 5, 'NIL') ; location.href = 'protoreview.html';">View
-                                                                        More</button>
-                                                                </a>
-                                                                &nbsp
-                                                                <button
-                                                                    class="text-black bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center light:bg-blue-600 light:hover:bg-blue-700 light:focus:ring-blue-800"
-                                                                    v-on:click="addToCart(1, 'Wild Wild Ticket', 10.00, 'img/a.jpg', 'Adult')">Add Cart</button>
+                                                                        v-on:click="addToCart(1, 'Wild Wild Ticket', 10.00, 'img/a.jpg', 'Adult')">Add Cart</button>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                    </div> -->
+                                                        </div> -->
 
-            <!-- <div v-for="doc of allDocs" :cardID=doc.ID :cardName=doc.Data.Name :cardImg=doc.Data.images[0]
+            <div v-for="doc of allDocs" :cardID=doc.ID :cardName=doc.Data.Name :cardImg=doc.Data.images[0]
                 :cardRating=doc.Data.rating :cardRatingImg=doc.Data.rating_img :card-price=doc.Data.Price_level>
+                <!-- <h1 style="color: black;">{{ doc.Data.Name }} </h1>
+                                                <br> -->
                 <div
-                    class="w-full h-full m-5 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                    <div class="px-5 pb-5 mx-auto">
-                        <br>
-                        <h3 class="text-sm font-semibold tracking-tight text-gray-900 dark:text-white">
-                            {{ doc.Data.Name }}
-                        </h3>
-                        <img class="object-cover object-center h-full rounded-lg" :src="doc.Data.images[0]"
+                    class="col-span-1 rounded-3xl transition duration-500 ease-in-out scale-90 hover:scale-100 w-64 h-96 max-w-sm bg-white border border-gray-200 shadow-xl dark:bg-gray-800 dark:border-gray-700 align-bottom">
+                    <div class="relative">
+                        <!-- <RouterLink :to=cardURL class='flex flex-column' @click="currentID.updateCurrentID(theURL)">
+                            <img class="h-40 w-full p-2.5 rounded-3xl" :src="cardImg" alt="product image" />
+                        </RouterLink> -->
+                        <img class="h-40 w-full p-2.5 rounded-3xl" :src="doc.Data.images[0]"
                             alt="product image" />
+
+                        <div class="absolute top-3 right-4">
+                            <button @click="togglefav()" class="scale-75 hover:scale-90">
+                                <img :id="cardID" src="/src/assets/Favorite_fillwhite@2x.png">
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="px-5 pb-5 mx-auto">
+                        <h5 class="text-sm font-semibold tracking-tight text-gray-900 dark:text-white">
+                            {{ doc.Data.Name }}
+                        </h5>
+                        
 
                         <div class="flex items-center mt-2.5 mb-5">
                             <img :src="doc.Data.rating_img" />
@@ -206,18 +218,7 @@ img {
 
 
 
-            </div> -->
-
-            <div id="PageContent"
-                        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:col-span-4 gap-2 place-items-center content-center">
-
-                        <itemCardVue v-for="doc of allDocs" :cardID=doc.ID :cardName=doc.Data.Name
-                            :cardImg=doc.Data.images[0] :cardRating=doc.Data.rating :cardRatingImg=doc.Data.rating_img
-                            :card-price=doc.Data.Price_level>
-                        </itemCardVue>
-                    </div>
-
-
+            </div>
 
 
         </div>
@@ -226,11 +227,12 @@ img {
     </div>
 </template>
 
+
 <script>
 
 
 import { initCarousels, initDropdowns } from 'flowbite'
-import itemCardVue from '../components/cartCard2.vue'
+import itemCardVue from '../components/CartCard.vue'
 import { getAllDocuments } from '../db/dbfunctions.js'
 import { db } from '../db/FireBaseDB.js'
 import { currentUser, currentID } from '../db/localstore'
