@@ -21,20 +21,20 @@
 
     </section>
 
-            <div class=" mt-4 mb-4 border-b border-gray-200">
-                <h1 class="font-bold text-3xl p-3">{{ info.Name }}</h1>
-                <h1 class="p-3 justify-start">{{ info.Description }}</h1>
+            <div class=" mt-4 mb-4 border-b text-black border-gray-200">
+                <h1 class="font-bold text-3xl p-5">{{ info.Name }}</h1>
+                <h1 class="p-5 justify-start">{{ info.Description }}</h1>
                 
                 <div class="container lg:grid  md:grid-cols-2 lg:grid-cols-2 lg:gap-4">
                     <div class="lg:col-span-1">
                     <ul>
-                        <li class="text-start mb-3"><p class="text-lg p-1 font-bold text-gray-600" style="color:black;">Address:</p> {{ info.Address }}</li>
-                        <li class="text-start"><span class="text-lg p-1 font-bold text-gray-600 " style="color: black;">Price Level:</span> {{ info.Price_level }}</li>
+                        <li class="text-start p-5"><p class="text-lg font-bold text-gray-600">Address:</p>{{ info.Address }}</li>
+                        <li class="text-start"><span class="text-lg p-5 font-bold text-gray-600 " style="color: black;">Price Level:</span> {{ info.Price_level }}</li>
                     </ul>
                     </div>
     
                     <div class="lg:col-span-1 flex justify-end"> 
-                        <button class="bg-blue-500 px-4 m-5 py-2 rounded-lg">
+                        <button class="bg-blue-500 p-2 m-5 rounded-lg">
                         <a :href="info.WebUrl" class="text-md text-slate-50">
                             Link to Tripadvisor
                         </a>
