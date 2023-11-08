@@ -118,13 +118,15 @@ img {
             </div>
         </div>
     </div>
-    <button v-on:click="openNav()"
+    
+    <button v-on:click="openNav()" class="transition duration-500 ease-in-out bg-green-500 text-white sm:text-black sm:bg-green sm:border sm:border-black hover:border-white hover:bg-blue-500 hover:text-white hover:scale-110 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1 text-center"
         style="font-weight: 900; text-align: center; display: flex; justify-content: center; align-items: center; color: black;">CART</button>
-
     <div id="main"
         style="display: flex; text-align: center; padding-left: 10%; padding-right: 10%; transition: margin-left .5s; padding: 30px; ">
+        
         <div id="PageContent" class="container flex flex-1 justify-center md:justify-start "
             style=" display: flex; width: 100%; display: flex; flex-wrap: wrap; justify-content: center; ">
+            
 
             <!-- <div id="item1"
                                                             class="w-full max-w-sm bg-green-100 border border-gray-200 rounded-xl shadow light:bg-gray-800 dark:border-gray-700 object-cover"

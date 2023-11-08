@@ -1,7 +1,7 @@
 <template>
     <div class="cart">
 
-      <div class="display:block lg:flex">
+      <div class="display:block lg:flex border-b-2 mb-5">
         <h1 class="text-gray-600 font-extrabold text-3xl text-center py-10 lg:ml-16">Your Cart</h1>
 
         <div class="justify-center flex pb-8 lg:block lg:pt-8 lg:ml-16 ">
@@ -9,23 +9,28 @@
           class="items-center transition duration-500 ease-in-out bg-green-500 text-white sm:text-black sm:bg-white sm:border sm:border-black hover:border-white hover:bg-green-500 hover:text-white rounded-lg hover:scale-110 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-lg px-5 py-2.5 text-center">
             View Your Cart
           </button>
+
+          <div id="ghost">
+            <div id="face"><img src="/src/assets/Rofl@2x.png" class="hidden lg:block"></div>
+          </div>
         </div>
       </div>
       
       
 
-      <div class="cart-content">
+      <div class="cart-content pb-20">
 
         <ul id="cart" class="" style="color: black;"></ul>
       
       </div>
-
       
   
     </div>
   </template>
   
   <script>
+  import { initFlowbite } from 'flowbite';
+
   export default {
     name: 'Checkout',
     methods: {
@@ -66,7 +71,9 @@
 
       },
     },
-    beforeMount() {},
+    mounted(){
+      initFlowbite();
+    }
   };
   </script>
   
@@ -76,6 +83,34 @@
     .cart-content {
       text-align: center;
     }
+
+
+    #ghost{
+    display: block;
+    position:fixed;
+    margin-right:0;
+    right: 10%;
+    animation-name: updown;
+    animation-duration:2s;
+    animation-iteration-count: infinite;
+    transition:0.5s;
+    }
+
+    #face{
+    display: inline-block;
+    border-radius:30px;
+    }
+
+  @keyframes bounce{
+    from{padding: 10px 20px;}
+    50%{padding:25px 20px;}
+    to{padding: 10px 20px;}
+  }
+
+  @keyframes updown{
+    from, to ,20%, 60%{top: 150px;}
+    50%{top:100px;}
+  }
   
     
   </style>

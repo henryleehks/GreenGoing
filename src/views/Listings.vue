@@ -9,7 +9,7 @@
                     <RouterLink to="/" class=" relative inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-emerald-700 hover:bg-emerald-800 focus:ring-4 focus:ring-emerald-300 dark:focus:ring-emerald-900">
                         Home
                     </RouterLink>
-                    <RouterLink to="/cart" class=" relative inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 text-base font-medium text-center text-black rounded-lg bg-white border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400">
+                    <RouterLink to="/" class=" relative inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 text-base font-medium text-center text-black rounded-lg bg-white border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400">
                         Check Out
                     </RouterLink>
                 </div>
@@ -28,7 +28,7 @@
                 <div class="container lg:grid  md:grid-cols-2 lg:grid-cols-2 lg:gap-4">
                     <div class="lg:col-span-1">
                     <ul>
-                        <li class="text-start"><p class="text-lg p-1 font-bold text-gray-600">Address:</p> {{ info.Address }}</li>
+                        <li class="text-start mb-3"><p class="text-lg p-1 font-bold text-gray-600" style="color:black;">Address:</p> {{ info.Address }}</li>
                         <li class="text-start"><span class="text-lg p-1 font-bold text-gray-600 " style="color: black;">Price Level:</span> {{ info.Price_level }}</li>
                     </ul>
                     </div>
@@ -75,7 +75,7 @@
             </button>
             <div class="px-6 py-6 lg:px-8">
                 <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Leave a review!</h3>
-                <form class="space-y-6"> <!-- idk how to get this to WORK HAIZ-->
+                <form class="space-y-6"> 
                     <div>
                         <label for="review_title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Review Title</label>
                         <input type="text" name="review_title" id="review_title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-emerald-500 focus:border-emerald-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Review Title" 
@@ -101,7 +101,7 @@
 
     <div id="tab-content">
         <!-- tripadvisor content -->
-        <div class="hidden p-4 rounded-lg bg-gray-50" id="tripadvisorbookings" role="tabpanel" aria-labelledby="tripadvisor-tab">
+        <div class="hidden p-4 rounded-lg bg-gray-300 pb-20" id="tripadvisorbookings" role="tabpanel" aria-labelledby="tripadvisor-tab">
             <table id="ItineraryListings" class="justify-center items-center">
                         <reviewdata
                         v-for="review in this_reviews"
@@ -115,7 +115,7 @@
             </table>
         </div>
         <!-- Greengoing content -->
-        <div class="hidden p-4 rounded-lg bg-gray-50 pb-20" id="greengoingbookings" role="tabpanel" aria-labelledby="greengoing-tab">
+        <div class="hidden p-4 rounded-lg bg-gray-300 pb-20" id="greengoingbookings" role="tabpanel" aria-labelledby="greengoing-tab">
             <table id="ItineraryListings" class="justify-center items-center">
             <ggreview
             v-for="review in this_ggreviews"
@@ -146,6 +146,10 @@ import router from '../router'
 onMounted(initFlowbite)
 
 console.log(currentID.currentID)
+
+function onsubmit(e){
+    e.preventDefault()
+}
 
 
 async function addReview(db,id,text,rating,title,user){
