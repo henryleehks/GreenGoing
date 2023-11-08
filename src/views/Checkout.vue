@@ -33,7 +33,7 @@
           img.style.marginRight = "auto";
           cartList.appendChild(img);
           let listItem = document.createElement("li");
-          listItem.innerText = `${item.cartID}. ${item.name} - $${item.price} - ${item.type}`;
+          listItem.innerText = `${item.cartID}. ${item.name} - $${item.price}`;
           cartList.appendChild(listItem);
           totalPrice += item.price;
           cartList.appendChild(document.createElement("br"));

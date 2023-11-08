@@ -1,6 +1,6 @@
 <template>
     <tr class="w-full h-full">
-        <td class="flex object-center p-1 my-auto w-full h-full">
+        <td class="flex object-center p-2 sm:p-5 md:p-10 my-auto w-full h-full">
             <img :src="rowImg" class=" object-fill w-auto h-auto">
         </td>
         <td class="w-1/3">
