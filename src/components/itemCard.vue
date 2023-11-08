@@ -48,9 +48,9 @@
 
 <script setup>
 import { RouterLink } from 'vue-router';
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import { currentID,currentUser } from '../db/localstore.js'
-import { addFavourite,removeFavourite } from '../db/dbfunctions';
+import { addFavourite,removeFavourite, searchUser } from '../db/dbfunctions';
 import { db } from '../db/FireBaseDB';
 
 
@@ -61,22 +61,47 @@ const cardURL = "/listing/" + theURL.value
 var fav_state = false
 const userID = currentUser.UserID
 
+var current_user_obj = await searchUser(userID,db)
+
+function checkfavs(){
+    if(currentUser.UserID != ''){
+    const favourites = current_user_obj.Favourites
+    if (favourites.includes(props.cardID)){
+        document.getElementById(props.cardID).setAttribute('src','/src/assets/Favorite_fill@2x.png')
+        fav_state = true
+    }
+    }
+    else{
+        console.log('no login')
+    }
+}
+
+onMounted(checkfavs) 
+
+
+
 // var Hearts = [{image1 : "src/assets/Favorite.png"}, {image2 : "src/assets/Favorite_fill.png"}]
 
 function togglefav(){
 
     const id = props.cardID
-    console.log(props.cardID)
-    if (fav_state){
-        document.getElementById(id).setAttribute('src','/src/assets/Favorite_fillwhite@2x.png')
-        var result = removeFavourite(db,props.cardID,userID)
-        fav_state = false
+    console.log("this card's ID is: " + props.cardID)
+    if (currentUser.UserID !== ''){
+        if (fav_state){
+            document.getElementById(id).setAttribute('src','/src/assets/Favorite_fillwhite@2x.png')
+            var result = removeFavourite(db,props.cardID,userID)
+            fav_state = false
+        }
+        else{
+            document.getElementById(id).setAttribute('src','/src/assets/Favorite_fill@2x.png')
+            var result = addFavourite(db,props.cardID,userID)
+            fav_state = true
+        }
     }
     else{
-        document.getElementById(id).setAttribute('src','/src/assets/Favorite_fill@2x.png')
-        var result = addFavourite(db,props.cardID,userID)
-        fav_state = true
+        console.log('no user logged in')
     }
+
 }
 
 

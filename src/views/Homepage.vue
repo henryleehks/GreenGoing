@@ -216,12 +216,9 @@ export default {
     mounted() {
         console.log('hello');
         initFlowbite();
-        console.log('username');    
-        console.log(currentUser.UserName)
-        console.log('user_ID')
-        console.log(currentUser.UserID)
-        console.log('loc_ID');
-        console.log(currentID.currentID)
+        console.log('username: ' + currentUser.UserName);    
+        console.log('user_ID: ' + currentUser.UserID)
+        console.log('loc_ID: ' + currentID.currentID);
 
     },
     components: { itemCardVue },

@@ -66,9 +66,9 @@
             </div>
 
             <div v-if="currentUser.UserID !== ''" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 place-items-center content-center">
-                    <itemCardVue v-for="doc of allDocs" :cardID=doc.ID :cardName=doc.Name
-                                :cardImg=doc.images[0] :cardRating=doc.rating :cardRatingImg=doc.rating_img
-                                :card-price=doc.Price_level>
+                    <itemCardVue v-for="doc of allDocs" :cardID=doc.ID :cardName=doc.Data.Name
+                                :cardImg=doc.Data.images[0] :cardRating=doc.Data.rating :cardRatingImg=doc.Data.rating_img
+                                :card-price=doc.Data.Price_level>
                     </itemCardVue>
 
             </div>
@@ -85,18 +85,24 @@ import {db} from '../db/FireBaseDB'
 
 
 const current_userID = currentUser.UserID
-console.log(current_userID)
+// console.log(current_userID)
 
-const userObj = await searchUser('6deIRHCpKD7ms58K2L2',db)
-console.log(userObj)
+const userObj = await searchUser(current_userID,db)
+// console.log(userObj)
 
 const favourites = userObj.Favourites
+// console.log(favourites)
 
 var allDocs = []
 
-for (let id of favourites){
-    let to_add = await getDocument(id,db)
-    allDocs.push(to_add)
+if(current_userID != ''){
+    for (let id of favourites){
+        let to_add = await getDocument(id,db)
+        allDocs.push({
+            Data:to_add,
+            ID:id
+        })
+    }
 }
 
 console.log(allDocs)

@@ -59,7 +59,6 @@ async function searchUser(UserID,db_object){
   var toreturn = {}
   querySnapshot.forEach((doc) => {
     const obj_to = doc.data()
-    console.log(doc.data())
     // doc.data() is never undefined for query doc snapshots
     toreturn =  obj_to
   });
