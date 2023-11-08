@@ -9,6 +9,10 @@
           class="items-center transition duration-500 ease-in-out bg-green-500 text-white sm:text-black sm:bg-white sm:border sm:border-black hover:border-white hover:bg-green-500 hover:text-white rounded-lg hover:scale-110 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-lg px-5 py-2.5 text-center">
             View Your Cart
           </button>
+
+          <div id="ghost" class="ml-2">
+            <div id="face">⌐■_■</div>
+          </div>
         </div>
       </div>
       
@@ -79,6 +83,36 @@
     .cart-content {
       text-align: center;
     }
+
+
+    #ghost{
+    display: block;
+    position:fixed;
+    left:50vw;
+    animation-name: updown;
+    animation-duration:2s;
+    animation-iteration-count: infinite;
+    transition:0.5s;
+    }
+
+    #face{
+    display: inline-block;
+    padding:10px 5px;
+    background-color: darkgray;
+    border-radius:30px;
+    border:1px solid black;
+    }
+
+  @keyframes bounce{
+    from{padding: 10px 20px;}
+    50%{padding:25px 20px;}
+    to{padding: 10px 20px;}
+  }
+
+  @keyframes updown{
+    from, to ,20%, 60%{bottom: 200px;}
+    50%{bottom:220px;}
+  }
   
     
   </style>
