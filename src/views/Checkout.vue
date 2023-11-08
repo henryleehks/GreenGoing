@@ -1,5 +1,5 @@
 <template>
-    <div class="cart">
+    <div class="cart bg-[bisque]">
 
       <div class="display:block lg:flex border-b-2 mb-5">
         <h1 class="text-gray-600 font-extrabold text-3xl text-center py-10 lg:ml-16">Your Cart</h1>
@@ -18,7 +18,7 @@
       
       
 
-      <div class="cart-content pb-20">
+      <div id="cart-content" class="pb-20 bg-gradient-to-b from-[bisque] to-[#A6CEAE]">
 
         <ul id="cart" class="" style="color: black;"></ul>
       
@@ -80,7 +80,7 @@
   <style scoped>
   
   
-    .cart-content {
+    #cart-content {
       text-align: center;
     }
 
