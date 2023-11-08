@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Tailwind cdn  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css">
+
+</head>
+<body>
+    
+    <section class="bg-center bg-no-repeat" style="background-image: url('img/Singapore_nature.jpg');">
+        <div class="px-4 mx-auto max-w-screen-xl text-center py-40 lg:py-45">
+            <h1 id="text" class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl rounded-lg">View Product</h1>
+            <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+                <a href="#" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+                    Home
+                </a>
+                <a href="#" class="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 text-base font-medium text-center text-black rounded-lg bg-white border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400">
+                    Check Out
+                </a>
+            </div>
+            <svg class="animate-bounce mt-4" width="100%" height="100%">
+                <image x="25%" y="25%" width="50%" height="50%" xlink:href="img/down_arrow.png" />
+            </svg>
+        </div>
+    </section>
+
+    <!-- Retrieve the LocationID , use that ID to call specific listing from tripAdvisor-->
+    <!-- Extract name, photo, description from specific listing returned -->
+    
+    <!-- Getting reviews from firebase -->
+    <script type="module" src="src/db/firebase.js"></script>
+    <script>
+
+        const docRef = doc(db, "cities", "SF");
+        const docSnap = await getDoc(docRef);
+        
+        if (docSnap.exists()) {
+        console.log("Document data:", docSnap.data());
+        } else {
+        // docSnap.data() will be undefined in this case
+        console.log("No such document!");
+        }
+    </script>
+
+
+    <!-- Listing details -->
+        <!-- title,photo,description -->
+
+        <!-- display reviews --> 
+            <!-- implement input box to upload new reviews into firebase -->
+
+
+
+            <!-- Passing data to local device -->
+            <!-- <a href="protoreview.html" onclick="sendoverrev(1,'./img/a','Wild Wild Ticket','My House',5,'NIL')">
+            </a> -->
+
+    <!-- Listing details -->
+
+    <div class="box-border border-4 rounded-lg p-3 mt-3 mx-2 border-black"> 
+        <div class="flex flex-col md:flex-row"> 
+            
+            <div class="md:w-1/2"> 
+                <!-- use carousel -->
+                <img src="img/bird-paradise-crimson-wetlands.png" class="card-img-top" alt="...">
+            </div>
+            <div class="md:w-1/2 p-3 md:ml-10"> 
+                <div class="max-w-lg p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    <a href="#">
+                        <h5 class="mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Bird Paradise</h5>
+                    </a>
+                    <p class="mb-4 text-lg font-normal text-gray-700 dark:text-gray-400">Description of the attraction</p>
+
+                    <!-- add to cart button -->
+                    <button
+                        class="inline-flex items-center px-3 py-2 text-lg font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover-bg-blue-700 dark:focus:ring-blue-800"
+                        onclick="addToCart('Wild Wild Ticket', 10.00,'./img/a','Adult')">
+                        Add To Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="box-border border-4 rounded-lg p-3 mt-3 mx-2 border-black">
+
+        <!-- Reviews -->
+        <!-- <div class="bg-green-500 py-2 mb-5 text-center">
+            <h5 class="text-white font-bold">Reviews</h5>
+        </div> -->
+
+        <!-- Review 1 -->
+
+        <hr>
+
+        <!-- Review 2 -->
+
+        
+    </div>
+
+
+    <script>
+
+        var cart = [];
+        var reviewcache = [];
+        function sendoverrev(ID, imgurl, Name, address, ratings, misc) {
+            reviewcache.push({ ID: ID, imgurl: imgurl, Name: Name, address: address, ratings: ratings, misc: misc });
+            // window.localStorage.setItem("rcac", reviewcache)
+            console.log(reviewcache)
+            window.localStorage.setItem("rcac", JSON.stringify(reviewcache));
+        }
+
+        function addToCart(productName, price, imgurl, type) {
+            cart.push({ name: productName, price: price, imgurl: imgurl, type: type });
+            updateCart();
+            window.localStorage.setItem("crt", cart)
+        }
+
+        function updateCart() {
+            let cartList = document.getElementById("cart");
+            cartList.innerHTML = "";
+            var totalPrice = 0;
+
+            for (let item of cart) {
+                let img = document.createElement('img');
+                img.src = item.imgurl;
+                cartList.appendChild(img);
+
+
+                console.log(item)
+                let listItem = document.createElement("li");
+                listItem.innerText = `${item.name} - $${item.price.toFixed(2)} - ${item.type}`;
+                cartList.appendChild(listItem);
+                totalPrice += item.price;
+                cartList.appendChild(document.createElement("br"));
+
+
+            }
+
+
+
+            let totalItem2 = document.createElement("br");
+            cartList.appendChild(totalItem2);
+
+            let totalItem = document.createElement("li");
+            totalItem.innerText = `Total: $${totalPrice.toFixed(2)}`;
+            cartList.appendChild(totalItem);
+            window.localStorage.setItem("cart", JSON.stringify(cart));
+        }
+    </script>
+    
+
+
+</body>
+</html>
