@@ -25,6 +25,8 @@
   </template>
   
   <script>
+  import { initFlowbite } from 'flowbite';
+
   export default {
     name: 'Checkout',
     methods: {
@@ -65,7 +67,9 @@
 
       },
     },
-    beforeMount() {},
+    mounted(){
+      initFlowbite();
+    }
   };
   </script>
   
