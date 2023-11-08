@@ -1,4 +1,4 @@
-<style>
+<style scoped>
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
 * {
@@ -542,6 +542,7 @@ import { set, ref, update } from "firebase/database";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, updateCurrentUser } from "firebase/auth";
 import { currentUser, currentID } from "../db/localstore";
 import { RouterLink, routerKey } from "vue-router";
+import { createUser } from "../db/dbfunctions";
 import router from '../router'
 
 export default {
@@ -659,14 +660,21 @@ export default {
                         .catch((error) => {
                             console.error('Error adding user details to the database', error);
                         });
-
+                    
+                    // create FireStore user data
+                    console.log('creating user object in firestore')
+                    const result = createUser(user.uid,username,email,db)
+                    console.log('firestore user created')
                     alert('User created!');
+                    router.push('/login')
                 })
                 .catch((error) => {
                     // const errorCode = error.code;
                     const errorMessage = error.message;
                     alert(errorMessage);
                 });
+            
+            
         });
 
         console.log('[START] Current ID: ' + currentID.currentID);

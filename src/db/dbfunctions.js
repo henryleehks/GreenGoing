@@ -113,6 +113,16 @@ async function removePast(db,locationID,userID){
   )
 }
 
+async function createUser(id,user_name,user_email,db){
+const result = await setDoc(doc(db,"Users",id),{
+  authID: id,
+  Name: user_name,
+  Email: user_email,
+  Booked: [],
+  Favourites: []
+})
+console.log(result)
+}
 
 export {
     getDocument,
@@ -123,7 +133,8 @@ export {
     addFavourite,
     removeFavourite,
     addPast,
-    removePast
+    removePast,
+    createUser
 }
 
 // // ######################################################################
