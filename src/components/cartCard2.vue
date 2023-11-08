@@ -1,6 +1,6 @@
 <template>
     <div
-        class="rounded-3xl transition duration-500 ease-in-out scale-90 hover:scale-100 w-64 h-96 max-w-sm bg-white border border-gray-200 shadow-xl dark:bg-gray-800 dark:border-gray-700 align-bottom">
+        class="col-span-1 rounded-3xl transition duration-500 ease-in-out scale-90 hover:scale-100 w-64 h-96 max-w-sm bg-white border border-gray-200 shadow-xl dark:bg-gray-800 dark:border-gray-700 align-bottom">
         <div class="relative">
             <RouterLink :to=cardURL class='flex flex-column' @click="currentID.updateCurrentID(theURL)">
                 <img class="h-40 w-full p-2.5 rounded-3xl" :src="cardImg" alt="product image" />
@@ -26,6 +26,7 @@
 
 
             <div class="align-bottom pb-0">
+
                 <div class="flex items-center mt-2.5 mb-5">
                     <img :src="cardRatingImg">
                     <span
@@ -33,12 +34,13 @@
                         Rating: {{ cardRating }}
                     </span>
                 </div>
+
                 <div class="flex items-center justify-between bottom-0">
                     <span class="text-3xl font-bold text-gray-900 dark:text-white">{{ cardPrice }}</span>
 
                     <RouterLink :to=cardURL @click="currentID.updateCurrentID(theURL)"
                         class="transition duration-500 ease-in-out bg-green-500 text-white sm:text-black sm:bg-white sm:border sm:border-black hover:border-white hover:bg-green-500 hover:text-white rounded-lg hover:scale-110 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-5 py-2.5 text-center">
-                        View
+                        Cart
                     </RouterLink>
 
                 </div>
