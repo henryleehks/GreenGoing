@@ -4,14 +4,15 @@
             <img :src="rowImg" class=" object-fill w-auto h-auto">
         </td>
         <td class="w-1/3">
-            <h2 class="font-bold text-lg lg:text-5xl sm:text-2xl">
+            <h2 class="ml-1 font-bold text-lg lg:text-5xl sm:text-2xl">
                 {{ rowName }}
             </h2>
             <!-- <h2 class="font-bold text-xl">Date: 11/11/23</h2> -->
             <!-- <h2 class="font-bold text-xl">Time: 1300 - 1900</h2> -->
-            <div class="grid items-center mt-2.5 mb-5 grid-cols-4">
+            <p class="mt-4 ml-2">Reviews:</p>
+            <div class="grid mb-8 grid-cols-4 ml-0">
                 <img :src="rowRatingImg" class="col-span-4 sm:col-span-3">
-                    <span class="col-span-1 bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-0 md:ml-3">
+                    <span class="col-span-1 bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 text-center rounded dark:bg-blue-200 dark:text-blue-800 ">
                         {{ rowRating }}
                     </span>
             </div>
