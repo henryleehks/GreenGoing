@@ -40,20 +40,27 @@
                                     </svg>
                                 </div>
 
-                                <input type="search" id="nav-search" v-model="to_search" v-on:keyup="check()" placeholder = 'Search Experiences!' class="block w-full p-2 pl-8 pr-12 mx10 text-xs text-gray-900 border border-slate-900 rounded-lg bg-grey-200"  required>
+                                <input type="search" id="nav-search" v-model="to_search" v-on:keyup="check()"
+                                    placeholder='Search Experiences!'
+                                    class="block w-full p-2 pl-8 pr-12 mx10 text-xs text-gray-900 border border-slate-900 rounded-lg bg-grey-200"
+                                    required>
 
-                                <button @click="search()" class="text-white absolute right-1 bottom-1 bg-neutral-400 hover:bg-neutral-500 focus:ring-4 focus:outline-none focus:ring-[#50A060] font-xsmall rounded-md text-xs px-1 py-1">Search</button>
+                                <button @click="search()"
+                                    class="text-white absolute right-1 bottom-1 bg-neutral-400 hover:bg-neutral-500 focus:ring-4 focus:outline-none focus:ring-[#50A060] font-xsmall rounded-md text-xs px-1 py-1">Search</button>
                             </div>
                         </div>
                     </li>
                     <li>
-                        <RouterLink to="/" class="block py-2 pl-3 pr-4 text-white rounded hover:bg-neutral-500 md:hover:bg-transparent  md:hover:text-[#50A060] md:p-0" aria-current="page">
+                        <RouterLink to="/"
+                            class="block py-2 pl-3 pr-4 text-white rounded hover:bg-neutral-500 md:hover:bg-transparent  md:hover:text-[#50A060] md:p-0"
+                            aria-current="page">
                             Home
                         </RouterLink>
                     </li>
 
                     <li>
-                        <RouterLink to="/cart" class="block py-2 pl-3 pr-4 text-white rounded hover:bg-neutral-500 md:hover:bg-transparent md:border-0 md:hover:text-[#50A060] md:p-0">
+                        <RouterLink to="/cart"
+                            class="block py-2 pl-3 pr-4 text-white rounded hover:bg-neutral-500 md:hover:bg-transparent md:border-0 md:hover:text-[#50A060] md:p-0">
                             Listings
                         </RouterLink>
                     </li>
@@ -71,9 +78,10 @@
                             Favourites
                         </RouterLink>
                     </li>
-    
+
                     <li>
-                        <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-2 pl-3 pr-4  text-white border border-gray-100 hover:bg-[#50A060] md:hover:bg-transparent md:border-0 md:hover:text-[#50A060] md:p-0 md:w-auto">
+                        <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
+                            class="flex items-center justify-between w-full py-2 pl-3 pr-4  text-white border border-gray-100 hover:bg-[#50A060] md:hover:bg-transparent md:border-0 md:hover:text-[#50A060] md:p-0 md:w-auto">
                             <img src="/src/assets/User Profile Icon.png" />
                             <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 fill="none" viewBox="0 0 10 6">
@@ -111,15 +119,17 @@ import { ref } from "vue";
 
 export default {
     name: 'Navbar',
-    methods:{
+    methods: {
     },
     data() {
         const query = '';
+        const to_search = ref('');
         return {
             // This to check if user is currently signed in.
             isUserSignedIn: false, // Initialize it as false when the component is created
             query,
             searchQuery,
+            to_search
         };
     },
     created() {
@@ -138,25 +148,24 @@ export default {
     components: {
         SignOutButton,
     },
-    data() {
-        const to_search = ref('')
-        return {
-            isUserSignedIn: false,
-            searchQuery,
-            to_search // You should manage the user's sign-in status here
-        };
-    },
+    // data() {
+    //     const to_search = ref('')
+    //     return {
+    //         isUserSignedIn: false,
+    //         searchQuery,
+    //         to_search // You should manage the user's sign-in status here
+    //     };
+    // },
     methods: {
-        check(){
+        check() {
             console.log(this.to_search)
         },
-        search(){
+        search() {
             console.log("searching for: " + this.to_search)
             const value = this.to_search
             searchQuery.updatesearch(value)
             const url = '/search/' + this.to_search
             this.$router.push(url)
-            }
         },
         handleSignOut() {
             // Perform sign-out logic here
@@ -167,7 +176,7 @@ export default {
                     this.isUserSignedIn = false;
                     currentID.updateCurrentID('');
                     console.log('Logged Out UserID: ' + currentID.currentID)
-                    currentUser.updateCurrentUser('','Anonymous');
+                    currentUser.updateCurrentUser('', 'Anonymous');
                     console.log('Logged Out User ID: ' + currentUser.UserID)
                     console.log('Logged Out Username: ' + currentUser.UserName)
 
@@ -181,9 +190,11 @@ export default {
                     alert(errorMessage);
                 });
         },
-    }
+    },
 
-    
+}
+
+
 
 
 export { currentID, currentUser }
